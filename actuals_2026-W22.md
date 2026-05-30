@@ -27,5 +27,5 @@
 * Real Estate (XLRE): +0.88%
 
 ### Sector Summary
-* **Top 3 Leaders (前三名领跑者):** 1. Utilities (公用事业), 2. Communication Services (通讯), 3. Technology (科技)
-* **Bottom 3 Laggards (后三名落后者):** 1. Energy (能源), 2. Financials (金融), 3. Materials (原材料)
+* **Top 3 Leaders:** 1. Utilities , 2. Communication Services , 3. Technology 
+* **Bottom 3 Laggards:** 1. Energy , 2. Financials, 3. Materials 
