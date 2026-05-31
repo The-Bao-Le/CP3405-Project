@@ -12,13 +12,9 @@ The goal is not only to check whether the prediction was correct, but also wheth
 
 ## Status
 
-This file is in progress.
+Completed for Week 2.
 
-The actual weekly results are available, but the final calibration score is still waiting for the final team forecast and confidence levels.
-
-Final scores will be completed after:
-1. The final team forecast is submitted
-2. The confidence level for SPX, NDX, and IWM is confirmed
+The actual weekly results have been recorded and compared with the team’s neutral-to-bullish market view.
 
 ---
 
@@ -37,21 +33,25 @@ Final scores will be completed after:
 
 ## Team Forecast vs Actual Result
 
-| Asset | Team Prediction | Predicted Range | Confidence | Actual Result | Correct? | Score |
-|---|---|---:|---|---:|---|---:|
-| SPX | Waiting for final forecast | TBD | TBD | +0.22% | TBD | TBD |
-| NDX | Waiting for final forecast | TBD | TBD | +0.20% | TBD | TBD |
-| IWM | Waiting for final forecast | TBD | TBD | -0.59% | TBD | TBD |
+| Asset | Team Prediction | Predicted View | Confidence | Actual Result | Correct? | Score |
+|---|---|---|---|---:|---|---:|
+| SPX | Neutral → Bullish | Slightly positive / Flat → Up | Medium | +0.22% | HIT | +2 |
+| NDX | Bullish / Up | Technology leadership expected to continue | Medium | +0.20% | HIT | +2 |
+| IWM | Flat → Up | Small-cap recovery expected | Medium | -0.59% | MISS | 0 |
 
 ---
 
-## Total Calibration Score
+## Calibration Result
 
-**Total Score:** TBD
+**Direction Result:** 2 HIT, 1 MISS  
+**Working Calibration Score:** +4
 
 ---
 
-## Notes
+## QA Comment
 
-The actual weekly market results have been recorded.  
-The score will be calculated after the final forecast and confidence levels are confirmed.
+SPX and NDX were successful calls because both finished slightly positive and aligned with the team’s neutral-to-bullish view.
+
+IWM was a miss because the expected small-cap recovery did not happen. This shows that broad market strength was not evenly distributed across all indices.
+
+The key calibration lesson is that our bullish view worked better for large-cap and technology-related indices than for small-cap stocks.
