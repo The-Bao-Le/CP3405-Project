@@ -1,1 +1,44 @@
+Weekly Market Synthesis
 
+Direction
+Sideways
+
+Bias
+Neutral-Bearish
+
+Top Bullish Factors
+- S&P 500 remains above both the 8-day and 21-day EMAs, with short-term trend positive and support at 7,330 (Technical Agent).
+- Falling WTI crude oil prices (~5-6% weekly decline) reduce inflation pressure and support the soft‑landing narrative (Macro Agent).
+- Technology sector remains in its seasonal long window (March–July), which supports Nasdaq and the tech‑heavy S&P 500 (Almanac Agent).
+- The week‑after‑options‑expiration pattern shows S&P 500 up 30 of 45 times, avg +0.40%, a mild bullish offset (Almanac Agent).
+
+Top Bearish Factors
+- Elevated Treasury yields (10‑year at 4.45‑4.58%) are the primary macro headwind for equities, especially growth and rate‑sensitive sectors (Macro Agent).
+- Memorial Day week has a bearish lean (Dow down 17 of last 29), and the day after Memorial Day is down 8 of last 10 (Almanac Agent).
+- In a midterm election year, May averages −0.7% for the S&P 500, adding seasonal pressure (Almanac Agent).
+- Friday’s Core PCE inflation report creates binary risk; a significantly higher reading could trigger a broad risk‑off move (Macro Agent).
+- The market may be extended after recent record highs, and small‑caps (Russell 2000) remain sensitive to rates (Technical & Almanac Agents).
+
+Most Important Macro Driver
+Friday’s Core PCE Inflation report is the most important economic event this week. Markets are highly sensitive to inflation surprises because they directly affect Treasury yields and Federal Reserve expectations. The outcome will likely determine whether yields continue to fall or move higher, and as a result, will be the primary driver of market direction this week.
+
+Most Important Technical Signal
+The S&P 500 remains above both the 8‑day EMA and 21‑day EMA, confirming that the short‑term trend is still positive. Recent record highs have been sustained, but momentum may become extended. Immediate support is at 7,330 and resistance at 7,600.
+
+Most Important Seasonal Factor
+Seasonality is cautiously bearish‑neutral for late May in a midterm year. The midterm year May average of −0.7% for the S&P 500 and the bearish tendency of Memorial Day week (Dow down 17 of last 29) are headwinds. However, the week‑after‑options‑expiration bullish pattern (S&P up 30 of 45) and technology’s ongoing seasonal long window provide partial offsets.
+
+Expected SPX Trading Range
+Lower Bound: 7,330
+Upper Bound: 7,600
+Confidence Level: Medium
+
+Final Weekly Call
+The S&P 500 is expected to trade sideways with a neutral‑bearish bias, constrained between support at 7,330 and resistance at 7,600. Technicals remain positive with price above short‑term moving averages, but elevated Treasury yields, midterm year May weakness, and the historically bearish Memorial Day week pattern create significant headwinds. Falling oil prices and technology seasonality offer some support, but Friday’s Core PCE report is the key binary event that could resolve the range. Until then, upside is limited and downside risk is elevated.
+
+Reasoning Summary
+Point 1: Technicals are bullish (above EMAs, support at 7,330) but note the market may be extended after record highs.
+Point 2: Macro is neutral‑bullish with medium confidence, but elevated yields and Core PCE risk keep the bias cautious.
+Point 3: Almanac seasonal factors lean bearish‑neutral due to midterm year May weakness and Memorial Day week patterns.
+Point 4: Contradicting week‑level patterns (Memorial Day bearish vs. week‑after‑options bullish) lower confidence and suggest sideways price action.
+Point 5: The most probable range is 7,330–7,600, with a break likely only if Core PCE surprises significantly.
