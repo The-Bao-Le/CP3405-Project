@@ -1,1 +1,65 @@
+# Weekly Market Synthesis
 
+### Direction
+
+**Up**
+
+### Bias
+
+**Neutral-Bullish**
+
+### Top Bullish Factors
+
+1. All major indices remain above their 8-day and 21-day EMAs, maintaining positive short-term trends.
+2. S&P 500, Nasdaq 100, and Russell 2000 all retain bullish technical structures.
+3. Falling oil prices are reducing inflation pressure and supporting the soft-landing narrative.
+4. Markets expect the Federal Reserve to keep rates unchanged, reducing immediate policy uncertainty.
+5. Technology remains in a favorable seasonal window and continues to show relative strength.
+6. The week-after-options-expiration pattern historically favors gains in the S&P 500.
+
+### Top Bearish Factors
+
+1. Treasury yields remain elevated and are the primary macro headwind for equities.
+2. Core PCE inflation introduces significant event risk and could alter rate expectations.
+3. Midterm election year seasonality places the market in the historical Q2–Q3 “Weak Spot.”
+4. Memorial Day week carries a moderate bearish seasonal tendency.
+5. Markets may be technically extended after recent record highs.
+6. Geopolitical uncertainty remains present through ongoing US-Iran negotiations.
+
+### Most Important Macro Driver
+
+The Friday Core PCE Inflation report is the dominant macro catalyst for the week. Markets remain highly sensitive to inflation surprises because they directly influence Treasury yields and Federal Reserve expectations. The Macro Agent identifies this report as the primary determinant of whether yields continue easing or resume moving higher. Given that elevated yields are currently the main macro headwind for equities, the inflation outcome is likely to drive overall market direction.
+
+### Most Important Technical Signal
+
+The most important technical signal is that the S&P 500 remains above both its 8-day EMA and 21-day EMA while maintaining a bullish trend. The Technical Agent notes that all major indices continue trading above key short-term moving averages, confirming positive momentum. Although the market may be somewhat extended following recent record highs, the prevailing technical structure remains constructive until support levels are violated.
+
+### Most Important Seasonal Factor
+
+The dominant seasonal factor is the midterm election year cycle. While the week-after-options-expiration pattern provides a modest bullish tailwind, the broader 2026 midterm-year environment places the market in the historical Q2–Q3 weak period. Memorial Day week also carries a bearish tendency. Overall, seasonality remains cautiously bearish-neutral, with technology serving as the primary positive offset.
+
+### Expected SPX Trading Range
+
+**Lower Bound:** 7,330
+
+**Upper Bound:** 7,600
+
+### Confidence Level
+
+**Medium**
+
+### Final Weekly Call
+
+The balance of evidence supports a Neutral-Bullish outlook with an upward directional bias. Technical conditions remain favorable, oil prices are helping ease inflation concerns, and Federal Reserve expectations remain stable. However, elevated Treasury yields and the upcoming Core PCE inflation report introduce meaningful event risk. As a result, the most likely outcome is modest upside within the established range, provided inflation data does not trigger a renewed rise in yields.
+
+### Reasoning Summary
+
+**Point 1** — S&P 500 remains above key short-term moving averages, preserving a bullish technical trend.
+
+**Point 2** — Falling oil prices support the soft-landing narrative and reduce inflation pressure.
+
+**Point 3** — Markets expect the Federal Reserve to hold rates steady, limiting policy uncertainty.
+
+**Point 4** — Elevated Treasury yields remain the primary risk and could pressure equities if they move higher.
+
+**Point 5** — Seasonality is mixed, with midterm-year weakness offset partially by technology strength and the week-after-options-expiration bullish tendency.
