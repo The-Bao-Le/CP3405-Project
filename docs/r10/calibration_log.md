@@ -36,9 +36,9 @@ Final scores will be completed after:
 
 | Asset | Team Prediction | Predicted Range | Confidence | Actual Result | Correct? | Score |
 |---|---|---:|---|---:|---|---:|
-| SPX | Waiting for final forecast | TBD | TBD | TBD | TBD | TBD |
-| NDX | Waiting for final forecast | TBD | TBD | TBD | TBD | TBD |
-| IWM | Waiting for final forecast | TBD | TBD | TBD | TBD | TBD |
+| SPX | Waiting for final forecast | TBD | TBD | +0.22% | TBD | TBD |
+| NDX | Waiting for final forecast | TBD | TBD | +0.20% | TBD | TBD |
+| IWM | Waiting for final forecast | TBD | TBD | -0.59% | TBD | TBD |
 
 ---
 
