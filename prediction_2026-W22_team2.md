@@ -8,31 +8,31 @@ Filed: 25 May 2026
 
 PRIMARY PREDICTIONS
 
-S&P 500 (SPX)
+SPX
 
 Direction: Sideways → Up
 
-Expected Range: 7,330 – 7,600
+% Range: 0.0% to +3.7%
 
 Confidence: Medium
 
 ---
 
-Nasdaq 100 (NDX)
+NDX
 
 Direction: Up
 
-Expected Range: 29,800 – 30,500
+% Range: +0.5% to +2.5%
 
 Confidence: Medium-High
 
 ---
 
-Russell 2000 (IWM)
+IWM
 
 Direction: Flat → Up
 
-Expected Range: 2,850 – 3,000
+% Range: -0.5% to +1.5%
 
 Confidence: Medium
 
@@ -55,11 +55,11 @@ XLRE (Real Estate)| Neutral
 
 Top Sector
 
-Technology (XLK)
+XLK (Technology) – Technology remains in its seasonal long window (March–July) and continues to demonstrate the strongest relative strength among major sectors.
 
 Bottom Sector
 
-Energy (XLE)
+XLE (Energy) – Falling oil prices and weaker energy momentum create headwinds for the sector and reduce earnings support.
 
 ---
 
@@ -87,7 +87,7 @@ This outlook becomes invalid if:
 
 - Core PCE inflation is significantly higher than expected.
 - The 10-year Treasury yield rises above 4.70%.
-- SPX breaks below the 7,330 support level.
+- SPX breaks below key support levels and loses its bullish EMA structure.
 
 ---
 
@@ -105,12 +105,18 @@ Market leadership appears relatively narrow. Utilities outperformed while Energy
 
 LLM Consensus
 
+Mixed
+
+Three models (ChatGPT, Claude, and Gemini) were Neutral-Bullish, while DeepSeek maintained a more cautious Neutral-Bearish outlook due to greater emphasis on Treasury yields and seasonal headwinds.
+
+---
+
+Final Team View
+
 Bias: Neutral-Bullish
 
 Direction: Sideways → Up
 
 Confidence: Medium
 
-Expected SPX Range: 7,330 – 7,600
-
-Key Risk: Core PCE Inflation Report
+Key Risk: Friday's Core PCE Inflation Report
