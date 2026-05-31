@@ -1,1 +1,50 @@
+Weekly Market Synthesis
 
+Direction
+Up
+
+Bias
+Neutral-Bullish
+
+Top Bullish Factors
+* The S&P 500 remains above its 8-day and 21-day Exponential Moving Averages (EMAs), signaling that short-term trend momentum remains positive.
+* WTI crude oil prices fell approximately 5% to 6%, reducing near-term inflation pressures and supporting soft-landing expectations.
+* Federal Reserve expectations remain stable, with a 99% CME FedWatch probability of keeping rates unchanged at the June FOMC meeting.
+* Selected seasonal tailwinds offer support, specifically the technology sector's active long window and a historically positive pattern during the week after options expiration.
+
+
+
+Top Bearish Factors
+* Elevated U.S. Treasury yields, with the 10-year yield trading between 4.45% and 4.58%, persist as the primary macro headwind for equities.
+* The market is navigating the Q2–Q3 "Weak Spot" of the 4-year midterm election cycle, where May historically averages a -0.7% return for the S&P 500.
+* High sensitivity to inflation uncertainty introduces acute binary event risk to the broader equity market.
+* Short-term historical patterns present headwinds, including a moderate bearish lean for Memorial Day week and a recent negative trend for the day after Memorial Day.
+* Markets face potential overextension risks following recent record highs.
+
+
+
+Most Important Macro Driver
+The Friday Core PCE Inflation Report stands as the most critical macroeconomic driver for the week. Because equity markets are highly sensitive to inflation surprises that directly alter Treasury yields and Federal Reserve expectations, this high-importance report will determine whether the 10-year yield breaks lower or resumes its upward trajectory, making it the primary catalyst for realized volatility.
+
+Most Important Technical Signal
+The primary technical indicator is the S&P 500 sustaining its position above both its 8-day and 21-day EMAs. This layout confirms that the underlying short-term market momentum is healthy and intact following recent record highs, establishing a reliable baseline of technical support at 7,330 to counteract near-term macro or seasonal friction.
+
+Most Important Seasonal Factor
+The overarching 2026 midterm election year cycle context represents the most powerful seasonal force, placing the market in the historical Q2–Q3 "Weak Spot" characterized by tougher trading conditions. This cyclical headwind is reinforced by the Memorial Day week pattern, which has seen the Dow decline in 17 of the last 29 years, compounding the pressure of elevated yields despite minor technical and options-related offsets.
+
+Expected SPX Trading Range
+Lower Bound: 7,330
+Upper Bound: 7,600
+
+Confidence Level
+Medium
+
+Final Weekly Call
+The S&P 500 carries a Neutral-Bullish bias into the week, underpinned by strong upward price momentum above key short-term moving averages and macro relief from falling crude oil prices. However, meaningful upside will likely be capped by restrictive Treasury yields and structural seasonal headwinds native to the midterm election year context and post-holiday trading patterns. Expect the index to fluctuate within its defined technical range of 7,330 to 7,600 until Friday's high-stakes Core PCE inflation data delivers a definitive macro direction.
+
+Reasoning Summary
+Point 1: The S&P 500 exhibits robust short-term technical health by consistently maintaining support above its 8-day and 21-day EMAs.
+Point 2: A substantial 5% to 6% drop in crude oil prices acts as a tangible economic tailwind by deflating immediate commodity-driven inflation fears.
+Point 3: Elevated Treasury yields near recent highs continue to act as the primary restrictive force against sustained equity market expansion.
+Point 4: Historical parameters introduce clear resistance, as May in midterm election years averages a negative performance paired with a seasonally weak Memorial Day week.
+Point 5: Ongoing interest rate uncertainty ensures that major trend continuation or breakdown is entirely dependent on the market's reaction to Friday's Core PCE inflation release.
