@@ -14,7 +14,7 @@ The repository is used to organise project work, track progress, store evidence,
 | ------- | ---------------------------------------- |
 | Role 1  | The Bao                                  |
 | Role 2  | louis112                                 |
-| Role 3  | ARCHVILE                                 |
+| Role 3  | Hamzah Nutt (Opal)                       |
 | Role 4  | Wenhan Hu, Hao Wang                      |
 | Role 5  | 設計思考                                     |
 | Role 6  | Guanyu Lu, Zheng Zaikun                  |
