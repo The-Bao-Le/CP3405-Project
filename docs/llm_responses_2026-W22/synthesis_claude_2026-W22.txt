@@ -1,1 +1,66 @@
+**Weekly Market Synthesis — Week 2 (26 May–1 June 2026)**
 
+---
+
+**Direction:** Sideways → Up
+
+**Bias:** Neutral-Bullish
+
+---
+
+**Top Bullish Factors**
+
+1. SPX and NDX remain above both the 8-day and 21-day EMAs, confirming the short-term uptrend
+2. Falling oil prices (~−5% to −6%) reduce inflation pressure and support the soft-landing narrative
+3. Federal Reserve expected to hold at June meeting; stable rate expectations
+4. Technology sector remains in its seasonal long window (March–July)
+5. Week-after-options-expiration bullish pattern (S&P up 30 of 45, avg +0.40%)
+
+**Top Bearish Factors**
+
+1. 10-year Treasury yield remains elevated at 4.45–4.58%, the primary macro headwind for equities
+2. Core PCE on Friday creates binary event risk capable of invalidating the bullish view
+3. Midterm election year cycle places Q2–Q3 in the historical "weak spot"
+4. Memorial Day week bearish tendency (Dow down 17 of last 29; day after down 8 of last 10)
+5. Market may be extended following recent record highs
+
+---
+
+**Most Important Macro Driver**
+
+Friday's Core PCE Inflation report is the single most consequential event of the week. Treasury yields remain the primary macro headwind for equities, meaning a hotter-than-expected print would likely push the 10-year yield back toward the 4.70% invalidation threshold and trigger a broad risk-off move. A soft or in-line reading would reinforce the soft-landing narrative supported by falling oil prices and stable Fed expectations, providing a constructive backdrop into month-end.
+
+**Most Important Technical Signal**
+
+The S&P 500 holding above both the 8-day and 21-day EMAs is the most important technical condition this week, confirming the short-term uptrend remains intact. The Nasdaq 100 carries the highest confidence rating (Medium-High), reflecting technology's continued relative strength. Key SPX support sits at 7,330; resistance at 7,600. The overall technical verdict is Flat to Up, as momentum may be extended after recent record highs.
+
+**Most Important Seasonal Factor**
+
+The midterm election year cycle is the dominant seasonal context, placing Q2–Q3 in a historically weak period before a typical Q4 recovery. The Memorial Day week bearish tendency reinforces this caution. These headwinds are partially offset by the week-after-options-expiration bullish pattern and the ongoing Technology seasonal long window. Net seasonal read is cautious bearish-neutral, with technology as the lone clear seasonal positive.
+
+---
+
+**Expected SPX Trading Range**
+
+Lower Bound: 7,330
+Upper Bound: 7,600
+
+---
+
+**Confidence Level:** Medium
+
+---
+
+**Final Weekly Call**
+
+The S&P 500 is set up for a sideways-to-modestly-higher week, with the path of least resistance leaning up as long as the EMA structure holds and Friday's Core PCE does not surprise to the upside. Macro, technical, and seasonal inputs all carry simultaneous bullish and bearish offsets, which argues against a high-conviction directional call. The week is best framed as a PCE binary event wrapped in constructive technicals: bulls need a soft inflation print to unlock upside toward 7,600; bears need a hot print and a yield spike above 4.70% to validate seasonal and macro caution. Until Friday, price action is likely to be contained and rotational.
+
+---
+
+**Reasoning Summary**
+
+1. All three major indices remain above their 8-day and 21-day EMAs, confirming the short-term uptrend and providing a technical floor for the week.
+2. Falling oil prices reduce near-term inflation pressure and support the soft-landing narrative, partially offsetting the headwind from elevated Treasury yields.
+3. Core PCE on Friday is the week's binary risk event. The macro view is explicitly invalidated if the print is materially hot or if the 10-year yield rises above 4.70%, making pre-Friday positioning tentative.
+4. Seasonal forces are in direct conflict: the Memorial Day week tendency and midterm cycle argue for caution, while the post-OpEx pattern and Technology seasonal long provide partial offsets.
+5. All three agent inputs independently converge on Medium or Low-Medium confidence, reflecting genuine two-sided risk and supporting a Neutral-Bullish rather than outright Bullish weekly call.
