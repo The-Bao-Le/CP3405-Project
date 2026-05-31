@@ -25,4 +25,4 @@ PATTERN CONFIDENCE: LOW–MEDIUM. Two contradicting week-level patterns. Midterm
 
 ALMANAC THESIS: "Seasonality suggests cautious/bearish-neutral for late May in a midterm year. Technology is the seasonal bright spot that gives a bullish offset. Banking and Materials face seasonal headwinds. The Memorial Day week bearish tendency adds to the macro pressure from elevated yields. However, the week-after-options-expiration bullish pattern provides some offset. Confidence is low due to conflicting signals."
 
-Source: Stock Trader's Almanac 2026, pp. 65–66 (May Vital Statistics), p. 94 (Sector Seasonality), pp. 10–11 (2026 Outlook). Accessed: 30 May 2026.
+Source: Stock Trader's Almanac 2026, pp. 65–66 (May Vital Statistics), p. 94 (Sector Seasonality), pp. 12–15 (2026 Outlook). Accessed: 30 May 2026.
