@@ -11,11 +11,14 @@ The goal is not only to check whether the prediction was correct, but also wheth
 ---
 
 ## Status
-This file is prepared before the final market result is available.
+
+This file is in progress.
+
+The actual weekly results are available, but the final calibration score is still waiting for the final team forecast and confidence levels.
 
 Final scores will be completed after:
 1. The final team forecast is submitted
-2. The actual weekly SPX, NDX, and IWM results are known
+2. The confidence level for SPX, NDX, and IWM is confirmed
 
 ---
 
@@ -50,4 +53,5 @@ Final scores will be completed after:
 
 ## Notes
 
-This section will be updated after the market closes and the actual weekly results are available.
+The actual weekly market results have been recorded.  
+The score will be calculated after the final forecast and confidence levels are confirmed.
