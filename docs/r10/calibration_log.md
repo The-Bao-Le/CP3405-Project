@@ -55,3 +55,5 @@ SPX and NDX were successful calls because both finished slightly positive and al
 IWM was a miss because the expected small-cap recovery did not happen. This shows that broad market strength was not evenly distributed across all indices.
 
 The key calibration lesson is that our bullish view worked better for large-cap and technology-related indices than for small-cap stocks.
+
+R8’s updated actuals also showed uneven sector performance. Utilities, Communication Services, and Technology were the top leaders, while Energy, Financials, and Materials were the weakest sectors. This supports the conclusion that market strength was selective rather than broad.
