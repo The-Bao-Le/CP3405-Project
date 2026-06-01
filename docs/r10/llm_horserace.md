@@ -57,3 +57,6 @@ The LLM horse race shows that the most useful model was not the most bullish mod
 Claude performed best because it balanced technical strength with macro uncertainty. ChatGPT and Gemini were also directionally correct, but their views were more bullish than the actual result.
 
 The team should continue comparing different AI models, but the final forecast should not simply copy the AI consensus.
+
+R8’s broader actuals also remind us that AI model comparison should consider not only SPX direction, but also whether the model understands breadth and sector rotation.
+
