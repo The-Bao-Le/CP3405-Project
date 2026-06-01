@@ -103,6 +103,10 @@ This week, SPX and NDX moved slightly higher, but IWM moved lower. This shows th
 
 Small-cap weakness was the main issue we missed.
 
+R8’s updated actuals showed that market breadth was uneven. Utilities, Communication Services, and Technology led the market, while Energy, Financials, and Materials lagged.
+
+This confirms that the market was selective rather than broadly bullish. For Sprint 2, we should check sector rotation and market breadth before trusting a bullish AI consensus.
+
 ---
 
 ## Next Sprint Improvement
@@ -115,8 +119,9 @@ We will also give more weight to:
 
 1. Market breadth
 2. Small-cap weakness
-3. Whether leadership is broad or concentrated
-4. Macro risks from yields and inflation
+3. Sector rotation
+4. Whether leadership is broad or concentrated
+5. Macro risks from yields and inflation
 
 ---
 
