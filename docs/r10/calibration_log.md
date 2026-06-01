@@ -56,4 +56,4 @@ IWM was a miss because the expected small-cap recovery did not happen. This show
 
 The key calibration lesson is that our bullish view worked better for large-cap and technology-related indices than for small-cap stocks.
 
-R8’s updated actuals also showed uneven sector performance. Utilities, Communication Services, and Technology were the top leaders, while Energy, Financials, and Materials were the weakest sectors. This supports the conclusion that market strength was selective rather than broad.
+R8’s updated actuals also showed uneven sector rotation. Technology, Basic Materials, and Industrials were the top leaders, while Energy, Consumer Defensive, and Utilities were the weakest sectors. This supports the conclusion that market strength was selective rather than broad.
