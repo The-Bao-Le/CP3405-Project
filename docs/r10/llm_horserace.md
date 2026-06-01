@@ -59,4 +59,3 @@ Claude performed best because it balanced technical strength with macro uncertai
 The team should continue comparing different AI models, but the final forecast should not simply copy the AI consensus.
 
 R8’s broader actuals also remind us that AI model comparison should consider not only SPX direction, but also whether the model understands breadth and sector rotation.
-
