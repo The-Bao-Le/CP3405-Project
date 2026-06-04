@@ -4,8 +4,8 @@
 | Asset | Ticker | Closing Price | Weekly % Change (5D) | Actual Direction |
 | :--- | :--- | :--- | :--- | :--- |
 | S&P 500 | SPX | 7,580.06 | +0.22% | ⬆️ Up |
-| Nasdaq 100 | NDX | 26,972.62 | +0.20% | ⬆️ Up |
-| Russell 2000 | IWM | 2,919.34 | -0.59% | ⬇️ Down |
+| Nasdaq 100 | NDX | 30,333.50 | +0.20% | ⬆️ Up |
+| Russell 2000 | IWM | 290.15 | -0.59% | ⬇️ Down |
 | Gold | GC=F | 4,593.00 | +1.34% | ⬆️ Up |
 | Crude Oil | CL=F | 73.50 | -2.40% | ⬇️ Down |
 | 10Y Yield | ^TNX | 4.12% | -1.15% | ⬇️ Down |
@@ -32,4 +32,4 @@
 
 ### Compliance Notes
 * **Source:** Data verified via Finviz 1W performance metrics to ensure accurate 5D tracking.
-* **Evidence Preservation:** Source screenshots are archived under `/evidence/screenshots/` as `yahoo_sectors_5D_Week2_Sat.png`.
+* **Evidence Preservation:** Source screenshots are archived under `/evidence/screenshots/` as `yahoo_sectors_5D_2026-WXX_Sat.png`.
