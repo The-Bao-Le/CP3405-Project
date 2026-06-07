@@ -1,17 +1,21 @@
 # Week 2 Actual Market Data
 
 ## 1. Major Asset Classes Directional Performance
-| Asset | Ticker | Closing Price | Weekly % Change (5D) | Actual Direction |
-| :--- | :--- | :--- | :--- | :--- |
-| S&P 500 | SPX | 7,580.06 | +0.22% | ⬆️ Up |
-| Nasdaq 100 | NDX | 30,333.50 | +0.20% | ⬆️ Up |
-| Russell 2000 | IWM | 290.15 | -0.59% | ⬇️ Down |
-| Gold | GC=F | 4,593.00 | +1.34% | ⬆️ Up |
-| Crude Oil | CL=F | 73.50 | -2.40% | ⬇️ Down |
-| 10Y Yield | ^TNX | 4.12% | -1.15% | ⬇️ Down |
-| Bond (TLT) | TLT | 92.40 | +0.85% | ⬆️ Up |
-| VIX | ^VIX | 15.32 | -2.67% | ⬇️ Down |
-| Bitcoin | BTC-USD| 73,697.19 | +0.92% | ⬆️ Up |
+S&P 500 (^GSPC): 7,383.74 (🔴 MISS)
+
+Nasdaq 100 (^NDXT): 16,670.17 (🔴 MISS)
+
+Russell 2000 (IWM): 281.65 (🟢 HIT)
+
+Gold (GC=F): 4,365.30 (🔴 MISS)
+
+Crude Oil (CL=F): 90.54 (🟢 HIT)
+
+10Y Yield (^TNX): 4.5360% (🔴 MISS)
+
+Bonds (TLT): 85.06 (🔴 MISS)
+
+Bitcoin (BTC-USD): 61,426.24 (🟢 HIT)
 
 ## 2. 11 S&P 500 Sectors True Performance (1W Interval)
 * Technology (XLK): +5.27%
