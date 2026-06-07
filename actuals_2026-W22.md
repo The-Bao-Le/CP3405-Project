@@ -1,21 +1,15 @@
 # Week 2 Actual Market Data
 
 ## 1. Major Asset Classes Directional Performance
-S&P 500 (^GSPC): 7,383.74 (🔴 MISS)
-
-Nasdaq 100 (^NDXT): 16,670.17 (🔴 MISS)
-
-Russell 2000 (IWM): 281.65 (🟢 HIT)
-
-Gold (GC=F): 4,365.30 (🔴 MISS)
-
-Crude Oil (CL=F): 90.54 (🟢 HIT)
-
-10Y Yield (^TNX): 4.5360% (🔴 MISS)
-
-Bonds (TLT): 85.06 (🔴 MISS)
-
-Bitcoin (BTC-USD): 61,426.24 (🟢 HIT)
+资产类别 (Asset Class),上周收盘基准 (PPT Base),你们团队的预测 (Forecast),本周五实际收盘 (Actual Close),本周实际走势 (Actual Direction),🎯 审计结果 (Accuracy)
+S&P 500 (^GSPC),"7,580.06",⬆️ UP,"7,383.74",🔴 DOWN,🔴 MISS
+Nasdaq 100 (^NDXT),"30,333.50 (NDX)",⬆️ UP,"16,670.17",🔴 DOWN,🔴 MISS
+Russell 2000 (IWM),290.15,⬇️ DOWN,281.65,🔴 DOWN,🟢 HIT
+Gold (GC=F),"4,593.00",⬆️ UP,"4,365.30",🔴 DOWN,🔴 MISS
+Crude Oil (CL=F),73.50,⬇️ DOWN,90.54,🟢 UP,🔴 MISS
+10Y Yield (^TNX),4.12%,⬇️ DOWN,4.5360%,🟢 UP,🔴 MISS
+Bonds (TLT),92.40,⬆️ UP,85.06,🔴 DOWN,🔴 MISS
+Bitcoin (BTC-USD),"73,697.19",⬆️ UP,"61,426.24",🔴 DOWN,🔴 MISS
 
 ## 2. 11 S&P 500 Sectors True Performance (1W Interval)
 * Technology (XLK): +5.27%
