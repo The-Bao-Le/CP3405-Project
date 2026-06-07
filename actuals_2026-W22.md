@@ -26,5 +26,6 @@
 * Energy (XLE): -5.08%
 
 ## 3. Data Integrity & Calibration Notes
-* **Audit Source**: Verified via Yahoo Finance Friday Close screenshots and Finviz 1W Group Performance tracking. All evidence is logged under the `evidence/` repository folder.
-* **NDX/IWM Verification**: Followed precise guidelines to audit the benchmark prices. Checked that ^NDXT correctly reflects the 10k-level point and IWM reflects the ~280 ETF price level to eliminate previous scaling errors.
+* **Audit Source**: Verified via Yahoo Finance Friday Close screenshots and Finviz 1W Group Performance tracking. All data evidence is securely logged under the repository's `evidence/` folder.
+* **NDX/IWM Verification**: Followed precise engineering guidelines to audit the benchmark prices. Confirmed that ^NDXT correctly reflects the 16k-level tech sector point and IWM reflects the ~281 ETF price level to eliminate previous scaling or denominational errors.
+* **Scrum Retrospective Note**: Due to widespread market-wide liquidations (notably led by Micron Technology's -13.25% earnings drag), the team's generalized bullish stance on mega-cap equity indexes and precious metals resulted in an unconventional 1-HIT / 7-MISS distribution this week. This systematic variance will be integrated into Week 23's algorithmic forecasting priors.
