@@ -1,1 +1,68 @@
+# Weekly Market Synthesis
 
+## Direction
+
+**Down**
+
+## Bias
+
+**Neutral-Bearish**
+
+## Top Bullish Factors
+
+* Federal Reserve is overwhelmingly expected to keep rates unchanged, reducing immediate policy uncertainty.
+* Economic activity remains resilient, supporting earnings and broader risk sentiment.
+* The week-after-options-expiration seasonal pattern is historically positive for the S&P 500.
+* Technology remains in a favorable seasonal window through mid-July.
+* Earnings reports could provide selective upside catalysts.
+
+## Top Bearish Factors
+
+* All major indices have broken below their 8-day and 21-day EMAs, confirming a broad-based bearish technical shift.
+* Rising Treasury yields are creating valuation pressure, particularly for growth-oriented sectors.
+* CPI and PPI releases present significant upside inflation risk that could further delay rate-cut expectations.
+* Midterm-election-year June seasonality is historically weak, with the S&P 500 averaging negative performance.
+* Ongoing Iran-related geopolitical tensions could increase energy prices and market volatility.
+
+## Most Important Macro Driver
+
+The most important macro driver this week is the U.S. inflation data, particularly CPI and PPI. The macro report identifies inflation releases as the primary catalyst for market direction. With Treasury yields already rising and the 10-year yield reaching 4.55%, any upside inflation surprise could push yields higher, further reduce expectations for future rate cuts, and increase pressure on equity valuations. Conversely, benign inflation data would help stabilize rate expectations and provide relief for risk assets.
+
+## Most Important Technical Signal
+
+The most important technical signal is the synchronized breakdown of the S&P 500, Nasdaq 100, and Russell 2000 below both their 8-day and 21-day exponential moving averages. The technical report characterizes this as a systemic bearish transition with short-term moving averages now acting as dynamic resistance. For the S&P 500 specifically, the break below the EMA support zone confirms a loss of momentum and shifts the technical outlook decisively bearish with high confidence.
+
+## Most Important Seasonal Factor
+
+The most important seasonal factor is the broader midterm-election-year cycle. While the week-after-options-expiration pattern provides a modest bullish tailwind, the Almanac report notes that June during midterm years historically averages a decline for the S&P 500 and occurs within the weaker Q2-Q3 portion of the four-year cycle. This larger seasonal backdrop outweighs shorter-term positive patterns and supports a cautious stance.
+
+## Expected SPX Trading Range
+
+**Lower Bound:** 7,360
+
+**Upper Bound:** 7,420
+
+## Confidence Level
+
+**Medium**
+
+## Final Weekly Call
+
+The balance of evidence favors a modestly negative week for the S&P 500. Although a stable Federal Reserve outlook and supportive technology seasonality provide some offsets, rising Treasury yields, critical inflation data risk, bearish market internals, and unfavorable midterm-year seasonality collectively argue for downside pressure. Unless inflation data materially eases concerns about future rate policy, rallies are likely to encounter resistance.
+
+## Reasoning Summary
+
+**Point 1**
+All major U.S. equity indices have broken below their 8-day and 21-day EMAs, creating a high-confidence bearish technical backdrop.
+
+**Point 2**
+Treasury yields continue to rise, increasing valuation pressure and reducing support for growth equities.
+
+**Point 3**
+CPI and PPI releases are the key macro catalysts and present asymmetric downside risk if inflation exceeds expectations.
+
+**Point 4**
+Midterm-election-year June seasonality and the broader Q2-Q3 weak-cycle period favor caution despite some shorter-term positive patterns.
+
+**Point 5**
+Fed policy stability, resilient economic activity, technology seasonality, and earnings catalysts provide support, preventing a fully bearish outlook but not outweighing the dominant headwinds.
