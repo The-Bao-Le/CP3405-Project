@@ -1,1 +1,66 @@
+# Weekly Market Synthesis
 
+---
+
+## Direction
+**Down**
+
+## Bias
+**Neutral-Bearish**
+
+---
+
+## Top Bullish Factors
+- Fed expected to hold rates steady, removing near-term policy shock risk
+- Technology sector remains in seasonal long window (mid-March to mid-July), providing a structural tailwind for Nasdaq-heavy exposure
+- Week-after-options-expiration pattern historically bullish (S&P up 30 of 45, avg +0.40%)
+- Earnings season active; positive surprises could provide short-term offsets
+- Economic activity described as resilient, supporting a soft-landing narrative
+
+## Top Bearish Factors
+- All three major indices (SPX, NDX, IWM) trading below 8-day and 21-day EMAs — confirmed bearish technical alignment across the board
+- 10-year Treasury yield at 4.55% and rising, creating headwinds for growth and risk assets
+- Midterm year June historically averages −2.1% for the S&P 500
+- Memorial Day week pattern: Dow down 17 of last 29 years — bearish lean
+- Banking and Materials sectors in seasonal short windows
+- Geopolitical risk (Iran ceasefire fragility, new sanctions) elevates energy price and volatility risk
+- Inflation data (CPI/PPI) due this week; upside surprise could accelerate yield pressure
+
+---
+
+## Most Important Macro Driver
+The U.S. CPI report is the single most consequential event of the week. With the 10-year Treasury already at 4.55% and markets pricing in virtually no rate cuts (95.4% probability of the Fed holding at 350–375 bps), a hotter-than-expected CPI or PPI print would likely push yields higher still, increasing pressure on equity valuations — particularly in growth and technology. Conversely, a benign inflation reading could stabilize yields and support a relief rally. The macro bias is described as neutral to slightly bullish, but that assessment is conditionally dependent on inflation data coming in at or below expectations.
+
+## Most Important Technical Signal
+The most significant technical signal is the uniform breakdown across all three major indices below both the 8-day and 21-day EMAs. The S&P 500 at 7,383.73, the Nasdaq 100 at 28,957.60, and the Russell 2000 at 281.65 are all trading beneath these short-term moving averages, with the 8-day EMA now acting as dynamic resistance rather than support. The Technical Agent assigns high confidence to the bearish bias on SPX and NDX, and medium-high on IWM. This broad-based alignment is not an isolated signal — it reflects systemic downward momentum across large-cap, technology-heavy, and small-cap segments simultaneously, which materially increases the reliability of the bearish read.
+
+## Most Important Seasonal Factor
+The dominant seasonal context is the midterm election year cycle. June in a midterm year averages −2.1% for the S&P 500, materially worse than the average June return of +0.2%. The Almanac identifies Q2–Q3 2026 as the cyclical "Weak Spot" of the 4-Year Cycle, with a Q4 "Sweet Spot" rally anticipated later in the year. The Memorial Day week bearish tendency (Dow down 17 of last 29) adds near-term pressure, though it is partially offset by the post-options-expiration bullish tendency. The Almanac's pattern confidence is rated low-to-medium due to conflicting week-level signals, but the midterm year cycle context is treated as the dominant frame — and it is bearish.
+
+---
+
+## Expected SPX Trading Range
+- **Lower Bound:** 7,360 *(Technical Agent support level)*
+- **Upper Bound:** 7,420 *(Technical Agent resistance level)*
+
+---
+
+## Confidence Level
+**Medium**
+
+*Rationale: Technical signals are high-confidence and internally consistent. Macro and seasonal signals are directionally aligned bearish but carry uncertainty due to the pending CPI catalyst and the contradicting post-expiration seasonal tailwind. The range is narrow and well-defined by technical levels.*
+
+---
+
+## Final Weekly Call
+The weight of evidence across all three analytical frameworks points to a **cautiously bearish posture for the S&P 500 this week**. Technical structure is the clearest signal — all major indices have broken below key short-term EMAs with high conviction. Seasonal context reinforces this, as midterm-year June cycles carry a meaningful negative historical bias. Macro conditions are not outright hostile (Fed on hold, resilient economy), but the risk is asymmetric: a CPI upside surprise would likely accelerate the current technical breakdown toward the 7,360 support level, while a benign print offers limited upside constrained by the 7,420 resistance zone. Maintain a defensive bias; any intra-week relief rallies should be treated as opportunities to reduce risk rather than signals of trend reversal.
+
+---
+
+## Reasoning Summary
+
+1. **Technical breakdown is broad and confirmed.** SPX, NDX, and IWM are all below 8-day and 21-day EMAs simultaneously, with the 8-day EMA now acting as resistance — a systemic bearish shift, not an isolated signal.
+2. **Macro risk is asymmetric to the downside this week.** The CPI and PPI releases are the primary catalyst. With yields already elevated at 4.55% on the 10-year, any upside inflation surprise has more potential to hurt than a benign print has to help.
+3. **Midterm year seasonality dominates the almanac read.** June's −2.1% average return in midterm years, combined with Q2–Q3 as the 4-Year Cycle "Weak Spot," provides a structural seasonal headwind that outweighs the mild post-expiration tailwind.
+4. **Geopolitical risk adds a volatility premium.** Active Iran-related tensions (fragile ceasefire, new sanctions) introduce an unquantified but real tail risk to energy prices and overall market sentiment that is not yet priced into a stable equilibrium.
+5. **Bullish offsets exist but are insufficient to reverse the bias.** Technology seasonal strength, Fed stability, and earnings catalysts are genuine positives, but they are not enough to overcome the convergence of bearish technical structure, adverse midterm seasonality, and an inflationary macro risk event in the same week.
