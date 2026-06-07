@@ -1,1 +1,54 @@
+Weekly Market Synthesis
 
+Direction
+Down
+
+Bias
+Neutral-Bearish
+
+Top Bullish Factors
+
+Federal Reserve is overwhelmingly expected to keep interest rates unchanged at the next meeting, removing near-term policy uncertainty.
+
+Economic activity remains resilient, and corporate earnings provide potential positive catalysts that could offset some macro concerns.
+
+Technology sector remains in its seasonal long window (mid-March to mid-July), which may offer a partial bullish offset to broader weakness.
+
+Top Bearish Factors
+
+All three major indices (S&P 500, Nasdaq 100, Russell 2000) have broken decisively below their 8-day and 21-day EMAs, confirming a systemic bearish technical transition.
+
+Rising Treasury yields (10-year at 4.55%) create pressure on growth stocks and technology sectors, while inflation reports (CPI, PPI) may surprise to the upside.
+
+Midterm election year June averages a -2.1% return for the S&P 500, and the Memorial Day week pattern carries a bearish lean, adding seasonal headwinds.
+
+Most Important Macro Driver
+The U.S. CPI report is the most critical macro catalyst this week. A higher-than-expected CPI or PPI reading could push Treasury yields even higher and further reduce expectations for future rate cuts, exacerbating downward pressure on equities. Conversely, a benign inflation print might temporarily ease yield-driven selling.
+
+Most Important Technical Signal
+The S&P 500 is trading well below both its 8-day and 21-day EMAs, with the 8-day EMA now acting as dynamic resistance. This bearish crossover, confirmed across all three major indices, signals a loss of short-term momentum and suggests further potential for volatility and downside price action.
+
+Most Important Seasonal Factor
+June in a midterm election year is historically the second-worst month for the S&P 500, averaging a -2.1% return. This midterm cycle headwind dominates contradictory week-level patterns, creating a cautious-to-bearish seasonal backdrop that aligns with the current technical breakdown.
+
+Expected SPX Trading Range
+Lower Bound: 7360
+Upper Bound: 7420
+
+Confidence Level
+Medium
+
+Final Weekly Call
+Expect the S&P 500 to trade lower over the week as the bearish technical break below key moving averages aligns with seasonally weak midterm‑year June pressures. Rising Treasury yields and the risk of an upside inflation surprise add to the headwinds, though a steady Fed and resilient economic activity may prevent a sharper decline. The CPI report will likely determine whether the index tests support at 7360 or briefly retests resistance near 7420.
+
+Reasoning Summary
+
+The Technical Agent reports a high-confidence bearish breakdown below 8/21 EMAs for the S&P 500, with support at 7360 and resistance at 7420.
+
+The Almanac Agent notes midterm year June averages -2.1% for the S&P 500, a strong seasonal headwind that overrides mixed week-level patterns.
+
+The Macro Agent cites rising 10-year Treasury yields (4.55%) and potential upside inflation surprises as key bearish factors, despite a neutral-to-slightly-bullish overall conclusion.
+
+Bullish offsets are limited: technology’s seasonal long window and expectations of no Fed rate change, but technicals and seasonals dominate.
+
+The most important driver is the CPI report; its outcome will likely decide whether the bearish technicals lead to a sustained decline or a short-term relief bounce.
