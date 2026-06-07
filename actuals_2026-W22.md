@@ -3,7 +3,7 @@
 ## 1. Major Asset Classes Directional Performance
 
 * S&P 500 (^GSPC): 7,383.74 (🔴 MISS)
-* Nasdaq 100 (^NDXT): 16,670.17 (🔴 MISS)
+* Nasdaq 100 (^NDXT): 16,670.17 (🔴 MISS) 
 * Russell 2000 (IWM): 281.65 (🟢 HIT)
 * Gold (GC=F): 4,365.30 (🔴 MISS)
 * Crude Oil (CL=F): 90.54 (🔴 MISS)
