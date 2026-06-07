@@ -4,10 +4,10 @@
 R10 — QA and Learning Log Lead
 
 ## Purpose
-This file records the Week 23 LLM horse race and checks whether the AI consensus is supported by team evidence.
+This file records the Week 23 LLM horse race and checks whether the AI consensus is supported by the team evidence.
 
 ## Raw Model Responses
-The raw model responses have been saved in:
+The raw model responses and comparison table are saved in:
 
 - evidence/llm_responses_2026-W23/synthesis_chatgpt_2026-W23.txt
 - evidence/llm_responses_2026-W23/synthesis_claude_2026-W23.txt
@@ -24,6 +24,14 @@ The raw model responses have been saved in:
 | Gemini | Down | Neutral-Bearish | Medium | U.S. CPI and PPI inflation data |
 | DeepSeek | Down | Neutral-Bearish | Medium | U.S. CPI report |
 
+## SPX Range
+
+| Item | Level |
+|---|---|
+| Expected SPX Range | 7,360–7,420 |
+| Key Support | 7,360 |
+| Key Resistance | 7,420 |
+
 ## Agreement
 All four AI models reached the same conclusion:
 
@@ -31,13 +39,17 @@ All four AI models reached the same conclusion:
 - Bias: Neutral-Bearish
 - Confidence: Medium
 - Main macro risk: CPI / PPI inflation reports
-- Main technical risk: SPX, NDX, and IWM trading below the 8-day and 21-day EMAs
+- Main technical risk: major indices trading below the 8-day and 21-day EMAs
+- Expected SPX range: 7,360–7,420
 
 ## Disagreement
-There was no major disagreement between the four models. The only minor difference was the emphasis on secondary risks, such as geopolitical risk and seasonal patterns.
+There was no major disagreement between the four models. The main difference was only in emphasis. Some models focused more on CPI/PPI inflation risk, while others also mentioned seasonal weakness, geopolitical risk, or technical breakdown.
 
 ## QA Comment
-The AI consensus is strong because all four models reached the same market direction and risk bias. However, the final team prediction should not simply copy the AI consensus. It should also be checked against Human Score, technical evidence, macro risks, and almanac signals.
+The AI consensus is very strong because all four models reached the same market direction, bias, and confidence level. However, the final team prediction should not simply copy the AI consensus. It should also be checked against the Human Score, technical evidence, macro risk, almanac signals, and any human override insight.
 
-## Current QA Status
-LLM comparison is ready. Final validation still depends on the completed Human Score, final W23 prediction file, and actual market outcome.
+## R10 Finding
+The LLM horse race supports a Neutral-Bearish W23 outlook. The strongest evidence is the 4/4 AI agreement on Down direction, Medium confidence, CPI/PPI risk, and the 7,360–7,420 SPX trading range.
+
+## Current Status
+LLM horse race completed. Final calibration still depends on the actual W23 market outcome.
