@@ -5,14 +5,17 @@
 - [ ] A Python script exists at `scripts`.
 - [ ] The script uses yfinance to fetch Yahoo Finance data.
 - [ ] The script fetches data for SPY, QQQ, IWM, XLK, XLE, and XLF.
-- [ ] The script generates `data/friday_close_market_snapshot.csv`.
-- [ ] The script generates `data/friday_close_market_snapshot.json`.
-- [ ] The script generates `data/friday_close_5d_prices.csv`.
-- [ ] The script generates `data/friday_close_5d_prices.json`.
-- [ ] The output includes latest close, 5-day return, 20-day return, 20-day SMA, above/below 20-day average, and signal.
+- [ ] The script generates appropriate `csv` and `json` files.
 - [ ] The GitHub Actions workflow can run manually and is scheduled for Friday after US market close.
 - [ ] `README.md` explains what the script does and how to run it.
 - [ ] The team can explain how the script works during the demo.
+
+## Weekly Archive Acceptance Criteria
+
+* [ ] The automation archives each weekly market result under `data/archive/YYYY-WXX/`.
+* [ ] The latest files remain easy to access in `data/latest/`.
+* [ ] Previous weekly outputs are preserved instead of overwritten.
+* [ ] The archive can be used later for calibration, delta reports, and prediction review.
 
 ## Prediction Acceptance Criteria
 
