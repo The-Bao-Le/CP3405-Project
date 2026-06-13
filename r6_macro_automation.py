@@ -4,34 +4,33 @@ import argparse
 import yfinance as yf
 from datetime import datetime, timedelta
 
-def calculate_trading_window(data_week_str):
+def calculate_trading_window(market_week_str):
     """
-    Dynamically computes the yfinance OHLV fetching window based on the targeted data collection week.
+    Dynamically computes the yfinance OHLV fetching window based on the targeted market data week.
     """
     today = datetime.now()
     current_year = today.year
     
     # Parse integer from input strings like 'W24' or 'w24'
-    data_week_num = int(data_week_str.upper().replace("W", ""))
+    week_num = int(market_week_str.upper().replace("W", ""))
         
-    print(f"[Engine Activation] Target Reference Point: {current_year}-{data_week_str}")
+    print(f"[Engine Activation] Target Reference Point: {current_year}-{market_week_str}")
     
     # Calculate approximate date matching the ISO week sequence
     base_date = datetime(current_year, 1, 4)
-    calculated_date = base_date + timedelta(weeks=data_week_num - 1)
+    calculated_date = base_date + timedelta(weeks=week_num - 1)
     
     # Establish a safe tracking window (Previous Friday Open to Current Wednesday Close)
     start_date = (calculated_date - timedelta(days=calculated_date.weekday() + 3)).strftime('%Y-%m-%d')
     end_date = (calculated_date + timedelta(days=5 - calculated_date.weekday())).strftime('%Y-%m-%d')
     
-    return data_week_num, start_date, end_date
+    return start_date, end_date
 
-def run_market_capture_pipeline(data_week_num, start_date, end_date):
+def run_market_capture_pipeline(market_week_str, start_date, end_date):
     """
-    Stage 1: Live API Ingestion. Output snapshot file corresponds to the active data week.
+    Stage 1: Live API Ingestion. Output snapshot file corresponds strictly to MARKET_WEEK.
     """
-    # 🌟 CORRECTION: Snapshot uses the real data week (e.g., market_snapshot_W24.json)
-    snapshot_filename = f"market_snapshot_W{data_week_num}.json"
+    snapshot_filename = f"market_snapshot_{market_week_str.upper()}.json"
     print(f"\n>>> STAGE 1: Ingesting Market Snapshot ({start_date} -> {end_date})")
     
     tickers = {
@@ -43,7 +42,7 @@ def run_market_capture_pipeline(data_week_num, start_date, end_date):
     
     snapshot_data = {
         "meta": {
-            "data_week": f"W{data_week_num}",
+            "market_week": market_week_str.upper(),
             "generation_time": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             "data_window": f"{start_date} to {end_date}"
         },
@@ -74,15 +73,12 @@ def run_market_capture_pipeline(data_week_num, start_date, end_date):
     print(f"[SUCCESS] Snapshot securely mirrored to disk: '{snapshot_filename}'")
     return snapshot_filename
 
-def generate_report_from_snapshot(snapshot_path, data_week_num):
+def generate_report_from_snapshot(snapshot_path, actual_week_str):
     """
-    Stage 2: Process mirrored JSON snapshot and construct dynamic Markdown Ledger.
+    Stage 2: Process mirrored JSON snapshot and construct Markdown Ledger named after ACTUAL_WEEK.
     """
-    # 🌟 CORRECTION: The evaluation week is always the Prediction week (Data Week - 1)
-    prediction_week_num = data_week_num - 1
-    output_ledger = f"actual_2026-W{prediction_week_num}.md"
-    
-    print(f"\n>>> STAGE 2: Constructing Dynamic Cross-Asset Markdown Ledger for Prediction Week W{prediction_week_num}")
+    output_ledger = f"actual_2026-{actual_week_str.upper()}.md"
+    print(f"\n>>> STAGE 2: Constructing Evaluation Ledger for Prediction Week: {actual_week_str.upper()}")
     
     with open(snapshot_path, "r", encoding="utf-8") as f:
         snapshot = json.load(f)
@@ -90,9 +86,9 @@ def generate_report_from_snapshot(snapshot_path, data_week_num):
     metrics = snapshot["metrics"]
     meta = snapshot["meta"]
     
-    markdown_payload = f"""# Market Performance Ledger: W{prediction_week_num} Prediction Evaluation
+    markdown_payload = f"""# Market Performance Ledger: {actual_week_str.upper()} Prediction Evaluation
 
-**Snapshot Data Source:** {meta['data_week']} Close  
+**Snapshot Data Source:** {meta['market_week']} Close  
 **Snapshot Timestamp:** {meta['generation_time']}  
 **Data Integrity State:** Verified via Local Pipeline Enclosure (`{snapshot_path}`)  
 
@@ -135,12 +131,11 @@ def generate_report_from_snapshot(snapshot_path, data_week_num):
     print(f"[SUCCESS] Markdown ledger generated: '{output_ledger}'\n")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Multi-Week Production-Grade Market Audit Pipeline")
-    # Defending against hardcoding: accepts dynamic data week string from outer context
-    parser.add_argument("--week", type=str, default="W24", help="Target active data collection week (e.g. W24)")
+    parser = argparse.ArgumentParser(description="Multi-Week Decoupled Market Audit Pipeline")
+    parser.add_argument("--market-week", type=str, required=True, help="Target market data week (e.g. W24)")
+    parser.add_argument("--actual-week", type=str, required=True, help="Target evaluation prediction week (e.g. W23)")
     args = parser.parse_args()
     
-    # Variable propagation
-    data_week_num, start_window, end_window = calculate_trading_window(args.week)
-    json_cache = run_market_capture_pipeline(data_week_num, start_window, end_window)
-    generate_report_from_snapshot(json_cache, data_week_num)
+    start_window, end_window = calculate_trading_window(args.market_week)
+    json_cache = run_market_capture_pipeline(args.market_week, start_window, end_window)
+    generate_report_from_snapshot(json_cache, args.actual_week)
