@@ -1,22 +1,23 @@
 name: Automated Cross-Asset Market Audit Pipeline
 
 on:
-  push:
-    branches:
-      - 'Week-**'  # Active sprint operational branch
-      - 'main'
+  # 🌟 DYNAMIC MANUAL TRIGGER: Allows testing historical weeks without changing code
+  workflow_dispatch:
+    inputs:
+      custom_week:
+        description: 'Target Week to override (Leave BLANK for dynamic current week execution, e.g., W23)'
+        required: false
+        type: string
+
+  # 🌟 AUTOMATED SCHEDULE: Runs blindly and automatically every Friday post-market
   schedule:
     - cron: '0 22 * * 5'
-
-env:
-  # 🌟 GLOBAL VARIABLE CENTRALIZATION: Change this single line for future weeks (e.g., W24, W25)
-  TARGET_WEEK: 'W23'
 
 jobs:
   audit_and_log:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Bypasses the 403 authorization lock safely
+      contents: write  # Crucial: Bypasses the 403 write-access permission block
       
     steps:
       - name: Checkout Active Repository Branch
@@ -33,24 +34,40 @@ jobs:
         run: |
           pip install yfinance argparse
 
-      - name: Run Dynamic Matrix Market Audit
-        # 🌟 PASSING VARIABLE: Dynamically injects the global environment variable into the execution runtime
+      - name: Resolve Execution Week Dynamic Variable
+        # This shell step automatically resolves the target week dynamically
+        # Priority: Manual input -> Environment ISO week fallback
+        id: resolve_week
         run: |
-          python r6_macro_automation.py --week ${{ env.TARGET_WEEK }}
+          if [ -n "${{ github.event.inputs.custom_week }}" ]; then
+            RESOLVED_WEEK=$(echo "${{ github.event.inputs.custom_week }}" | tr '[:lower:]' '[:upper:]')
+            echo "Execution Mode: Manual Override Detected."
+          else
+            # Automatically grabs current year's week number (e.g., 23 -> W23)
+            CURRENT_WEEK_NUM=$(date +%V)
+            RESOLVED_WEEK="W${CURRENT_WEEK_NUM}"
+            echo "Execution Mode: Fully Automated Calendar Resolution."
+          fi
+          echo "FINAL_WEEK=$RESOLVED_WEEK" >> $GITHUB_ENV
+          echo "Resolved target parameter for this session: $RESOLVED_WEEK"
+
+      - name: Run Dynamic Matrix Market Audit
+        # Executes your script with zero hardcoded references
+        run: |
+          python r6_macro_automation.py --week ${{ env.FINAL_WEEK }}
 
       - name: Secure Ledger Artifacts & Route Commit to Active Branch
         run: |
           git config --global user.name "Team2 Data Automation Bot"
           git config --global user.email "bot@team2.financial"
           
-          # 🌟 DYNAMIC TRACKING: Stages files dynamically based on the global env variable
-          git add market_snapshot_${{ env.TARGET_WEEK }}.json actual_2026-${{ env.TARGET_WEEK }}.md
+          # Dynamic file tracking based on resolved timeline variable
+          git add market_snapshot_${{ env.FINAL_WEEK }}.json actual_2026-${{ env.FINAL_WEEK }}.md
           
           if git diff --staged --quiet; then
-            echo "No data changes detected for ${{ env.TARGET_WEEK }}. Terminating pipeline workflow safely."
+            echo "No data changes detected for ${{ env.FINAL_WEEK }}. Terminating pipeline workflow safely."
           else
-            # 🌟 DYNAMIC COMMIT MESSAGE: Injects variable context safely into the repo ledger
-            git commit -m "chore(data): automated ${{ env.TARGET_WEEK }} market ledger alignment [skip ci]"
+            git commit -m "chore(data): automated ${{ env.FINAL_WEEK }} market ledger alignment [skip ci]"
             echo "Routing validated payload back to upstream context: ${{ github.ref_name }}"
             git push origin HEAD:${{ github.ref_name }}
           fi
