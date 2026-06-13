@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
-        cache: 'pip' # Caches dependencies to speed up the workflow runs
+        cache: 'pip'
 
     # Step 3: Install required data engineering packages
     - name: Install Dependencies
@@ -30,7 +30,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install yfinance pandas
 
-    # Step 4: Execute the R6 automation script to fetch actuals and generate actual_2026-W23.md
+    # Step 4: Execute the R6 automation script to fetch actuals
     - name: Run R6 Data Collection Script
       run: |
         python r6_macro_automation.py
@@ -40,12 +40,8 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        
-        # Check if the file was created or modified to avoid empty commit errors
         if [ -f "actual_2026-W23.md" ]; then
           git add actual_2026-W23.md
-          
-          # Only commit if there are actual changes detected to prevent pipeline crash
           git diff-index --quiet HEAD || git commit -m "auto(r6): update actual_2026-W23.md via GitHub Actions pipeline [skip ci]"
           git push
         else
