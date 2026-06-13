@@ -20,12 +20,11 @@ jobs:
       with:
         ref: Week-04
 
-    # Step 2: Set up a stable Python environment
+    # Step 2: Set up a stable Python environment (Cleaned without problematic cache anchors)
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
-        cache: 'pip'
 
     # Step 3: Install required data engineering packages
     - name: Install Dependencies
