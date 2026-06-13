@@ -75,7 +75,7 @@ def compile_actuals_report(metrics):
     markdown_payload = f"""# R6 Market Evaluation Ledger: Week 22 Actuals Audit
 
 **Team:** Team2  
-**Current Process Loop:** Automation Tracking (Branch: week4)  
+**Current Process Loop:** Automation Tracking (Branch: Week-04)  
 **Target Matrix Reference:** Week 22 (2026-W22) Directional Forecast Calibration  
 **Data Pipeline Anchor:** Automated Yahoo Finance API Engine  
 
@@ -119,6 +119,6 @@ def compile_actuals_report(metrics):
         file.write(markdown_payload)
     print(f"SUCCESS: Generated active verification report: {target_output_file}")
 
- if __name__ == "__main__":
+if __name__ == "__main__":
     market_data = fetch_market_actuals()
     compile_actuals_report(market_data)
