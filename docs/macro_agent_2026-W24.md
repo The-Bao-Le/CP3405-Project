@@ -13,15 +13,32 @@ This week's macro environment is driven by four major themes:
 4.Energy market developments
 
 ---
-### Federal Reserve Outlook
+## Federal Reserve Outlook
 
-According to the CME FedWatch Tool, market participants assign a 97.4% probability that the Federal Reserve will maintain the current target range of 3.50%-3.75% at the June 17 FOMC meeting.
+### FedWatch Tool (13 June 2026)
 
-Only 2.6% of market participants expect a rate cut.
+Current market expectations for the 17 June 2026 FOMC Meeting are:
 
-This suggests that interest rate expectations are largely priced in, reducing the likelihood of a major surprise from the rate decision itself.
+| Target Rate Range | Probability |
+|-------------------|-------------|
+| 325–350 bps (Rate Cut) | 2.6% |
+| 350–375 bps (Current) | 97.4% |
 
-Assessment: Neutral to Mildly Bullish
+### Interpretation
+
+According to the CME FedWatch Tool, market participants overwhelmingly expect the Federal Reserve to maintain the current target rate range of **3.50%–3.75%** at the upcoming June FOMC meeting.
+
+With a **97.4% probability** assigned to no change and only a **2.6% probability** of a rate cut, the policy decision itself is largely priced into financial markets.
+
+As a result, investor attention will likely shift toward:
+
+- FOMC Economic Projections (Dot Plot)
+- Future rate-cut guidance
+- Chair Powell's Press Conference
+
+Any hawkish or dovish change in the Fed's forward guidance could have a greater impact on market sentiment than the rate decision itself.
+
+**Assessment:** High Impact, Low Surprise Risk
 
 ---
 ## Treasury Yield Analysis
