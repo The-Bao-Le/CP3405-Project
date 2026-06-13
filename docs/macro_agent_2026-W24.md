@@ -13,13 +13,15 @@ This week's macro environment is driven by four major themes:
 4.Energy market developments
 
 ---
-## Federal Reserve Outlook
+### Federal Reserve Outlook
 
-Markets expect the Fed to keep rates unchanged at 3.75%.
+According to the CME FedWatch Tool, market participants assign a 97.4% probability that the Federal Reserve will maintain the current target range of 3.50%-3.75% at the June 17 FOMC meeting.
 
-Investors will focus on the FOMC statement, economic projections and Powell's press conference.
+Only 2.6% of market participants expect a rate cut.
 
-Assessment: High Impact
+This suggests that interest rate expectations are largely priced in, reducing the likelihood of a major surprise from the rate decision itself.
+
+Assessment: Neutral to Mildly Bullish
 
 ---
 ## Treasury Yield Analysis
