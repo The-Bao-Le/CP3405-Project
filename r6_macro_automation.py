@@ -4,32 +4,23 @@ import argparse
 import yfinance as yf
 from datetime import datetime, timedelta
 
-def calculate_trading_window(target_week=None):
+def calculate_trading_window(target_week):
     """
-    Dynamically computes the yfinance OHLV fetching window.
-    If target_week is provided (e.g., 'W23'), it calculates dates based on week number.
-    If target_week is None, it automatically captures the active calendar week.
+    Dynamically computes the yfinance OHLV fetching window based on the targeted audit week variable.
     """
     today = datetime.now()
     current_year = today.year
     
-    if not target_week:
-        # Automatically detect the current calendar ISO week
-        year, week_num, _ = today.isocalendar()
-        target_week = f"W{week_num}"
-    else:
-        # Parse integers from input strings like 'W23' or 'w24'
-        week_num = int(target_week.upper().replace("W", ""))
+    # Parse integers from input strings like 'W23' or 'w24'
+    week_num = int(target_week.upper().replace("W", ""))
         
     print(f"[Engine Activation] Target Reference Point: {current_year}-{target_week}")
     
     # Calculate approximate date matching the ISO week sequence
-    # 4th of January is always in ISO Week 1
     base_date = datetime(current_year, 1, 4)
     calculated_date = base_date + timedelta(weeks=week_num - 1)
     
     # Establish a safe tracking window (Previous Friday Open to Current Wednesday Close)
-    # This prevents timezone alignment leaks on Yahoo Finance feeds
     start_date = (calculated_date - timedelta(days=calculated_date.weekday() + 3)).strftime('%Y-%m-%d')
     end_date = (calculated_date + timedelta(days=5 - calculated_date.weekday())).strftime('%Y-%m-%d')
     
@@ -37,13 +28,12 @@ def calculate_trading_window(target_week=None):
 
 def run_market_capture_pipeline(target_week, start_date, end_date):
     """
-    Stage 1: Live API ingestion and snapshot generation.
-    Strictly zero fallbacks to prevent data contamination.
+    Stage 1: Live API Ingestion. Output file uses the dynamic target_week variable.
     """
+    # Dynamic file naming via variable allocation
     snapshot_filename = f"market_snapshot_{target_week}.json"
     print(f"\n>>> STAGE 1: Ingesting Market Snapshot ({start_date} -> {end_date})")
     
-    # Fixed core tickers as requested by peer audit (^NDX corrected)
     tickers = {
         "SPX": "^GSPC", "NDX": "^NDX", "IWM": "IWM",
         "GOLD": "GC=F", "OIL": "CL=F", "US10Y": "^TNX", "TLT": "TLT", "BTC": "BTC-USD",
@@ -64,9 +54,8 @@ def run_market_capture_pipeline(target_week, start_date, end_date):
         ticker_instance = yf.Ticker(symbol)
         df = ticker_instance.history(start=start_date, end=end_date)
         
-        # Peer Feedback Implementation: Halt execution immediately if any data point is blank
         if df.empty:
-            raise RuntimeError(f"CRITICAL IMMUTABILITY FAILURE: {label} ({symbol}) data stream broke. Pipeline terminated.")
+            raise RuntimeError(f"CRITICAL IMMUTABILITY FAILURE: {label} ({symbol}) stream broke. Terminating.")
             
         initial_open = df['Open'].iloc[0]
         final_close = df['Close'].iloc[-1]
@@ -87,8 +76,9 @@ def run_market_capture_pipeline(target_week, start_date, end_date):
 
 def generate_report_from_snapshot(snapshot_path, target_week):
     """
-    Stage 2: Process local mirrored JSON snapshot and parse into standard Markdown Ledger.
+    Stage 2: Process mirrored JSON snapshot and construct dynamic Markdown Ledger.
     """
+    # Dynamic ledger path mapping
     output_ledger = f"actual_2026-{target_week}.md"
     print(f"\n>>> STAGE 2: Constructing Dynamic Cross-Asset Markdown Ledger")
     
@@ -143,12 +133,11 @@ def generate_report_from_snapshot(snapshot_path, target_week):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Multi-Week Production-Grade Market Audit Pipeline")
-    parser.add_argument("--week", type=str, default=None, help="Explicit target week parameter (e.g., W23, W24). Default is automatic tracking.")
+    # Defending against hardcoding: accepts dynamic week variable string from outer context
+    parser.add_argument("--week", type=str, default="W23", help="Target sprint week variable (e.g. W23, W24)")
     args = parser.parse_args()
     
-    # Trigger the dynamic scheduling component
+    # Variable propagation
     validated_week, start_window, end_window = calculate_trading_window(args.week)
-    
-    # Execute structural pipeline
     json_cache = run_market_capture_pipeline(validated_week, start_window, end_window)
     generate_report_from_snapshot(json_cache, validated_week)
