@@ -4,7 +4,7 @@
 
 For Sprint 4, our team decided to build a focused Python-based market data collection automation rather than attempting a full AI prediction system. Based on the level definitions, our current approach is already close to Level 2, and our goal is to move toward Level 3 by automating one repeatable part of the weekly prediction workflow.
 
-The automation will fetch market data from Yahoo Finance using Python and `yfinance`, then export structured output that can support the weekly market analysis and prediction process.
+The automation will fetch market data from Yahoo Finance using Python, then export structured output that can support the weekly market analysis and prediction process.
 
 ## What We Chose to Automate
 
@@ -14,8 +14,8 @@ The script will fetch data for the required index and sector proxies:
 
 | Market Area            | Proxy Ticker | Purpose                                 |
 | ---------------------- | ------------ | --------------------------------------- |
-| S&P 500 / SPX          | SPY          | Broad US large-cap market proxy         |
-| Nasdaq 100 / NDX       | QQQ          | Growth and technology-heavy index proxy |
+| S&P 500 / SPX          | ^GSPC        | Broad US large-cap market proxy         |
+| Nasdaq 100 / NDX       | ^NDX         | Growth and technology-heavy index proxy |
 | Russell 2000 / IWM     | IWM          | Small-cap market proxy                  |
 | Information Technology | XLK          | Selected S&P sector proxy               |
 | Financials             | XLF          | Selected S&P sector proxy               |
@@ -49,18 +49,6 @@ It moves toward Level 3 because:
 * The generated output can support the following week’s prediction discussion.
 
 However, we are not claiming this is a full AI prediction system. The final prediction still requires human interpretation, role-based analysis, and team validation.
-
-## Timing Decision
-
-The automation is intended to run after the US market closes on Friday. Instead of running exactly at 4:00 PM Eastern Time, the workflow should run shortly after market close, such as 4:20 PM ET, to allow Yahoo Finance data to update.
-
-This timing supports the team’s goal of using the Friday close snapshot as evidence for the following week’s prediction.
-
-## Weekly Archive Decision
-
-In addition to generating the latest market snapshot, the team will archive each weekly result under `data/archive/YYYY-WXX/`. This creates a historical evidence trail that can be used for future calibration, delta reports, and comparison against later market outcomes.
-
-The `data/latest/` folder stores the most recent output for easy access, while the `data/archive/` folder preserves each weekly snapshot for reference. This supports Sprint 4 because the automation does not only fetch data once; it also creates repeatable and inspectable weekly evidence.
 
 ## Role Usage
 
