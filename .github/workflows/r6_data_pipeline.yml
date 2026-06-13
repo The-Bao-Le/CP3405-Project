@@ -1,10 +1,10 @@
 name: R6 Data Agent Automation Pipeline
 
 on:
-  # Allows immediate manual triggering on the week4 branch layout
+  # Allows immediate manual triggering on the Week-04 branch layout
   workflow_dispatch:
   
-  # Tracking loop parameters triggered on pushes to week4 environment
+  # Tracking loop parameters triggered on pushes to Week-04 environment
   push:
     branches:
       - Week-04
@@ -43,5 +43,5 @@ jobs:
         git config --global user.name "github-actions[bot]" &&
         git config --global user.email "github-actions[bot]@users.noreply.github.com" &&
         git add actual_2026-W23.md &&
-        (git diff-index --quiet HEAD || git commit -m "auto(r6): update market actuals for week4 branch [skip ci]") &&
+        (git diff-index --quiet HEAD || git commit -m "auto(r6): update market actuals for Week-04 branch [skip ci]") &&
         git push origin Week-04
