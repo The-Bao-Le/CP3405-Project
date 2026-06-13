@@ -162,7 +162,7 @@ The sector outperformed the broader market during the latest session, suggesting
 
 However, Financials continue to lag the S&P 500 over longer time horizons, indicating that capital flows remain concentrated in Technology and AI-related sectors.
 
-**Assessment:** Bullish
+**Assessment:** Neutral to Bullish
 
 ### Energy (XLE)
 
@@ -278,7 +278,7 @@ Moderately Bullish
 | Sector | Outlook |
 |----------|----------|
 | XLK (Technology) | Bullish (Rebounding from tactical pullback) |
-| XLF (Financials) | Bullish (Supported by resilient macro data) |
+| XLF (Financials) | Neutral to Bullish (Supported by resilient macro data) |
 | XLE (Energy) | Neutral to Bearish (Pressured by U.S.-Iran peace deal probability) |
 
 Technology remains the strongest sector under the current macro backdrop, supported by declining yields, stable Fed expectations and improving risk sentiment.
