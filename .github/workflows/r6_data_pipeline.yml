@@ -7,7 +7,7 @@ on:
   # Tracking loop parameters triggered on pushes to week4 environment
   push:
     branches:
-      - week4
+      - Week-04
 
 jobs:
   run-r6-automation:
