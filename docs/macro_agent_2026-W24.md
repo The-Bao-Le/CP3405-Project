@@ -61,28 +61,45 @@ Assessment: Confirmed
 ---
 ## Dollar Strength (DXY)
 
-The US Dollar remains an important indicator of global risk appetite.
+Finviz market performance data shows the US Dollar Index (USD) declined by approximately 0.11% during the latest trading session.
 
-A weaker dollar generally supports equities and commodities.
+A weaker dollar generally supports risk assets and improves financial conditions for equities and commodities.
 
-Assessment: Confirmed
+This development provides a modest tailwind for US equities heading into the FOMC meeting.
+
+**Assessment:** Mildly Bullish
 
 ---
 
 ## Sector Rotation
 
 ### Technology (XLK)
-AI-related momentum remains supportive.
 
-Assessment: Bullish
+Technology remains the market leadership sector.
+
+The Nasdaq 100 gained 0.66% while the VIX volatility index declined 6.59%, indicating continued investor confidence in growth-oriented assets.
+
+Lower volatility and expectations of a stable Federal Reserve policy environment continue to support technology valuations.
+
+**Assessment:** Bullish
+
 ### Financials (XLF)
-Supported by stable economic growth and consumer spending.
 
-Assessment: Neutral to Bullish
+Financials continue to benefit from stable economic conditions and a Federal Reserve expected to maintain current interest rates.
+
+The market currently assigns a 97.4% probability that the Fed will leave rates unchanged at the June meeting, reducing policy uncertainty for the sector.
+
+**Assessment:** Neutral to Bullish
+
 ### Energy (XLE)
-Dependent on crude oil prices and inventory data.
 
-Assessment: Neutral
+Energy sector performance remains heavily influenced by oil prices and inventory data.
+
+According to Finviz market performance data, WTI crude oil declined by 3.23% while Brent crude oil fell by 3.37% during the latest session.
+
+The sharp decline in oil prices may create short-term pressure on Energy stocks despite ongoing geopolitical uncertainty.
+
+**Assessment:** Neutral to Bearish
 
 ---
 
@@ -111,22 +128,18 @@ Assessment: High Impact
 ## Macro Conclusion
 ### Bullish Factors
 
-Stable Fed outlook
-
-Resilient consumer demand
-
-Continued Technology leadership
+- 97.4% probability of no Fed rate change
+- Nasdaq 100 gained 0.66%
+- VIX declined 6.59%, indicating lower market fear
+- US Dollar weakened slightly, supporting risk assets
 
 ### Bearish Factors
 
-Elevated Treasury yields
-
-Potential inflation surprises
-
-Energy market volatility
+- WTI crude oil fell 3.23%
+- Brent crude oil fell 3.37%
+- Potential hawkish guidance from the Federal Reserve
+- Inflation remains a key uncertainty
 
 ### Macro Bias
 
 Moderately Bullish
-
-Confidence
