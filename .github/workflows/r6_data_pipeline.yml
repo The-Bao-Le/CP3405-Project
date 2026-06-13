@@ -3,33 +3,34 @@ name: Automated Cross-Asset Market Audit Pipeline
 on:
   push:
     branches:
-      - 'Week-**'   # Automatically triggers on any weekly sprint branches (week-4, week-5, etc.)
-      - 'main'     # Fallback triggers for production main line
+      - 'week-*'
+      - 'main'
   schedule:
-    - cron: '0 22 * * 5'  # Trigger automatically every Friday at 22:00 UTC (Post-Market Close)
+    - cron: '0 22 * * 5'
 
 jobs:
   audit_and_log:
     runs-on: ubuntu-latest
+    # 🌟 ADD THIS BLOCK: Grants the virtual server explicit write access to your repository
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout Active Repository Branch
         uses: actions/checkout@v3
         with:
-          # Dynamic decoupling: Checkouts the exact branch that triggered the action instead of a hardcoded target
           ref: ${{ github.ref }}
 
       - name: Initialize Python Core Environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-          # Removed the 'cache' property to prevent path-matching errors when requirements.txt is absent
 
       - name: Deploy Script Dependencies
         run: |
           pip install yfinance argparse
 
       - name: Run Dynamic Matrix Market Audit
-        # The script will auto-detect the week number if executed via cron schedules
         run: |
           python r6_macro_automation.py
 
@@ -38,16 +39,12 @@ jobs:
           git config --global user.name "Team2 Data Automation Bot"
           git config --global user.email "bot@team2.financial"
           
-          # Stage the weekly generated local files safely
           git add market_snapshot_*.json actual_2026-*.md
           
-          # Condition processing: prevents pipeline failures if no files were changed
           if git diff --staged --quiet; then
             echo "No data changes detected for the active period. Terminating pipeline workflow safely."
           else
             git commit -m "chore(data): automated market ledger alignment [skip ci]"
-            
-            # CRITICAL FEEDBACK RESOLUTION: Dynamically routing the push upstream using github.ref_name context variables
             echo "Routing validated payload back to upstream context: ${{ github.ref_name }}"
             git push origin HEAD:${{ github.ref_name }}
           fi
