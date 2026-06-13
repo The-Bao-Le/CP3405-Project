@@ -133,29 +133,54 @@ This development provides a modest tailwind for US equities heading into the FOM
 
 Technology remains the market leadership sector.
 
-The Nasdaq 100 gained 0.66% while the VIX volatility index declined 6.59%, indicating continued investor confidence in growth-oriented assets.
+According to sector performance data:
 
-Lower volatility and expectations of a stable Federal Reserve policy environment continue to support technology valuations.
+- YTD Return: +16.84%
+- 1-Year Return: +39.01%
+- 3-Year Return: +110.25%
+
+Short-term sentiment also remains supportive:
+
+- Nasdaq 100 gained 0.66%
+- VIX declined 6.59%
+
+Lower Treasury yields and stable Fed expectations continue to support growth-oriented technology valuations.
 
 **Assessment:** Bullish
 
 ### Financials (XLF)
 
-Financials continue to benefit from stable economic conditions and a Federal Reserve expected to maintain current interest rates.
+Financials continue to benefit from resilient economic activity and stable interest-rate expectations.
 
-The market currently assigns a 97.4% probability that the Fed will leave rates unchanged at the June meeting, reducing policy uncertainty for the sector.
+According to sector performance data:
+
+- YTD Return: +1.11%
+- 1-Year Return: -11.00%
+
+The market currently assigns a 97.4% probability that the Federal Reserve will leave rates unchanged at the June meeting, reducing policy uncertainty.
+
+Progressive (PGR) earnings this week may provide additional insight into consumer financial health and insurance trends.
 
 **Assessment:** Neutral to Bullish
 
 ### Energy (XLE)
 
-Energy sector performance remains heavily influenced by oil prices and inventory data.
+Energy remains one of the strongest-performing sectors over the past year.
 
-According to Finviz market performance data, WTI crude oil declined by 3.23% while Brent crude oil fell by 3.37% during the latest session.
+According to sector performance data:
 
-The sharp decline in oil prices may create short-term pressure on Energy stocks despite ongoing geopolitical uncertainty.
+- YTD Return: +26.80%
+- 1-Year Return: +33.74%
 
-**Assessment:** Neutral to Bearish
+However, short-term pressure emerged this week:
+
+- WTI crude oil fell 3.23%
+- Brent crude oil fell 3.37%
+
+Progress in US-Iran negotiations has reduced oil risk premiums and contributed to recent weakness in energy prices.
+
+**Assessment:** Neutral
+(Long-term Bullish, Short-term Neutral)
 
 ---
 ## Economic Calendar Risks
