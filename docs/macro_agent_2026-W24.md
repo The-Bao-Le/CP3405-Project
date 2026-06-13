@@ -4,13 +4,10 @@
 
 This week's macro environment is driven by four major themes:
 
-1.Federal Reserve policy outlook
-
-2.Consumer spending strength
-
-3.Labor market conditions
-
-4.Energy market developments
+1. Federal Reserve policy outlook and interest-rate expectations
+2. Consumer spending and economic growth resilience
+3. Labor market conditions and recession risk
+4. Energy market developments and geopolitical uncertainty
 
 ---
 ## Federal Reserve Outlook
@@ -43,20 +40,72 @@ Any hawkish or dovish change in the Fed's forward guidance could have a greater 
 ---
 ## Treasury Yield Analysis
 
-The 10-year Treasury yield remains one of the most important indicators for market direction.
+US Treasury yields declined during the week as lower oil prices and easing geopolitical concerns improved market sentiment.
 
-Higher yields could pressure growth stocks, particularly Technology.
+According to market commentary, the 10-year Treasury yield fell from approximately 4.54% to 4.49%, while the 2-year Treasury yield declined from 4.16% to 4.09%.
 
-Assessment: Confirmed
+Lower yields generally support growth-oriented sectors by reducing discount-rate pressure on future earnings.
+
+### Sector Impact
+
+- XLK (Technology): Positive
+- XLF (Financials): Neutral
+- XLE (Energy): Neutral
+
+**Assessment:** Bullish for Technology
 
 ---
 ## Inflation Analysis
 
-Recent inflation data remains a key determinant of future Fed policy.
+Recent inflation data delivered mixed signals.
 
-Lower inflation would support rate-cut expectations and improve market sentiment.
+Consumer Price Index (CPI) increased 0.5% in May, bringing annual inflation to 4.2%.
 
-Assessment: Confirmed
+Producer Price Index (PPI) increased 1.1% in May, above market expectations, although Core PPI remained softer than forecast.
+
+While inflation remains above the Federal Reserve's target, recent data did not materially change expectations for the June FOMC meeting.
+
+### Sector Impact
+
+- XLK: Benefits if inflation stabilises
+- XLF: Neutral
+- XLE: Can benefit from inflation-related commodity demand
+
+**Assessment:** Neutral
+
+---
+## Consumer Spending
+
+Consumer demand remains relatively resilient.
+
+The Atlanta Fed GDPNow estimate for Q2 GDP increased from 3.0% to 3.3%, supported by stronger consumer spending and residential investment.
+
+Retail Sales data scheduled this week will provide additional confirmation regarding consumer strength.
+
+### Sector Impact
+
+- XLF: Positive
+- XLK: Positive
+- XLE: Neutral
+
+**Assessment:** Mildly Bullish
+
+---
+## Labor Market Conditions
+
+Labor market data remains stable despite signs of gradual softening.
+
+Initial Jobless Claims increased to 229K, slightly above expectations, while Continuing Claims rose to 1.795 million.
+
+The labor market remains healthy overall, but investors are monitoring for signs of further cooling that could influence future Federal Reserve policy decisions.
+
+### Sector Impact
+
+- XLK: Positive if labor market softens without recession
+- XLF: Neutral
+- XLE: Neutral
+
+**Assessment:** Stable
 
 ---
 ## Dollar Strength (DXY)
@@ -70,7 +119,6 @@ This development provides a modest tailwind for US equities heading into the FOM
 **Assessment:** Mildly Bullish
 
 ---
-
 ## Sector Rotation
 
 ### Technology (XLK)
@@ -102,29 +150,37 @@ The sharp decline in oil prices may create short-term pressure on Energy stocks 
 **Assessment:** Neutral to Bearish
 
 ---
-
 ## Economic Calendar Risks
 
-Key events this week:
+Key events this week include:
 
-FOMC Rate Decision
+- FOMC Rate Decision
+- FOMC Economic Projections (Dot Plot)
+- Federal Reserve Press Conference
+- Retail Sales
+- Initial Jobless Claims
+- EIA Crude Oil Inventory Report
 
-FOMC Economic Projections
-
-Fed Press Conference
-
-Retail Sales
-
-Initial Jobless Claims
-
-Crude Oil Inventory Reports
-
-Assessment: High Impact
+**Assessment:** High Impact
 
 ---
-
 ## Geopolitical Risks
 
+Markets are closely monitoring ongoing negotiations between the United States and Iran.
+
+Reports suggesting progress toward a potential agreement contributed to lower oil prices and reduced market volatility during the week.
+
+A breakdown in negotiations could reverse recent declines in energy prices and increase inflationary pressures.
+
+### Sector Impact
+
+- XLK: Positive if tensions ease
+- XLF: Positive if market volatility remains low
+- XLE: Negative if oil prices continue to fall
+
+**Assessment:** Moderate Risk
+
+---
 ## Macro Conclusion
 ### Bullish Factors
 
@@ -143,3 +199,33 @@ Assessment: High Impact
 ### Macro Bias
 
 Moderately Bullish
+
+### Sector Outlook
+
+| Sector | Outlook |
+|----------|----------|
+| XLK (Technology) | Bullish |
+| XLF (Financials) | Neutral to Bullish |
+| XLE (Energy) | Neutral to Bearish |
+
+Technology remains the strongest sector under the current macro backdrop, supported by declining yields, stable Fed expectations and improving risk sentiment.
+
+Financials benefit from resilient economic activity and reduced policy uncertainty.
+
+Energy faces near-term headwinds from falling crude oil prices despite ongoing geopolitical risks.
+
+### Supporting Evidence
+
+- 97.4% probability of no Fed rate change
+- Treasury yields declined during the week
+- Nasdaq 100 gained 0.66%
+- VIX fell 6.59%
+- GDPNow forecast increased to 3.3%
+- Consumer sentiment improved
+
+### Key Risks
+
+- Hawkish FOMC guidance
+- Higher-than-expected inflation
+- Rebound in oil prices
+- Breakdown in US-Iran negotiations
