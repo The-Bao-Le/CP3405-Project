@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - 'week-04'   # Automatically triggers on any weekly sprint branches (week-4, week-5, etc.)
-      - 'main'     # Fallback triggers for production main line
+      # - 'main'     # Fallback triggers for production main line
   schedule:
     - cron: '0 22 * * 5'  # Trigger automatically every Friday at 22:00 UTC (Post-Market Close)
 
