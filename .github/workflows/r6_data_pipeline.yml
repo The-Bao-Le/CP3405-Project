@@ -3,17 +3,20 @@ name: Automated Cross-Asset Market Audit Pipeline
 on:
   push:
     branches:
-      - 'Week-**'
+      - 'Week-**'  # Active sprint operational branch
       - 'main'
   schedule:
     - cron: '0 22 * * 5'
 
+env:
+  # 🌟 GLOBAL VARIABLE CENTRALIZATION: Change this single line for future weeks (e.g., W24, W25)
+  TARGET_WEEK: 'W23'
+
 jobs:
   audit_and_log:
     runs-on: ubuntu-latest
-    # 🌟 ADD THIS BLOCK: Grants the virtual server explicit write access to your repository
     permissions:
-      contents: write
+      contents: write  # Bypasses the 403 authorization lock safely
       
     steps:
       - name: Checkout Active Repository Branch
@@ -31,20 +34,23 @@ jobs:
           pip install yfinance argparse
 
       - name: Run Dynamic Matrix Market Audit
+        # 🌟 PASSING VARIABLE: Dynamically injects the global environment variable into the execution runtime
         run: |
-          python r6_macro_automation.py
+          python r6_macro_automation.py --week ${{ env.TARGET_WEEK }}
 
       - name: Secure Ledger Artifacts & Route Commit to Active Branch
         run: |
           git config --global user.name "Team2 Data Automation Bot"
           git config --global user.email "bot@team2.financial"
           
-          git add market_snapshot_*.json actual_2026-*.md
+          # 🌟 DYNAMIC TRACKING: Stages files dynamically based on the global env variable
+          git add market_snapshot_${{ env.TARGET_WEEK }}.json actual_2026-${{ env.TARGET_WEEK }}.md
           
           if git diff --staged --quiet; then
-            echo "No data changes detected for the active period. Terminating pipeline workflow safely."
+            echo "No data changes detected for ${{ env.TARGET_WEEK }}. Terminating pipeline workflow safely."
           else
-            git commit -m "chore(data): automated market ledger alignment [skip ci]"
+            # 🌟 DYNAMIC COMMIT MESSAGE: Injects variable context safely into the repo ledger
+            git commit -m "chore(data): automated ${{ env.TARGET_WEEK }} market ledger alignment [skip ci]"
             echo "Routing validated payload back to upstream context: ${{ github.ref_name }}"
             git push origin HEAD:${{ github.ref_name }}
           fi
