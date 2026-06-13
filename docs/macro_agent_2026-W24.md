@@ -172,6 +172,46 @@ Key events this week include:
 **Assessment:** High Impact
 
 ---
+## Earnings Watchlist
+
+Several company earnings releases may provide additional signals for the sectors under review this week.
+
+### Progressive (PGR) – 17 June
+
+Sector: XLF (Financials)
+
+Progressive is one of the largest US auto insurers.
+
+Its earnings may provide insight into:
+
+- Consumer insurance demand
+- Claims trends
+- Premium inflation
+- Household financial conditions
+
+A stronger-than-expected report could provide a positive signal for the Financials sector.
+
+**Assessment:** Moderate Impact on XLF
+
+### Accenture (ACN) – 18 June
+
+Sector: XLK (Technology)
+
+Accenture is widely viewed as a leading indicator of enterprise technology spending.
+
+Investors will focus on:
+
+- Corporate IT spending trends
+- AI-related consulting demand
+- Management guidance
+
+Weak guidance could negatively affect technology sentiment, particularly software and services companies.
+
+If combined with a hawkish FOMC outcome, downside pressure on XLK could increase.
+
+**Assessment:** High Impact on XLK
+
+---
 ## Geopolitical Risks
 
 Markets are closely monitoring ongoing negotiations between the United States and Iran.
