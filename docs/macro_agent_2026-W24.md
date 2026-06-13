@@ -150,18 +150,19 @@ Lower Treasury yields and stable Fed expectations continue to support growth-ori
 
 ### Financials (XLF)
 
-Financials continue to benefit from resilient economic activity and stable interest-rate expectations.
+Financials benefited from improving risk sentiment and stable interest-rate expectations during the week.
 
 According to sector performance data:
 
-- YTD Return: +1.11%
-- 1-Year Return: -11.00%
+- Day Return: +1.20%
+- YTD Return: -1.11%
+- 1-Year Return: +11.00%
 
-The market currently assigns a 97.4% probability that the Federal Reserve will leave rates unchanged at the June meeting, reducing policy uncertainty.
+The sector outperformed the broader market during the latest session, suggesting improving investor confidence.
 
-Progressive (PGR) earnings this week may provide additional insight into consumer financial health and insurance trends.
+However, Financials continue to lag the S&P 500 over longer time horizons, indicating that capital flows remain concentrated in Technology and AI-related sectors.
 
-**Assessment:** Neutral to Bullish
+**Assessment:** Bullish
 
 ### Energy (XLE)
 
@@ -179,8 +180,7 @@ However, short-term pressure emerged this week:
 
 Progress in US-Iran negotiations has reduced oil risk premiums and contributed to recent weakness in energy prices.
 
-**Assessment:** Neutral
-(Long-term Bullish, Short-term Neutral)
+**Assessment:** Neutral to Bearish
 
 ---
 ## Economic Calendar Risks
@@ -277,9 +277,9 @@ Moderately Bullish
 
 | Sector | Outlook |
 |----------|----------|
-| XLK (Technology) | Bullish |
-| XLF (Financials) | Neutral to Bullish |
-| XLE (Energy) | Neutral to Bearish |
+| XLK (Technology) | Bullish (Rebounding from tactical pullback) |
+| XLF (Financials) | Bullish (Supported by resilient macro data) |
+| XLE (Energy) | Neutral to Bearish (Pressured by U.S.-Iran peace deal probability) |
 
 Technology remains the strongest sector under the current macro backdrop, supported by declining yields, stable Fed expectations and improving risk sentiment.
 
