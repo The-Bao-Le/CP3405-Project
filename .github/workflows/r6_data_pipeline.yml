@@ -1,7 +1,7 @@
 name: Automated Cross-Asset Market Audit Pipeline
 
 on:
-  # 🌟 DYNAMIC MANUAL TRIGGER: Allows testing historical weeks without changing code
+  # Allows manual testing execution directly from the Actions Web UI
   workflow_dispatch:
     inputs:
       custom_week:
@@ -9,7 +9,7 @@ on:
         required: false
         type: string
 
-  # 🌟 AUTOMATED SCHEDULE: Runs blindly and automatically every Friday post-market
+  # Runs seamlessly every Friday post-market close without human intervention
   schedule:
     - cron: '0 22 * * 5'
 
@@ -17,7 +17,7 @@ jobs:
   audit_and_log:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Crucial: Bypasses the 403 write-access permission block
+      contents: write  # Crucial authorization to fix the 403 Git Push rejection
       
     steps:
       - name: Checkout Active Repository Branch
@@ -35,15 +35,12 @@ jobs:
           pip install yfinance argparse
 
       - name: Resolve Execution Week Dynamic Variable
-        # This shell step automatically resolves the target week dynamically
-        # Priority: Manual input -> Environment ISO week fallback
         id: resolve_week
         run: |
           if [ -n "${{ github.event.inputs.custom_week }}" ]; then
             RESOLVED_WEEK=$(echo "${{ github.event.inputs.custom_week }}" | tr '[:lower:]' '[:upper:]')
             echo "Execution Mode: Manual Override Detected."
           else
-            # Automatically grabs current year's week number (e.g., 23 -> W23)
             CURRENT_WEEK_NUM=$(date +%V)
             RESOLVED_WEEK="W${CURRENT_WEEK_NUM}"
             echo "Execution Mode: Fully Automated Calendar Resolution."
@@ -52,7 +49,7 @@ jobs:
           echo "Resolved target parameter for this session: $RESOLVED_WEEK"
 
       - name: Run Dynamic Matrix Market Audit
-        # Executes your script with zero hardcoded references
+        # Executes your r6_macro_automation.py script using the resolved variable
         run: |
           python r6_macro_automation.py --week ${{ env.FINAL_WEEK }}
 
@@ -61,7 +58,6 @@ jobs:
           git config --global user.name "Team2 Data Automation Bot"
           git config --global user.email "bot@team2.financial"
           
-          # Dynamic file tracking based on resolved timeline variable
           git add market_snapshot_${{ env.FINAL_WEEK }}.json actual_2026-${{ env.FINAL_WEEK }}.md
           
           if git diff --staged --quiet; then
