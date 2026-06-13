@@ -4,7 +4,8 @@ on:
   # 🌟 TEMPORARY ACTIVATION TRIGGER: Forces GitHub to index this workflow on the web UI
   push:
     branches:
-      - 'Week-04'
+      - 'Week-**'
+      - 'main'
 
   # Allows manual testing execution directly from the Actions Web UI
   workflow_dispatch:
