@@ -9,9 +9,7 @@ on:
     branches:
       - Week-04
 
-# ====================================================================
-# 🔥 CORE FIX: Explicitly grant write permissions to the runner bot
-# ====================================================================
+# Grant write permissions to the runner bot to fix 403 errors natively
 permissions:
   contents: write
 
