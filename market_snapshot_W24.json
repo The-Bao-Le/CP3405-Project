@@ -1,0 +1,104 @@
+{
+    "meta": {
+        "week": "W24",
+        "generation_time": "2026-06-13 12:59:43",
+        "data_window": "2026-06-05 to 2026-06-13"
+    },
+    "metrics": {
+        "SPX": {
+            "ticker": "^GSPC",
+            "close_price": 7431.46,
+            "weekly_delta_pct": -1.4
+        },
+        "NDX": {
+            "ticker": "^NDX",
+            "close_price": 29635.95,
+            "weekly_delta_pct": -1.19
+        },
+        "IWM": {
+            "ticker": "IWM",
+            "close_price": 292.95,
+            "weekly_delta_pct": 1.33
+        },
+        "GOLD": {
+            "ticker": "GC=F",
+            "close_price": 4215.0,
+            "weekly_delta_pct": -5.75
+        },
+        "OIL": {
+            "ticker": "CL=F",
+            "close_price": 84.88,
+            "weekly_delta_pct": -8.55
+        },
+        "US10Y": {
+            "ticker": "^TNX",
+            "close_price": 4.487,
+            "weekly_delta_pct": 0.45
+        },
+        "TLT": {
+            "ticker": "TLT",
+            "close_price": 85.77,
+            "weekly_delta_pct": 0.92
+        },
+        "BTC": {
+            "ticker": "BTC-USD",
+            "close_price": 63543.2,
+            "weekly_delta_pct": -0.41
+        },
+        "XLK": {
+            "ticker": "XLK",
+            "close_price": 184.8,
+            "weekly_delta_pct": -2.17
+        },
+        "XLC": {
+            "ticker": "XLC",
+            "close_price": 111.65,
+            "weekly_delta_pct": -1.01
+        },
+        "XLY": {
+            "ticker": "XLY",
+            "close_price": 116.6,
+            "weekly_delta_pct": -0.68
+        },
+        "XLF": {
+            "ticker": "XLF",
+            "close_price": 53.34,
+            "weekly_delta_pct": 1.83
+        },
+        "XLV": {
+            "ticker": "XLV",
+            "close_price": 153.81,
+            "weekly_delta_pct": 0.28
+        },
+        "XLP": {
+            "ticker": "XLP",
+            "close_price": 85.82,
+            "weekly_delta_pct": 3.91
+        },
+        "XLE": {
+            "ticker": "XLE",
+            "close_price": 57.55,
+            "weekly_delta_pct": -1.91
+        },
+        "XLU": {
+            "ticker": "XLU",
+            "close_price": 44.53,
+            "weekly_delta_pct": 1.11
+        },
+        "XLI": {
+            "ticker": "XLI",
+            "close_price": 176.18,
+            "weekly_delta_pct": 0.32
+        },
+        "XLB": {
+            "ticker": "XLB",
+            "close_price": 52.18,
+            "weekly_delta_pct": 1.5
+        },
+        "XLRE": {
+            "ticker": "XLRE",
+            "close_price": 45.36,
+            "weekly_delta_pct": 2.32
+        }
+    }
+}
