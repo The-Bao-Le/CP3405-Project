@@ -1,6 +1,11 @@
 name: Automated Cross-Asset Market Audit Pipeline
 
 on:
+  # 🌟 TEMPORARY ACTIVATION TRIGGER: Forces GitHub to index this workflow on the web UI
+  push:
+    branches:
+      - 'Week-04'
+
   # Allows manual testing execution directly from the Actions Web UI
   workflow_dispatch:
     inputs:
