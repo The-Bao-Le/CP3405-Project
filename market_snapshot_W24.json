@@ -1,7 +1,7 @@
 {
     "meta": {
         "market_week": "W24",
-        "generation_time": "2026-06-14 00:23:40",
+        "generation_time": "2026-06-13 16:39:14",
         "data_window": "2026-06-05 to 2026-06-14"
     },
     "metrics": {
@@ -42,8 +42,8 @@
         },
         "BTC": {
             "ticker": "BTC-USD",
-            "close_price": 63957.9883,
-            "weekly_delta_pct": 4.98
+            "close_price": 63991.5117,
+            "weekly_delta_pct": 5.04
         },
         "XLK": {
             "ticker": "XLK",
