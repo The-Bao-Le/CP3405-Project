@@ -1,17 +1,11 @@
 name: Automated Cross-Asset Market Audit Pipeline
 
 on:
-  # 🌟 TEMPORARY ACTIVATION TRIGGER: Forces GitHub to index this workflow on the web UI
-  push:
-    branches:
-      - 'Week-**'
-      - 'main'
-
   # Allows manual testing execution directly from the Actions Web UI
   workflow_dispatch:
     inputs:
       custom_week:
-        description: 'Target Week to override (Leave BLANK for dynamic current week execution, e.g., W23)'
+        description: 'Target Week to override (Leave BLANK for dynamic PREVIOUS week execution, e.g., W23)'
         required: false
         type: string
 
@@ -47,9 +41,11 @@ jobs:
             RESOLVED_WEEK=$(echo "${{ github.event.inputs.custom_week }}" | tr '[:lower:]' '[:upper:]')
             echo "Execution Mode: Manual Override Detected."
           else
+            # 🌟 AUTOMATED LAST-WEEK CALCULATION: Grabs current ISO week and subtracts 1
             CURRENT_WEEK_NUM=$(date +%V)
-            RESOLVED_WEEK="W${CURRENT_WEEK_NUM}"
-            echo "Execution Mode: Fully Automated Calendar Resolution."
+            PREVIOUS_WEEK_NUM=$((10#$CURRENT_WEEK_NUM - 1))
+            RESOLVED_WEEK="W${PREVIOUS_WEEK_NUM}"
+            echo "Execution Mode: Fully Automated Previous Week Calendar Resolution."
           fi
           echo "FINAL_WEEK=$RESOLVED_WEEK" >> $GITHUB_ENV
           echo "Resolved target parameter for this session: $RESOLVED_WEEK"
