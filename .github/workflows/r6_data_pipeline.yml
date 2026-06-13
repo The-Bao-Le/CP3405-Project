@@ -3,7 +3,7 @@ name: Automated Cross-Asset Market Audit Pipeline
 on:
   push:
     branches:
-      - 'week-*'
+      - 'Week-**'
       - 'main'
   schedule:
     - cron: '0 22 * * 5'
