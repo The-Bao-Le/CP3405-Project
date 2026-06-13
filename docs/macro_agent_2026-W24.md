@@ -42,7 +42,15 @@ Any hawkish or dovish change in the Fed's forward guidance could have a greater 
 
 US Treasury yields declined during the week as lower oil prices and easing geopolitical concerns improved market sentiment.
 
-According to market commentary, the 10-year Treasury yield fell from approximately 4.54% to 4.49%, while the 2-year Treasury yield declined from 4.16% to 4.09%.
+According to US Treasury data:
+
+| Maturity | 8 Jun | 12 Jun | Change |
+|-----------|--------|--------|--------|
+| 2-Year | 4.15% | 4.09% | -0.06% |
+| 10-Year | 4.56% | 4.48% | -0.08% |
+| 30-Year | 5.03% | 4.97% | -0.06% |
+
+Treasury yields declined across the curve during the week, indicating reduced inflation expectations and improved risk sentiment.
 
 Lower yields generally support growth-oriented sectors by reducing discount-rate pressure on future earnings.
 
