@@ -61,7 +61,7 @@ jobs:
           git config --global user.name "R6 Data Agent Bot"
           git config --global user.email "r6-data-agent-bot@example.com"
 
-          git add market_snapshot_*.json actual_2026-*.md
+          git add "market_snapshot_${MARKET_WEEK}.json" "actual_2026-${ACTUAL_WEEK}.md"
 
           if git diff --staged --quiet; then
             echo "No changes to commit."
