@@ -31,7 +31,7 @@ jobs:
       - name: Run Dynamic Matrix Market Audit
         # The script will auto-detect the week number if executed via cron schedules
         run: |
-          python macro_market_audit.py
+          python r6_macro_automation.py
 
       - name: Secure Ledger Artifacts & Route Commit to Active Branch
         run: |
