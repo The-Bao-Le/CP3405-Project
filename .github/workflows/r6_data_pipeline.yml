@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       custom_week:
-        description: 'Target Week to override (Leave BLANK for dynamic PREVIOUS week execution, e.g., W23)'
+        description: 'Target DATA week to capture (Leave BLANK for dynamic current week execution, e.g., W24)'
         required: false
         type: string
 
@@ -41,17 +41,15 @@ jobs:
             RESOLVED_WEEK=$(echo "${{ github.event.inputs.custom_week }}" | tr '[:lower:]' '[:upper:]')
             echo "Execution Mode: Manual Override Detected."
           else
-            # 🌟 AUTOMATED LAST-WEEK CALCULATION: Grabs current ISO week and subtracts 1
+            # 🌟 AUTOMATED SYSTEM TIME DETECTION: Grabs current real-world week number (W24)
             CURRENT_WEEK_NUM=$(date +%V)
-            PREVIOUS_WEEK_NUM=$((10#$CURRENT_WEEK_NUM - 1))
-            RESOLVED_WEEK="W${PREVIOUS_WEEK_NUM}"
-            echo "Execution Mode: Fully Automated Previous Week Calendar Resolution."
+            RESOLVED_WEEK="W${CURRENT_WEEK_NUM}"
+            echo "Execution Mode: Fully Automated Calendar Resolution."
           fi
           echo "FINAL_WEEK=$RESOLVED_WEEK" >> $GITHUB_ENV
-          echo "Resolved target parameter for this session: $RESOLVED_WEEK"
+          echo "Resolved target data parameter for this session: $RESOLVED_WEEK"
 
       - name: Run Dynamic Matrix Market Audit
-        # Executes your r6_macro_automation.py script using the resolved variable
         run: |
           python r6_macro_automation.py --week ${{ env.FINAL_WEEK }}
 
@@ -60,12 +58,13 @@ jobs:
           git config --global user.name "Team2 Data Automation Bot"
           git config --global user.email "bot@team2.financial"
           
-          git add market_snapshot_${{ env.FINAL_WEEK }}.json actual_2026-${{ env.FINAL_WEEK }}.md
+          # 🌟 DYNAMIC TRACKING: Captures both filenames safely via wildcards to prevent bash tracking crash
+          git add market_snapshot_*.json actual_2026-*.md
           
           if git diff --staged --quiet; then
-            echo "No data changes detected for ${{ env.FINAL_WEEK }}. Terminating pipeline workflow safely."
+            echo "No data changes detected. Terminating pipeline workflow safely."
           else
-            git commit -m "chore(data): automated ${{ env.FINAL_WEEK }} market ledger alignment [skip ci]"
+            git commit -m "chore(data): automated market ledger realignment [skip ci]"
             echo "Routing validated payload back to upstream context: ${{ github.ref_name }}"
             git push origin HEAD:${{ github.ref_name }}
           fi
