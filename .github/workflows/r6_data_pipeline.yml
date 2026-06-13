@@ -1,50 +1,53 @@
-name: R6 Data Agent Automation Pipeline
+name: Automated Cross-Asset Market Audit Pipeline
 
 on:
-  # Allows immediate manual triggering on the Week-04 branch layout
-  workflow_dispatch:
-  
-  # Tracking loop parameters triggered on pushes to Week-04 environment
   push:
     branches:
-      - Week-04
-
-# Grant write permissions to the runner bot to fix 403 errors natively
-permissions:
-  contents: write
+      - 'week-*'   # Automatically triggers on any weekly sprint branches (week-4, week-5, etc.)
+      - 'main'     # Fallback triggers for production main line
+  schedule:
+    - cron: '0 22 * * 5'  # Trigger automatically every Friday at 22:00 UTC (Post-Market Close)
 
 jobs:
-  run-r6-automation:
+  audit_and_log:
     runs-on: ubuntu-latest
-
     steps:
-    # Step 1: Check out the team's repository code from current tracking target
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-      with:
-        ref: Week-04
+      - name: Checkout Active Repository Branch
+        uses: actions/checkout@v3
+        with:
+          # Dynamic decoupling: Checkouts the exact branch that triggered the action instead of a hardcoded target
+          ref: ${{ github.ref }}
 
-    # Step 2: Set up a stable Python environment
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+      - name: Initialize Python Core Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
 
-    # Step 3: Install required data engineering packages
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install yfinance pandas
+      - name: Deploy Script Dependencies
+        run: |
+          pip install yfinance argparse
 
-    # Step 4: Execute the R6 automation script to fetch actuals
-    - name: Run R6 Data Collection Script
-      run: python r6_macro_automation.py
+      - name: Run Dynamic Matrix Market Audit
+        # The script will auto-detect the week number if executed via cron schedules
+        run: |
+          python macro_market_audit.py
 
-    # Step 5: Secure commit and push targeting the active branch directly
-    - name: Commit and Push Verified Actuals Document
-      run: >
-        git config --global user.name "github-actions[bot]" &&
-        git config --global user.email "github-actions[bot]@users.noreply.github.com" &&
-        git add actual_2026-W23.md &&
-        (git diff-index --quiet HEAD || git commit -m "auto(r6): update market actuals for Week-04 branch [skip ci]") &&
-        git push origin Week-04
+      - name: Secure Ledger Artifacts & Route Commit to Active Branch
+        run: |
+          git config --global user.name "Team2 Data Automation Bot"
+          git config --global user.email "bot@team2.financial"
+          
+          # Stage the weekly generated local files safely
+          git add market_snapshot_*.json actual_2026-*.md
+          
+          # Condition processing: prevents pipeline failures if no files were changed
+          if git diff --staged --quiet; then
+            echo "No data changes detected for the active period. Terminating pipeline workflow safely."
+          else
+            git commit -m "chore(data): automated market ledger alignment [skip ci]"
+            
+            # CRITICAL FEEDBACK RESOLUTION: Dynamically routing the push upstream using github.ref_name context variables
+            echo "Routing validated payload back to upstream context: ${{ github.ref_name }}"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
