@@ -4,7 +4,7 @@
 
 **Prediction Week Evaluated:** W23  
 **Market Data Week Used:** W24  
-**Generated At:** 2026-06-13 16:39:14  
+**Generated At:** 2026-06-14 12:34:58  
 **Data Window:** 2026-06-05 to 2026-06-14  
 
 ---
@@ -13,14 +13,14 @@
 
 | Market | Ticker | Close | Weekly Change |
 |---|---:|---:|---:|
-| S&P 500 | ^GSPC | 7431.46 | 0.65% |
-| Nasdaq 100 | ^NDX | 29635.9492 | 2.34% |
-| Russell 2000 | IWM | 292.95 | 4.01% |
-| Gold | GC=F | 4215.0 | -2.82% |
-| Crude Oil | CL=F | 84.88 | -6.25% |
-| 10Y Treasury Yield | ^TNX | 4.487 | -1.08% |
-| TLT | TLT | 85.77 | 0.83% |
-| Bitcoin | BTC-USD | 63991.5117 | 5.04% |
+| S&P 500 | ^GSPC | 7431.46 | -1.4% |
+| Nasdaq 100 | ^NDX | 29635.9492 | -1.19% |
+| Russell 2000 | IWM | 292.95 | 1.33% |
+| Gold | GC=F | 4238.7998 | -5.22% |
+| Crude Oil | CL=F | 84.88 | -8.55% |
+| 10Y Treasury Yield | ^TNX | 4.487 | 0.45% |
+| TLT | TLT | 85.77 | 0.92% |
+| Bitcoin | BTC-USD | 64421.3242 | 0.96% |
 
 ---
 
@@ -28,20 +28,20 @@
 
 | Sector ETF | Weekly Change |
 |---|---:|
-| XLK Technology | 2.5% |
-| XLC Communication Services | -0.02% |
-| XLY Consumer Discretionary | 1.51% |
-| XLF Financials | 1.99% |
-| XLV Healthcare | 0.52% |
-| XLP Consumer Staples | 2.85% |
-| XLE Energy | -0.21% |
-| XLU Utilities | 0.41% |
-| XLI Industrials | 1.15% |
-| XLB Materials | 3.06% |
-| XLRE Real Estate | 1.48% |
+| XLK Technology | -2.17% |
+| XLC Communication Services | -1.01% |
+| XLY Consumer Discretionary | -0.68% |
+| XLF Financials | 1.83% |
+| XLV Healthcare | 0.28% |
+| XLP Consumer Staples | 3.91% |
+| XLE Energy | -1.91% |
+| XLU Utilities | 1.11% |
+| XLI Industrials | 0.32% |
+| XLB Materials | 1.5% |
+| XLRE Real Estate | 2.32% |
 
 ---
 
 ## 4. R6 Monday Speaking Point
 
-For W23, the R6 Data / Actuals Agent recorded the actual market outcome using the generated market snapshot. The key benchmark for the team prediction is the S&P 500 result. The SPX weekly change was **0.65%**. This figure should be compared against the team’s previous prediction to update the calibration record.
+For W23, the R6 Data / Actuals Agent recorded the actual market outcome using the generated market snapshot. The key benchmark for the team prediction is the S&P 500 result. The SPX weekly change was **-1.4%**. This figure should be compared against the team’s previous prediction to update the calibration record.

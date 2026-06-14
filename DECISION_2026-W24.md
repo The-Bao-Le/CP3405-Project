@@ -71,7 +71,6 @@ For R4 specifically, the macro data needed for interpretation should be defined 
 This automation has several limitations:
 
 * Yahoo Finance data may update a few minutes after the market close.
-* The selected ETFs are proxies, not the exact underlying indexes or sector indexes.
 * The script does not automatically generate a final prediction.
 * The signal logic is intentionally simple and should not be treated as a complete trading model.
 * Market holidays or early-close days may affect the latest available data date.

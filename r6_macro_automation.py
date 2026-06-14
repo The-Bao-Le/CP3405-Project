@@ -1,16 +1,13 @@
 import json
 import argparse
 from datetime import datetime, timedelta
-
 import yfinance as yf
-
 
 def normalize_week(week_str):
     week_str = week_str.upper().strip()
     if not week_str.startswith("W"):
         week_str = "W" + week_str
     return week_str
-
 
 def calculate_trading_window(market_week_str):
     market_week_str = normalize_week(market_week_str)
@@ -26,7 +23,6 @@ def calculate_trading_window(market_week_str):
     print(f"Data window: {start_date} to {end_date}")
 
     return start_date, end_date
-
 
 def run_market_capture_pipeline(market_week_str, start_date, end_date):
     market_week_str = normalize_week(market_week_str)
@@ -73,9 +69,9 @@ def run_market_capture_pipeline(market_week_str, start_date, end_date):
             print(f"WARNING: No data for {label} ({symbol}). Skipped.")
             continue
 
-        initial_close = df["Close"].iloc[0]
+        initial_open = df["Open"].iloc[0]
         final_close = df["Close"].iloc[-1]
-        weekly_delta_pct = ((final_close - initial_close) / initial_close) * 100
+        weekly_delta_pct = ((final_close - initial_open) / initial_open) * 100
 
         snapshot_data["metrics"][label] = {
             "ticker": symbol,
@@ -89,12 +85,10 @@ def run_market_capture_pipeline(market_week_str, start_date, end_date):
     print(f"Generated: {snapshot_filename}")
     return snapshot_filename
 
-
 def get_metric(metrics, key, field):
     if key not in metrics:
         return "N/A"
     return metrics[key].get(field, "N/A")
-
 
 def generate_report_from_snapshot(snapshot_path, actual_week_str):
     actual_week_str = normalize_week(actual_week_str)
@@ -159,7 +153,6 @@ For {actual_week_str}, the R6 Data / Actuals Agent recorded the actual market ou
         file.write(report)
 
     print(f"Generated: {output_file}")
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="R6 Data Agent Automation Pipeline")

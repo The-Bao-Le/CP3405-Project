@@ -1,0 +1,87 @@
+# Weekly Market Synthesis
+
+## Direction
+
+Neutral — Cautiously Bullish
+
+## Bias
+
+Neutral-Bullish
+
+## Top Bullish Factors
+
+* **Federal Reserve Stability:** The market assigns a 97.4% probability to no rate change at the upcoming FOMC meeting, significantly reducing near-term policy uncertainty and supporting investor confidence.
+
+* **Economic Growth Acceleration:** GDPNow increased to 3.3%, indicating resilient economic activity and supporting the soft-landing narrative for U.S. equities.
+
+* **Declining Treasury Yields:** Treasury yields declined during the week, easing valuation pressure on growth stocks and improving overall financial conditions.
+
+* **Technology Sector Leadership:** Technology remains the strongest-performing sector and continues to benefit from both positive seasonality and strong momentum.
+
+* **Volatility Compression:** The VIX declined by 6.59%, indicating reduced market fear and improving risk sentiment.
+
+---
+
+## Top Bearish Factors
+
+* **Midterm Election Year Seasonality:** June remains historically weak during U.S. midterm election years, with the S&P 500 averaging negative performance.
+
+* **Triple Witch Volatility:** Triple Witch week historically increases institutional rebalancing activity and can generate sharp short-term market swings.
+
+* **Negative Sector Seasonality:** Financials (XLF), Energy (XLE), and Materials (XLB) remain in unfavorable seasonal windows.
+
+* **Inflation Risk:** Inflation remains above the Federal Reserve's target and any upside CPI or PPI surprise could reignite yield pressure.
+
+* **Small-Cap Mean-Reversion Risk:** Russell 2000 gained more than 4% during the previous week, increasing the probability of short-term consolidation or pullback.
+
+---
+
+## Most Important Macro Driver
+
+The most important macro driver is the combination of Federal Reserve policy stability and accelerating economic growth. With markets assigning a 97.4% probability to no rate change and GDPNow rising to 3.3%, investors are benefiting from a rare combination of stable monetary policy and improving economic momentum. However, this constructive backdrop remains highly sensitive to inflation data and future Federal Reserve guidance.
+
+---
+
+## Most Important Technical Signal
+
+The dominant technical signal is broad-based market momentum supported by Technology leadership. SPX gained 0.65%, NDX gained 2.34%, and IWM gained 4.01% during the previous week, demonstrating positive market breadth. XLK also advanced 2.50%, reinforcing Technology's role as the primary market leader. The key technical risk is that Russell 2000 may be vulnerable to short-term mean reversion after its strong rally.
+
+---
+
+## Most Important Seasonal Factor
+
+The dominant seasonal influence remains the 2026 midterm-election-year cycle. Historically, June underperforms during midterm years and the broader Q2–Q3 period is considered the weaker portion of the four-year presidential cycle. While Technology remains in a favorable seasonal window through mid-July, broader market seasonality continues to limit upside conviction.
+
+---
+
+## Expected SPX Trading Range
+
+Lower Bound: 7,360
+
+Upper Bound: 7,420
+
+---
+
+## Confidence Level
+
+Medium
+
+---
+
+## Final Weekly Call
+
+The balance of evidence supports a cautiously bullish outlook for the week ahead. Stable Federal Reserve expectations, declining Treasury yields, improving economic growth, and strong Technology leadership continue to provide support for equities. However, June seasonality, Triple Witch volatility, and inflation uncertainty prevent a higher-confidence bullish stance. Technology remains the highest-conviction sector, while Energy remains the weakest area of the market. Investors should expect a volatile but generally constructive trading environment.
+
+---
+
+## Reasoning Summary
+
+* Federal Reserve policy stability and a 3.3% GDPNow forecast provide a supportive macro backdrop for equities.
+
+* Treasury yields declined during the week, improving valuation support for growth-oriented sectors.
+
+* Technology remains the strongest-performing sector and continues to benefit from favorable seasonal conditions.
+
+* June seasonality and the midterm-election-year cycle remain significant structural headwinds.
+
+* Triple Witch week and inflation-related surprises could create elevated volatility despite an otherwise constructive market environment.

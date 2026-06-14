@@ -1,71 +1,77 @@
-name: R6 Data Agent Automation Pipeline
+name: Automated Cross-Asset Market Audit Pipeline
 
 on:
+  # Activates the single-variable override panel on GitHub Web UI
   workflow_dispatch:
     inputs:
       custom_market_week:
-        description: "Target MARKET week, e.g. W24"
+        description: 'Target MARKET week to capture (Leave BLANK for automated current week, e.g., W24)'
         required: false
         type: string
 
+  # Standard cron scheduler configuration
   schedule:
-    - cron: "0 22 * * 5"
+    - cron: '0 22 * * 5'
 
 jobs:
   audit_and_log:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
-
+      
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout Active Repository Branch
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Initialize Python Core Environment
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Deploy Script Dependencies
         run: |
-          pip install yfinance
+          pip install yfinance argparse
 
-      - name: Resolve week variables
+      - name: Resolve Decoupled Execution Week Variables
+        id: resolve_weeks
         run: |
           if [ -n "${{ github.event.inputs.custom_market_week }}" ]; then
             M_WEEK=$(echo "${{ github.event.inputs.custom_market_week }}" | tr '[:lower:]' '[:upper:]')
+            WEEK_NUM=$(echo "$M_WEEK" | tr -cd '0-9')
+            PREV_NUM=$((10#$WEEK_NUM - 1))
+            A_WEEK="W${PREV_NUM}"
+            echo "Execution Mode: Manual Override."
           else
             WEEK_NUM=$(date +%V)
             M_WEEK="W${WEEK_NUM}"
+            PREV_NUM=$((10#$WEEK_NUM - 1))
+            A_WEEK="W${PREV_NUM}"
+            echo "Execution Mode: Automated Cron Resolution."
           fi
-
-          WEEK_NUM=$(echo "$M_WEEK" | tr -cd '0-9')
-          PREV_NUM=$((10#$WEEK_NUM - 1))
-          A_WEEK="W${PREV_NUM}"
-
+          
           echo "MARKET_WEEK=$M_WEEK" >> $GITHUB_ENV
           echo "ACTUAL_WEEK=$A_WEEK" >> $GITHUB_ENV
+          
+          echo "Resolved MARKET_WEEK: $M_WEEK"
+          echo "Resolved ACTUAL_WEEK: $A_WEEK"
 
-          echo "MARKET_WEEK=$M_WEEK"
-          echo "ACTUAL_WEEK=$A_WEEK"
-
-      - name: Run R6 data pipeline
+      - name: Run Dynamic Matrix Market Audit
         run: |
           python r6_macro_automation.py --market-week ${{ env.MARKET_WEEK }} --actual-week ${{ env.ACTUAL_WEEK }}
 
-      - name: Commit generated files
+      - name: Secure Ledger Artifacts & Route Commit to Active Branch
         run: |
-          git config --global user.name "R6 Data Agent Bot"
-          git config --global user.email "r6-data-agent-bot@example.com"
-
-          git add "market_snapshot_${MARKET_WEEK}.json" "actual_2026-${ACTUAL_WEEK}.md"
-
+          git config --global user.name "Team2 Data Automation Bot"
+          git config --global user.email "bot@team2.financial"
+          
+          git add market_snapshot_*.json actual_2026-*.md
+          
           if git diff --staged --quiet; then
-            echo "No changes to commit."
+            echo "No data changes detected. Terminating smoothly."
           else
-            git commit -m "chore: update R6 market actuals"
-            git push
+            git commit -m "chore(data): automated market ledger alignment [skip ci]"
+            echo "Routing validated payload back to upstream context: ${{ github.ref_name }}"
+            git push origin HEAD:${{ github.ref_name }}
           fi
