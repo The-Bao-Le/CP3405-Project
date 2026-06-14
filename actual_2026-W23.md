@@ -4,7 +4,7 @@
 
 **Prediction Week Evaluated:** W23  
 **Market Data Week Used:** W24  
-**Generated At:** 2026-06-14 07:18:42  
+**Generated At:** 2026-06-14 12:34:58  
 **Data Window:** 2026-06-05 to 2026-06-14  
 
 ---
