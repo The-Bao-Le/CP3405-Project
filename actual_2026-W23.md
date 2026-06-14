@@ -4,7 +4,7 @@
 
 **Prediction Week Evaluated:** W23  
 **Market Data Week Used:** W24  
-**Generated At:** 2026-06-14 03:10:17  
+**Generated At:** 2026-06-14 04:58:41  
 **Data Window:** 2026-06-05 to 2026-06-14  
 
 ---
@@ -16,7 +16,7 @@
 | S&P 500 | ^GSPC | 7431.46 | -1.4% |
 | Nasdaq 100 | ^NDX | 29635.9492 | -1.19% |
 | Russell 2000 | IWM | 292.95 | 1.33% |
-| Gold | GC=F | 4215.0 | -5.75% |
+| Gold | GC=F | 4238.7998 | -5.22% |
 | Crude Oil | CL=F | 84.88 | -8.55% |
 | 10Y Treasury Yield | ^TNX | 4.487 | 0.45% |
 | TLT | TLT | 85.77 | 0.92% |

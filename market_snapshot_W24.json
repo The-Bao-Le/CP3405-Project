@@ -1,7 +1,7 @@
 {
     "meta": {
         "market_week": "W24",
-        "generation_time": "2026-06-14 03:10:17",
+        "generation_time": "2026-06-14 04:58:41",
         "data_window": "2026-06-05 to 2026-06-14"
     },
     "metrics": {
@@ -22,8 +22,8 @@
         },
         "GOLD": {
             "ticker": "GC=F",
-            "close_price": 4215.0,
-            "weekly_delta_pct": -5.75
+            "close_price": 4238.7998,
+            "weekly_delta_pct": -5.22
         },
         "OIL": {
             "ticker": "CL=F",
