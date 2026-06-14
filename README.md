@@ -15,9 +15,9 @@ The repository is used to organise project work, track progress, store evidence,
 | Role 1  | The Bao Le                                  |
 | Role 2  | Yue Zhou                                   |
 | Role 3  | Wenhan Hu, Hao Wang                      |
-| Role 4  | Lu Junwen                      |
-| Role 5  | @ARCHVILE                                    |
-| Role 6  | Wu qingyang Zheng Zaikun                  |
+| Role 4  | Guanyu Lu                      |
+| Role 5  | Hamzah Nutt (Opal)                                    |
+| Role 6  | Wu qingyang, Zheng Zaikun                  |
 | Role 7  | Viral Stock                            |
 | Role 8  | Lu junwen                               |
 | Role 9  | kan yijie (GitHub Repository Management) |
