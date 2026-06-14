@@ -30,6 +30,30 @@ Direction: Flat → Up
 
 Confidence: Medium
 
+### XLK (Technology)
+
+Direction: Up
+
+% Range: +0.8% to +2.0%
+
+Confidence: Medium-High
+
+### XLF (Financials)
+
+Direction: Neutral → Up
+
+% Range: 0.0% to +1.0%
+
+Confidence: Medium
+
+### XLE (Energy)
+
+Direction: Down
+
+% Range: -1.5% to -0.3%
+
+Confidence: Medium
+
 ---
 
 ## SECTOR CALLS
