@@ -1,0 +1,8 @@
+{
+  "rule_update": "R10_2024_06_W3",
+  "adjustments": {
+    "almanac_weight_multiplier": 0.5,
+    "condition": "macro_score >= 1",
+    "reason": "Prevent over-conservative forecasting as seen in R7 IWM performance."
+  }
+}
