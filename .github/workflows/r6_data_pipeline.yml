@@ -1,12 +1,6 @@
 name: Automated Cross-Asset Market Audit Pipeline
 
 on:
-  # 🌟 Active on Week-04 for your dedicated pipeline testing sessions
-  push:
-    branches:
-      - 'Week-04'
-      - 'main'
-
   # Activates the single-variable override panel on GitHub Web UI
   workflow_dispatch:
     inputs:
