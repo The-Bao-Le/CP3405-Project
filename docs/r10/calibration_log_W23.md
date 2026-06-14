@@ -33,3 +33,10 @@ To be completed after the W23 calibration review.
 
 ## R10 Note
 At this stage, R10 can only prepare the calibration structure. Hit / Miss judgment must not be completed until the actual W23 market outcome is known.
+
+W4 - QA lead:
+| Index | Team Prediction | Confidence | Actual Result | Hit / Miss | Comment |
+|---|---|---|---|---|---|
+| SPX | Up / Neutral-Bullish | Medium | +0.50% | HIT | Waiting for actual result |
+| NDX | Up / Neutral-Bullish | Medium | +0.64% | MISS | Waiting for actual result |
+| IWM | Up / Neutral-Bullish | Medium | +0.87% | MISS | Waiting for actual result |
