@@ -21,7 +21,7 @@ The repository is used to organise project work, track progress, store evidence,
 | Role 7  | Viral Stock                            |
 | Role 8  | Lu junwen                               |
 | Role 9  | kan yijie (GitHub Repository Management) |
-| Role 10 |                             |
+| Role 10 |  Lin yuchu                           |
 
 ---
 
