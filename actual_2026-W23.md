@@ -4,7 +4,7 @@
 
 **Prediction Week Evaluated:** W23  
 **Market Data Week Used:** W24  
-**Generated At:** 2026-06-13 16:39:14  
+**Generated At:** 2026-06-14 03:09:27  
 **Data Window:** 2026-06-05 to 2026-06-14  
 
 ---
@@ -20,7 +20,7 @@
 | Crude Oil | CL=F | 84.88 | -6.25% |
 | 10Y Treasury Yield | ^TNX | 4.487 | -1.08% |
 | TLT | TLT | 85.77 | 0.83% |
-| Bitcoin | BTC-USD | 63991.5117 | 5.04% |
+| Bitcoin | BTC-USD | 63543.1992 | 4.3% |
 
 ---
 
