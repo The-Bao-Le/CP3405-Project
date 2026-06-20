@@ -110,30 +110,21 @@ This combination supports the view that markets expect policy rates to remain re
 
 ### Core PCE Inflation (May)
 
-| Indicator    | Actual | Previous | Forecast |
-| ------------ | ------ | -------- | -------- |
-| Core PCE MoM | 0.2%   | 0.3%     | 0.2%     |
-| PCE YoY      | 3.8%   | 4.0%     | —        |
+| Indicator | Actual | Consensus | Forecast |
+|---|---:|---:|---:|
+| Core PCE MoM | 0.2% | 0.3% | 0.2% |
+| PCE Price Index MoM | 0.4% | — | 0.4% |
+| PCE Price Index YoY | 3.8% | — | 4.0% |
 
 ### Interpretation
 
-The Federal Reserve's preferred inflation measure showed continued moderation.
+Core PCE MoM came in at 0.2%, below the 0.3% consensus and in line with forecast.
 
-Core PCE increased 0.2% month-over-month, matching expectations and slowing from the previous month's 0.3% increase.
+PCE YoY came in at 3.8%, below the 4.0% forecast, suggesting inflation pressure is moderating.
 
-Annual PCE inflation declined from 4.0% to 3.8%, reinforcing the view that inflation pressures are gradually easing.
+This supports the soft-landing narrative and reduces pressure on the Federal Reserve to adopt a more aggressive policy stance.
 
-The data supports a "soft landing" narrative in which inflation continues to cool without triggering a significant economic slowdown.
-
-### Sector Impact
-
-* XLK (Technology): Positive
-* XLF (Financials): Neutral
-* XLU (Utilities): Positive
-* XLE (Energy): Neutral
-* XLB (Materials): Neutral
-
-**Assessment:** Bullish for Growth Sectors
+**Assessment:** Mildly Bullish
 
 ---
 
