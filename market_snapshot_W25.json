@@ -1,19 +1,19 @@
 {
     "meta": {
         "market_week": "W25",
-        "generation_time": "2026-06-20 04:58:52",
+        "generation_time": "2026-06-20 05:00:37",
         "data_window": "2026-06-12 to 2026-06-21"
     },
     "metrics": {
         "SPX": {
             "ticker": "^GSPC",
-            "close_price": NaN,
-            "weekly_delta_pct": NaN
+            "close_price": 7500.5801,
+            "weekly_delta_pct": 1.21
         },
         "NDX": {
             "ticker": "^NDX",
-            "close_price": NaN,
-            "weekly_delta_pct": NaN
+            "close_price": 30406.1895,
+            "weekly_delta_pct": 3.49
         },
         "IWM": {
             "ticker": "IWM",
@@ -42,8 +42,8 @@
         },
         "BTC": {
             "ticker": "BTC-USD",
-            "close_price": 63502.2891,
-            "weekly_delta_pct": -0.07
+            "close_price": 63527.3789,
+            "weekly_delta_pct": -0.03
         },
         "XLK": {
             "ticker": "XLK",
@@ -52,13 +52,13 @@
         },
         "XLC": {
             "ticker": "XLC",
-            "close_price": NaN,
-            "weekly_delta_pct": NaN
+            "close_price": 109.45,
+            "weekly_delta_pct": -3.06
         },
         "XLY": {
             "ticker": "XLY",
-            "close_price": NaN,
-            "weekly_delta_pct": NaN
+            "close_price": 117.16,
+            "weekly_delta_pct": 0.12
         },
         "XLF": {
             "ticker": "XLF",
@@ -72,8 +72,8 @@
         },
         "XLP": {
             "ticker": "XLP",
-            "close_price": NaN,
-            "weekly_delta_pct": NaN
+            "close_price": 83.3,
+            "weekly_delta_pct": -2.53
         },
         "XLE": {
             "ticker": "XLE",
@@ -97,8 +97,8 @@
         },
         "XLRE": {
             "ticker": "XLRE",
-            "close_price": NaN,
-            "weekly_delta_pct": NaN
+            "close_price": 43.86,
+            "weekly_delta_pct": -2.62
         }
     }
 }
