@@ -202,6 +202,21 @@ Initial Jobless Claims are expected to remain largely unchanged from the previou
 
 ADP Employment Change previously recorded 25.5K, indicating slower but still positive private-sector hiring activity.
 
+### Labor Market Validation Watchlist
+
+Paychex (PAYX), one of the largest payroll and HR service providers in the United States, reports earnings this week.
+
+Management commentary regarding:
+
+- Hiring activity
+- Payroll growth
+- Small business employment trends
+
+could provide an important real-world validation of current labor market conditions.
+
+A stronger-than-expected outlook would reinforce the soft-landing narrative and support Financials.
+
+**Assessment:** Moderate Impact on XLF
 The overall labor market continues to support the soft-landing narrative, although hiring momentum has moderated compared with earlier phases of the economic cycle.
 
 ### Sector Impact
@@ -212,8 +227,32 @@ The overall labor market continues to support the soft-landing narrative, althou
 
 **Assessment:** Stable
 
----
+### Labor Market Validation Watchlist
 
+Paychex (PAYX), one of the largest payroll and HR service providers in the United States, reports earnings this week.
+
+Management commentary regarding:
+
+* Hiring activity
+* Payroll growth
+* Small business employment trends
+* HR outsourcing demand
+
+could provide an important real-world validation of current labor market conditions.
+
+A stronger-than-expected outlook would reinforce the soft-landing narrative and support the Financials sector.
+
+Conversely, weaker guidance could indicate that labor market conditions are deteriorating faster than current macro data suggests.
+
+### Sector Impact
+
+* XLF (Financials): Positive if hiring remains resilient
+* XLU (Utilities): Neutral
+* XLK (Technology): Indirectly Positive
+
+**Assessment:** Moderate Impact on XLF
+
+---
 ## Market Performance & Risk Sentiment
 
 ### Finviz 1-Week Performance Snapshot
@@ -280,7 +319,28 @@ The PHLX Semiconductor Index (SOX) reached fresh all-time highs during the week.
 
 As long as AI demand continues to exceed available supply, Technology is likely to remain the market leadership sector.
 
-Assessment: Strongly Bullish for XLK
+### Earnings Validation
+
+TD SYNNEX (SNX) reports earnings this week and serves as a useful proxy for enterprise technology spending.
+
+Investors will focus on:
+
+* AI server demand
+* Enterprise hardware spending
+* IT infrastructure deployment
+* Management guidance regarding AI-related capital expenditure
+
+Strong results would reinforce the view that AI infrastructure investment remains a primary driver of Technology sector leadership.
+
+Weak guidance could suggest that enterprise customers are becoming more cautious with technology budgets, potentially creating short-term pressure on software, semiconductor and infrastructure-related stocks.
+
+### Sector Impact
+
+* XLK (Technology): Positive if enterprise demand remains strong
+* XLB (Materials): Slightly Positive through industrial demand
+* XLF (Financials): Neutral
+
+**Assessment:** High Impact on XLK
 
 ---
 
@@ -305,6 +365,10 @@ Assessment: Bullish
 ---
 
 ## Sector Rotation Analysis (Finviz 1-Week Heatmap)
+
+According to the Finviz 1-Week S&P 500 Heatmap, capital flows remained concentrated in Technology and Financials, while Energy experienced broad-based weakness across major constituents.
+
+This rotation is consistent with falling crude oil prices, moderating inflation expectations and continued investor preference for AI-related growth opportunities.
 
 Market leadership remained concentrated in Technology and Financials during the week.
 
