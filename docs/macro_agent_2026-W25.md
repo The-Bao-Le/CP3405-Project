@@ -193,3 +193,59 @@ The overall labor market continues to support the soft-landing narrative, althou
 - XLU (Utilities): Positive
 
 **Assessment:** Stable
+
+---
+
+## Market Performance & Risk Sentiment
+
+### Finviz 1-Week Performance Snapshot
+
+Market performance over the past week suggests a continued risk-on environment.
+
+Top Performing Assets:
+
+| Asset | 1-Week Return |
+|---------|---------|
+| Cocoa | +11.56% |
+| Nikkei 225 | +7.02% |
+| Coffee | +7.01% |
+| Cotton | +4.33% |
+| Wheat | +3.15% |
+| Nasdaq 100 | +2.31% |
+
+Weakest Performing Assets:
+
+| Asset | 1-Week Return |
+|---------|---------|
+| WTI Crude Oil | -8.99% |
+| VIX | -8.47% |
+| Brent Crude Oil | -7.74% |
+| Heating Oil | -6.17% |
+| Silver | -4.51% |
+
+### Interpretation
+
+Several important macro signals emerge from this week's performance data:
+
+1. Nasdaq 100 gained 2.31%, confirming continued investor preference for growth and technology stocks.
+
+2. VIX fell 8.47%, indicating declining market fear and improving risk appetite.
+
+3. Crude oil prices experienced one of the largest declines across major asset classes, with WTI falling 8.99% and Brent declining 7.74%.
+
+4. Treasury yields remained relatively stable despite stronger economic data, suggesting markets continue to expect inflation moderation.
+
+The combination of rising equities, falling volatility and declining energy prices is generally supportive of risk assets and growth sectors.
+
+### Sector Impact
+
+- XLK (Technology): Positive
+- XLF (Financials): Positive
+- XLU (Utilities): Neutral
+- XLE (Energy): Negative
+- XLB (Materials): Neutral
+
+**Assessment:** Bullish Risk-On Environment
+
+---
+
