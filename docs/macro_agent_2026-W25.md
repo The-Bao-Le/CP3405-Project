@@ -39,32 +39,28 @@ However, market expectations are currently being driven primarily by FedWatch pr
 
 According to CME FedWatch data, markets currently assign a 61.5% probability that the Federal Reserve will maintain the current target range of 3.50%–3.75% at the July meeting.
 
-However, a substantial 38.5% probability remains for a move toward the 3.75%–4.00% range, reflecting ongoing uncertainty regarding the path of monetary policy.
+However, markets still assign a meaningful 38.5% probability to a higher target range of 3.75%–4.00%, reflecting lingering concerns that inflation could remain persistent and delay the Fed's easing cycle.
 
-Recent strength in PMI and Durable Goods data has reduced expectations for near-term rate cuts.
+Recent strength in PMI data, Durable Goods Orders and resilient economic activity has reduced expectations for aggressive rate cuts.
+
+The current market outlook therefore remains consistent with a higher-for-longer policy environment.
 
 ### Federal Reserve Dot Plot Analysis
 
-The June Dot Plot continues to indicate that policymakers expect policy rates to gradually decline over the coming years.
+The June 2026 Dot Plot indicates that policymakers continue to expect a gradual easing cycle over the medium term.
 
-| Year | Expected Policy Rate |
-|------|----------------------|
-| 2026 | ~3.75% |
-| 2027 | ~3.25% |
-| 2028 | ~2.75% |
-| Longer Run | ~2.75% |
+Median Dot Plot Projections:
 
-### Interpretation
+| Year | Median Policy Rate |
+|------|-------------------|
+| 2026 | 3.625% |
+| 2027 | 3.625% |
+| 2028 | 3.375% |
+| Longer Run | 3.000% |
 
-While the Federal Reserve continues to project eventual policy easing, the distribution of committee members' forecasts remains relatively dispersed.
+While policymakers still expect rates to decline over time, the median projections remain above the Federal Reserve's longer-run neutral rate, suggesting a continued "higher-for-longer" policy stance.
 
-Several policymakers continue to project policy rates above 4%, suggesting that inflation risks have not been fully eliminated.
-
-The Dot Plot therefore supports:
-
-- Higher-for-longer policy rates in the near term
-- Gradual easing over the medium term
-- Continued data dependency
+Several committee members continue to project rates above 4%, indicating that inflation risks have not been fully eliminated.
 
 ### Sector Impact
 
@@ -73,6 +69,38 @@ The Dot Plot therefore supports:
 - XLF (Financials): Neutral
 - XLE (Energy): Neutral
 - XLB (Materials): Neutral
+
+**Assessment:** Mildly Bullish
+
+---
+
+## Treasury Yield Analysis
+
+Treasury markets delivered a mixed signal during the week.
+
+### Treasury Yield Curve
+
+| Maturity | 15 Jun | 18 Jun | Change |
+|-----------|--------|--------|--------|
+| 2-Year | 4.07% | 4.19% | +0.12% |
+| 10-Year | 4.47% | 4.46% | -0.01% |
+| 30-Year | 4.97% | 4.90% | -0.07% |
+
+### Interpretation
+
+Short-term Treasury yields increased as stronger economic data reduced expectations for near-term Federal Reserve rate cuts.
+
+However, longer-dated Treasury yields remained stable or declined slightly, suggesting that long-term inflation expectations remain contained.
+
+This combination supports the view that markets expect policy rates to remain restrictive in the near term while inflation gradually moderates over the longer term.
+
+### Sector Impact
+
+- XLK (Technology): Positive
+- XLF (Financials): Neutral
+- XLU (Utilities): Positive
+- XLB (Materials): Positive
+- XLE (Energy): Neutral
 
 **Assessment:** Mildly Bullish
 
