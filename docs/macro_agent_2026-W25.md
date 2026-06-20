@@ -249,3 +249,41 @@ The combination of rising equities, falling volatility and declining energy pric
 
 ---
 
+## Sector Rotation Analysis
+
+Recent market performance indicates continued rotation toward growth-oriented sectors.
+
+### Market Performance Snapshot (Finviz 1 Week)
+
+| Asset | Weekly Return |
+|---------|---------|
+| Nasdaq 100 | +2.31% |
+| Russell 2000 | +0.97% |
+| S&P 500 | +0.78% |
+| VIX | -8.47% |
+| WTI Crude Oil | -8.99% |
+| Brent Crude Oil | -7.74% |
+
+### Interpretation
+
+The strongest signal from this week's market performance is the continued outperformance of growth assets alongside a sharp decline in market volatility.
+
+The Nasdaq 100 gained 2.31% while the VIX fell 8.47%, suggesting investors remain comfortable increasing exposure to growth-oriented sectors.
+
+At the same time, crude oil prices experienced significant declines, with WTI falling 8.99% and Brent crude declining 7.74%.
+
+This indicates capital is rotating away from energy-related themes and toward sectors that benefit from moderating inflation and lower input costs.
+
+### Sector Outlook
+
+| Sector | Outlook |
+|----------|----------|
+| XLK (Technology) | Bullish |
+| XLF (Financials) | Neutral to Bullish |
+| XLU (Utilities) | Neutral to Bullish |
+| XLB (Materials) | Neutral |
+| XLE (Energy) | Bearish |
+
+### Assessment
+
+Current sector rotation continues to favor Technology and other growth-oriented sectors while Energy remains under pressure from declining crude oil prices.
