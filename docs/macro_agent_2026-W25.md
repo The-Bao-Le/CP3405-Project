@@ -6,27 +6,15 @@
 
 This week's macro environment is driven by five major themes:
 
-1. Federal Reserve post-FOMC communication
-2. Inflation trends and Core PCE data
-3. Economic growth resilience
-4. Labor market stability
-5. Energy inventories and commodity demand
+1. Higher-for-longer Federal Reserve expectations
+2. Moderating inflation pressures
+3. Resilient economic growth and business investment
+4. Rotation away from Energy and into Growth sectors
+5. AI infrastructure spending remaining the dominant market theme
 
 ---
 
 ## Federal Reserve Outlook
-
-### Fed Communications
-
-Markets will continue to monitor comments from Federal Reserve officials including:
-
-- Christopher Waller
-- John Williams
-- Austan Goolsbee
-
-for additional guidance on inflation and future rate cuts.
-
-However, market expectations are currently being driven primarily by FedWatch probabilities, the June Dot Plot and incoming inflation data rather than individual speeches.
 
 ### FedWatch Probabilities (19 June 2026)
 
@@ -49,14 +37,16 @@ The current market outlook therefore remains consistent with a higher-for-longer
 
 The June 2026 Dot Plot indicates that policymakers continue to expect a gradual easing cycle over the medium term.
 
-Median Dot Plot Projections:
+Median Dot Plot Projections (Approximate):
 
-| Year | Median Policy Rate |
+| Year | Median Rate |
 |------|-------------------|
 | 2026 | 3.625% |
 | 2027 | 3.625% |
 | 2028 | 3.375% |
 | Longer Run | 3.000% |
+
+The median policymaker projection remains above the longer-run neutral rate, reinforcing the higher-for-longer narrative.
 
 While policymakers still expect rates to decline over time, the median projections remain above the Federal Reserve's longer-run neutral rate, suggesting a continued "higher-for-longer" policy stance.
 
@@ -69,6 +59,10 @@ Several committee members continue to project rates above 4%, indicating that in
 - XLF (Financials): Neutral
 - XLE (Energy): Neutral
 - XLB (Materials): Neutral
+
+Despite the hawkish shift in Fed expectations, equity markets remained resilient.
+
+The market's ability to recover following the June FOMC selloff suggests investors remain more focused on earnings growth and AI-driven capital expenditure than near-term monetary tightening.
 
 **Assessment:** Mildly Bullish
 
@@ -85,6 +79,22 @@ Treasury markets delivered a mixed signal during the week.
 | 2-Year | 4.07% | 4.19% | +0.12% |
 | 10-Year | 4.47% | 4.46% | -0.01% |
 | 30-Year | 4.97% | 4.90% | -0.07% |
+
+### Yield Curve Dynamics
+
+| Maturity | Change |
+|-----------|---------|
+| 2-Year | +12 bps |
+| 10-Year | -1 bp |
+| 30-Year | -7 bps |
+
+The yield curve flattened during the week.
+
+Short-term yields rose as markets priced in a more hawkish Federal Reserve.
+
+Long-term yields remained stable, suggesting investors continue to believe inflation will moderate over time.
+
+Historically, this type of flattening is more supportive of growth sectors than commodity-driven sectors.
 
 ### Interpretation
 
@@ -132,7 +142,7 @@ This supports the soft-landing narrative and reduces pressure on the Federal Res
 
 Upcoming economic releases suggest that investors will focus on the strength of US economic activity and business investment during the week.
 
-### PMI Expectations (June Flash)
+### PMI Results (June Flash)
 
 | Indicator | Previous | Consensus | Forecast |
 |------------|------------|------------|------------|
@@ -144,7 +154,7 @@ All three PMI indicators remain above the 50 expansion threshold, indicating con
 
 However, forecasts suggest a modest slowdown compared with previous readings, particularly within the manufacturing sector.
 
-Investors will closely monitor whether business activity remains resilient following the June FOMC meeting.
+PMI data exceeded expectations and remained above the 50 expansion threshold.
 
 ### Durable Goods Orders Expectations
 
@@ -156,6 +166,14 @@ Investors will closely monitor whether business activity remains resilient follo
 Headline Durable Goods Orders are expected to decline following the exceptionally strong 7.9% increase recorded previously.
 
 Nevertheless, core durable goods orders are expected to remain positive, suggesting underlying business investment remains relatively healthy.
+
+### Consumer Resilience
+
+Retail Sales remained stronger than expected in recent releases, indicating that consumer demand continues to support economic growth despite higher interest rates.
+
+Atlanta Fed GDPNow estimates remain near 3%, suggesting that recession risks remain limited in the near term.
+
+Combined with stronger PMI and Durable Goods Orders data, economic activity remains more resilient than many investors expected earlier this year.
 
 ### Sector Impact
 
@@ -248,6 +266,43 @@ The combination of rising equities, falling volatility and declining energy pric
 **Assessment:** Bullish Risk-On Environment
 
 ---
+## AI Infrastructure Theme
+
+The dominant market narrative remains AI infrastructure expansion.
+
+Semiconductor stocks continue to outperform broader indices, supported by:
+
+- Strong demand for AI compute
+- Continued hyperscaler capital expenditure
+- Ongoing supply constraints across advanced chips
+
+The PHLX Semiconductor Index (SOX) reached fresh all-time highs during the week.
+
+As long as AI demand continues to exceed available supply, Technology is likely to remain the market leadership sector.
+
+Assessment: Strongly Bullish for XLK
+
+---
+
+## Market Breadth Analysis
+
+Market breadth remained generally healthy despite some contraction during the week.
+
+% of Stocks Above 200-Day Moving Average:
+
+| Index | Current |
+|---------|---------|
+| S&P 500 | 61.4% |
+| Russell 2000 | 60.4% |
+| Nasdaq Composite | 43.7% |
+
+Broad participation remains supportive of the broader bull market.
+
+While technology continues to lead, gains are no longer concentrated solely in mega-cap stocks.
+
+Assessment: Bullish
+
+---
 
 ## Sector Rotation Analysis (Finviz 1-Week Heatmap)
 
@@ -323,3 +378,41 @@ Industrial metals weakened while some commodity-sensitive stocks remained resili
 The sector continues to benefit from stronger manufacturing activity but lacks broad market leadership.
 
 **Assessment:** Neutral
+
+---
+
+## Macro Conclusion
+
+### Bullish Factors
+
+- Inflation continues to moderate
+- Core PCE matched expectations
+- PMI remains in expansion territory
+- Durable Goods Orders significantly exceeded forecasts
+- VIX declined sharply
+- AI infrastructure spending remains strong
+
+### Bearish Factors
+
+- Fed remains higher-for-longer
+- 2-Year Treasury yields increased
+- Labor market cooling continues
+- Energy sector weakness may signal slower global demand
+
+### Macro Bias
+
+Moderately Bullish
+
+### Sector Outlook
+
+| Sector | Outlook |
+|----------|----------|
+| XLK | Bullish |
+| XLF | Neutral to Bullish |
+| XLU | Neutral |
+| XLB | Neutral to Bullish |
+| XLE | Bearish |
+
+Technology remains the strongest sector under the current macro backdrop, supported by AI infrastructure spending, resilient economic growth and moderating inflation.
+
+Energy remains the weakest sector due to falling crude oil prices and reduced geopolitical risk premiums.
