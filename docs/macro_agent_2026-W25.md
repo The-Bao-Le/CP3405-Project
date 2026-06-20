@@ -16,28 +16,42 @@ This week's macro environment is driven by five major themes:
 
 ## Federal Reserve Outlook
 
-### Federal Reserve Communications
+### Fed Communications
 
-Key Federal Reserve speakers this week include:
+Markets will continue to monitor comments from Federal Reserve officials including:
 
-* Fed Governor Christopher Waller (22 June)
-* New York Fed President John Williams (26 June)
-* Chicago Fed President Austan Goolsbee (26 June)
+- Christopher Waller
+- John Williams
+- Austan Goolsbee
+
+for additional guidance on inflation and future rate cuts.
+
+However, market expectations are currently being driven primarily by FedWatch probabilities, the June Dot Plot and incoming inflation data rather than individual speeches.
+
+### FedWatch Probabilities (20 June 2026)
+
+Current market expectations for the 29 July 2026 FOMC Meeting:
+
+| Target Rate Range     | Probability |
+|-----------------------|-------------|
+| 350–375 bps (Current) | 61.5%       |
+| 375–400 bps           | 38.5%       |
 
 ### Interpretation
 
-Following the June FOMC meeting, market participants are focusing less on the policy rate itself and more on the Federal Reserve's forward guidance.
+According to CME FedWatch data, markets currently assign a 61.5% probability that the Federal Reserve will maintain the current target range of 3.50%–3.75% at the July meeting.
 
-Comments from Waller, Williams and Goolsbee will be closely monitored for signals regarding:
+However, a substantial 38.5% probability remains for a move toward the 3.75%–4.00% range, indicating ongoing uncertainty regarding the path of monetary policy.
 
-* Timing of future rate cuts
-* Inflation progress
-* Economic growth expectations
-* Labor market conditions
+Compared with one week earlier, market expectations have shifted toward a more hawkish outlook following stronger-than-expected economic data, particularly:
 
-Any indication that inflation is moving sustainably toward target could reinforce expectations for policy easing later in 2026.
+- Manufacturing PMI (55.1)
+- Durable Goods Orders (+7.9%)
+- Stable labor market conditions
 
-**Assessment:** High Impact
+As a result, investors are likely to remain highly sensitive to incoming inflation and employment data.
+
+**Assessment: Moderate Hawkish Risk**
 
 ---
 
