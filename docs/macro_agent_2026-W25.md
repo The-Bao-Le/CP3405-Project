@@ -130,57 +130,66 @@ This supports the soft-landing narrative and reduces pressure on the Federal Res
 
 ## Economic Growth Analysis
 
-Recent economic data presented a mixed but generally resilient picture.
+Upcoming economic releases suggest that investors will focus on the strength of US economic activity and business investment during the week.
 
-### PMI Data (June Flash)
+### PMI Expectations (June Flash)
 
-| Indicator         | Actual | Previous |
-| ----------------- | ------ | -------- |
-| Composite PMI     | 51.5   | 50.8     |
-| Manufacturing PMI | 55.1   | 50.7     |
-| Services PMI      | 51.0   | 50.9     |
+| Indicator | Previous | Consensus | Forecast |
+|------------|------------|------------|------------|
+| Composite PMI | 51.5 | — | 50.8 |
+| Manufacturing PMI | 55.1 | 54.7 | 54.5 |
+| Services PMI | 50.7 | 51.0 | 50.9 |
 
-All three PMI indicators remain above the 50 expansion threshold.
+All three PMI indicators remain above the 50 expansion threshold, indicating continued economic expansion.
 
-Manufacturing activity strengthened significantly, suggesting continued business investment and industrial demand.
+However, forecasts suggest a modest slowdown compared with previous readings, particularly within the manufacturing sector.
 
-### Durable Goods Orders
+Investors will closely monitor whether business activity remains resilient following the June FOMC meeting.
 
-| Indicator                | Actual | Previous | Forecast |
-| ------------------------ | ------ | -------- | -------- |
-| Durable Goods Orders MoM | 7.9%   | -4.7%    | -3.2%    |
+### Durable Goods Orders Expectations
 
-Durable Goods Orders significantly exceeded expectations, indicating stronger-than-expected capital spending and business confidence.
+| Indicator | Previous | Consensus | Forecast |
+|------------|------------|------------|------------|
+| Durable Goods Orders MoM | 7.9% | -4.7% | -3.2% |
+| Durable Goods Orders Ex Transportation MoM | 1.1% | 0.5% | 0.6% |
+
+Headline Durable Goods Orders are expected to decline following the exceptionally strong 7.9% increase recorded previously.
+
+Nevertheless, core durable goods orders are expected to remain positive, suggesting underlying business investment remains relatively healthy.
 
 ### Sector Impact
 
-* XLB (Materials): Positive
-* XLF (Financials): Positive
-* XLK (Technology): Positive
+- XLK (Technology): Positive
+- XLF (Financials): Positive
+- XLB (Materials): Positive
+- XLU (Utilities): Neutral
+- XLE (Energy): Neutral
 
-**Assessment:** Moderately Bullish
+**Assessment:** Mildly Bullish
 
 ---
 
 ## Labor Market Conditions
 
-Labor market conditions remain stable.
+Labor market conditions remain broadly stable.
 
 ### Key Indicators
 
-| Indicator              | Actual | Previous | Forecast |
-| ---------------------- | ------ | -------- | -------- |
-| Initial Jobless Claims | 226K   | 225K     | 225K     |
-| ADP Employment Change  | 25.5K  | —        | —        |
+| Indicator | Previous | Consensus | Forecast |
+|------------|------------|------------|------------|
+| Initial Jobless Claims | 226K | 225K | 225K |
+| ADP Employment Change | 25.5K | — | — |
 
-Initial Jobless Claims remained broadly unchanged, suggesting no significant deterioration in labor market conditions.
+Initial Jobless Claims are expected to remain largely unchanged from the previous week, suggesting continued labor market stability.
 
-The labor market continues to cool gradually rather than abruptly, supporting the soft-landing narrative.
+ADP Employment Change previously recorded 25.5K, indicating slower but still positive private-sector hiring activity.
+
+The overall labor market continues to support the soft-landing narrative, although hiring momentum has moderated compared with earlier phases of the economic cycle.
 
 ### Sector Impact
 
-* XLK: Positive
-* XLF: Neutral
-* XLU: Positive
+- XLK (Technology): Positive
+- XLF (Financials): Neutral
+- XLU (Utilities): Positive
 
 **Assessment:** Stable
