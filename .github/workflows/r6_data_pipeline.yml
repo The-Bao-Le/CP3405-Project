@@ -11,8 +11,7 @@ on:
 
   # Standard cron scheduler configuration
   schedule:
-  - cron: '17 16 * * 5'
-    timezone: "America/New_York"
+  - cron: '17 22 * * 5'
 
 jobs:
   audit_and_log:
