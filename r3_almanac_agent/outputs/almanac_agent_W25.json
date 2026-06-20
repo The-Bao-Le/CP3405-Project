@@ -1,0 +1,117 @@
+{
+  "agent": "R3 Almanac Agent",
+  "week": "W25",
+  "date_range": "2026-06-22 to 2026-06-26",
+  "generated_at": "2026-06-20T08:30:18",
+  "source_file": "Stock Trader's Almanac 2026_L(2).pdf",
+  "automation_level": "PDF parsed automatically using pypdf; outputs generated as JSON, CSV, and Markdown.",
+  "cycle_context": {
+    "year": "2026",
+    "cycle": "U.S. midterm election year",
+    "summary": "Q2-Q3 is historically the weak spot of the 4-Year Presidential Cycle.",
+    "source_note": "2026 Outlook and Introduction pages mention the midterm-year weak spot."
+  },
+  "monthly_vital_statistics": {
+    "SPX": {
+      "index": "S&P 500",
+      "june_rank": 9,
+      "normal_june_average_return": "+0.2%",
+      "midterm_june_average_return": "-2.1%",
+      "source_page": 80,
+      "extraction_method": "parsed_from_june_vital_statistics_table"
+    },
+    "NDX": {
+      "index": "NASDAQ",
+      "june_rank": 6,
+      "normal_june_average_return": "+1.0%",
+      "midterm_june_average_return": "-1.9%",
+      "source_page": 80,
+      "extraction_method": "parsed_from_june_vital_statistics_table"
+    },
+    "IWM": {
+      "index": "Russell 2000",
+      "june_rank": 7,
+      "normal_june_average_return": "+0.8%",
+      "midterm_june_average_return": "-2.1%",
+      "source_page": 80,
+      "extraction_method": "parsed_from_june_vital_statistics_table"
+    }
+  },
+  "week_specific_pattern": {
+    "name": "Week After June Triple-Witching",
+    "evidence": "Week After June Triple-Witching, Dow Down 29 of Last 35 Average Loss Since 1990, 0.8%",
+    "source_page": 91,
+    "extraction_method": "parsed_from_weekly_planner_page",
+    "interpretation": "Bearish seasonal signal for W25."
+  },
+  "sector_signals": {
+    "XLK": {
+      "project_ticker": "XLK",
+      "project_sector": "Technology",
+      "pdf_ticker": "S5INFT",
+      "pdf_sector": "InfoTech",
+      "signal": "LONG",
+      "seasonal_window": "Mid March to Mid July",
+      "average_return_25_year": "+10.87%",
+      "average_return_10_year": "+17.16%",
+      "average_return_5_year": "+24.95%",
+      "source_page": 130,
+      "extraction_method": "parsed_from_sector_index_seasonality_table"
+    },
+    "XLU": {
+      "project_ticker": "XLU",
+      "project_sector": "Utilities",
+      "pdf_ticker": "UTY",
+      "pdf_sector": "Utilities",
+      "signal": "LONG",
+      "seasonal_window": "Mid March to Early October",
+      "average_return_25_year": "+9.32%",
+      "average_return_10_year": "+8.53%",
+      "average_return_5_year": "+10.47%",
+      "source_page": 130,
+      "extraction_method": "parsed_from_sector_index_seasonality_table"
+    },
+    "XLF": {
+      "project_ticker": "XLF",
+      "project_sector": "Financials",
+      "pdf_ticker": "BKX",
+      "pdf_sector": "Banking",
+      "signal": "SHORT",
+      "seasonal_window": "Early May to Early July",
+      "average_return_25_year": "-6.30%",
+      "average_return_10_year": "-4.39%",
+      "average_return_5_year": "-5.33%",
+      "source_page": 130,
+      "extraction_method": "parsed_from_sector_index_seasonality_table"
+    },
+    "XLE": {
+      "project_ticker": "XLE",
+      "project_sector": "Energy",
+      "pdf_ticker": "XOI",
+      "pdf_sector": "Oil",
+      "signal": "SHORT",
+      "seasonal_window": "Early June to Late August",
+      "average_return_25_year": "-5.67%",
+      "average_return_10_year": "-8.98%",
+      "average_return_5_year": "-9.79%",
+      "source_page": 130,
+      "extraction_method": "parsed_from_sector_index_seasonality_table"
+    },
+    "XLB": {
+      "project_ticker": "XLB",
+      "project_sector": "Materials",
+      "pdf_ticker": "S5MATR",
+      "pdf_sector": "Materials",
+      "signal": "SHORT",
+      "seasonal_window": "Mid May to Mid October",
+      "average_return_25_year": "-5.10%",
+      "average_return_10_year": "-2.03%",
+      "average_return_5_year": "-1.03%",
+      "source_page": 130,
+      "extraction_method": "parsed_from_sector_index_seasonality_table"
+    }
+  },
+  "almanac_bias": "Bearish",
+  "confidence": "Medium",
+  "thesis": "W25 is the week after June Triple-Witching. The Almanac weekly planner shows a weak historical pattern for this week. June vital statistics are also weak in midterm years. Sector seasonality favors Technology and Utilities, while Financials, Energy, and Materials remain seasonally weak."
+}
