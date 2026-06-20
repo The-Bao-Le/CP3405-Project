@@ -28,30 +28,53 @@ for additional guidance on inflation and future rate cuts.
 
 However, market expectations are currently being driven primarily by FedWatch probabilities, the June Dot Plot and incoming inflation data rather than individual speeches.
 
-### FedWatch Probabilities (20 June 2026)
+### FedWatch Probabilities (19 June 2026)
 
-Current market expectations for the 29 July 2026 FOMC Meeting:
-
-| Target Rate Range     | Probability |
-|-----------------------|-------------|
-| 350–375 bps (Current) | 61.5%       |
-| 375–400 bps           | 38.5%       |
+| Target Rate Range | Probability |
+|-------------------|-------------|
+| 350–375 bps (Current) | 61.5% |
+| 375–400 bps | 38.5% |
 
 ### Interpretation
 
 According to CME FedWatch data, markets currently assign a 61.5% probability that the Federal Reserve will maintain the current target range of 3.50%–3.75% at the July meeting.
 
-However, a substantial 38.5% probability remains for a move toward the 3.75%–4.00% range, indicating ongoing uncertainty regarding the path of monetary policy.
+However, a substantial 38.5% probability remains for a move toward the 3.75%–4.00% range, reflecting ongoing uncertainty regarding the path of monetary policy.
 
-Compared with one week earlier, market expectations have shifted toward a more hawkish outlook following stronger-than-expected economic data, particularly:
+Recent strength in PMI and Durable Goods data has reduced expectations for near-term rate cuts.
 
-- Manufacturing PMI (55.1)
-- Durable Goods Orders (+7.9%)
-- Stable labor market conditions
+### Federal Reserve Dot Plot Analysis
 
-As a result, investors are likely to remain highly sensitive to incoming inflation and employment data.
+The June Dot Plot continues to indicate that policymakers expect policy rates to gradually decline over the coming years.
 
-**Assessment: Moderate Hawkish Risk**
+| Year | Expected Policy Rate |
+|------|----------------------|
+| 2026 | ~3.75% |
+| 2027 | ~3.25% |
+| 2028 | ~2.75% |
+| Longer Run | ~2.75% |
+
+### Interpretation
+
+While the Federal Reserve continues to project eventual policy easing, the distribution of committee members' forecasts remains relatively dispersed.
+
+Several policymakers continue to project policy rates above 4%, suggesting that inflation risks have not been fully eliminated.
+
+The Dot Plot therefore supports:
+
+- Higher-for-longer policy rates in the near term
+- Gradual easing over the medium term
+- Continued data dependency
+
+### Sector Impact
+
+- XLK (Technology): Positive
+- XLU (Utilities): Positive
+- XLF (Financials): Neutral
+- XLE (Energy): Neutral
+- XLB (Materials): Neutral
+
+**Assessment:** Mildly Bullish
 
 ---
 
