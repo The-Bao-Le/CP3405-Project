@@ -1,7 +1,7 @@
 {
     "meta": {
         "market_week": "W25",
-        "generation_time": "2026-06-20 04:54:46",
+        "generation_time": "2026-06-20 05:00:37",
         "data_window": "2026-06-12 to 2026-06-21"
     },
     "metrics": {
@@ -42,8 +42,8 @@
         },
         "BTC": {
             "ticker": "BTC-USD",
-            "close_price": 63514.0195,
-            "weekly_delta_pct": -0.05
+            "close_price": 63527.3789,
+            "weekly_delta_pct": -0.03
         },
         "XLK": {
             "ticker": "XLK",
@@ -72,8 +72,8 @@
         },
         "XLP": {
             "ticker": "XLP",
-            "close_price": NaN,
-            "weekly_delta_pct": NaN
+            "close_price": 83.3,
+            "weekly_delta_pct": -2.53
         },
         "XLE": {
             "ticker": "XLE",

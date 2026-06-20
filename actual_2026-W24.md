@@ -4,7 +4,7 @@
 
 **Prediction Week Evaluated:** W24  
 **Market Data Week Used:** W25  
-**Generated At:** 2026-06-20 04:54:46  
+**Generated At:** 2026-06-20 05:00:37  
 **Data Window:** 2026-06-12 to 2026-06-21  
 
 ---
@@ -20,7 +20,7 @@
 | Crude Oil | CL=F | 76.54 | -11.66% |
 | 10Y Treasury Yield | ^TNX | 4.487 | 0.31% |
 | TLT | TLT | 86.75 | 1.3% |
-| Bitcoin | BTC-USD | 63514.0195 | -0.05% |
+| Bitcoin | BTC-USD | 63527.3789 | -0.03% |
 
 ---
 
@@ -33,7 +33,7 @@
 | XLY Consumer Discretionary | 0.12% |
 | XLF Financials | 1.15% |
 | XLV Healthcare | -3.59% |
-| XLP Consumer Staples | nan% |
+| XLP Consumer Staples | -2.53% |
 | XLE Energy | -5.32% |
 | XLU Utilities | 1.29% |
 | XLI Industrials | 2.78% |
