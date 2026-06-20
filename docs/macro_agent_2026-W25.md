@@ -249,41 +249,77 @@ The combination of rising equities, falling volatility and declining energy pric
 
 ---
 
-## Sector Rotation Analysis
+## Sector Rotation Analysis (Finviz 1-Week Heatmap)
 
-Recent market performance indicates continued rotation toward growth-oriented sectors.
+Market leadership remained concentrated in Technology and Financials during the week.
 
-### Market Performance Snapshot (Finviz 1 Week)
+### Technology (XLK)
 
-| Asset | Weekly Return |
-|---------|---------|
-| Nasdaq 100 | +2.31% |
-| Russell 2000 | +0.97% |
-| S&P 500 | +0.78% |
-| VIX | -8.47% |
-| WTI Crude Oil | -8.99% |
-| Brent Crude Oil | -7.74% |
+Technology was the strongest major sector.
 
-### Interpretation
+Key contributors included:
 
-The strongest signal from this week's market performance is the continued outperformance of growth assets alongside a sharp decline in market volatility.
+- NVIDIA +2.84%
+- Broadcom +6.69%
+- AMD +10.02%
+- Micron +13.87%
+- Intel +14.56%
 
-The Nasdaq 100 gained 2.31% while the VIX fell 8.47%, suggesting investors remain comfortable increasing exposure to growth-oriented sectors.
+Semiconductors continued to attract capital inflows, reflecting strong investor confidence in AI-related growth themes.
 
-At the same time, crude oil prices experienced significant declines, with WTI falling 8.99% and Brent crude declining 7.74%.
+**Assessment:** Bullish
 
-This indicates capital is rotating away from energy-related themes and toward sectors that benefit from moderating inflation and lower input costs.
+---
 
-### Sector Outlook
+### Financials (XLF)
 
-| Sector | Outlook |
-|----------|----------|
-| XLK (Technology) | Bullish |
-| XLF (Financials) | Neutral to Bullish |
-| XLU (Utilities) | Neutral to Bullish |
-| XLB (Materials) | Neutral |
-| XLE (Energy) | Bearish |
+Financials also demonstrated relative strength.
 
-### Assessment
+Key performers included:
 
-Current sector rotation continues to favor Technology and other growth-oriented sectors while Energy remains under pressure from declining crude oil prices.
+- JPMorgan +3.74%
+- Goldman Sachs +5.88%
+- Morgan Stanley +4.94%
+- Visa +2.57%
+
+The sector benefited from resilient economic growth expectations and improving market sentiment.
+
+**Assessment:** Neutral to Bullish
+
+---
+
+### Energy (XLE)
+
+Energy was among the weakest sectors.
+
+Major energy stocks declined sharply:
+
+- Exxon Mobil -6.00%
+- Chevron -6.56%
+- ConocoPhillips -6.61%
+
+Weakness coincided with substantial declines in crude oil prices.
+
+**Assessment:** Bearish
+
+---
+
+### Utilities (XLU)
+
+Utilities delivered mixed performance.
+
+While selected names such as NextEra Energy gained, sector performance remained inconsistent and lagged growth sectors.
+
+**Assessment:** Neutral
+
+---
+
+### Materials (XLB)
+
+Materials showed mixed signals.
+
+Industrial metals weakened while some commodity-sensitive stocks remained resilient.
+
+The sector continues to benefit from stronger manufacturing activity but lacks broad market leadership.
+
+**Assessment:** Neutral
