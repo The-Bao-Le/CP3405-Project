@@ -11,7 +11,7 @@ on:
 
   # Standard cron scheduler configuration
   schedule:
-    - cron: '19 22 * * 0'
+    - cron: '22 14 * * 0'
 
 jobs:
   audit_and_log:
