@@ -60,7 +60,7 @@ jobs:
           git config --global user.name "Team2 Data Automation Bot"
           git config --global user.email "bot@team2.financial"
           
-          git add technical_agent_*.json technical_agent-*.md
+          git add technical_agent_*.json technical_agent-*.md chart_SPX_*.png chart_NDX_*.png chart_IWM_*.png
           
           if git diff --staged --quiet; then
             echo "No data changes detected. Terminating smoothly."
