@@ -49,36 +49,63 @@ jobs:
         id: resolve_week
         shell: bash
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.week }}" ]; then
             WEEK="${{ github.event.inputs.week }}"
-          else
-            WEEK=$(ls actual_2026-W*.md 2>/dev/null | sed -E 's/.*actual_2026-(W[0-9]+)\.md/\1/' | sort -V | tail -n 1)
+            WEEK=$(echo "$WEEK" | tr '[:lower:]' '[:upper:]')
+
+            if [[ "$WEEK" != W* ]]; then
+              WEEK="W$WEEK"
+            fi
+
+            echo "Manual calibration week selected: $WEEK"
+            echo "week=$WEEK" >> "$GITHUB_OUTPUT"
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
-          if [ -z "$WEEK" ]; then
-            echo "No actual_2026-W*.md file found. Cannot resolve calibration week."
-            exit 1
+          echo "Auto-detecting latest actual week with a matching prediction file..."
+
+          SELECTED_WEEK=""
+
+          for ACTUAL_FILE in $(ls actual_2026-W*.md 2>/dev/null | sort -V -r); do
+            WEEK=$(echo "$ACTUAL_FILE" | sed -E 's/actual_2026-(W[0-9]+)\.md/\1/')
+            PREDICTION_FILE="prediction_2026-${WEEK}_team2.md"
+            RESULT_FILE="docs/r10/calibration_result_${WEEK}.json"
+
+            echo "Checking $WEEK..."
+
+            if [ ! -f "$PREDICTION_FILE" ]; then
+              echo "Skipping $WEEK: no matching prediction file."
+              continue
+            fi
+
+            if [ -f "$RESULT_FILE" ]; then
+              echo "Skipping $WEEK: calibration result already exists."
+              continue
+            fi
+
+            SELECTED_WEEK="$WEEK"
+            break
+          done
+
+          if [ -z "$SELECTED_WEEK" ]; then
+            echo "No pending calibration found."
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
-          WEEK=$(echo "$WEEK" | tr '[:lower:]' '[:upper:]')
-
-          if [[ "$WEEK" != W* ]]; then
-            WEEK="W$WEEK"
-          fi
-
-          echo "week=$WEEK" >> "$GITHUB_OUTPUT"
-          echo "Resolved calibration week: $WEEK"
+          echo "Selected calibration week: $SELECTED_WEEK"
+          echo "week=$SELECTED_WEEK" >> "$GITHUB_OUTPUT"
+          echo "should_run=true" >> "$GITHUB_OUTPUT"
 
       - name: Validate required files
+        if: steps.resolve_week.outputs.should_run == 'true'
         shell: bash
         run: |
           WEEK="${{ steps.resolve_week.outputs.week }}"
 
           PREDICTION_FILE="prediction_2026-${WEEK}_team2.md"
           ACTUAL_FILE="actual_2026-${WEEK}.md"
-
-          echo "Checking prediction file: $PREDICTION_FILE"
-          echo "Checking actual file: $ACTUAL_FILE"
 
           if [ ! -f "$PREDICTION_FILE" ]; then
             echo "Missing prediction file: $PREDICTION_FILE"
@@ -91,12 +118,14 @@ jobs:
           fi
 
       - name: Run R10 calibration automation
+        if: steps.resolve_week.outputs.should_run == 'true'
         shell: bash
         run: |
           WEEK="${{ steps.resolve_week.outputs.week }}"
           python src/r10_calibration_automation.py --week "$WEEK"
 
       - name: Commit calibration outputs
+        if: steps.resolve_week.outputs.should_run == 'true'
         shell: bash
         run: |
           WEEK="${{ steps.resolve_week.outputs.week }}"
