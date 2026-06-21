@@ -1,0 +1,114 @@
+name: R10 Calibration Automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Week to calibrate, e.g. W24, W25, W27"
+        required: true
+        default: "W25"
+        type: string
+
+      target_branch:
+        description: "Branch to run against and commit to. Leave blank to use current branch."
+        required: false
+        default: ""
+        type: string
+
+  workflow_run:
+    workflows:
+      - "Automated Cross-Asset Market Audit Pipeline"
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  calibrate:
+    name: Generate calibration log
+    runs-on: ubuntu-latest
+
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.event.inputs.target_branch || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Resolve calibration week
+        id: resolve_week
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            WEEK="${{ github.event.inputs.week }}"
+          else
+            WEEK=$(ls actual_2026-W*.md 2>/dev/null | sed -E 's/.*actual_2026-(W[0-9]+)\.md/\1/' | sort -V | tail -n 1)
+          fi
+
+          if [ -z "$WEEK" ]; then
+            echo "No actual_2026-W*.md file found. Cannot resolve calibration week."
+            exit 1
+          fi
+
+          WEEK=$(echo "$WEEK" | tr '[:lower:]' '[:upper:]')
+
+          if [[ "$WEEK" != W* ]]; then
+            WEEK="W$WEEK"
+          fi
+
+          echo "week=$WEEK" >> "$GITHUB_OUTPUT"
+          echo "Resolved calibration week: $WEEK"
+
+      - name: Validate required files
+        shell: bash
+        run: |
+          WEEK="${{ steps.resolve_week.outputs.week }}"
+
+          PREDICTION_FILE="prediction_2026-${WEEK}_team2.md"
+          ACTUAL_FILE="actual_2026-${WEEK}.md"
+
+          echo "Checking prediction file: $PREDICTION_FILE"
+          echo "Checking actual file: $ACTUAL_FILE"
+
+          if [ ! -f "$PREDICTION_FILE" ]; then
+            echo "Missing prediction file: $PREDICTION_FILE"
+            exit 1
+          fi
+
+          if [ ! -f "$ACTUAL_FILE" ]; then
+            echo "Missing actual file: $ACTUAL_FILE"
+            exit 1
+          fi
+
+      - name: Run R10 calibration automation
+        shell: bash
+        run: |
+          WEEK="${{ steps.resolve_week.outputs.week }}"
+          python src/r10_calibration_automation.py --week "$WEEK"
+
+      - name: Commit calibration outputs
+        shell: bash
+        run: |
+          WEEK="${{ steps.resolve_week.outputs.week }}"
+
+          git config --global user.name "Team2 Calibration Bot"
+          git config --global user.email "bot@team2.financial"
+
+          git add docs/r10/calibration_log_${WEEK}.md docs/r10/calibration_result_${WEEK}.json
+
+          if git diff --staged --quiet; then
+            echo "No calibration changes detected."
+          else
+            git commit -m "chore(r10): automate calibration for ${WEEK}"
+            git push
+          fi
