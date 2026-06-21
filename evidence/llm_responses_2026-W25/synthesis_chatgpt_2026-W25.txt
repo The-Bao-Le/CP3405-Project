@@ -1,0 +1,59 @@
+Weekly Market Synthesis
+
+Direction
+Neutral → Cautiously Up
+
+Bias
+Neutral-Bullish
+
+Top Bullish Factors
+
+* Federal Reserve expected to hold rates steady with a 97.4% probability.
+* GDPNow increased to 3.3%, indicating resilient economic growth.
+* Treasury yields declined during the week, supporting equity valuations.
+* SPX, NDX and IWM recovered above their 8-day and 21-day EMAs.
+* Technology remains the strongest sector and continues to benefit from positive seasonality.
+* Human Score remains positive (+1).
+
+Top Bearish Factors
+
+* June remains historically weak during Midterm Election Years.
+* Triple Witch week increases volatility risk.
+* Inflation remains above the Federal Reserve target.
+* Recovery trend remains unconfirmed with Low-Medium technical confidence.
+* Energy remains in a negative seasonal window.
+
+Most Important Macro Driver
+
+The combination of Federal Reserve stability, improving GDP growth, and declining Treasury yields remains the dominant macro driver. Markets benefit from reduced policy uncertainty and improving economic resilience, although inflation remains an important risk factor.
+
+Most Important Technical Signal
+
+SPX, NDX and IWM have all recovered above their 8-day and 21-day EMAs. This suggests improving momentum and a potential recovery from the previous bearish trend.
+
+Most Important Seasonal Factor
+
+June seasonal weakness during a Midterm Election Year and the Q2-Q3 Weak Spot remain the dominant seasonal headwinds. Triple Witch volatility further limits upside conviction.
+
+Expected SPX Trading Range
+
+Lower Bound: 7,380
+
+Upper Bound: 7,450
+
+Confidence Level
+
+Medium
+
+Final Weekly Call
+
+The market outlook is Neutral-Bullish. Improving technical momentum, declining Treasury yields and stronger economic growth support further recovery. However, seasonal weakness and Triple Witch volatility limit conviction and suggest a cautious rather than aggressive bullish stance.
+
+Reasoning Summary
+
+* Federal Reserve stability supports risk assets.
+* GDPNow increased to 3.3%.
+* Treasury yields declined.
+* Major indices recovered above key moving averages.
+* Technology remains the strongest leadership sector.
+* Seasonal headwinds continue to limit upside.
