@@ -351,9 +351,9 @@ However, the lower Nasdaq breadth compared with the S&P 500 and Russell 2000 sug
 
 ---
 
-## Sector Rotation Analysis
+## Sector Rotation Analysis 
 
-### Yahoo 5D / Relative Sector Performance
+### Yahoo 5D Relative Performance
 
 The five selected sectors show different levels of market leadership.
 
@@ -379,15 +379,13 @@ Financials show some strength in the Finviz heatmap but remain weaker in Yahoo r
 
 Utilities remain defensive and stable, but they lag Technology and Energy in momentum.
 
----
-
-## Sector Rotation Analysis (Finviz 1-Week Heatmap)
+### Finviz 1-Week Heatmap
 
 According to the Finviz 1-Week S&P 500 Heatmap, capital flows remained concentrated in Technology and Financials, while Energy experienced broad-based weakness across major constituents.
 
 This rotation is consistent with falling crude oil prices, moderating inflation expectations and continued investor preference for AI-related growth opportunities.
 
-### Technology (XLK)
+#### Technology (XLK)
 
 Technology was the strongest major sector.
 
@@ -403,9 +401,7 @@ Semiconductors continued to attract capital inflows, reflecting strong investor 
 
 **Assessment:** Bullish
 
----
-
-### Financials (XLF)
+#### Financials (XLF)
 
 Financials demonstrated relative strength in the Finviz heatmap.
 
@@ -422,9 +418,7 @@ However, Yahoo relative performance data shows that Financials continue to lag t
 
 **Assessment:** Neutral to Bullish
 
----
-
-### Energy (XLE)
+#### Energy (XLE)
 
 Energy produced mixed signals.
 
@@ -440,9 +434,7 @@ Weakness coincided with substantial declines in crude oil prices.
 
 **Assessment:** Neutral to Bearish
 
----
-
-### Utilities (XLU)
+#### Utilities (XLU)
 
 Utilities delivered stable but non-leading performance.
 
@@ -452,9 +444,7 @@ Lower long-term Treasury yields provide some support, but the sector lacks stron
 
 **Assessment:** Neutral
 
----
-
-### Materials (XLB)
+#### Materials (XLB)
 
 Materials showed moderately positive relative performance.
 
