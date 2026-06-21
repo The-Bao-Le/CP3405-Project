@@ -1,0 +1,10 @@
+category,ticker,name,signal,window_or_rank,return_or_evidence,source_page,extraction_method
+index_stat,SPX,S&P 500,,June rank 9,Normal June +0.2%; Midterm June -2.1%,80,parsed_from_june_vital_statistics_table
+index_stat,NDX,NASDAQ,,June rank 6,Normal June +1.0%; Midterm June -1.9%,80,parsed_from_june_vital_statistics_table
+index_stat,IWM,Russell 2000,,June rank 7,Normal June +0.8%; Midterm June -2.1%,80,parsed_from_june_vital_statistics_table
+sector_signal,XLK,Technology,LONG,Mid March to Mid July,+10.87%,130,parsed_from_sector_index_seasonality_table
+sector_signal,XLU,Utilities,LONG,Mid March to Early October,+9.32%,130,parsed_from_sector_index_seasonality_table
+sector_signal,XLF,Financials,SHORT,Early May to Early July,-6.30%,130,parsed_from_sector_index_seasonality_table
+sector_signal,XLE,Energy,SHORT,Early June to Late August,-5.67%,130,parsed_from_sector_index_seasonality_table
+sector_signal,XLB,Materials,SHORT,Mid May to Mid October,-5.10%,130,parsed_from_sector_index_seasonality_table
+week_pattern,W25,Week After June Triple-Witching,Bearish,2026-06-22 to 2026-06-26,"Week After June Triple-Witching, Dow Down 29 of Last 35 Average Loss Since 1990, 0.8%",91,parsed_from_weekly_planner_page
