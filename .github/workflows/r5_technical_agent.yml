@@ -1,0 +1,71 @@
+name: Automated Technical Agent
+
+on:
+  # Activates the single-variable override panel on GitHub Web UI
+  workflow_dispatch:
+    inputs:
+      custom_market_week:
+        description: 'Target MARKET week to capture (Leave BLANK for automated current week, e.g., W24)'
+        required: false
+        type: string
+
+  # Standard cron scheduler configuration
+  schedule:
+    - cron: '17 22 * * 5'
+
+jobs:
+  audit_and_log:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout Active Repository Branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Initialize Python Core Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Deploy Script Dependencies
+        run: |
+          pip install yfinance argparse mplfinance
+
+      - name: Resolve Decoupled Execution Week Variables
+        id: resolve_weeks
+        run: |
+          if [ -n "${{ github.event.inputs.custom_market_week }}" ]; then
+            M_WEEK=$(echo "${{ github.event.inputs.custom_market_week }}" | tr '[:lower:]' '[:upper:]')
+            WEEK_NUM=$(echo "$M_WEEK" | tr -cd '0-9')
+            echo "Execution Mode: Manual Override."
+          else
+            WEEK_NUM=$(date +%V)
+            M_WEEK="W${WEEK_NUM}"
+            echo "Execution Mode: Automated Cron Resolution."
+          fi
+          
+          echo "MARKET_WEEK=$M_WEEK" >> $GITHUB_ENV
+          
+          echo "Resolved MARKET_WEEK: $M_WEEK"
+
+      - name: Run Dynamic Matrix Market Audit
+        run: |
+          python r5_technical_automation.py --market-week ${{ env.MARKET_WEEK }}
+
+      - name: Secure Ledger Artifacts & Route Commit to Active Branch
+        run: |
+          git config --global user.name "Team2 Data Automation Bot"
+          git config --global user.email "bot@team2.financial"
+          
+          git add technical_agent_*.json technical_agent-*.md
+          
+          if git diff --staged --quiet; then
+            echo "No data changes detected. Terminating smoothly."
+          else
+            git commit -m "chore(data): automated market ledger alignment [skip ci]"
+            echo "Routing validated payload back to upstream context: ${{ github.ref_name }}"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
