@@ -1,25 +1,16 @@
 # Calibration Log — W23
 
-## Role
-R10 — QA and Learning Log Lead
+## Role R10 — QA and Learning Log Lead
 
 ## Purpose
-This file records how well the team’s W23 market prediction matched the actual weekly market result.
 
-The goal is not only to check whether the prediction direction was correct, but also whether the team’s confidence level was reasonable and whether the forecast range captured the actual move.
-
----
-
-## Current Status
-Completed for W23.
-
-The actual W23 market results are now available and have been compared against the team’s W23 prediction for SPX, NDX, and IWM.
+This file records how well the team’s market prediction matched the actual weekly market result. The calibration is generated automatically from the prediction file and the actuals file.
 
 ---
 
 ## Scoring Rules
 
-The same scoring method from W22 is used for this calibration.
+The same scoring method from W22 is reused for consistency.
 
 | Confidence Level | Prediction Result | Score |
 |---|---|---:|
@@ -34,61 +25,36 @@ The same scoring method from W22 is used for this calibration.
 
 ## W23 Team Prediction vs Actual Result
 
-| Index | Team Prediction | Predicted Range | Confidence | Actual Result | Hit / Miss | Score | Comment |
-|---|---|---:|---|---:|---|---:|---|
-| SPX | Down / Neutral-Bearish | -0.8% to -0.2% | Medium | -1.40% | HIT | +2 | Direction was correct, but the actual downside was larger than the predicted range. |
-| NDX | Down / Neutral-Bearish | -1.2% to -0.3% | Medium | -1.19% | HIT | +2 | Direction was correct and the actual result was inside the predicted range. |
-| IWM | Down / Neutral-Bearish | -1.5% to -0.5% | Medium | +1.33% | MISS | 0 | Prediction missed because IWM moved up instead of down. |
+| Target | Team Prediction | Predicted Direction | Predicted Range | Confidence | Actual Result | Actual Direction | Hit / Miss | Range Check | Score |
+|---|---|---|---:|---|---:|---|---|---|---:|
+| SPX | Down | down | -0.8% to -0.2% | Medium | -1.40% | down | HIT | Outside range | +2 |
+| NDX | Down | down | -1.2% to -0.3% | Medium | -1.19% | down | HIT | Inside range | +2 |
+| IWM | Down | down | -1.5% to -0.5% | Medium | +1.33% | up | MISS | Outside range | +0 |
+| XLK Technology | Neutral-Bullish | up | N/A | Medium | -2.17% | down | MISS | N/A | +0 |
+| XLC Communication Services | Neutral | neutral | N/A | Medium | -1.01% | down | MISS | N/A | +0 |
+| XLY Consumer Discretionary | Neutral-Bearish | down | N/A | Medium | -0.68% | down | HIT | N/A | +2 |
+| XLP Consumer Staples | Neutral-Bullish | up | N/A | Medium | +3.91% | up | HIT | N/A | +2 |
+| XLE Energy | Neutral | neutral | N/A | Medium | -1.91% | down | MISS | N/A | +0 |
+| XLF Financials | Bearish | down | N/A | Medium | +1.83% | up | MISS | N/A | +0 |
+| XLV Health Care | Neutral | neutral | N/A | Medium | +0.28% | up | MISS | N/A | +0 |
+| XLI Industrials | Neutral-Bearish | down | N/A | Medium | +0.32% | up | MISS | N/A | +0 |
+| XLB Materials | Bearish | down | N/A | Medium | +1.50% | up | MISS | N/A | +0 |
+| XLRE Real Estate | Bearish | down | N/A | Medium | +2.32% | up | MISS | N/A | +0 |
+| XLU Utilities | Bullish | up | N/A | Medium | +1.11% | up | HIT | N/A | +2 |
 
 ---
 
 ## Calibration Summary
 
-**Direction Result:** 2 HIT, 1 MISS  
-**Hit Rate:** 2 / 3 = 66.7%  
-**Working Calibration Score:** +4  
-**Largest Miss:** IWM, because the team predicted a decline but IWM finished up +1.33%.
-
-The team’s broad bearish view worked for SPX and NDX, but it did not work for IWM. The final score is +4 because SPX and NDX were both medium-confidence correct calls worth +2 each, while IWM was a medium-confidence wrong call worth 0.
+**Direction Result:** 5 HIT, 9 MISS
+**Hit Rate:** 5 / 14 = 35.7%
+**Working Calibration Score:** +10
+**Structured Result File:** `calibration_result_W23.json`
 
 ---
 
-## What Worked
+## QA Comment
 
-SPX and NDX were successful direction calls. Both finished negative, matching the team’s W23 bearish direction.
+This calibration measures directional accuracy with confidence weighting. The range check is reported separately and does not change the official W22-style score.
 
-NDX was the strongest calibration result because the actual move was -1.19%, which landed inside the predicted range of -1.2% to -0.3%.
-
-The team correctly identified broad weakness in large-cap indices. The bearish technical evidence and macro risk view were useful for SPX and NDX.
-
----
-
-## What Did Not Work
-
-IWM was the main miss. The team expected small caps to fall, but IWM finished positive at +1.33%.
-
-SPX was directionally correct, but the predicted range underestimated the downside. The team expected -0.8% to -0.2%, but the actual result was -1.40%.
-
-The sector view was mixed. XLK was selected as the top sector but finished down, while XLF was selected as a weak/bearish sector but finished positive. This shows that sector rotation did not fully match the team’s forecast.
-
----
-
-## Learning for Next Sprint
-
-Separate direction accuracy from range accuracy. The W23 score is good directionally, but SPX shows that a correct direction can still miss the magnitude.
-
-Treat IWM separately from SPX and NDX. Small caps did not follow the same bearish pattern as the large-cap indices, so future forecasts should include a stronger check on small-cap-specific drivers.
-
-Add a clearer breadth or rotation check before making sector calls. The team should verify whether money is moving into defensive, growth, or cyclical sectors before naming top and bottom sectors.
-
-Keep using the same scoring rules so calibration remains comparable across weeks.
-
----
-
-## R10 Note
-
-W23 calibration is now complete using the same scoring method as W22.
-
-The final W23 working calibration score is **+4**, based on **2 hits and 1 miss**.
-
-This score measures directional accuracy with confidence weighting. It does not apply an additional penalty for missing the exact percentage range.
+Generated automatically at: 2026-07-04 08:13:48
