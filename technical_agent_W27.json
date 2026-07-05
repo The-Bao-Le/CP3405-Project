@@ -1,0 +1,42 @@
+{
+    "meta": {
+        "market_week": "W27",
+        "generation_time": "2026-07-05 18:14:55",
+        "data_window": "2025-06-29 to 2026-07-05"
+    },
+    "metrics": {
+        "SPX": {
+            "ticker": "^GSPC",
+            "close_price": 7483.2402,
+            "ema_8": 7449.5395,
+            "ema_21": 7437.1411,
+            "support": 7333.6802,
+            "resistance": 7517.1201,
+            "trend": "Bullish / Recovery",
+            "bias": "Bullish",
+            "confidence": "Medium"
+        },
+        "NDX": {
+            "ticker": "^NDX",
+            "close_price": 29329.2109,
+            "ema_8": 29660.2384,
+            "ema_21": 29618.4294,
+            "support": 28890.7402,
+            "resistance": 29678.8906,
+            "trend": "Pullback / Weakening",
+            "bias": "Slightly Bearish",
+            "confidence": "Low"
+        },
+        "IWM": {
+            "ticker": "IWM",
+            "close_price": 297.58,
+            "ema_8": 297.8794,
+            "ema_21": 293.8543,
+            "support": 294.68,
+            "resistance": 297.91,
+            "trend": "Pullback / Weakening",
+            "bias": "Slightly Bearish",
+            "confidence": "Low"
+        }
+    }
+}
