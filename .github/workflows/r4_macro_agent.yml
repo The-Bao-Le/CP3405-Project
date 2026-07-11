@@ -1,0 +1,26 @@
+name: Run R4 Market Agent
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 1 * * 1"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - run: python main.py
+        env:
+          TRADING_ECONOMICS_API_KEY: ${{ secrets.TRADING_ECONOMICS_API_KEY }}
+          CME_FEDWATCH_API_URL: ${{ secrets.CME_FEDWATCH_API_URL }}
+          CME_FEDWATCH_API_KEY: ${{ secrets.CME_FEDWATCH_API_KEY }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: market-outputs
+          path: outputs/
