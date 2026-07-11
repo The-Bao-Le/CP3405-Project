@@ -2,8 +2,6 @@ name: R3 Almanac Agent Multi-Week Automation Pipeline
 
 on:
   push:
-  # Core Change: The pipeline will run automatically every time you push code to the Week-06 branch, 
-  # making testing easier.
     branches:
       - Week-06
   workflow_dispatch:
@@ -24,6 +22,8 @@ jobs:
     steps:
     - name: 1. Checkout repository assets
       uses: actions/checkout@v3
+      with:
+        ref: Week-06
 
     - name: 2. Initialize Python 3.10 environment
       uses: actions/setup-python@v4
@@ -31,26 +31,34 @@ jobs:
         python-version: '3.10'
 
     - name: 3. Install Python dependencies inside sub-folder
-      # ⚠️ CRITICAL: Please replace 'YOUR_SUBFOLDER_NAME' with your actual sub-folder name (e.g., Week6-R3-Agent)
       working-directory: ./r3_almanac_agent
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: 4. Execute parameterized R3 Almanac Agent
-      # ⚠️ CRITICAL: Please replace 'YOUR_SUBFOLDER_NAME' with your actual sub-folder name (e.g., Week6-R3-Agent)
       working-directory: ./r3_almanac_agent
       run: |
-        python r3_almanac_agent.py "${{ github.event.inputs.week_number }}" "${{ github.event.inputs.date_duration }}"
+        # Core Automation Logic: Detect whether it is triggered manually or by git push
+        INPUT_WEEK="${{ github.event.inputs.week_number }}"
+        INPUT_DATE="${{ github.event.inputs.date_duration }}"
+        
+        # Multi-week general runtime injection: fallback safely to current cycle if inputs are blank
+        FINAL_WEEK="${INPUT_WEEK:-W27}"
+        FINAL_DATE="${INPUT_DATE:-2026-07-06 to 2026-07-10}"
+        
+        python r3_almanac_agent.py "$FINAL_WEEK" "$FINAL_DATE"
 
-    - name: 5. Auto-commit and push dynamic artifacts to repository
+    - name: 5. Auto-commit and push dynamic artifacts back to Week-06 branch
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
-        # Stage all changes including those inside the sub-folder's outputs directory
         git add .
         
-        # Only commit if changes exist to prevent pipeline failures on empty commits
-        git diff-index --quiet HEAD || git commit -m "chore: auto-publish R3 artifacts for ${{ github.event.inputs.week_number }} [skip ci]"
-        git push
+        # Construct dynamic commit messages dynamically matching the current execution cycle
+        INPUT_WEEK="${{ github.event.inputs.week_number }}"
+        WEEK_LABEL="${INPUT_WEEK:-W27}"
+        
+        git diff-index --quiet HEAD || git commit -m "chore: auto-publish R3 artifacts for ${WEEK_LABEL} [skip ci]"
+        git push origin Week-06
