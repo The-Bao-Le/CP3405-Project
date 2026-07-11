@@ -32,7 +32,8 @@ jobs:
 
       - name: Deploy Script Dependencies
         run: |
-          pip install yfinance argparse
+          python -m pip install --upgrade pip
+          python -m pip install yfinance
 
       - name: Resolve Decoupled Execution Week Variables
         id: resolve_weeks
