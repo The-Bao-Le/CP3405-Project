@@ -1,0 +1,15 @@
+{
+  "source": "Earnings Whispers",
+  "ok": false,
+  "data": [
+    {
+      "status": "COLLECTOR INCLUDED",
+      "source": "Earnings Whispers",
+      "detail": "Run python main.py after installing Playwright Chromium."
+    }
+  ],
+  "fetched_at": "2026-07-11 08:23 UTC",
+  "method": "automated collector included",
+  "error": "Run python main.py after installing Playwright Chromium.",
+  "stale_cache": false
+}

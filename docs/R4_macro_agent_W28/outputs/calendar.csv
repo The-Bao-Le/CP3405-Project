@@ -1,0 +1,2 @@
+﻿status,source,detail
+CONFIGURATION REQUIRED,Trading Economics Calendar,"Add TRADING_ECONOMICS_API_KEY to .env, then run python main.py."

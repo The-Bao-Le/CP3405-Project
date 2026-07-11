@@ -1,0 +1,15 @@
+{
+  "source": "Trading Economics Calendar",
+  "ok": false,
+  "data": [
+    {
+      "status": "CONFIGURATION REQUIRED",
+      "source": "Trading Economics Calendar",
+      "detail": "Add TRADING_ECONOMICS_API_KEY to .env, then run python main.py."
+    }
+  ],
+  "fetched_at": "2026-07-11 08:23 UTC",
+  "method": "automated collector included",
+  "error": "Add TRADING_ECONOMICS_API_KEY to .env, then run python main.py.",
+  "stale_cache": false
+}
