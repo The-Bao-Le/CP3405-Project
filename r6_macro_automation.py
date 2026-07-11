@@ -17,7 +17,7 @@ def calculate_trading_window(market_week_str):
     base_date = datetime.fromisocalendar(current_year, week_num, 1)
 
     start_date = (base_date - timedelta(days=3)).strftime("%Y-%m-%d")
-    end_date = (base_date + timedelta(days=6)).strftime("%Y-%m-%d")
+    end_date = (base_date + timedelta(days=5)).strftime("%Y-%m-%d")
 
     print(f"Market week: {market_week_str}")
     print(f"Data window: {start_date} to {end_date}")
