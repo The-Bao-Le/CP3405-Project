@@ -1,0 +1,102 @@
+[
+  {
+    "file": ".github/workflows/generate-report.yml",
+    "sha256": "0bd6c73d29b5f54ddf80dd1ee34d49a44179506764900b54d41af367ab011c87",
+    "size_bytes": 430
+  },
+  {
+    "file": ".gitignore",
+    "sha256": "74756503e09b3fc51374117e07de92deeecf33c65cec1ff50e3142b75153ada6",
+    "size_bytes": 48
+  },
+  {
+    "file": "README.md",
+    "sha256": "57a14909ed7308563af7a8e4d36596e37cde388701d4dc6a6eaa57a3fe7d3f1b",
+    "size_bytes": 1210
+  },
+  {
+    "file": "SUBMISSION_NOTE.md",
+    "sha256": "88ee3a646756951974f803020511a93accede650b1dd2c456f5bd954759c838b",
+    "size_bytes": 394
+  },
+  {
+    "file": "__pycache__/main.cpython-313.pyc",
+    "sha256": "ca457496f90edc5a916ecd2ba041d9f5090663eb22efa58a4ddf32f716abca62",
+    "size_bytes": 15597
+  },
+  {
+    "file": "data/verified_snapshot.json",
+    "sha256": "8c489d3e94b9c012e4603d48f3a88b957d55da59a71c1ce5490f449ca327061e",
+    "size_bytes": 6898
+  },
+  {
+    "file": "evidence/01_cme_fedwatch.png",
+    "sha256": "d28b673b4f9458c8f861b3c57f05d859898dd0d4dd8fdb20fde58156fd76be9d",
+    "size_bytes": 136779
+  },
+  {
+    "file": "evidence/02_trading_economics_calendar.png",
+    "sha256": "e99f07b92983184717261e6546e712f282db4dcbfac44bf6c27a1ab87360d301",
+    "size_bytes": 230895
+  },
+  {
+    "file": "evidence/03_finviz_week_performance.png",
+    "sha256": "b26c269d846f340dac55c8d8e0c587bc6101daee1f0d5dcb3c208ffbd03281dd",
+    "size_bytes": 152091
+  },
+  {
+    "file": "evidence/04_us_treasury_yields.png",
+    "sha256": "eddd5e54311c0adba7a8b33b5686425d9654886d079e433d69df62d845ba8928",
+    "size_bytes": 100955
+  },
+  {
+    "file": "evidence/evidence_manifest.json",
+    "sha256": "82a263bbc0f0d469cb2935f4fe58385d009197a790262446975805716acd00f4",
+    "size_bytes": 673
+  },
+  {
+    "file": "main.py",
+    "sha256": "40fb8d34d472ad0331523cc3f74cfeb673a7be486f62a430721ce304d6a2a9ae",
+    "size_bytes": 13019
+  },
+  {
+    "file": "outputs/economic_calendar.csv",
+    "sha256": "5967857d826a59a3194c419c226d5d7ed5be5a5715c99831f08ec9687abce099",
+    "size_bytes": 969
+  },
+  {
+    "file": "outputs/fedwatch.csv",
+    "sha256": "9a8831e03aab2905a0c10d22e097b6882e4cc0249af8e8e1d6a8f6f899a122de",
+    "size_bytes": 127
+  },
+  {
+    "file": "outputs/finviz_performance.csv",
+    "sha256": "c2ce2a1c8a62fae3d2b68d862144c6c95aa9e1ed306e428ec3343795b8c944fd",
+    "size_bytes": 765
+  },
+  {
+    "file": "outputs/macro_agent_report.md",
+    "sha256": "eb7283d113a12bbf1c12ae04251e9089d9300e26a5781e216bfc54eccc7699fd",
+    "size_bytes": 2581
+  },
+  {
+    "file": "outputs/macro_summary.json",
+    "sha256": "89513bef7301943615f9400ceae28e97bdaf3b8d5437c82abf5d81b2d71616e3",
+    "size_bytes": 1969
+  },
+  {
+    "file": "outputs/treasury_yields.csv",
+    "sha256": "94acc532403e6259fb31695c622f8ac10692a879d6eba07b9b636dd607a61297",
+    "size_bytes": 209
+  },
+  {
+    "file": "requirements.txt",
+    "sha256": "7b1045a271ccb6ba2605dd5e5a4604db11338f0be4c088bf6de32bc9be0c0a8e",
+    "size_bytes": 36
+  },
+  {
+    "file": "tests/test_main.py",
+    "sha256": "c3c99942572dbabf355e65cd642ddd31060fc3a9de648f53f0c6aa3c34cbc459",
+    "size_bytes": 1121
+  }
+]

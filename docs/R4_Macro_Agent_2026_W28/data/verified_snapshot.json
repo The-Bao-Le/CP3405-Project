@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "role": "R4 Macro Agent",
+    "snapshot_name": "Verified macro snapshot",
+    "generated_from": [
+      "evidence/01_cme_fedwatch.png",
+      "evidence/02_trading_economics_calendar.png",
+      "evidence/03_finviz_week_performance.png",
+      "evidence/04_us_treasury_yields.png"
+    ],
+    "integrity_note": "Values are transcribed from the supplied screenshots. No unavailable value is guessed."
+  },
+  "fedwatch": {
+    "meeting_date": "2026-07-29",
+    "current_target_bps": "350-375",
+    "ease_probability_pct": 0.0,
+    "no_change_probability_pct": 65.8,
+    "hike_probability_pct": 34.2,
+    "one_week_ago": {
+      "ease_probability_pct": 0.0,
+      "no_change_probability_pct": 81.8,
+      "hike_probability_pct": 18.2
+    },
+    "one_month_ago": {
+      "ease_probability_pct": 2.3,
+      "no_change_probability_pct": 89.3,
+      "hike_probability_pct": 8.3
+    },
+    "as_of_text": "11 Jul 2026 03:45:39 CT",
+    "source_evidence": "evidence/01_cme_fedwatch.png"
+  },
+  "treasury": {
+    "rows": [
+      {
+        "date": "2026-07-01",
+        "2y": 4.17,
+        "10y": 4.48,
+        "30y": 4.97
+      },
+      {
+        "date": "2026-07-02",
+        "2y": 4.14,
+        "10y": 4.49,
+        "30y": 4.98
+      },
+      {
+        "date": "2026-07-06",
+        "2y": 4.13,
+        "10y": 4.48,
+        "30y": 4.99
+      },
+      {
+        "date": "2026-07-07",
+        "2y": 4.19,
+        "10y": 4.55,
+        "30y": 5.05
+      },
+      {
+        "date": "2026-07-08",
+        "2y": 4.21,
+        "10y": 4.56,
+        "30y": 5.06
+      },
+      {
+        "date": "2026-07-09",
+        "2y": 4.16,
+        "10y": 4.54,
+        "30y": 5.05
+      },
+      {
+        "date": "2026-07-10",
+        "2y": 4.21,
+        "10y": 4.56,
+        "30y": 5.06
+      }
+    ],
+    "source_evidence": "evidence/04_us_treasury_yields.png"
+  },
+  "economic_calendar": {
+    "timezone": "UTC+8",
+    "events": [
+      {
+        "date": "2026-07-06",
+        "time": "22:00",
+        "event": "ISM Services PMI",
+        "period": "JUN",
+        "actual": "54.0",
+        "previous": "54.5",
+        "consensus": "54",
+        "forecast": "54"
+      },
+      {
+        "date": "2026-07-06",
+        "time": "23:00",
+        "event": "Fed Waller Speech",
+        "actual": "",
+        "previous": "",
+        "consensus": "",
+        "forecast": ""
+      },
+      {
+        "date": "2026-07-07",
+        "time": "20:15",
+        "event": "ADP Employment Change Weekly",
+        "actual": "21.0K",
+        "previous": "24.25K",
+        "consensus": "",
+        "forecast": ""
+      },
+      {
+        "date": "2026-07-07",
+        "time": "20:30",
+        "event": "Balance of Trade",
+        "period": "MAY",
+        "actual": "$-77.6B",
+        "previous": "$-54.6B",
+        "consensus": "$-78.5B",
+        "forecast": "$-80.0B"
+      },
+      {
+        "date": "2026-07-07",
+        "time": "20:30",
+        "event": "Exports",
+        "period": "MAY",
+        "actual": "$317.7B",
+        "previous": "$328.2B",
+        "consensus": "",
+        "forecast": "$314.0B"
+      },
+      {
+        "date": "2026-07-07",
+        "time": "20:30",
+        "event": "Imports",
+        "period": "MAY",
+        "actual": "$395.3B",
+        "previous": "$382.8B",
+        "consensus": "",
+        "forecast": "$394.0B"
+      },
+      {
+        "date": "2026-07-08",
+        "time": "05:00",
+        "event": "API Crude Oil Stock Change",
+        "period": "JUL/03",
+        "actual": "-0.399M",
+        "previous": "-6.072M",
+        "consensus": "-1.5M",
+        "forecast": ""
+      },
+      {
+        "date": "2026-07-08",
+        "time": "19:00",
+        "event": "MBA 30-Year Mortgage Rate",
+        "period": "JUL/03",
+        "actual": "6.58%",
+        "previous": "6.57%",
+        "consensus": "",
+        "forecast": ""
+      },
+      {
+        "date": "2026-07-08",
+        "time": "22:30",
+        "event": "EIA Crude Oil Stocks Change",
+        "period": "JUL/03",
+        "actual": "2.998M",
+        "previous": "-3.775M",
+        "consensus": "-2.4M",
+        "forecast": ""
+      },
+      {
+        "date": "2026-07-08",
+        "time": "22:30",
+        "event": "EIA Gasoline Stocks Change",
+        "period": "JUL/03",
+        "actual": "-1.904M",
+        "previous": "-2.333M",
+        "consensus": "-1.6M",
+        "forecast": ""
+      },
+      {
+        "date": "2026-07-09",
+        "time": "02:00",
+        "event": "FOMC Minutes",
+        "actual": "",
+        "previous": "",
+        "consensus": "",
+        "forecast": ""
+      },
+      {
+        "date": "2026-07-09",
+        "time": "20:30",
+        "event": "Initial Jobless Claims",
+        "period": "JUL/04",
+        "actual": "215K",
+        "previous": "217K",
+        "consensus": "218K",
+        "forecast": "220.0K"
+      },
+      {
+        "date": "2026-07-09",
+        "time": "21:00",
+        "event": "Fed Williams Speech",
+        "actual": "",
+        "previous": "",
+        "consensus": "",
+        "forecast": ""
+      },
+      {
+        "date": "2026-07-09",
+        "time": "22:00",
+        "event": "Existing Home Sales",
+        "period": "JUN",
+        "actual": "4.09M",
+        "previous": "4.19M",
+        "consensus": "4.20M",
+        "forecast": "4.2M"
+      },
+      {
+        "date": "2026-07-09",
+        "time": "22:00",
+        "event": "Existing Home Sales MoM",
+        "period": "JUN",
+        "actual": "-2.4%",
+        "previous": "3.7%",
+        "consensus": "",
+        "forecast": "0.7%"
+      }
+    ],
+    "source_evidence": "evidence/02_trading_economics_calendar.png"
+  },
+  "finviz": {
+    "one_week_performance_pct": {
+      "Cocoa": 20.43,
+      "Heating Oil": 11.66,
+      "Coffee": 10.97,
+      "Wheat": 6.75,
+      "Oats": 6.42,
+      "Cotton": 5.73,
+      "Soybean Oil": 5.53,
+      "Crude Oil Brent": 5.39,
+      "Canola": 5.31,
+      "Soybeans": 4.88,
+      "Soybean Meal": 4.88,
+      "Rough Rice": 4.3,
+      "Crude Oil WTI": 3.96,
+      "Corn": 3.9,
+      "Gasoline RBOB": 2.31,
+      "Ethanol": 2.26,
+      "Copper": 1.83,
+      "Lumber": 1.75,
+      "Nasdaq 100": 1.61,
+      "Nikkei 225": 1.32,
+      "S&P 500": 1.22,
+      "NZD": 1.15,
+      "Bitcoin": 0.82,
+      "AUD": 0.49,
+      "GBP": 0.38,
+      "Palladium": 0.3,
+      "Lean Hogs": 0.25,
+      "Sugar": 0.2,
+      "CAD": 0.17,
+      "USD": 0.13,
+      "Platinum": 0.06,
+      "2 Year Note": -0.14,
+      "EUR": -0.18,
+      "Gold": -0.29,
+      "5 Year Note": -0.34,
+      "JPY": -0.46,
+      "10 Year Note": -0.5,
+      "DJIA": -0.52,
+      "Russell 2000": -0.67,
+      "CHF": -0.69,
+      "30 Year Bond": -1.14,
+      "Silver": -1.47,
+      "Feeder Cattle": -1.67,
+      "Live Cattle": -1.68,
+      "Euro Stoxx 50": -2.34,
+      "DAX": -2.88,
+      "VIX": -5.29,
+      "Natural Gas": -8.01,
+      "Orange Juice": -16.72
+    },
+    "source_evidence": "evidence/03_finviz_week_performance.png"
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "file": "evidence/01_cme_fedwatch.png",
+    "sha256": "d28b673b4f9458c8f861b3c57f05d859898dd0d4dd8fdb20fde58156fd76be9d",
+    "size_bytes": 136779
+  },
+  {
+    "file": "evidence/02_trading_economics_calendar.png",
+    "sha256": "e99f07b92983184717261e6546e712f282db4dcbfac44bf6c27a1ab87360d301",
+    "size_bytes": 230895
+  },
+  {
+    "file": "evidence/03_finviz_week_performance.png",
+    "sha256": "b26c269d846f340dac55c8d8e0c587bc6101daee1f0d5dcb3c208ffbd03281dd",
+    "size_bytes": 152091
+  },
+  {
+    "file": "evidence/04_us_treasury_yields.png",
+    "sha256": "eddd5e54311c0adba7a8b33b5686425d9654886d079e433d69df62d845ba8928",
+    "size_bytes": 100955
+  }
+]
