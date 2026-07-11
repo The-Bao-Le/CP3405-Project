@@ -1,6 +1,11 @@
 name: R3 Almanac Agent Multi-Week Automation Pipeline
 
 on:
+push:
+    # Core Change: The pipeline will run automatically every time you push code to the Week-06 branch, 
+    # making testing easier.
+    branches:
+      - Week-06
   workflow_dispatch:
     inputs:
       week_number:
