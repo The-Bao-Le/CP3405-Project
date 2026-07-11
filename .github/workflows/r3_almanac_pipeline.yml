@@ -1,0 +1,51 @@
+name: R3 Almanac Agent Multi-Week Automation Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      week_number:
+        description: 'Enter target sprint week (e.g., W27, W28, W29)'
+        required: true
+        default: 'W27'
+      date_duration:
+        description: 'Enter trading date range (YYYY-MM-DD to YYYY-MM-DD)'
+        required: true
+        default: '2026-07-06 to 2026-07-10'
+
+jobs:
+  execute-r3-matrix:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Checkout repository assets
+      uses: actions/checkout@v3
+
+    - name: 2. Initialize Python 3.10 environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: 3. Install Python dependencies inside sub-folder
+      # ⚠️ CRITICAL: Please replace 'YOUR_SUBFOLDER_NAME' with your actual sub-folder name (e.g., Week6-R3-Agent)
+      working-directory: ./r3_almanac_agent
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: 4. Execute parameterized R3 Almanac Agent
+      # ⚠️ CRITICAL: Please replace 'YOUR_SUBFOLDER_NAME' with your actual sub-folder name (e.g., Week6-R3-Agent)
+      working-directory: ./r3_almanac_agent
+      run: |
+        python r3_almanac_agent.py "${{ github.event.inputs.week_number }}" "${{ github.event.inputs.date_duration }}"
+
+    - name: 5. Auto-commit and push dynamic artifacts to repository
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Stage all changes including those inside the sub-folder's outputs directory
+        git add .
+        
+        # Only commit if changes exist to prevent pipeline failures on empty commits
+        git diff-index --quiet HEAD || git commit -m "chore: auto-publish R3 artifacts for ${{ github.event.inputs.week_number }} [skip ci]"
+        git push
