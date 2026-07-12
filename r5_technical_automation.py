@@ -90,7 +90,9 @@ def calculate_trading_window(market_week_str):
     base_date = datetime.fromisocalendar(current_year, week_num, 1)
 
     start_date_output = (base_date - timedelta(days=365)).strftime("%Y-%m-%d")  # Need lots of data for accurate EMA calculation
-    end_date_output = (base_date + timedelta(days=6)).strftime("%Y-%m-%d")
+    # Use Friday as the final trading day of the market week.
+    # The workflow runs on Sunday after markets have closed.
+    end_date_output = (base_date + timedelta(days=4)).strftime("%Y-%m-%d")
 
     print(f"Market week: {market_week_str}")
     print(f"Data window: {start_date_output} to {end_date_output}")
