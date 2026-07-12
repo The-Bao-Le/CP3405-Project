@@ -1,0 +1,26 @@
+name: Production Deployment
+on:
+  push:
+    branches: [ main ] # Trigger deployment only when the main branch changes
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install & Test
+        run: |
+          npm ci
+          npm test
+
+      - name: Deploy to Server
+        if: success() # Execute only if the preceding tests pass
+        env:
+          SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        run: |
+          echo "Execute the deployment script to push the code to the server..."
