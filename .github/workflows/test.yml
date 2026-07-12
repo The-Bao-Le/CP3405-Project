@@ -1,0 +1,22 @@
+name: Node.js CI               # Workflow Name
+
+on: [push, pull_request]       # Trigger condition: When a push or PR occurs.
+
+jobs:
+  build:                       # Task ID
+    runs-on: ubuntu-latest     # Runtime environment (virtual machine provided by GitHub)
+
+    steps:
+      - name: Check out code        # Step 1: Download the repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js    # Step 2: Set up the environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Installation kit           # Step 3: Execute the command
+        run: npm install
+
+      - name: Execute tests           # Step 4: Execute the command
+        run: npm test
