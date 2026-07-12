@@ -9,16 +9,16 @@ on:
         required: false
         type: string
 
-  # Standard cron scheduler configuration
+  # Runs every Sunday at 18:00 Singapore/Beijing Time (10:00 UTC)
   schedule:
-    - cron: '22 14 * * 0'
+    - cron: '0 10 * * 0'
 
 jobs:
   audit_and_log:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+
     steps:
       - name: Checkout Active Repository Branch
         uses: actions/checkout@v3
@@ -46,9 +46,9 @@ jobs:
             M_WEEK="W${WEEK_NUM}"
             echo "Execution Mode: Automated Cron Resolution."
           fi
-          
+
           echo "MARKET_WEEK=$M_WEEK" >> $GITHUB_ENV
-          
+
           echo "Resolved MARKET_WEEK: $M_WEEK"
 
       - name: Run Dynamic Matrix Market Audit
@@ -59,9 +59,9 @@ jobs:
         run: |
           git config --global user.name "Team2 Data Automation Bot"
           git config --global user.email "bot@team2.financial"
-          
+
           git add technical_agent_*.json technical_agent-*.md chart_SPX_*.png chart_NDX_*.png chart_IWM_*.png
-          
+
           if git diff --staged --quiet; then
             echo "No data changes detected. Terminating smoothly."
           else
