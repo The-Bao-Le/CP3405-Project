@@ -1,6 +1,9 @@
 name: Automated R8 LLM Operator
 
 on:
+  push:
+    branches:
+      - Week-06
   # Triggered on Sunday nights at 23:45 (UTC+8) to ensure R3/R5 files have already been pushed to the repository
   schedule:
     - cron: '45 15 * * 0'
