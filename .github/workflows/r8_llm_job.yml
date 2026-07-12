@@ -4,49 +4,56 @@ on:
   push:
     branches:
       - Week-06
-  # Triggered on Sunday nights at 23:45 (UTC+8) to ensure R3/R5 files have already been pushed to the repository
+  # Configured for execution every Saturday morning at 09:45 Singapore/Beijing Time (01:45 UTC)
   schedule:
-    - cron: '45 15 * * 0'
+    - cron: '45 1 * * 6'
   workflow_dispatch:
 
 jobs:
   multi_model_audit:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # Grants commit push capabilities back into the repository
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Active Repository Branch
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Setup Python
+      - name: Initialize Python Core Environment
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Install SDKs
-        run: pip install openai anthropic google-generativeai requests argparse
+      - name: Deploy Script Dependencies
+        run: |
+          pip install openai requests argparse
 
-      - name: Resolve Target Week
+      - name: Resolve Target Market Week Variable
         run: |
           WEEK_NUM=$(date +%V)
           echo "MARKET_WEEK=W${WEEK_NUM}" >> $GITHUB_ENV
+          echo "Target Execution Window resolved: W${WEEK_NUM}"
 
-      - name: Query All 4 LLMs & Build Comparison Matrix
+      - name: Query All 4 LLMs via GitHub Free Models Cloud Layer
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          # Injects the built-in repository token automatically without creating manual secrets
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python r8_llm_operator.py --market-week ${{ env.MARKET_WEEK }}
 
-      - name: Commit Matrix and Raw Responses
+      - name: Secure Consensus Ledger & Route Commit to Active Branch
         run: |
           git config --global user.name "Team2 R8 LLM Operator"
           git config --global user.email "r8-operator@team2.financial"
+          
+          # Stage the newly created JSON response archive and Markdown matrix board
           git add r8_raw_responses_*.json r8_comparison_matrix_*.md
-          git commit -m "docs(r8): multi-model comparison ledger updated [skip ci]"
-          git push origin ${{ github.ref_name }}
+          
+          if git diff --staged --quiet; then
+            echo "No strategy drift detected. Operational termination smooth."
+          else
+            git commit -m "docs(r8): multi-model comparison ledger updated via cloud free-tier [skip ci]"
+            git push origin ${{ github.ref_name }}
+          fi
