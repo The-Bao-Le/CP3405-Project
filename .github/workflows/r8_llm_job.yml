@@ -1,0 +1,49 @@
+name: Automated R8 LLM Operator
+
+on:
+  # Triggered on Sunday nights at 23:45 (UTC+8) to ensure R3/R5 files have already been pushed to the repository
+  schedule:
+    - cron: '45 15 * * 0'
+  workflow_dispatch:
+
+jobs:
+  multi_model_audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install SDKs
+        run: pip install openai anthropic google-generativeai requests argparse
+
+      - name: Resolve Target Week
+        run: |
+          WEEK_NUM=$(date +%V)
+          echo "MARKET_WEEK=W${WEEK_NUM}" >> $GITHUB_ENV
+
+      - name: Query All 4 LLMs & Build Comparison Matrix
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          python r8_llm_operator.py --market-week ${{ env.MARKET_WEEK }}
+
+      - name: Commit Matrix and Raw Responses
+        run: |
+          git config --global user.name "Team2 R8 LLM Operator"
+          git config --global user.email "r8-operator@team2.financial"
+          git add r8_raw_responses_*.json r8_comparison_matrix_*.md
+          git commit -m "docs(r8): multi-model comparison ledger updated [skip ci]"
+          git push origin ${{ github.ref_name }}
