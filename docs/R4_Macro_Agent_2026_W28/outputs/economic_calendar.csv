@@ -1,0 +1,16 @@
+﻿date,time,event,period,actual,previous,consensus,forecast
+2026-07-06,22:00,ISM Services PMI,JUN,54.0,54.5,54,54
+2026-07-06,23:00,Fed Waller Speech,,,,,
+2026-07-07,20:15,ADP Employment Change Weekly,,21.0K,24.25K,,
+2026-07-07,20:30,Balance of Trade,MAY,$-77.6B,$-54.6B,$-78.5B,$-80.0B
+2026-07-07,20:30,Exports,MAY,$317.7B,$328.2B,,$314.0B
+2026-07-07,20:30,Imports,MAY,$395.3B,$382.8B,,$394.0B
+2026-07-08,05:00,API Crude Oil Stock Change,JUL/03,-0.399M,-6.072M,-1.5M,
+2026-07-08,19:00,MBA 30-Year Mortgage Rate,JUL/03,6.58%,6.57%,,
+2026-07-08,22:30,EIA Crude Oil Stocks Change,JUL/03,2.998M,-3.775M,-2.4M,
+2026-07-08,22:30,EIA Gasoline Stocks Change,JUL/03,-1.904M,-2.333M,-1.6M,
+2026-07-09,02:00,FOMC Minutes,,,,,
+2026-07-09,20:30,Initial Jobless Claims,JUL/04,215K,217K,218K,220.0K
+2026-07-09,21:00,Fed Williams Speech,,,,,
+2026-07-09,22:00,Existing Home Sales,JUN,4.09M,4.19M,4.20M,4.2M
+2026-07-09,22:00,Existing Home Sales MoM,JUN,-2.4%,3.7%,,0.7%

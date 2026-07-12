@@ -1,6 +1,9 @@
 name: Automated Cross-Asset Market Audit Pipeline
 
 on:
+  # push:
+  #   branches:
+  #     - Week-06
   # Activates the single-variable override panel on GitHub Web UI
   workflow_dispatch:
     inputs:
@@ -32,7 +35,8 @@ jobs:
 
       - name: Deploy Script Dependencies
         run: |
-          pip install yfinance argparse
+          python -m pip install --upgrade pip
+          python -m pip install yfinance
 
       - name: Resolve Decoupled Execution Week Variables
         id: resolve_weeks

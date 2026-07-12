@@ -1,0 +1,60 @@
+{
+  "fedwatch": {
+    "hold_probability_pct": 65.8,
+    "hike_probability_pct": 34.2,
+    "ease_probability_pct": 0.0,
+    "hold_change_vs_one_week_pp": -16.0,
+    "hike_change_vs_one_week_pp": 16.0,
+    "interpretation": "Hold is still the base case, but pricing became more hawkish because the hike probability increased by 16.0 percentage points."
+  },
+  "treasury": {
+    "latest_date": "2026-07-10",
+    "latest_2y": 4.21,
+    "latest_10y": 4.56,
+    "latest_30y": 5.06,
+    "2y_bps": 4,
+    "10y_bps": 8,
+    "30y_bps": 9,
+    "10s2s_start_bps": 31,
+    "10s2s_latest_bps": 35,
+    "10s2s_change_bps": 4
+  },
+  "risk_assets": {
+    "sp500_pct": 1.22,
+    "nasdaq100_pct": 1.61,
+    "vix_pct": -5.29,
+    "wti_pct": 3.96,
+    "brent_pct": 5.39,
+    "usd_proxy_pct": 0.13
+  },
+  "key_catalyst": {
+    "event": "FOMC Minutes",
+    "classification": "Binary Risk",
+    "confidence": "High",
+    "reason": "The minutes can confirm or challenge the hawkish repricing visible in FedWatch probabilities and Treasury yields."
+  },
+  "macro_bias": "Neutral to Moderately Bullish",
+  "confidence": "Medium",
+  "bullish_factors": [
+    "S&P 500 and Nasdaq 100 rose over the week.",
+    "VIX fell, indicating lower market fear.",
+    "A rate hold remains the most likely Fed outcome."
+  ],
+  "bearish_factors": [
+    "The probability of a hike is material at 34.2%.",
+    "The 10-year Treasury yield rose during the period.",
+    "Oil prices rose, adding inflation pressure."
+  ],
+  "sector_outlook": {
+    "XLK Technology": "Neutral to Bullish",
+    "XLF Financials": "Neutral to Bullish",
+    "XLE Energy": "Bullish",
+    "XLU Utilities": "Neutral to Bearish",
+    "XLB Materials": "Neutral to Bullish"
+  },
+  "data_limitations": [
+    "A DXY value is not visible in the supplied evidence, so it is not reported.",
+    "AP News and Earnings Whispers are not used in this verified snapshot.",
+    "The report distinguishes facts, market expectations and agent opinion."
+  ]
+}

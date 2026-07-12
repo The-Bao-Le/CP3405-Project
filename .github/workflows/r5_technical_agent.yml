@@ -1,6 +1,9 @@
 name: Automated Technical Agent
 
 on:
+  # push:
+  #   branches:
+  #     - Week-06
   # Activates the single-variable override panel on GitHub Web UI
   workflow_dispatch:
     inputs:

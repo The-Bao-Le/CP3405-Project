@@ -1,0 +1,6 @@
+{
+    "ChatGPT": "[gpt-4o Error]: Error code: 401 - {'error': {'code': 'unauthorized', 'message': 'The `models` permission is required to access this endpoint', 'details': 'The `models` permission is required to access this endpoint'}}",
+    "Claude": "[ai21-jamba-1-5-large Error]: Error code: 401 - {'error': {'code': 'unauthorized', 'message': 'The `models` permission is required to access this endpoint', 'details': 'The `models` permission is required to access this endpoint'}}",
+    "Gemini": "[meta-llama-3.1-405b-instruct Error]: Error code: 401 - {'error': {'code': 'unauthorized', 'message': 'The `models` permission is required to access this endpoint', 'details': 'The `models` permission is required to access this endpoint'}}",
+    "DeepSeek": "[cohere-command-r-plus Error]: Error code: 401 - {'error': {'code': 'unauthorized', 'message': 'The `models` permission is required to access this endpoint', 'details': 'The `models` permission is required to access this endpoint'}}"
+}
