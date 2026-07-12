@@ -12,16 +12,16 @@ The repository is used to organise project work, track progress, store evidence,
 
 | Role    | Member(s)                                |
 | ------- | ---------------------------------------- |
-| Role 1  | The Bao Le                                  |
-| Role 2  | Yue Zhou                                   |
-| Role 3  | Wenhan Hu, Hao Wang                      |
-| Role 4  | Guanyu Lu                      |
-| Role 5  | Hamzah Nutt (Opal)                                    |
-| Role 6  | Qinyang Wu, Zaikun Zheng                  |
+| Role 1  | Junwen Lu                                  |
+| Role 2  | The Bao Le                                   |
+| Role 3  | Zaikun Zheng                      |
+| Role 4  | Wenhan Hu, Hao Wang                      |
+| Role 5  | Qinyang Wu                                    |
+| Role 6  | Guanyu Lu                   |
 | Role 7  | Viral Stock                            |
-| Role 8  | Junwen Lu                               |
+| Role 8  | Yijie Kan                               |
 | Role 9  | Yu-Chu Lin |
-| Role 10 | Yijie Kan (GitHub Repository Management)                       |
+| Role 10 | Hamzah Nutt (Opal)                       |
 
 ---
 
