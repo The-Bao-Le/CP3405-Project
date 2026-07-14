@@ -346,17 +346,60 @@ def main() -> None:
     # 2. Output Data Evidence CSV
     csv_path = output_dir / f"almanac_agent_{WEEK}.csv"
     m_lower = TARGET_MONTH.lower()
-    val_key = f"normal_{m_lower}_average_return"
+    m_cap = TARGET_MONTH.capitalize()
     
     with csv_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["category", "ticker", "name", "signal", "window_or_rank", "return_or_evidence"])
+        
+        # a. Expanded Header Contract to align perfectly with legacy rich schema
+        writer.writerow(["category", "ticker", "name", "signal", "window_or_rank", "return_or_evidence", "source_page", "extraction_method"])
+        
+        # b. Dynamic Monthly Vital Statistics Injection (Composite Normal + Midterm returns)
         for ticker, item in report["monthly_vital_statistics"].items():
-            return_val = item.get(val_key, item.get(f"normal_june_average_return", "+0.0%"))
-            writer.writerow(["index_stat", ticker, item["index"], "", "Rank", return_val])
+            rank_val = item.get(f"{m_lower}_rank", "N/A")
+            norm_ret = item.get(f"normal_{m_lower}_average_return", "N/A")
+            mid_ret = item.get(f"midterm_{m_lower}_average_return", "N/A")
+            
+            # Fusing data into a high-density string just like the legacy output
+            composite_evidence = f"Normal {m_cap} {norm_ret}; Midterm {m_cap} {mid_ret}"
+            
+            writer.writerow([
+                "index_stat", 
+                ticker, 
+                item["index"], 
+                "", 
+                f"{m_cap} rank {rank_val}", 
+                composite_evidence, 
+                item["source_page"], 
+                item["extraction_method"]
+            ])
+            
+        # c. Dynamic Sector Seasonality Signal Routing
         for ticker, item in report["sector_signals"].items():
-            writer.writerow(["sector_signal", ticker, item["project_sector"], item["signal"], item["seasonal_window"], item["average_return_25_year"]])
+            writer.writerow([
+                "sector_signal", 
+                ticker, 
+                item["project_sector"], 
+                item["signal"], 
+                item["seasonal_window"], 
+                item["average_return_25_year"], 
+                item["source_page"], 
+                item["extraction_method"]
+            ])
 
+        # d. Appending Week-Specific Calendar Pattern row to provide granular rolling context
+        wp = report["week_specific_pattern"]
+        writer.writerow([
+            "week_pattern", 
+            WEEK, 
+            wp["name"], 
+            "", 
+            "Calendar Matrix", 
+            wp["evidence"], 
+            wp["source_page"], 
+            wp["extraction_method"]
+        ])
+        
     # 3. Output Beautiful Fused Markdown Report
     md_path = output_dir / f"almanac_agent_{WEEK}.md"
     write_beautiful_markdown(md_path, report)
