@@ -1,9 +1,9 @@
 # 📊 R8 Multi-Model Consensus Strategy Dashboard (W29)
-Generated at: 2026-07-14 04:27:41
+Generated at: 2026-07-14 07:02:28
 
 ## 🔍 Prediction Uncertainty Assessment Matrix (Free Open-Source Model Alignment)
 
-| Evaluation Dimension | Llama 3.1 (70B) | Mistral (7B) | Gemma 2 (9B) | Qwen 2.5 (72B) |
+| Evaluation Dimension | ChatGPT (4o-mini) | Claude (Alternative) | Gemini (2.5-flash) | DeepSeek (R1) |
 | :--- | :--- | :--- | :--- | :--- |
 | **Final Bias** | ⚠️ Error | ⚠️ Error | ⚠️ Error | ⚠️ Error |
 | **Response Status** | ❌ Key Missing | ❌ Key Missing | ❌ Key Missing | ❌ Key Missing |
@@ -12,24 +12,24 @@ Generated at: 2026-07-14 04:27:41
 
 ## 📝 Raw Model Syntheses
 
-### 🔵 Llama 3.1 70B Analysis
+### 🟢 ChatGPT 4o Mini Analysis
 ```text
-认证错误：缺少 meta-llama/llama-3.1-70b-instruct:free 的 API 密钥。...
+Authentication Error: API key is missing for openai/gpt-4o-mini:free....
 ```
 
-### ⚪ Mistral 7B Analysis
+### 🔵 Claude / Llama Alternative Analysis
 ```text
-认证错误：缺少 mistralai/mistral-7b-instruct:free 的 API 密钥。...
+Authentication Error: API key is missing for meta-llama/llama-3.1-70b-instruct:free....
 ```
 
-### 🔴 Gemma 2 9B Analysis
+### 🔴 Gemini 2.5 Flash Analysis
 ```text
-认证错误：缺少 google/gemma-2-9b-it:free 的 API 密钥。...
+Authentication Error: API key is missing for google/gemini-2.5-flash:free....
 ```
 
-### 🟢 Qwen 2.5 72B Analysis
+### 🟡 DeepSeek R1 Analysis
 ```text
-认证错误：缺少 qwen/qwen-2.5-72b-instruct:free 的 API 密钥。...
+Authentication Error: API key is missing for deepseek/deepseek-r1:free....
 ```
 
 ----------------------------------------
