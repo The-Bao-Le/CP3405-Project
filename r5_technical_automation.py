@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
-import yfinance as yf
 import argparse
 import json
+import pandas as pd
 import mplfinance as mpf
 
 NUMBER_OF_CHART_DAYS = 15  # Number of trading days to include on the generated charts
@@ -9,10 +9,6 @@ NUMBER_OF_CHART_DAYS = 15  # Number of trading days to include on the generated 
 def calculate_ema(dataframe, column, period):
     """
     Function to calculate Exponential Moving Averages
-    :param dataframe: input dataframe
-    :param column: column to calculate EMA for
-    :param period: period to calculate EMA for
-    :return: modified dataframe
     """
     dataframe[f"EMA_{period}"] = dataframe[column].ewm(span=period, adjust=False).mean()
     return dataframe
@@ -20,12 +16,6 @@ def calculate_ema(dataframe, column, period):
 def calculate_support_resistance(dataframe, lookback=60, pivot_window=3):
     """
     Calculate simple support and resistance levels using recent pivot highs/lows.
-
-    Support = nearest recent pivot low below the current close.
-    Resistance = nearest recent pivot high above the current close.
-
-    If no valid resistance exists above the current close, resistance is returned as None.
-    This avoids the mistake of showing a resistance level below the current price.
     """
     recent = dataframe.tail(lookback).copy()
 
@@ -82,54 +72,66 @@ def normalize_week(week_str):
         week_str = "W" + week_str
     return week_str
 
-def calculate_trading_window(market_week_str):
-    market_week_str = normalize_week(market_week_str)
-    current_year = datetime.now().year
-    week_num = int(market_week_str.replace("W", ""))
+def load_r6_market_data(file_path="r6_market_data.json"):
+    """
+    Loads historical market data provided by R6 pipeline output.
+    """
+    try:
+        with open(file_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+        return data
+    except Exception as e:
+        print(f"ERROR: Failed to load R6 data from {file_path}. Details: {e}")
+        return {}
 
-    base_date = datetime.fromisocalendar(current_year, week_num, 1)
-
-    start_date_output = (base_date - timedelta(days=365)).strftime("%Y-%m-%d")  # Need lots of data for accurate EMA calculation
-    # Use Friday as the final trading day of the market week.
-    # The workflow runs on Sunday after markets have closed.
-    end_date_output = (base_date + timedelta(days=4)).strftime("%Y-%m-%d")
-
-    print(f"Market week: {market_week_str}")
-    print(f"Data window: {start_date_output} to {end_date_output}")
-
-    return start_date_output, end_date_output
-
-def run_technical_agent_pipeline(market_week_str, start_date_input, end_date_input):
+def run_technical_agent_pipeline(market_week_str):
+    """
+    Runs the agent pipeline parsing data from R6 local repository input.
+    """
     market_week_str = normalize_week(market_week_str)
     snapshot_filename = f"technical_agent_{market_week_str}.json"
     generation_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+    # Complete list of required market indices and sector ETFs specified for Sprint 7
     tickers = {
-        "SPX": "^GSPC",
-        "NDX": "^NDX",
-        "IWM": "IWM"
+        "SPX": "SPX",
+        "NDX": "NDX",
+        "IWM": "IWM",
+        "XLK": "XLK",
+        "XLF": "XLF",
+        "XLV": "XLV",
+        "XLY": "XLY",
+        "XLE": "XLE",
+        "XLC": "XLC"
     }
+
+    r6_data = load_r6_market_data("r6_market_data.json")
 
     snapshot_data = {
         "meta": {
             "market_week": market_week_str,
             "generation_time": generation_time,
-            "data_window": f"{start_date_input} to {end_date_input}",
+            "data_source": "R6 Output Pipeline",
         },
         "metrics": {},
     }
 
     for label, symbol in tickers.items():
-        print(f"Fetching {label} ({symbol})...")
+        print(f"Processing {label} from R6 data...")
 
-        ticker = yf.Ticker(symbol)
-        df = ticker.history(start=start_date_input, end=end_date_input)
-
-        if df.empty:
-            print(f"WARNING: No data for {label} ({symbol}). Skipped.")
+        if label not in r6_data or not r6_data[label]:
+            print(f"WARNING: No R6 data found for {label}. Skipped.")
             continue
 
-        # Add required values to snapshot
+        df = pd.DataFrame(r6_data[label])
+        df["Date"] = pd.to_datetime(df["Date"])
+        df.set_index("Date", inplace=True)
+        df = df.sort_index()
+
+        if df.empty:
+            print(f"WARNING: DataFrame empty for {label}. Skipped.")
+            continue
+
         df = calculate_ema(df, "Close", 8)
         df = calculate_ema(df, "Close", 21)
         final_close = df["Close"].iloc[-1]
@@ -151,11 +153,11 @@ def run_technical_agent_pipeline(market_week_str, start_date_input, end_date_inp
             "confidence": confidence
         }
 
-        # Create chart
+        # Chart configuration setup
         chart_dataframe = df.tail(NUMBER_OF_CHART_DAYS)
         chart_filename = f"chart_{label}_{market_week_str}.png"
         chart_style = mpf.make_mpf_style(base_mpf_style="yahoo", rc={"axes.edgecolor" : "black"})
-        chart_title = f"{label} - {market_week_str}\nGenerated on {generation_time}"
+        chart_title = f"{label} - {market_week_str}\nGenerated via R6 Data on {generation_time}"
         additional_plots = [
             mpf.make_addplot(chart_dataframe["EMA_8"], type="line", color="#ec915c", width=2, label="EMA 8"),
             mpf.make_addplot(chart_dataframe["EMA_21"], type="line", color="#4687d3", width=2, label="EMA 21")
@@ -187,12 +189,10 @@ def format_support(value):
         return "No clear support level found"
     return value
 
-
 def format_resistance(value):
     if value in ["N/A", None]:
         return "No clear nearby resistance"
     return value
-
 
 def build_overall_verdict(metrics, market_week_str):
     spx_trend = get_metric(metrics, "SPX", "trend")
@@ -212,6 +212,9 @@ def build_overall_verdict(metrics, market_week_str):
     )
 
 def generate_report_from_snapshot(snapshot_path_input, market_week_str):
+    """
+    Generates markdown documentation report dynamically rendering all assets processed.
+    """
     output_file = f"technical_agent-{market_week_str}.md"
 
     with open(snapshot_path_input, "r", encoding="utf-8") as file:
@@ -220,53 +223,33 @@ def generate_report_from_snapshot(snapshot_path_input, market_week_str):
     metrics = snapshot["metrics"]
     meta = snapshot["meta"]
 
-    report = f"""# R5 Technical Agent Report: {meta["market_week"]}
-
-## S&P 500 (SPX)
-**Current Trend:** {get_metric(metrics, "SPX", "trend")}
-* **Close Price:** {get_metric(metrics, "SPX", "close_price")}
-* **8-Day EMA:** {get_metric(metrics, "SPX", "ema_8")}
-* **21-Day EMA:** {get_metric(metrics, "SPX", "ema_21")}
-* **Support Level:** {format_support(get_metric(metrics, "SPX", "support"))}
-* **Resistance Level:** {format_resistance(get_metric(metrics, "SPX", "resistance"))}
-* **Technical Bias:** {get_metric(metrics, "SPX", "bias")}
-* **Confidence:** {get_metric(metrics, "SPX", "confidence")}
-
-## NASDAQ 100 (NDX)
-**Current Trend:** {get_metric(metrics, "NDX", "trend")}
-* **Close Price:** {get_metric(metrics, "NDX", "close_price")}
-* **8-Day EMA:** {get_metric(metrics, "NDX", "ema_8")}
-* **21-Day EMA:** {get_metric(metrics, "NDX", "ema_21")}
-* **Support Level:** {format_support(get_metric(metrics, "NDX", "support"))}
-* **Resistance Level:** {format_resistance(get_metric(metrics, "NDX", "resistance"))}
-* **Technical Bias:** {get_metric(metrics, "NDX", "bias")}
-* **Confidence:** {get_metric(metrics, "NDX", "confidence")}
-
-## Russell 2000 ETF (IWM)
-**Current Trend:** {get_metric(metrics, "IWM", "trend")}
-* **Close Price:** {get_metric(metrics, "IWM", "close_price")}
-* **8-Day EMA:** {get_metric(metrics, "IWM", "ema_8")}
-* **21-Day EMA:** {get_metric(metrics, "IWM", "ema_21")}
-* **Support Level:** {format_support(get_metric(metrics, "IWM", "support"))}
-* **Resistance Level:** {format_resistance(get_metric(metrics, "IWM", "resistance"))}
-* **Technical Bias:** {get_metric(metrics, "IWM", "bias")}
-* **Confidence:** {get_metric(metrics, "IWM", "confidence")}
-
-## Overall Technical Verdict
-
-{build_overall_verdict(metrics, market_week_str)}
+    report_sections = [f"# R5 Technical Agent Report: {meta['market_week']}\n"]
+    
+    for label in metrics.keys():
+        section = f"""## {label} ({get_metric(metrics, label, 'ticker')})
+**Current Trend:** {get_metric(metrics, label, 'trend')}
+* **Close Price:** {get_metric(metrics, label, 'close_price')}
+* **8-Day EMA:** {get_metric(metrics, label, 'ema_8')}
+* **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}
+* **Support Level:** {format_support(get_metric(metrics, label, 'support'))}
+* **Resistance Level:** {format_resistance(get_metric(metrics, label, 'resistance'))}
+* **Technical Bias:** {get_metric(metrics, label, 'bias')}
+* **Confidence:** {get_metric(metrics, label, 'confidence')}
 """
+        report_sections.append(section)
+        
+    verdict_section = f"\n## Overall Technical Verdict\n\n{build_overall_verdict(metrics, market_week_str)}\n"
+    report_sections.append(verdict_section)
 
     with open(output_file, "w", encoding="utf-8") as file:
-        file.write(report)
+        file.write("\n".join(report_sections))
 
     print(f"Generated: {output_file}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="R5 Technical Agent Automation Pipeline")
+    parser = argparse.ArgumentParser(description="R5 Technical Agent Automation Pipeline (R6 Data Source)")
     parser.add_argument("--market-week", required=True, help="Market week, e.g. W24")
     args = parser.parse_args()
 
-    start_date, end_date = calculate_trading_window(args.market_week)
-    snapshot_path = run_technical_agent_pipeline(args.market_week, start_date, end_date)
+    snapshot_path = run_technical_agent_pipeline(args.market_week)
     generate_report_from_snapshot(snapshot_path, args.market_week)
