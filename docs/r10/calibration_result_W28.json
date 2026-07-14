@@ -1,0 +1,64 @@
+{
+    "week": "W28",
+    "prediction_file": "prediction_2026-W28_team2.md",
+    "actual_file": "actual_2026-W28.md",
+    "scoring_rule": "W22 confidence-weighted directional scoring",
+    "generated_at": "2026-07-14 11:28:55",
+    "targets_requested": [
+        "SPX",
+        "NDX",
+        "IWM",
+        "XLK",
+        "XLC",
+        "XLY",
+        "XLP",
+        "XLE",
+        "XLF",
+        "XLV",
+        "XLI",
+        "XLB",
+        "XLRE",
+        "XLU"
+    ],
+    "full_target_universe": [
+        "SPX",
+        "NDX",
+        "IWM",
+        "XLK",
+        "XLC",
+        "XLY",
+        "XLP",
+        "XLE",
+        "XLF",
+        "XLV",
+        "XLI",
+        "XLB",
+        "XLRE",
+        "XLU"
+    ],
+    "items_scored": [],
+    "missing_predictions": [
+        "SPX",
+        "NDX",
+        "IWM"
+    ],
+    "missing_actuals": [
+        "XLK",
+        "XLC",
+        "XLY",
+        "XLP",
+        "XLE",
+        "XLF",
+        "XLV",
+        "XLI",
+        "XLB",
+        "XLRE",
+        "XLU"
+    ],
+    "summary": {
+        "hits": 0,
+        "misses": 0,
+        "total_items": 0,
+        "working_calibration_score": 0
+    }
+}
