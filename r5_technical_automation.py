@@ -156,7 +156,7 @@ def run_technical_agent_pipeline(market_week_str):
         # Chart configuration setup
         chart_dataframe = df.tail(NUMBER_OF_CHART_DAYS)
         chart_filename = f"chart_{label}_{market_week_str}.png"
-        chart_style = mpf.make_mpf_style(base_mpf_style="yahoo", rc={"axes.edgecolor" : "black"})
+        chart_style = mpf.make_mpf_style(base_mpf_style="yahoo", rc={"axes.edgecolor": "black"})
         chart_title = f"{label} - {market_week_str}\nGenerated via R6 Data on {generation_time}"
         additional_plots = [
             mpf.make_addplot(chart_dataframe["EMA_8"], type="line", color="#ec915c", width=2, label="EMA 8"),
@@ -231,25 +231,3 @@ def generate_report_from_snapshot(snapshot_path_input, market_week_str):
 * **Close Price:** {get_metric(metrics, label, 'close_price')}
 * **8-Day EMA:** {get_metric(metrics, label, 'ema_8')}
 * **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}
-* **Support Level:** {format_support(get_metric(metrics, label, 'support'))}
-* **Resistance Level:** {format_resistance(get_metric(metrics, label, 'resistance'))}
-* **Technical Bias:** {get_metric(metrics, label, 'bias')}
-* **Confidence:** {get_metric(metrics, label, 'confidence')}
-"""
-        report_sections.append(section)
-        
-    verdict_section = f"\n## Overall Technical Verdict\n\n{build_overall_verdict(metrics, market_week_str)}\n"
-    report_sections.append(verdict_section)
-
-    with open(output_file, "w", encoding="utf-8") as file:
-        file.write("\n".join(report_sections))
-
-    print(f"Generated: {output_file}")
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="R5 Technical Agent Automation Pipeline (R6 Data Source)")
-    parser.add_argument("--market-week", required=True, help="Market week, e.g. W24")
-    args = parser.parse_args()
-
-    snapshot_path = run_technical_agent_pipeline(args.market_week)
-    generate_report_from_snapshot(snapshot_path, args.market_week)
