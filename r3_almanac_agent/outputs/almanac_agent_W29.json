@@ -2,7 +2,7 @@
   "agent": "R3 Almanac Agent",
   "week": "W29",
   "date_range": "2026-07-13 to 2026-07-17",
-  "generated_at": "2026-07-14T04:29:16",
+  "generated_at": "2026-07-14T04:56:09",
   "source_file": "Stock Trader's Almanac 2026_L.pdf",
   "automation_level": "Fully optimized parameterized pipeline output via Cloud Workflow infrastructure.",
   "cycle_context": {
@@ -13,25 +13,25 @@
   "monthly_vital_statistics": {
     "SPX": {
       "index": "S&P 500",
-      "june_rank": 4,
-      "normal_june_average_return": "+1.3%",
-      "midterm_june_average_return": "+1.3%",
+      "july_rank": 4,
+      "normal_july_average_return": "+1.3%",
+      "midterm_july_average_return": "+1.3%",
       "source_page": 92,
       "extraction_method": "parsed_from_july_vital_statistics_table"
     },
     "NDX": {
       "index": "NASDAQ",
-      "june_rank": 7,
-      "normal_june_average_return": "+0.9%",
-      "midterm_june_average_return": "-0.8%",
+      "july_rank": 7,
+      "normal_july_average_return": "+0.9%",
+      "midterm_july_average_return": "-0.8%",
       "source_page": 92,
       "extraction_method": "parsed_from_july_vital_statistics_table"
     },
     "IWM": {
       "index": "Russell 2000",
-      "june_rank": 9,
-      "normal_june_average_return": "+0.4%",
-      "midterm_june_average_return": "-2.5%",
+      "july_rank": 9,
+      "normal_july_average_return": "+0.4%",
+      "midterm_july_average_return": "-2.5%",
       "source_page": 92,
       "extraction_method": "parsed_from_july_vital_statistics_table"
     }
