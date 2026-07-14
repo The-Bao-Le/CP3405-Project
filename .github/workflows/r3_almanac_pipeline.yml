@@ -4,10 +4,13 @@ on:
   # push:
   #   branches:
   #     - Week-07
+  # 1. Added Schedule Trigger to automatically run every Saturday at 00:00 UTC
+  schedule:
+    - cron: '0 0 * * 6'
   workflow_dispatch:
     inputs:
       custom_market_week:
-        description: 'Target MARKET week to capture (Leave BLANK for automated current week, e.g., W27)'
+        description: 'Target MARKET week to predict (Leave BLANK for automated next week forecast, e.g., W30)'
         required: false
         type: string
 
@@ -15,7 +18,6 @@ jobs:
   execute-r3-matrix:
     runs-on: ubuntu-latest
     
-    # Standard security elevation configuration to allow auto-commit
     permissions:
       contents: write
 
@@ -40,38 +42,37 @@ jobs:
     - name: Resolve Decoupled Execution Week Variables
       id: resolve_weeks
       run: |
-        # 1. Resolve the Target Market Week (e.g., W28, W29)
+        # 2. Shift calculation to forecast NEXT WEEK (T+1) instead of current week
         if [ -n "${{ github.event.inputs.custom_market_week }}" ]; then
           M_WEEK=$(echo "${{ github.event.inputs.custom_market_week }}" | tr '[:lower:]' '[:upper:]')
           echo "Execution Mode: Manual Override."
+          
+          # Extract number from manual input to compute dates
+          WEEK_VAL=$(echo "$M_WEEK" | sed 's/[^0-9]*//g')
+          CURRENT_YEAR=$(date +%Y)
+          MON_DATE=$(date -d "$CURRENT_YEAR-01-01 +$((WEEK_VAL - 1)) weeks -$(date -d "$CURRENT_YEAR-01-01" +%u) days + 1 day" +%Y-%m-%d)
         else
-          WEEK_NUM=$(date +%V)
+          # Automatically calculate next week numbers and rolling dates (+7 days forward shift)
+          WEEK_NUM=$(date -d "+7 days" +%V)
           M_WEEK="W${WEEK_NUM}"
-          echo "Execution Mode: Automated Calendar Resolution."
+          echo "Execution Mode: Automated Next-Week Forecast Resolution."
+          
+          MON_DATE=$(date -d "next monday" +%Y-%m-%d)
         fi
         
-        # 2. Programmatically Calculate Monday and Friday Dates for the Target Week
-        CURRENT_YEAR=$(date +%Y)
-        # Extract only the numeric part of the week string (e.g., "W29" -> "29")
-        WEEK_VAL=$(echo "$M_WEEK" | sed 's/[^0-9]*//g')
-        
-        # Compute the calendar dates for Monday and Friday of that specific week (Ubuntu Compatible)
-        MON_DATE=$(date -d "$CURRENT_YEAR-01-01 +$((WEEK_VAL - 1)) weeks -$(date -d "$CURRENT_YEAR-01-01" +%u) days + 1 day" +%Y-%m-%d)
         FRI_DATE=$(date -d "$MON_DATE + 4 days" +%Y-%m-%d)
-        
         DYNAMIC_DATE_RANGE="${MON_DATE} to ${FRI_DATE}"
         
         # 3. Export resolved values to Github Environment
         echo "RESOLVED_WEEK=$M_WEEK" >> $GITHUB_ENV
         echo "RESOLVED_DATE=$DYNAMIC_DATE_RANGE" >> $GITHUB_ENV
         
-        echo "Resolved Dynamic WEEK: $M_WEEK"
-        echo "Resolved Dynamic DATE RANGE: $DYNAMIC_DATE_RANGE"
+        echo "Resolved Forecast WEEK: $M_WEEK"
+        echo "Resolved Forecast DATE RANGE: $DYNAMIC_DATE_RANGE"
 
     - name: Execute Parameterized R3 Almanac Agent
       working-directory: ./r3_almanac_agent
       run: |
-        # Inject dynamic runtime variables straight into the refactored Python script
         python r3_almanac_agent.py "${{ env.RESOLVED_WEEK }}" "${{ env.RESOLVED_DATE }}"
 
     - name: Secure Ledger Artifacts & Route Commit to Active Branch
@@ -79,15 +80,12 @@ jobs:
         git config --global user.name "Team2 Data Automation Bot"
         git config --global user.email "bot@team2.financial"
         
-        # Securely capture all generated multi-week artifacts in the outputs folder
         git add r3_almanac_agent/outputs/almanac_agent_${{ env.RESOLVED_WEEK }}.*
         
         if git diff --staged --quiet; then
           echo "No strategic data shifts detected. Terminating smoothly."
         else
-          git commit -m "chore(data): automated R3 almanac matrix alignment for ${{ env.RESOLVED_WEEK }} [skip ci]"
-          
-          # Injecting the secret token to safely bypass any 403 access constraints
+          git commit -m "chore(data): automated R3 almanac forecast alignment for ${{ env.RESOLVED_WEEK }} [skip ci]"
           git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           git push origin HEAD:${{ github.ref_name }}
         fi
