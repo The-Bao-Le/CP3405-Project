@@ -16,14 +16,22 @@ from pathlib import Path
 from typing import Any
 
 # ========================================================
-# 1. Dynamic Parameter Initialization (Un-boxing constraints)
+# 1. Dynamic Parameter Initialization with Next-Week Rolling Forecast
 # ========================================================
-DEFAULT_WEEK = "W27"
-DEFAULT_DATE_RANGE = "2026-07-06 to 2026-07-10"
+# Compute the target benchmark date: EXACTLY 7 DAYS FORWARD from today to predict the UPCOMING trading week
+forecast_target_day = datetime.date.today() + datetime.timedelta(days=7)
 
-# Read CLI arguments passed by GitHub Actions pipeline
-WEEK = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_WEEK
-DATE_RANGE = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_DATE_RANGE
+# Dynamically resolve upcoming ISO week number (e.g., W30)
+automated_next_week = f"W{forecast_target_day.strftime('%V')}"
+
+# Dynamically calculate upcoming week's Monday and Friday dates
+next_week_monday = forecast_target_day - datetime.timedelta(days=forecast_target_day.weekday())
+next_week_friday = next_week_monday + datetime.timedelta(days=4)
+automated_date_range = f"{next_week_monday.strftime('%Y-%m-%d')} to {next_week_friday.strftime('%Y-%m-%d')}"
+
+# Priority: 1. CLI Override parameters (Manual triggers) > 2. Automated Next-Week Rolling Forecast
+WEEK = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1].strip() else automated_next_week
+DATE_RANGE = sys.argv[2] if len(sys.argv) > 2 and sys.argv[2].strip() else automated_date_range
 AGENT = "R3 Almanac Agent"
 
 # Dynamic Month Detection logic to prevent crashing on month transitions
