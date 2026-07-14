@@ -42,14 +42,21 @@ def detect_month(duration_str: str) -> str:
 TARGET_MONTH = detect_month(DATE_RANGE)
 
 # ETF mapping matrix
+# Expanded to cover all 11 core Global Industry Classification Standard (GICS) sectors
 SECTOR_REQUESTS = {
     "XLK": {"pdf_ticker": "S5INFT", "pdf_sector": "InfoTech", "project_sector": "Technology", "desired_type": "Long"},
     "XLU": {"pdf_ticker": "UTY", "pdf_sector": "Utilities", "project_sector": "Utilities", "desired_type": "Long"},
     "XLF": {"pdf_ticker": "BKX", "pdf_sector": "Banking", "project_sector": "Financials", "desired_type": "Short"},
     "XLE": {"pdf_ticker": "XOI", "pdf_sector": "Oil", "project_sector": "Energy", "desired_type": "Short"},
     "XLB": {"pdf_ticker": "S5MATR", "pdf_sector": "Materials", "project_sector": "Materials", "desired_type": "Short"},
+    # --- Newly added 6 sectors to complete all 11 core market pillars ---
+    "XLY": {"pdf_ticker": "S5COND", "pdf_sector": "ComDisc", "project_sector": "Consumer Discretionary", "desired_type": "Long"},
+    "XLP": {"pdf_ticker": "S5CONS", "pdf_sector": "ComStaple", "project_sector": "Consumer Staples", "desired_type": "Long"},
+    "XLV": {"pdf_ticker": "S5HLTH", "pdf_sector": "HealthCare", "project_sector": "Health Care", "desired_type": "Long"},
+    "XLI": {"pdf_ticker": "S5INDU", "pdf_sector": "Industrials", "project_sector": "Industrials", "desired_type": "Long"},
+    "XLC": {"pdf_ticker": "S5TELS", "pdf_sector": "Telecom", "project_sector": "Communication Services", "desired_type": "Long"},
+    "XLRE": {"pdf_ticker": "S5REAS", "pdf_sector": "RealEstate", "project_sector": "Real Estate", "desired_type": "Short"},
 }
-
 def script_folder() -> Path:
     return Path(__file__).resolve().parent
 
