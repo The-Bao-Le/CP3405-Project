@@ -4,13 +4,16 @@ on:
   push:
     branches:
       - Week-07
-  # 1. Added Schedule Trigger to automatically run every Saturday at 00:00 UTC
   schedule:
     - cron: '0 0 * * 6'
   workflow_dispatch:
     inputs:
       custom_market_week:
-        description: 'Target MARKET week to predict (Leave BLANK for automated next week forecast, e.g., W30)'
+        description: 'Target MARKET week to override manually (Leave BLANK for automated next week forecast)'
+        required: false
+        type: string
+      custom_market_date:
+        description: 'Target DATE RANGE to override manually (Leave BLANK for automated next week forecast)'
         required: false
         type: string
 
@@ -39,53 +42,25 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Resolve Decoupled Execution Week Variables
-      id: resolve_weeks
-      run: |
-        # 2. Shift calculation to forecast NEXT WEEK (T+1) instead of current week
-        if [ -n "${{ github.event.inputs.custom_market_week }}" ]; then
-          M_WEEK=$(echo "${{ github.event.inputs.custom_market_week }}" | tr '[:lower:]' '[:upper:]')
-          echo "Execution Mode: Manual Override."
-          
-          # Extract number from manual input to compute dates
-          WEEK_VAL=$(echo "$M_WEEK" | sed 's/[^0-9]*//g')
-          CURRENT_YEAR=$(date +%Y)
-          MON_DATE=$(date -d "$CURRENT_YEAR-01-01 +$((WEEK_VAL - 1)) weeks -$(date -d "$CURRENT_YEAR-01-01" +%u) days + 1 day" +%Y-%m-%d)
-        else
-          # Automatically calculate next week numbers and rolling dates (+7 days forward shift)
-          WEEK_NUM=$(date -d "+7 days" +%V)
-          M_WEEK="W${WEEK_NUM}"
-          echo "Execution Mode: Automated Next-Week Forecast Resolution."
-          
-          MON_DATE=$(date -d "next monday" +%Y-%m-%d)
-        fi
-        
-        FRI_DATE=$(date -d "$MON_DATE + 4 days" +%Y-%m-%d)
-        DYNAMIC_DATE_RANGE="${MON_DATE} to ${FRI_DATE}"
-        
-        # 3. Export resolved values to Github Environment
-        echo "RESOLVED_WEEK=$M_WEEK" >> $GITHUB_ENV
-        echo "RESOLVED_DATE=$DYNAMIC_DATE_RANGE" >> $GITHUB_ENV
-        
-        echo "Resolved Forecast WEEK: $M_WEEK"
-        echo "Resolved Forecast DATE RANGE: $DYNAMIC_DATE_RANGE"
-
     - name: Execute Parameterized R3 Almanac Agent
       working-directory: ./r3_almanac_agent
       run: |
-        python r3_almanac_agent.py "${{ env.RESOLVED_WEEK }}" "${{ env.RESOLVED_DATE }}"
+        # Pass manual override tokens dynamically if they exist.
+        # If blank, Python internally computes the precise T+1 upcoming trading week!
+        python r3_almanac_agent.py "${{ github.event.inputs.custom_market_week }}" "${{ github.event.inputs.custom_market_date }}"
 
     - name: Secure Ledger Artifacts & Route Commit to Active Branch
       run: |
         git config --global user.name "Team2 Data Automation Bot"
         git config --global user.email "bot@team2.financial"
         
-        git add r3_almanac_agent/outputs/almanac_agent_${{ env.RESOLVED_WEEK }}.*
+        # Capture all newly generated artifacts dynamically in the outputs folder
+        git add r3_almanac_agent/outputs/*
         
         if git diff --staged --quiet; then
           echo "No strategic data shifts detected. Terminating smoothly."
         else
-          git commit -m "chore(data): automated R3 almanac forecast alignment for ${{ env.RESOLVED_WEEK }} [skip ci]"
+          git commit -m "chore(data): automated R3 next-week forecast execution matrix [skip ci]"
           git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           git push origin HEAD:${{ github.ref_name }}
         fi
