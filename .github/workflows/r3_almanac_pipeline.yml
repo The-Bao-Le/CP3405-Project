@@ -1,9 +1,9 @@
 name: R3 Almanac Agent Multi-Week Automation Pipeline
 
 on:
-  # push:
-  #   branches:
-  #     - Week-07
+  push:
+    branches:
+      - Week-07
   # 1. Added Schedule Trigger to automatically run every Saturday at 00:00 UTC
   schedule:
     - cron: '0 0 * * 6'
