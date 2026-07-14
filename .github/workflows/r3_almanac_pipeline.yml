@@ -15,7 +15,7 @@ jobs:
   execute-r3-matrix:
     runs-on: ubuntu-latest
     
-    # Standard security elevation configuration
+    # Standard security elevation configuration to allow auto-commit
     permissions:
       contents: write
 
@@ -40,7 +40,7 @@ jobs:
     - name: Resolve Decoupled Execution Week Variables
       id: resolve_weeks
       run: |
-        # Replicating your brilliant R6 calendar engine logic
+        # 1. Resolve the Target Market Week (e.g., W28, W29)
         if [ -n "${{ github.event.inputs.custom_market_week }}" ]; then
           M_WEEK=$(echo "${{ github.event.inputs.custom_market_week }}" | tr '[:lower:]' '[:upper:]')
           echo "Execution Mode: Manual Override."
@@ -50,12 +50,23 @@ jobs:
           echo "Execution Mode: Automated Calendar Resolution."
         fi
         
-        # Mapped date range logic matching the respective dynamic week
-        # In production, this can be mapped programmatically or pass through fallback parameters
+        # 2. Programmatically Calculate Monday and Friday Dates for the Target Week
+        CURRENT_YEAR=$(date +%Y)
+        # Extract only the numeric part of the week string (e.g., "W29" -> "29")
+        WEEK_VAL=$(echo "$M_WEEK" | sed 's/[^0-9]*//g')
+        
+        # Compute the calendar dates for Monday and Friday of that specific week (Ubuntu Compatible)
+        MON_DATE=$(date -d "$CURRENT_YEAR-01-01 +$((WEEK_VAL - 1)) weeks -$(date -d "$CURRENT_YEAR-01-01" +%u) days + 1 day" +%Y-%m-%d)
+        FRI_DATE=$(date -d "$MON_DATE + 4 days" +%Y-%m-%d)
+        
+        DYNAMIC_DATE_RANGE="${MON_DATE} to ${FRI_DATE}"
+        
+        # 3. Export resolved values to Github Environment
         echo "RESOLVED_WEEK=$M_WEEK" >> $GITHUB_ENV
-        echo "RESOLVED_DATE=2026-07-06 to 2026-07-10" >> $GITHUB_ENV
+        echo "RESOLVED_DATE=$DYNAMIC_DATE_RANGE" >> $GITHUB_ENV
         
         echo "Resolved Dynamic WEEK: $M_WEEK"
+        echo "Resolved Dynamic DATE RANGE: $DYNAMIC_DATE_RANGE"
 
     - name: Execute Parameterized R3 Almanac Agent
       working-directory: ./r3_almanac_agent
