@@ -1,9 +1,9 @@
 name: R3 Almanac Agent Multi-Week Automation Pipeline
 
 on:
-  push:
-    branches:
-      - Week-07
+  # push:
+  #   branches:
+  #     - Week-07
   schedule:
     - cron: '0 0 * * 6'
   workflow_dispatch:
