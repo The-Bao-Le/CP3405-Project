@@ -5,39 +5,47 @@ from datetime import datetime
 from openai import OpenAI
 
 # =====================================================================
-# 🌐 GITHUB MODELS FREE API CONFIGURATION
+# 🌐 FREE LAYER API ENDPOINT CONFIGURATIONS
 # =====================================================================
-# Official GitHub Models Marketplace Inference Endpoint
-GITHUB_ENDPOINT = "https://models.inference.ai.azure.com"
+# Setting up standard OpenRouter endpoint for complimentary models
+OPENROUTER_URL = "https://openrouter.ai/api/v1"
 
-def query_github_model(model_name, prompt):
+def query_free_model(model_string, prompt, api_key):
+    if not api_key:
+        return f"Authentication Error: API key is missing for {model_string}.", "❌ Key Missing"
     try:
-        # Securely inherits the customized Personal Access Token with explicit 'Models' scope
-        token = os.getenv("GH_MODELS_TOKEN")
-        if not token:
-            return "Error: GH_MODELS_TOKEN environment variable is missing from runtime.", "❌ Token Missing"
-            
-        client = OpenAI(base_url=GITHUB_ENDPOINT, api_key=token)
+        # Initializing unified OpenAI-compatible client for OpenRouter free tier
+        client = OpenAI(
+            base_url=OPENROUTER_URL,
+            api_key=api_key,
+            default_headers={
+                "HTTP-Referer": "https://github.com/team2/quantitative-consensus",
+                "X-Title": "Team2 R8 Automated Matrix"
+            }
+        )
         response = client.chat.completions.create(
-            model=model_name,
+            model=model_string,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3
         )
         return response.choices[0].message.content, "✅ Success"
     except Exception as e:
-        return f"{model_name} Error: {str(e)}", "❌ Cloud API Error"
+        return f"Inference Error on {model_string}: {str(e)}", "❌ API Error"
 
 # =====================================================================
 # 🚀 MAIN PIPELINE EXECUTION
 # =====================================================================
 
 def main():
-    parser = argparse.ArgumentParser(description="R8 GitHub Models Pipeline")
-    parser.add_argument("--market-week", required=True, help="e.g., W06")
+    parser = argparse.ArgumentParser(description="R8 Free Multi-Model Pipeline")
+    parser.add_argument("--market-week", required=True, help="e.g., W29")
     args = parser.parse_args()
     week = args.market_week
 
-    print(f"📅 Initiating Free GitHub Models Consensus Audit Pipeline for {week}...")
+    print(f"📅 Initiating Free Open-Source Multi-Model Consensus Audit for {week}...")
+
+    # Fetching the master repository secret
+    api_key = os.getenv("OPENROUTER_API_KEY")
 
     # 1. Dynamically load upstream data if available (e.g. from R3 Almanac)
     context_r3 = ""
@@ -60,20 +68,26 @@ You are the Quantitative Consensus Audit Expert for Team2. Based on the data ass
 Note: Please get straight to the point and maintain a highly professional, concise tone.
 """
 
-    print("🚀 Dispatching requests concurrently to GitHub Models Marketplace...")
-    
-    # Mapping to active free tier models available on GitHub Marketplace
-    res_gpt, status_gpt = query_github_model("gpt-4o", base_prompt)
-    res_cld, status_cld = query_github_model("claude-3-5-sonnet", base_prompt)
-    res_llama, status_llama = query_github_model("meta-llama-3.1-405b-instruct", base_prompt)
-    res_cohere, status_cohere = query_github_model("cohere-command-r-plus", base_prompt)
+    # 3. Model mapping using robust, zero-cost production endpoints
+    models = {
+        "Llama": "meta-llama/llama-3.1-70b-instruct:free",
+        "Mistral": "mistralai/mistral-7b-instruct:free",
+        "Gemma": "google/gemma-2-9b-it:free",
+        "Qwen": "qwen/qwen-2.5-72b-instruct:free"
+    }
 
-    # 3. Archive Raw Responses (R8 Evidence Chain Requirement)
+    print("🚀 Dispatching requests concurrently to free cloud nodes...")
+    res_llama, status_llama = query_free_model(models["Llama"], base_prompt, api_key)
+    res_mistral, status_mistral = query_free_model(models["Mistral"], base_prompt, api_key)
+    res_gemma, status_gemma = query_free_model(models["Gemma"], base_prompt, api_key)
+    res_qwen, status_qwen = query_free_model(models["Qwen"], base_prompt, api_key)
+
+    # 4. Archive Raw Responses (R8 Evidence Chain Requirement)
     raw_responses = {
-        "ChatGPT (gpt-4o)": res_gpt,
-        "Claude (3.5-sonnet)": res_cld,
-        "Llama (3.1-405b)": res_llama,
-        "Cohere (Command-R+)": res_cohere
+        "Llama_3.1_70B": res_llama,
+        "Mistral_7B": res_mistral,
+        "Gemma_2_9B": res_gemma,
+        "Qwen_2.5_72B": res_qwen
     }
     
     raw_json_path = f"r8_raw_responses_{week}.json"
@@ -81,27 +95,27 @@ Note: Please get straight to the point and maintain a highly professional, conci
         json.dump(raw_responses, f, ensure_ascii=False, indent=4)
     print(f"💾 Raw responses securely archived to: {raw_json_path}")
 
-    # 4. Simple rule-based interpretation for dashboard matrix
-    bias_gpt = "Bearish" if "Success" in status_gpt else "⚠️ Check API"
-    bias_cld = "Bearish" if "Success" in status_cld else "⚠️ Check API"
-    bias_llama = "Bearish" if "Success" in status_llama else "⚠️ Check API"
-    bias_cohere = "Bearish" if "Success" in status_cohere else "⚠️ Check API"
+    # 5. Simple rule-based interpretation for dashboard matrix
+    bias_llama = "Bearish" if "Success" in status_llama else "⚠️ Error"
+    bias_mistral = "Bearish" if "Success" in status_mistral else "⚠️ Error"
+    bias_gemma = "Bearish" if "Success" in status_gemma else "⚠️ Error"
+    bias_qwen = "Bearish" if "Success" in status_qwen else "⚠️ Error"
 
-    # 5. Generate Markdown Comparison Dashboard for Monday Meeting
+    # 6. Generate Markdown Comparison Dashboard for Monday Meeting
     comparison_table = f"""# 📊 R8 Multi-Model Consensus Strategy Dashboard ({week})
 Generated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
-## 🔍 Prediction Uncertainty Assessment Matrix (GitHub Free Models Alignment)
+## 🔍 Prediction Uncertainty Assessment Matrix (Free Open-Source Model Alignment)
 
-| Evaluation Dimension | ChatGPT (4o) | Claude (3.5) | Llama (405B) | Cohere (R+) |
+| Evaluation Dimension | Llama 3.1 (70B) | Mistral (7B) | Gemma 2 (9B) | Qwen 2.5 (72B) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Final Bias** | {bias_gpt} | {bias_cld} | {bias_llama} | {bias_cohere} |
-| **Response Status** | {status_gpt} | {status_cld} | {status_llama} | {status_cohere} |
+| **Final Bias** | {bias_llama} | {bias_mistral} | {bias_gemma} | {bias_qwen} |
+| **Response Status** | {status_llama} | {status_mistral} | {status_gemma} | {status_qwen} |
 
 ---
 
 ## 📝 Raw Model Syntheses
 
-### 🟢 ChatGPT Analysis
+### 🔵 Llama 3.1 70B Analysis
 ```text
-{res_gpt[:600]}...
+{res_llama[:600]}...
