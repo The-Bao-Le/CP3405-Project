@@ -1,0 +1,9 @@
+category,ticker,name,signal,window_or_rank,return_or_evidence
+index_stat,SPX,S&P 500,,Rank,+1.3%
+index_stat,NDX,NASDAQ,,Rank,+0.9%
+index_stat,IWM,Russell 2000,,Rank,+0.4%
+sector_signal,XLK,Technology,LONG,Mid March to Mid July,+10.87%
+sector_signal,XLU,Utilities,LONG,Mid March to Early October,+9.32%
+sector_signal,XLF,Financials,SHORT,Early May to Early July,-6.30%
+sector_signal,XLE,Energy,SHORT,Early June to Late August,-5.67%
+sector_signal,XLB,Materials,SHORT,Mid May to Mid October,-5.10%
