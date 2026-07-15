@@ -13,13 +13,18 @@ def query_free_model(model_string, prompt, api_key):
     """
     Safely query free LLM models via the unified OpenRouter gateway.
     """
-    if not api_key:
-        return f"Authentication Error: API key is missing for {model_string}.", "❌ Key Missing"
+    # Robust check: If API key is None, empty, or literal placeholder strings
+    if not api_key or api_key.strip().lower() in ["", "none", "null", "undefined"]:
+        return (
+            f"API Key Error: OPENROUTER_API_KEY environment variable is not passed to this runtime environment. "
+            f"Please ensure your workflow YAML file contains the 'env: OPENROUTER_API_KEY: ${{{{ secrets.OPENROUTER_API_KEY }}}}' block.", 
+            "❌ Key Missing"
+        )
     try:
         # Initialize OpenAI-compatible client for unified OpenRouter access
         client = OpenAI(
             base_url=OPENROUTER_URL,
-            api_key=api_key,
+            api_key=api_key.strip(),
             default_headers={
                 "HTTP-Referer": "https://github.com/team2/quantitative-consensus",
                 "X-Title": "Team2 R8 Automated Matrix"
@@ -181,3 +186,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+eof
+
+---
+
+#### 第二步：检查工作流中的“真正运行者”
+因为报错是在集成运行时发生的，我们需要确保**真正执行此脚本的那个 `.yml` 文件**里注入了密钥：
+
+1. 如果你是通过单独运行 **`r8_llm_job.yml`**（手动触发或每周六定时触发）：
+   请确保 `.github/workflows/r8_llm_job.yml` 处于最新状态，且第 39-44 行有：
+   ```yaml
+   - name: Run R8 Multi-Model Operator
+     env:
+       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+     run: |
+       python r8_llm_operator.py --market-week ${{ env.MARKET_WEEK }}
