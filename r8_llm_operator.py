@@ -186,19 +186,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
-eof
-
----
-
-#### 第二步：检查工作流中的“真正运行者”
-因为报错是在集成运行时发生的，我们需要确保**真正执行此脚本的那个 `.yml` 文件**里注入了密钥：
-
-1. 如果你是通过单独运行 **`r8_llm_job.yml`**（手动触发或每周六定时触发）：
-   请确保 `.github/workflows/r8_llm_job.yml` 处于最新状态，且第 39-44 行有：
-   ```yaml
-   - name: Run R8 Multi-Model Operator
-     env:
-       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-     run: |
-       python r8_llm_operator.py --market-week ${{ env.MARKET_WEEK }}
