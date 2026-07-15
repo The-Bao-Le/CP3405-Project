@@ -118,25 +118,25 @@ R9's Definition of Done and work plan were delayed, and the Week 28 tag and rele
 ---
 
 ### R10 — Calibration Agent
-**Status:** Good progress / on track, pending evidence
+**Status:** Good progress / on track
 
 R10 reviewed and documented the calibration script, understood the neutral-band logic, and added a safeguard to the directional classification function. R10 also proposed a cumulative weekly comparison table to support long-term accuracy monitoring and future Human Score weighting.
 
-**Blocker:** The updated script, cumulative table, GitHub Actions workflow, test evidence, and repository commit have not yet been provided for verification.
+**Blocker:** The updated script, cumulative table, GitHub Actions workflow, and test evidence have not yet been committed to the repository.
 
-**R2 action:** Requested completion and testing of the cumulative accuracy feature, workflow validation, and committed files before R9 creates the release tag.
+**R2 action:** To request completion and testing of the cumulative accuracy feature, workflow validation, and committed files before R9 creates the release tag.
 
 ## Dependency Check
 
 The required pipeline order is:
 
-`R3 Almanac → R4 Macro → R5 Technical → R8 LLM Synthesis → R7 Human Score → R9 Release`
+`R3 Almanac + R4 Macro + R5 Technical → R8 LLM Synthesis → R7 Human Score → R9 Release`
 
 Midweek assessment:
 
 - R3 is complete.
-- R4 is effectively complete, pending the scheduled run.
-- R5's core analysis is substantially complete, pending workflow validation.
+- R4 is effectively complete.
+- R5's core analysis is substantially complete.
 - R8 has begun integration and is waiting for final upstream outputs and live API validation.
 - R7 is correctly waiting for the synthesis output.
 - R9's release tasks are scheduled, but the role remains at risk and requires active follow-up.
