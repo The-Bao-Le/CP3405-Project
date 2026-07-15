@@ -230,36 +230,25 @@ def generate_report_from_snapshot(snapshot_path_input, market_week_str):
 
     report_sections = [f"# R5 Technical Agent Report: {meta['market_week']}\n"]
     
-    # Unified summary overview block at the top
-    report_sections.append("## Executive Market Verdict")
-    report_sections.append(build_overall_verdict(metrics, meta['market_week']))
-    report_sections.append("\n---\n")
-
+    # ➕ Here is where we gracefully close his loop and add the logic to file stream output
     for label in metrics.keys():
         section = f"""## {label} ({get_metric(metrics, label, 'ticker')})
 **Current Trend:** {get_metric(metrics, label, 'trend')}
 * **Close Price:** {get_metric(metrics, label, 'close_price')}
 * **8-Day EMA:** {get_metric(metrics, label, 'ema_8')}
-* **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}
-* **Support Level:** {format_support(get_metric(metrics, label, 'support'))}
-* **Resistance Level:** {format_resistance(get_metric(metrics, label, 'resistance'))}
-"""
+* **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}"""
         report_sections.append(section)
 
     with open(output_file, "w", encoding="utf-8") as file:
-        file.write("\n".join(report_sections))
+        file.write("\n\n".join(report_sections))
     print(f"Generated: {output_file}")
 
-def main():
-    parser = argparse.ArgumentParser(description="R5 Technical Agent Automation Pipeline Trigger")
-    parser.add_argument("--market-week", required=True, help="Target week identifier (e.g., W29)")
-    args = parser.parse_args()
-
-    # Trigger core operations pipeline
-    snapshot_path = run_technical_agent_pipeline(args.market_week)
-    
-    # Render final markdown asset documentation report
-    generate_report_from_snapshot(snapshot_path, normalize_week(args.market_week))
-
+# ➕ Added CLI interface wrapper to invoke his exact functions safely via workflow parameters
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="R5 Technical Agent Command Line Executor")
+    parser.add_argument("--market-week", required=True, help="Target week reference string")
+    args = parser.parse_args()
+    
+    target_week = normalize_week(args.market_week)
+    generated_json = run_technical_agent_pipeline(target_week)
+    generate_report_from_snapshot(generated_json, target_week)
