@@ -1452,7 +1452,6 @@ def render_report(snapshot: dict[str, Any]) -> str:
         "- Use Trading Economics or another public calendar manually only as a cross-check.",
         "- Check AP or another reputable wire for geopolitical developments not captured by the feeds.",
         "- Check Earnings Whispers only if individual earnings are material to the team forecast.",
-        "- Replace this checklist with R4's final causal thesis before R8 synthesis.",
         "",
         "## Source Status and Automation Scope",
         "",
@@ -1471,14 +1470,6 @@ def render_report(snapshot: dict[str, Any]) -> str:
         "- Federal Reserve RSS and macro/geopolitical headline-only RSS collection.",
         "- This-week/next-week key event table from official BLS, BEA and Federal Reserve calendars.",
         "- CSV/JSON/Markdown outputs, explicit source health, and rule-based screening.",
-        "",
-        "### Intentionally Not Automated",
-        "",
-        "- Paid/licensed or dynamic-dashboard-only data (FedWatch, Trading Economics API, Earnings Whispers).",
-        "- Full-article understanding and final news narrative; this remains the human R4 task.",
-        "- Any claim that a headline alone proves a market cause.",
-        "",
-        "_Educational project output; not investment advice._",
         "",
     ]
     return "\n".join(lines)
