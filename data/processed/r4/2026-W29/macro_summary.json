@@ -12,16 +12,16 @@
   ],
   "neutral_factors": [],
   "headline_flags": [
-    "Geopolitical: 13 headline(s) require human review.",
-    "Inflation: 13 headline(s) require human review.",
+    "Geopolitical: 14 headline(s) require human review.",
+    "Inflation: 12 headline(s) require human review.",
     "Labor: 1 headline(s) require human review.",
     "Monetary Policy: 16 headline(s) require human review.",
-    "Oil Energy: 8 headline(s) require human review."
+    "Oil Energy: 7 headline(s) require human review."
   ],
   "headline_category_counts": {
-    "inflation": 13,
-    "oil_energy": 8,
-    "geopolitical": 13,
+    "inflation": 12,
+    "oil_energy": 7,
+    "geopolitical": 14,
     "monetary_policy": 16,
     "labor": 1
   },
