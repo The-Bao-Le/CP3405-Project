@@ -93,16 +93,21 @@ def run_technical_agent_pipeline(market_week_str):
     generation_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # Complete list of required market indices and sector ETFs specified for Sprint 7
-    tickers = {
+tickers = {
         "SPX": "SPX",
         "NDX": "NDX",
         "IWM": "IWM",
-        "XLK": "XLK",
-        "XLF": "XLF",
-        "XLV": "XLV",
-        "XLY": "XLY",
-        "XLE": "XLE",
-        "XLC": "XLC"
+        "XLK": "XLK",  # Technology
+        "XLU": "XLU",  # Utilities
+        "XLF": "XLF",  # Financials
+        "XLE": "XLE",  # Energy
+        "XLB": "XLB",  # Materials
+        "XLY": "XLY",  # Consumer Discretionary
+        "XLP": "XLP",  # Consumer Staples
+        "XLV": "XLV",  # Health Care
+        "XLI": "XLI",  # Industrials
+        "XLC": "XLC",  # Communication Services
+        "XLRE": "XLRE" # Real Estate
     }
 
     r6_data = load_r6_market_data("r6_market_data.json")
