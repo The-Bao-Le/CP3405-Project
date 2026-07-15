@@ -1,0 +1,135 @@
+[
+  {
+    "source": "U.S. Treasury daily par yields",
+    "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
+    "status": "ok",
+    "detail": "collection and parsing succeeded",
+    "elapsed_seconds": 0.29
+  },
+  {
+    "source": "BLS public timeseries API",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "ok",
+    "detail": "collection and parsing succeeded",
+    "elapsed_seconds": 0.26
+  },
+  {
+    "source": "U.S. Department of Labor weekly claims",
+    "url": "https://oui.doleta.gov/unemploy/DataDashboard.asp",
+    "status": "ok",
+    "detail": "collection and parsing succeeded",
+    "elapsed_seconds": 0.14
+  },
+  {
+    "source": "Yahoo Finance via yfinance",
+    "url": "https://finance.yahoo.com/",
+    "status": "ok",
+    "detail": "collection and parsing succeeded",
+    "elapsed_seconds": 3.54
+  },
+  {
+    "source": "BLS official release calendar",
+    "url": "https://www.bls.gov/schedule/news_release/bls.ics",
+    "status": "ok",
+    "detail": "160 key events parsed before date filtering",
+    "elapsed_seconds": 0.2
+  },
+  {
+    "source": "BEA official release schedule",
+    "url": "https://www.bea.gov/news/schedule",
+    "status": "ok",
+    "detail": "17 key events parsed before date filtering",
+    "elapsed_seconds": 0.18
+  },
+  {
+    "source": "Federal Reserve official calendar",
+    "url": "https://www.federalreserve.gov/newsevents/2026-july.htm",
+    "status": "ok",
+    "detail": "8 key events parsed from 1 month page(s)",
+    "elapsed_seconds": 0.1
+  },
+  {
+    "source": "DOL weekly claims release cadence",
+    "url": "https://www.dol.gov/newsroom/releases/opa/opa20200701",
+    "status": "derived",
+    "detail": "2 expected Thursday release(s); holiday changes require verification",
+    "elapsed_seconds": null
+  },
+  {
+    "source": "Free public weekly economic-calendar fallback",
+    "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
+    "status": "ok",
+    "detail": "11 key U.S. events parsed; used only to fill official-calendar gaps",
+    "elapsed_seconds": 0.13
+  },
+  {
+    "source": "Federal Reserve press releases",
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "status": "ok",
+    "detail": "5 relevant dated headlines",
+    "elapsed_seconds": 0.03
+  },
+  {
+    "source": "Federal Reserve speeches",
+    "url": "https://www.federalreserve.gov/feeds/speeches.xml",
+    "status": "ok",
+    "detail": "4 relevant dated headlines",
+    "elapsed_seconds": 0.04
+  },
+  {
+    "source": "Google News AP-only search",
+    "url": "https://news.google.com/rss/search?q=site%3Aapnews.com+%28Federal+Reserve+OR+inflation+OR+oil+OR+economy+OR+geopolitical%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
+    "status": "ok",
+    "detail": "22 relevant dated headlines",
+    "elapsed_seconds": 0.47
+  },
+  {
+    "source": "Google News macro search",
+    "url": "https://news.google.com/rss/search?q=%28Federal+Reserve+OR+inflation+OR+jobless+claims+OR+oil+OR+geopolitical%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
+    "status": "ok",
+    "detail": "91 relevant dated headlines",
+    "elapsed_seconds": 0.49
+  },
+  {
+    "source": "CME FedWatch",
+    "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+    "status": "skipped",
+    "detail": "No stable free public FedWatch API; dynamic dashboard remains a manual R4 check.",
+    "elapsed_seconds": null
+  },
+  {
+    "source": "Trading Economics calendar API",
+    "url": "https://tradingeconomics.com/calendar",
+    "status": "skipped",
+    "detail": "Reliable API access requires credentials; guest endpoint returns HTTP 410.",
+    "elapsed_seconds": null
+  },
+  {
+    "source": "Finviz futures performance",
+    "url": "https://finviz.com/futures_performance.ashx?v=12",
+    "status": "replaced",
+    "detail": "Direct scraping is fragile; market moves use yfinance or the same-week R6 snapshot.",
+    "elapsed_seconds": null
+  },
+  {
+    "source": "AP News full-article analysis",
+    "url": "https://apnews.com/",
+    "status": "skipped",
+    "detail": "No paid/licensed AP API is configured; headline links may appear via news RSS only.",
+    "elapsed_seconds": null
+  },
+  {
+    "source": "Earnings Whispers calendar",
+    "url": "https://earningswhispers.com/",
+    "status": "skipped",
+    "detail": "No stable free public API; earnings calendar remains a manual check.",
+    "elapsed_seconds": null
+  },
+  {
+    "source": "LLM news interpretation",
+    "url": "",
+    "status": "skipped",
+    "detail": "No LLM key is required or used; final narrative is intentionally human-reviewed.",
+    "elapsed_seconds": null
+  }
+]
