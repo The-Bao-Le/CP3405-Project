@@ -93,7 +93,7 @@ def run_technical_agent_pipeline(market_week_str):
     generation_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # Complete list of required market indices and sector ETFs specified for Sprint 7
-tickers = {
+    tickers = {
         "SPX": "SPX",
         "NDX": "NDX",
         "IWM": "IWM",
