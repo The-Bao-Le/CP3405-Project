@@ -1,0 +1,6 @@
+{
+    "ChatGPT_4o_Mini": "Inference Error on openai/gpt-4o-mini:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}",
+    "Claude_Llama_Alternative": "Inference Error on meta-llama/llama-3.1-70b-instruct:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}",
+    "Gemini_2.5_Flash": "Inference Error on google/gemini-2.5-flash:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}",
+    "DeepSeek_R1": "Inference Error on deepseek/deepseek-r1:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}"
+}
