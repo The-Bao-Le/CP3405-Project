@@ -1,19 +1,72 @@
-name: Generate R4 Macro Report
+name: R4 Weekly Macro Agent
 
 on:
   workflow_dispatch:
+    inputs:
+      as_of_sgt:
+        description: Optional Singapore date (YYYY-MM-DD); blank uses current SGT date
+        required: false
+        type: string
+  schedule:
+    # GitHub cron is UTC: Saturday 06:00 UTC = Saturday 14:00 Asia/Singapore.
+    - cron: "0 6 * * 6"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: r4-weekly-macro-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  generate:
+  collect-analyse-report:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python -m unittest discover -s tests
-      - run: python main.py
-      - uses: actions/upload-artifact@v4
+          cache: pip
+          cache-dependency-path: requirements-r4.txt
+
+      - name: Install free-source dependencies
+        run: python -m pip install -r requirements-r4.txt
+
+      - name: Run offline unit tests
+        run: python -m unittest discover -s tests -p "test_r4*.py" -v
+
+      - name: Collect weekly data and generate report
+        env:
+          AS_OF_SGT: ${{ inputs.as_of_sgt }}
+        run: |
+          if [ -n "$AS_OF_SGT" ]; then
+            python r4_macro_automation.py --as-of "$AS_OF_SGT"
+          else
+            python r4_macro_automation.py
+          fi
+
+      - name: Upload R4 evidence artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: r4-macro-agent-outputs
-          path: outputs/
+          name: r4-weekly-macro-${{ github.run_number }}
+          path: |
+            docs/macro_agent_*.md
+            data/processed/r4/
+          if-no-files-found: error
+
+      - name: Commit generated weekly outputs
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "Team2 R4 Automation Bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/macro_agent_*.md data/processed/r4/
+          if git diff --cached --quiet; then
+            echo "No R4 output changes to commit."
+          else
+            git commit -m "chore(r4): weekly macro report [skip ci]"
+            git push
+          fi
