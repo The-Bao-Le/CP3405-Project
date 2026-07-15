@@ -107,17 +107,31 @@ def generate_spx_summary(metrics, market_week_str):
         f"**{format_resistance(spx_resistance)}**. The S&P 500 remains the main benchmark for the team prediction."
     )
 
-def generate_report_from_snapshot(snapshot_path_input, market_week_str):
+def generate_report_from_snapshot(market_week_str):
     """
     Generates markdown documentation report dynamically rendering all assets processed.
+    Reads from R6 pipeline output: market_snapshot_WXX.json
     """
+    snapshot_path_input = f"market_snapshot_{market_week_str}.json"
     output_file = f"technical_agent-{market_week_str}.md"
 
-    with open(snapshot_path_input, "r", encoding="utf-8") as file:
-        snapshot = json.load(file)
+    try:
+        with open(snapshot_path_input, "r", encoding="utf-8") as file:
+            snapshot = json.load(file)
+    except FileNotFoundError:
+        print(f"❌ Error: Snapshot file not found! Expected: {snapshot_path_input}")
+        print("💡 Tip: Make sure the R6 script has run and generated the correct WXX file first.")
+        return
+    except Exception as e:
+        print(f"❌ Failed to read snapshot: {str(e)}")
+        return
 
-    metrics = snapshot["metrics"]
-    meta = snapshot["meta"]
+    metrics = snapshot.get("metrics", {})
+    meta = snapshot.get("meta", {"market_week": market_week_str})
+
+    if not metrics:
+        print("❌ Error: No metric data found in the snapshot file.")
+        return
 
     report_sections = [f"# R5 Technical Agent Report: {meta['market_week']}\n"]
     
@@ -127,102 +141,109 @@ def generate_report_from_snapshot(snapshot_path_input, market_week_str):
     report_sections.append("\n---\n")
 
     for label in metrics.keys():
+        # Fixed: Closed the triple-quote string properly
         section = f"""## {label} ({get_metric(metrics, label, 'ticker')})
 **Current Trend:** {get_metric(metrics, label, 'trend')}
 * **Close Price:** {get_metric(metrics, label, 'close_price')}
 * **8-Day EMA:** {get_metric(metrics, label, 'ema_8')}
-* **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}"""
+* **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}
+"""
         report_sections.append(section)
 
     with open(output_file, "w", encoding="utf-8") as file:
         file.write("\n\n".join(report_sections))
-    print(f"Successfully generated full technical markdown matrix: {output_file}")
+    print(f"✅ Successfully generated report: {output_file}")
 
 def main():
     parser = argparse.ArgumentParser(description="R5 Technical Analysis Automation Engine")
     parser.add_argument("--market-week", required=True, help="Target run week identifier (e.g. W29)")
+    parser.add_argument("--mode", default="generate", choices=["generate", "snapshot"], 
+                        help="Run mode: 'generate' (default, read R6 snapshot) or 'snapshot' (fetch new data)")
     args = parser.parse_args()
 
     market_week = args.market_week
+    run_mode = args.mode
     print(f"--- R5 TECHNICAL ENGINE RUNNING FOR WEEK: {market_week} ---")
 
-    # Complete 14 asset registries (11 Sector ETFs + 3 Benchmark Indices)
-    target_tickers = [
-        "SPX", "NDX", "IWM", 
-        "XLK", "XLU", "XLF", "XLE", "XLB", "XLY", "XLP", "XLV", "XLI", "XLC", "XLRE"
-    ]
+    if run_mode == "snapshot":
+        # Complete 14 asset registries (11 Sector ETFs + 3 Benchmark Indices)
+        target_tickers = [
+            "SPX", "NDX", "IWM", 
+            "XLK", "XLU", "XLF", "XLE", "XLB", "XLY", "XLP", "XLV", "XLI", "XLC", "XLRE"
+        ]
 
-    tickers = {
-        "SPX": "^SPX",
-        "NDX": "^NDX",
-        "IWM": "IWM",
-        "XLK": "XLK",
-        "XLU": "XLU",
-        "XLF": "XLF",
-        "XLE": "XLE",
-        "XLB": "XLB",
-        "XLY": "XLY",
-        "XLP": "XLP",
-        "XLV": "XLV",
-        "XLI": "XLI",
-        "XLC": "XLC",
-        "XLRE": "XLRE"
-    }
-
-    snapshot = {
-        "meta": {
-            "agent": "R5 Technical Agent",
-            "market_week": market_week,
-            "execution_time": datetime.now().isoformat()
-        },
-        "metrics": {}
-    }
-
-    for label in target_tickers:
-        symbol = tickers[label]
-        print(f"Processing historical matrix assets for: {label} ({symbol})")
-        
-        end_date = datetime.now()
-        start_date = end_date - timedelta(days=120)
-        
-        df = yf.download(symbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d'), progress=False)
-        
-        if df.empty:
-            print(f"Warning: No data for {label}")
-            continue
-
-        # 🛠️ CRITICAL FIX: Flatten yfinance MultiIndex columns to fit original script logic perfectly
-        if isinstance(df.columns, pd.MultiIndex):
-            df.columns = df.columns.get_level_values(0)
-            
-        df = calculate_ema(df, "Close", 8)
-        df = calculate_ema(df, "Close", 21)
-        sup, res = calculate_support_resistance(df)
-
-        latest_close = float(df["Close"].iloc[-1])
-        ema_8_val = float(df[f"EMA_8"].iloc[-1])
-        ema_21_val = float(df[f"EMA_21"].iloc[-1])
-
-        trend_status = "Bullish Phase" if latest_close > ema_8_val else "Bearish Phase"
-        bias_status = "Long Strategy" if ema_8_val > ema_21_val else "Short Strategy"
-
-        snapshot["metrics"][label] = {
-            "ticker": symbol,
-            "close_price": round(latest_close, 2),
-            "ema_8": round(ema_8_val, 2),
-            "ema_21": round(ema_21_val, 2),
-            "support": round(sup, 2) if sup else latest_close * 0.95,
-            "resistance": round(res, 2) if res else latest_close * 1.05,
-            "trend": trend_status,
-            "bias": bias_status
+        tickers = {
+            "SPX": "^SPX",
+            "NDX": "^NDX",
+            "IWM": "IWM",
+            "XLK": "XLK",
+            "XLU": "XLU",
+            "XLF": "XLF",
+            "XLE": "XLE",
+            "XLB": "XLB",
+            "XLY": "XLY",
+            "XLP": "XLP",
+            "XLV": "XLV",
+            "XLI": "XLI",
+            "XLC": "XLC",
+            "XLRE": "XLRE"
         }
 
-    snapshot_file = f"technical_snapshot-{market_week}.json"
-    with open(snapshot_file, "w", encoding="utf-8") as f:
-        json.dump(snapshot, f, indent=4)
-    print(f"Successfully secured technical snapshot data: {snapshot_file}")
+        snapshot = {
+            "meta": {
+                "agent": "R5 Technical Agent",
+                "market_week": market_week,
+                "execution_time": datetime.now().isoformat()
+            },
+            "metrics": {}
+        }
 
-    generate_report_from_snapshot(snapshot_file, market_week)
+        for label in target_tickers:
+            symbol = tickers[label]
+            print(f"Processing historical matrix assets for: {label} ({symbol})")
+            
+            end_date = datetime.now()
+            start_date = end_date - timedelta(days=120)
+            
+            df = yf.download(symbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d'), progress=False)
+            
+            if df.empty:
+                print(f"⚠️ Warning: No data for {label}, skipped.")
+                continue
+
+            # Flatten yfinance MultiIndex columns
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
+                
+            df = calculate_ema(df, "Close", 8)
+            df = calculate_ema(df, "Close", 21)
+            sup, res = calculate_support_resistance(df)
+
+            latest_close = float(df["Close"].iloc[-1])
+            ema_8_val = float(df[f"EMA_8"].iloc[-1])
+            ema_21_val = float(df[f"EMA_21"].iloc[-1])
+
+            trend_status = "Bullish Phase" if latest_close > ema_8_val else "Bearish Phase"
+            bias_status = "Long Strategy" if ema_8_val > ema_21_val else "Short Strategy"
+
+            snapshot["metrics"][label] = {
+                "ticker": symbol,
+                "close_price": round(latest_close, 2),
+                "ema_8": round(ema_8_val, 2),
+                "ema_21": round(ema_21_val, 2),
+                "support": round(sup, 2) if sup else round(latest_close * 0.95, 2),
+                "resistance": round(res, 2) if res else round(latest_close * 1.05, 2),
+                "trend": trend_status,
+                "bias": bias_status
+            }
+
+        snapshot_file = f"market_snapshot_{market_week}.json"
+        with open(snapshot_file, "w", encoding="utf-8") as f:
+            json.dump(snapshot, f, indent=4)
+        print(f"✅ Successfully generated snapshot: {snapshot_file}")
+
+    # Generate report (works for both modes)
+    generate_report_from_snapshot(market_week)
 
 if __name__ == "__main__":
     main()
