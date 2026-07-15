@@ -764,93 +764,304 @@ def parse_dol_claims_page(text: str) -> dict[str, Any]:
     }
 
 
-def _extract_close_frame(frame: Any, symbol: str) -> Any:
-    """Return a one-dimensional Close series across yfinance column layouts."""
-    if getattr(frame, "empty", True):
+def _coerce_close_series(candidate: Any, symbol: str) -> Any:
+    """Reduce a yfinance Close selection to one one-dimensional series."""
+    if candidate is None:
         return None
+    if getattr(candidate, "ndim", 1) == 2:
+        columns = getattr(candidate, "columns", [])
+        if symbol in columns:
+            candidate = candidate[symbol]
+        elif "Close" in columns:
+            candidate = candidate["Close"]
+        elif len(columns) == 1:
+            candidate = candidate.iloc[:, 0]
+        else:
+            return None
+    return candidate
+
+
+def _extract_close_frame(frame: Any, symbol: str) -> Any:
+    """Return a one-dimensional raw-Close series across yfinance layouts."""
+    if frame is None or getattr(frame, "empty", True):
+        return None
+
     columns = frame.columns
     if getattr(columns, "nlevels", 1) == 1:
-        return frame["Close"] if "Close" in columns else None
-    if symbol in columns.get_level_values(0):
+        if "Close" not in columns:
+            return None
+        return _coerce_close_series(frame["Close"], symbol)
+
+    # yfinance may return either (ticker, field) or (field, ticker).
+    for key in ((symbol, "Close"), ("Close", symbol)):
+        if key in columns:
+            return _coerce_close_series(frame[key], symbol)
+
+    level_0 = set(columns.get_level_values(0))
+    level_1 = set(columns.get_level_values(1))
+    if symbol in level_0:
         block = frame[symbol]
-        return block["Close"] if "Close" in block.columns else None
-    if symbol in columns.get_level_values(1):
+        if "Close" in block.columns:
+            return _coerce_close_series(block["Close"], symbol)
+    if symbol in level_1:
         block = frame.xs(symbol, axis=1, level=1)
-        return block["Close"] if "Close" in block.columns else None
+        if "Close" in block.columns:
+            return _coerce_close_series(block["Close"], symbol)
     return None
 
 
-def collect_market_data(week_start: date, week_end: date) -> dict[str, Any]:
-    """Fetch weekly cross-asset and all 11 sector ETF prices using yfinance."""
+def _market_metric_from_close(
+    close: Any,
+    symbol: str,
+    week_start: date,
+    week_end: date,
+) -> tuple[dict[str, Any] | None, str]:
+    """Convert a Close series into the R4 weekly-return record."""
+    close = _coerce_close_series(close, symbol)
+    if close is None:
+        return None, "Close column not found"
+
     try:
-        import yfinance as yf
-    except ImportError as exc:
-        raise CollectionError("yfinance is not installed") from exc
+        clean = close.dropna()
+    except AttributeError:
+        return None, "Close selection is not a pandas Series"
+    if getattr(clean, "empty", True):
+        return None, "Close series is empty"
 
-    symbols = list(MARKET_TICKERS.values())
-    fetch_start = week_start - timedelta(days=10)
-    fetch_end = week_end + timedelta(days=2)  # yfinance end is exclusive
-    frame = yf.download(
-        symbols,
-        start=fetch_start.isoformat(),
-        end=fetch_end.isoformat(),
-        interval="1d",
-        auto_adjust=False,
-        actions=False,
-        group_by="ticker",
-        # Parallel requests can trigger Yahoo throttling and yfinance cookie-DB locks.
-        threads=False,
-        progress=False,
-    )
+    points: list[tuple[date, float]] = []
+    for timestamp, value in clean.items():
+        try:
+            observed = (
+                timestamp.date()
+                if hasattr(timestamp, "date")
+                else date.fromisoformat(str(timestamp)[:10])
+            )
+        except (TypeError, ValueError):
+            continue
+        number = _float(value)
+        if number is not None and observed <= week_end:
+            points.append((observed, number))
 
-    metrics: dict[str, Any] = {}
-    for label, symbol in MARKET_TICKERS.items():
-        close = _extract_close_frame(frame, symbol)
-        if close is None:
-            continue
-        points: list[tuple[date, float]] = []
-        for timestamp, value in close.dropna().items():
-            observed = timestamp.date() if hasattr(timestamp, "date") else date.fromisoformat(str(timestamp)[:10])
-            number = _float(value)
-            if number is not None and observed <= week_end:
-                points.append((observed, number))
-        baseline = [point for point in points if point[0] < week_start]
-        current = [point for point in points if week_start <= point[0] <= week_end]
-        if not baseline or not current or baseline[-1][1] == 0:
-            continue
-        old_date, old_value = baseline[-1]
-        new_date, new_value = current[-1]
-        metrics[label] = {
+    points.sort(key=lambda item: item[0])
+    baseline = [point for point in points if point[0] < week_start]
+    current = [point for point in points if week_start <= point[0] <= week_end]
+    if not baseline:
+        return None, f"No observation before target week {week_start.isoformat()}"
+    if not current:
+        return None, (
+            "No observation inside target week "
+            f"{week_start.isoformat()} to {week_end.isoformat()}"
+        )
+
+    old_date, old_value = baseline[-1]
+    new_date, new_value = current[-1]
+    if old_value == 0:
+        return None, "Baseline close is zero"
+
+    return (
+        {
             "ticker": symbol,
             "baseline_date": old_date.isoformat(),
             "baseline_close": round(old_value, 4),
             "latest_date": new_date.isoformat(),
             "latest_close": round(new_value, 4),
             "weekly_return_pct": round((new_value / old_value - 1) * 100, 2),
-        }
+        },
+        "ok",
+    )
 
+
+def _download_yfinance_batch(
+    yf: Any,
+    symbols: list[str],
+    fetch_start: date,
+    fetch_end: date,
+    attempts: int = 2,
+) -> tuple[Any | None, str]:
+    """Try a low-concurrency batch request before slower per-ticker retries."""
+    messages: list[str] = []
+    for attempt in range(1, attempts + 1):
+        try:
+            frame = yf.download(
+                symbols,
+                start=fetch_start.isoformat(),
+                end=fetch_end.isoformat(),
+                interval="1d",
+                auto_adjust=False,
+                actions=False,
+                group_by="ticker",
+                threads=False,
+                progress=False,
+                timeout=30,
+            )
+            if frame is not None and not getattr(frame, "empty", True):
+                return frame, f"batch download succeeded on attempt {attempt}"
+            messages.append(f"attempt {attempt}: empty DataFrame")
+        except Exception as exc:
+            messages.append(f"attempt {attempt}: {type(exc).__name__}: {exc}")
+        if attempt < attempts:
+            time.sleep(attempt * 3)
+    return None, "; ".join(messages)
+
+
+def _download_yfinance_single(
+    yf: Any,
+    symbol: str,
+    fetch_start: date,
+    fetch_end: date,
+    attempts: int = 2,
+) -> tuple[Any | None, str]:
+    """Retry one ticker and use Ticker.history as a second yfinance route."""
+    messages: list[str] = []
+    for attempt in range(1, attempts + 1):
+        try:
+            frame = yf.download(
+                symbol,
+                start=fetch_start.isoformat(),
+                end=fetch_end.isoformat(),
+                interval="1d",
+                auto_adjust=False,
+                actions=False,
+                threads=False,
+                progress=False,
+                timeout=30,
+            )
+            if frame is not None and not getattr(frame, "empty", True):
+                return frame, f"single download succeeded on attempt {attempt}"
+            messages.append(f"download attempt {attempt}: empty DataFrame")
+        except Exception as exc:
+            messages.append(
+                f"download attempt {attempt}: {type(exc).__name__}: {exc}"
+            )
+
+        try:
+            frame = yf.Ticker(symbol).history(
+                start=fetch_start.isoformat(),
+                end=fetch_end.isoformat(),
+                interval="1d",
+                auto_adjust=False,
+                actions=False,
+            )
+            if frame is not None and not getattr(frame, "empty", True):
+                return frame, f"Ticker.history succeeded on attempt {attempt}"
+            messages.append(f"history attempt {attempt}: empty DataFrame")
+        except Exception as exc:
+            messages.append(
+                f"history attempt {attempt}: {type(exc).__name__}: {exc}"
+            )
+
+        if attempt < attempts:
+            time.sleep(attempt * 3)
+    return None, "; ".join(messages)
+
+
+def collect_market_data(week_start: date, week_end: date) -> dict[str, Any]:
+    """Fetch R4 market inputs independently with batch and per-ticker retries."""
+    try:
+        import yfinance as yf
+    except ImportError as exc:
+        raise CollectionError("yfinance is not installed") from exc
+
+    # A longer lookback makes the pre-week baseline robust to holidays and gaps.
+    fetch_start = week_start - timedelta(days=30)
+    fetch_end = week_end + timedelta(days=2)  # yfinance end is exclusive
+    symbols = list(dict.fromkeys(MARKET_TICKERS.values()))
+
+    metrics: dict[str, Any] = {}
+    diagnostics: dict[str, str] = {}
+    frame, batch_detail = _download_yfinance_batch(
+        yf, symbols, fetch_start, fetch_end
+    )
+    diagnostics["_batch"] = batch_detail
+
+    missing_labels: list[tuple[str, str]] = []
+    for label, symbol in MARKET_TICKERS.items():
+        close = _extract_close_frame(frame, symbol) if frame is not None else None
+        metric, reason = _market_metric_from_close(
+            close, symbol, week_start, week_end
+        )
+        if metric is not None:
+            metrics[label] = metric
+            diagnostics[label] = "batch: ok"
+        else:
+            missing_labels.append((label, symbol))
+            diagnostics[label] = f"batch: {reason}"
+
+    # A failed/partial batch must not make all 18 instruments fail together.
+    for index, (label, symbol) in enumerate(missing_labels):
+        if index:
+            time.sleep(1)
+        single_frame, request_detail = _download_yfinance_single(
+            yf, symbol, fetch_start, fetch_end
+        )
+        close = (
+            _extract_close_frame(single_frame, symbol)
+            if single_frame is not None
+            else None
+        )
+        metric, reason = _market_metric_from_close(
+            close, symbol, week_start, week_end
+        )
+        if metric is not None:
+            metrics[label] = metric
+            diagnostics[label] = f"individual retry: ok; {request_detail}"
+        else:
+            diagnostics[label] = (
+                f"individual retry failed: {reason}; {request_detail}"
+            )
+
+    missing_assets = sorted(set(MARKET_TICKERS) - set(metrics))
     missing_sectors = sorted(set(SECTOR_NAMES) - set(metrics))
     if not metrics:
-        raise CollectionError("yfinance returned no usable weekly observations")
+        compact = " | ".join(
+            f"{key}={value}" for key, value in diagnostics.items()
+        )
+        raise CollectionError(
+            "yfinance returned no usable weekly observations after batch and "
+            f"per-ticker retries. Diagnostics: {compact}"
+        )
+
     return {
         "metrics": metrics,
+        "missing_assets": missing_assets,
         "missing_sectors": missing_sectors,
         "all_11_sectors_complete": not missing_sectors,
-        "method": "Previous available close to latest target-week close; raw Close",
+        "diagnostics": diagnostics,
+        "method": (
+            "R4 independent yfinance collection: batch request followed by "
+            "per-ticker download/history retries; previous available close to "
+            "latest target-week close; raw Close"
+        ),
     }
 
 
-def load_r6_market_fallback(iso_year: int, iso_week: int) -> dict[str, Any]:
-    """Reuse the same-week R6 market snapshot if Yahoo blocks R4's direct call."""
-    week_label = f"W{iso_week:02d}"
-    path = BASE / f"market_snapshot_{week_label}.json"
-    if not path.exists():
-        raise CollectionError(f"same-week R6 snapshot not found: {path.name}")
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    meta = payload.get("meta", {})
-    if str(meta.get("market_week")) != week_label or int(meta.get("market_year", 0)) != iso_year:
-        raise CollectionError("R6 snapshot week/year does not match the R4 target")
+def load_latest_r6_market_fallback(iso_year: int, iso_week: int) -> dict[str, Any]:
+    """Optionally read the latest local R6 snapshot; this never triggers R6."""
+    candidates = list(BASE.glob("market_snapshot_W*.json"))
+    candidates.extend(BASE.glob("data/processed/r6/**/market_snapshot*.json"))
 
+    usable: list[tuple[tuple[int, int], Path, dict[str, Any]]] = []
+    for path in dict.fromkeys(candidates):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            meta = payload.get("meta", {})
+            year = int(meta.get("market_year", 0))
+            week_text = str(meta.get("market_week", ""))
+            match = re.fullmatch(r"W(\d{1,2})", week_text)
+            if not match:
+                match = re.search(r"W(\d{1,2})", path.name)
+            week = int(match.group(1)) if match else 0
+            if year <= 0 or week <= 0 or (year, week) > (iso_year, iso_week):
+                continue
+            usable.append(((year, week), path, payload))
+        except (OSError, ValueError, json.JSONDecodeError):
+            continue
+
+    if not usable:
+        raise CollectionError("no usable local R6 market snapshot was found")
+
+    (_, _), path, payload = max(usable, key=lambda item: item[0])
+    meta = payload.get("meta", {})
     metrics: dict[str, Any] = {}
     for label, row in payload.get("metrics", {}).items():
         r4_label = "WTI" if label == "OIL" else label
@@ -858,19 +1069,28 @@ def load_r6_market_fallback(iso_year: int, iso_week: int) -> dict[str, Any]:
             "ticker": row.get("ticker"),
             "baseline_date": row.get("baseline_date"),
             "baseline_close": row.get("baseline_close"),
-            "latest_date": row.get("final_date"),
-            "latest_close": row.get("close_price"),
-            "weekly_return_pct": row.get("weekly_delta_pct"),
+            "latest_date": row.get("final_date") or row.get("latest_date"),
+            "latest_close": row.get("close_price") or row.get("latest_close"),
+            "weekly_return_pct": row.get("weekly_delta_pct")
+            if row.get("weekly_delta_pct") is not None
+            else row.get("weekly_return_pct"),
         }
+
+    missing_assets = sorted(set(MARKET_TICKERS) - set(metrics))
     missing_sectors = sorted(set(SECTOR_NAMES) - set(metrics))
     if not metrics:
-        raise CollectionError("same-week R6 snapshot has no metrics")
+        raise CollectionError(f"local R6 snapshot has no metrics: {path}")
     return {
         "metrics": metrics,
+        "missing_assets": missing_assets,
         "missing_sectors": missing_sectors,
         "all_11_sectors_complete": not missing_sectors,
-        "method": f"Same-week R6 snapshot fallback ({path.name}); {meta.get('return_method', '')}",
-        "fallback_file": path.name,
+        "diagnostics": {},
+        "method": (
+            f"Optional local R6 snapshot ({path.name}); "
+            f"{meta.get('return_method', '')}"
+        ),
+        "fallback_file": str(path.relative_to(BASE)),
     }
 
 
@@ -1163,7 +1383,11 @@ def analyse(snapshot: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def build_snapshot(as_of: date, headline_limit: int = 30) -> dict[str, Any]:
+def build_snapshot(
+    as_of: date,
+    headline_limit: int = 30,
+    use_r6_fallback: bool = False,
+) -> dict[str, Any]:
     """Run every free collector and return a partial-safe weekly snapshot."""
     iso_year, iso_week, week_start, week_end = target_period(as_of)
     status: list[dict[str, Any]] = []
@@ -1203,17 +1427,24 @@ def build_snapshot(as_of: date, headline_limit: int = 30) -> dict[str, Any]:
 
     market = collect_source(
         status,
-        "Yahoo Finance via yfinance",
+        "Yahoo Finance via yfinance (batch + per-ticker retry)",
         "https://finance.yahoo.com/",
         lambda: collect_market_data(week_start, min(as_of, week_end)),
     )
-    if market is None:
-        fallback_path = BASE / f"market_snapshot_W{iso_week:02d}.json"
+    if market is None and use_r6_fallback:
         market = collect_source(
             status,
-            "Same-week R6 market snapshot fallback",
-            str(fallback_path.relative_to(BASE)),
-            lambda: load_r6_market_fallback(iso_year, iso_week),
+            "Optional latest local R6 market snapshot",
+            "local market_snapshot_W*.json",
+            lambda: load_latest_r6_market_fallback(iso_year, iso_week),
+        )
+    elif market is None:
+        add_status(
+            status,
+            "Optional local R6 market snapshot",
+            "",
+            "skipped",
+            "Disabled by default: R4 runs independently. Pass --use-r6-fallback to read an existing local R6 file.",
         )
 
     macro_events = collect_macro_events(as_of, status)
@@ -1452,6 +1683,7 @@ def render_report(snapshot: dict[str, Any]) -> str:
         "- Use Trading Economics or another public calendar manually only as a cross-check.",
         "- Check AP or another reputable wire for geopolitical developments not captured by the feeds.",
         "- Check Earnings Whispers only if individual earnings are material to the team forecast.",
+        "- Replace this checklist with R4's final causal thesis before R8 synthesis.",
         "",
         "## Source Status and Automation Scope",
         "",
@@ -1466,10 +1698,19 @@ def render_report(snapshot: dict[str, Any]) -> str:
         "### Implemented",
         "",
         "- Official Treasury yields, BLS CPI/unemployment, DOL claims where available.",
-        "- Cross-asset returns and 11-sector ETF collection through yfinance, with same-week R6 fallback.",
+        "- Cross-asset returns and 11-sector ETF collection through independent yfinance batch + per-ticker retries.",
+        "- Optional local R6 snapshot fallback only when explicitly enabled with `--use-r6-fallback`.",
         "- Federal Reserve RSS and macro/geopolitical headline-only RSS collection.",
         "- This-week/next-week key event table from official BLS, BEA and Federal Reserve calendars.",
         "- CSV/JSON/Markdown outputs, explicit source health, and rule-based screening.",
+        "",
+        "### Intentionally Not Automated",
+        "",
+        "- Paid/licensed or dynamic-dashboard-only data (FedWatch, Trading Economics API, Earnings Whispers).",
+        "- Full-article understanding and final news narrative; this remains the human R4 task.",
+        "- Any claim that a headline alone proves a market cause.",
+        "",
+        "_Educational project output; not investment advice._",
         "",
     ]
     return "\n".join(lines)
@@ -1565,6 +1806,14 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Exit non-zero if Treasury, market data or all 11 sectors are incomplete",
     )
+    parser.add_argument(
+        "--use-r6-fallback",
+        action="store_true",
+        help=(
+            "Only if independent yfinance collection fails, read the latest existing "
+            "local R6 market_snapshot file. This does not trigger or call R6."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -1577,7 +1826,11 @@ def main() -> int:
     except ValueError as exc:
         raise SystemExit("--as-of must use YYYY-MM-DD") from exc
 
-    snapshot = build_snapshot(as_of, headline_limit=args.headline_limit)
+    snapshot = build_snapshot(
+        as_of,
+        headline_limit=args.headline_limit,
+        use_r6_fallback=args.use_r6_fallback,
+    )
     paths = write_outputs(snapshot)
     print(f"R4 report: {paths['report'].relative_to(BASE)}")
     print(f"Structured outputs: {paths['output_dir'].relative_to(BASE)}")
