@@ -230,4 +230,4 @@ def generate_report_from_snapshot(snapshot_path_input, market_week_str):
 **Current Trend:** {get_metric(metrics, label, 'trend')}
 * **Close Price:** {get_metric(metrics, label, 'close_price')}
 * **8-Day EMA:** {get_metric(metrics, label, 'ema_8')}
-* **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}
+* **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}"""
