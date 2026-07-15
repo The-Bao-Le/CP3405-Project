@@ -121,17 +121,21 @@ def generate_report_from_snapshot(snapshot_path_input, market_week_str):
 
     report_sections = [f"# R5 Technical Agent Report: {meta['market_week']}\n"]
     
-    # ➕ Added all missing sectors into the Markdown report layout to support full 11 sectors dynamically
+    # Unified summary overview block at the top
+    report_sections.append("## Executive Market Verdict")
+    report_sections.append(generate_spx_summary(metrics, meta['market_week']))
+    report_sections.append("\n---\n")
+
     for label in metrics.keys():
         section = f"""## {label} ({get_metric(metrics, label, 'ticker')})
 **Current Trend:** {get_metric(metrics, label, 'trend')}
 * **Close Price:** {get_metric(metrics, label, 'close_price')}
 * **8-Day EMA:** {get_metric(metrics, label, 'ema_8')}
-* **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}""" # 🛠️ Fixed the syntax error by closing the triple quotes properly
+* **21-Day EMA:** {get_metric(metrics, label, 'ema_21')}"""
         report_sections.append(section)
 
     with open(output_file, "w", encoding="utf-8") as file:
-        file.write("\n".join(report_sections))
+        file.write("\n\n".join(report_sections))
     print(f"Successfully generated full technical markdown matrix: {output_file}")
 
 def main():
@@ -142,7 +146,7 @@ def main():
     market_week = args.market_week
     print(f"--- R5 TECHNICAL ENGINE RUNNING FOR WEEK: {market_week} ---")
 
-    # ➕ Expanded target_tickers array to include ALL 11 Sector ETFs + 3 Benchmark Indices
+    # Complete 14 asset registries (11 Sector ETFs + 3 Benchmark Indices)
     target_tickers = [
         "SPX", "NDX", "IWM", 
         "XLK", "XLU", "XLF", "XLE", "XLB", "XLY", "XLP", "XLV", "XLI", "XLC", "XLRE"
@@ -153,16 +157,16 @@ def main():
         "NDX": "^NDX",
         "IWM": "IWM",
         "XLK": "XLK",
-        "XLU": "XLU",  # Added Utilities
+        "XLU": "XLU",
         "XLF": "XLF",
         "XLE": "XLE",
-        "XLB": "XLB",  # Added Materials
+        "XLB": "XLB",
         "XLY": "XLY",
-        "XLP": "XLP",  # Added Consumer Staples
+        "XLP": "XLP",
         "XLV": "XLV",
-        "XLI": "XLI",  # Added Industrials
+        "XLI": "XLI",
         "XLC": "XLC",
-        "XLRE": "XLRE" # Added Real Estate
+        "XLRE": "XLRE"
     }
 
     snapshot = {
@@ -186,6 +190,10 @@ def main():
         if df.empty:
             print(f"Warning: No data for {label}")
             continue
+
+        # 🛠️ CRITICAL FIX: Flatten yfinance MultiIndex columns to fit original script logic perfectly
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = df.columns.get_level_values(0)
             
         df = calculate_ema(df, "Close", 8)
         df = calculate_ema(df, "Close", 21)
