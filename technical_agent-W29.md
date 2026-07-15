@@ -3,92 +3,140 @@
 
 ## Executive Market Verdict
 
-For W29, the R5 Technical Agent shows a **Long Strategy** technical bias for the S&P 500. SPX closed at **nan**, compared with its 8-day EMA at **7512.01** and 21-day EMA at **7476.55**. The current trend is classified as **Bearish Phase**. Key support is around **7046.55**, while resistance is **7620.90**. The S&P 500 remains the main benchmark for the team prediction.
+For W29, the R5 Technical Agent shows a **N/A** technical bias for the S&P 500. SPX closed at **7515.3398**, compared with its 8-day EMA at **N/A** and 21-day EMA at **N/A**. The current trend is classified as **N/A**. Key support is around **N/A**, while resistance is **N/A**. The S&P 500 remains the main benchmark for the team prediction.
 
 
 ---
 
 
-## SPX (^SPX)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 7512.01
-* **21-Day EMA:** 7476.55
+## SPX (^GSPC)
+**Current Trend:** N/A
+* **Close Price:** 7515.3398
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
 
 ## NDX (^NDX)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 29529.82
-* **21-Day EMA:** 29563.26
+**Current Trend:** N/A
+* **Close Price:** 29264.0996
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
 
 ## IWM (IWM)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 295.96
-* **21-Day EMA:** 294.65
+**Current Trend:** N/A
+* **Close Price:** 293.48
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## GOLD (GC=F)
+**Current Trend:** N/A
+* **Close Price:** 4029.6001
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## OIL (CL=F)
+**Current Trend:** N/A
+* **Close Price:** 80.46
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## US10Y (^TNX)
+**Current Trend:** N/A
+* **Close Price:** 4.609
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## TLT (TLT)
+**Current Trend:** N/A
+* **Close Price:** 83.97
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## BTC (BTC-USD)
+**Current Trend:** N/A
+* **Close Price:** 62800.1914
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
 
 ## XLK (XLK)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 183.38
-* **21-Day EMA:** 183.78
+**Current Trend:** N/A
+* **Close Price:** 181.28
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
 
-## XLU (XLU)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 45.44
-* **21-Day EMA:** 45.17
-
-## XLF (XLF)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 55.42
-* **21-Day EMA:** 54.41
-
-## XLE (XLE)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 54.98
-* **21-Day EMA:** 54.95
-
-## XLB (XLB)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 50.88
-* **21-Day EMA:** 51.07
-
-## XLY (XLY)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 116.62
-* **21-Day EMA:** 116.54
-
-## XLP (XLP)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 84.16
-* **21-Day EMA:** 83.96
-
-## XLV (XLV)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 161.15
-* **21-Day EMA:** 157.88
-
-## XLI (XLI)
-**Current Trend:** Bearish Phase
-* **Close Price:** nan
-* **8-Day EMA:** 181.71
-* **21-Day EMA:** 180.45
 
 ## XLC (XLC)
-**Current Trend:** Bullish Phase
-* **Close Price:** 111.45
-* **8-Day EMA:** 110.62
-* **21-Day EMA:** 110.29
+**Current Trend:** N/A
+* **Close Price:** 111.59
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## XLY (XLY)
+**Current Trend:** N/A
+* **Close Price:** 116.04
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## XLF (XLF)
+**Current Trend:** N/A
+* **Close Price:** 56.07
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## XLV (XLV)
+**Current Trend:** N/A
+* **Close Price:** 161.41
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## XLP (XLP)
+**Current Trend:** N/A
+* **Close Price:** 84.59
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## XLE (XLE)
+**Current Trend:** N/A
+* **Close Price:** 56.74
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## XLU (XLU)
+**Current Trend:** N/A
+* **Close Price:** 45.72
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## XLI (XLI)
+**Current Trend:** N/A
+* **Close Price:** 180.37
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
+
+## XLB (XLB)
+**Current Trend:** N/A
+* **Close Price:** 50.58
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
+
 
 ## XLRE (XLRE)
-**Current Trend:** Bullish Phase
-* **Close Price:** 44.48
-* **8-Day EMA:** 44.48
-* **21-Day EMA:** 44.39
+**Current Trend:** N/A
+* **Close Price:** 44.7
+* **8-Day EMA:** N/A
+* **21-Day EMA:** N/A
