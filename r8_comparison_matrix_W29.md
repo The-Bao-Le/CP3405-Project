@@ -1,5 +1,5 @@
 # 📊 R8 Multi-Model Consensus Strategy Dashboard (W29)
-Generated at: 2026-07-15 02:29:38
+Generated at: 2026-07-16 13:51:34
 
 ## 🔍 Prediction Uncertainty Assessment Matrix (Free Open-Source Model Alignment)
 
@@ -14,22 +14,22 @@ Generated at: 2026-07-15 02:29:38
 
 ### 🟢 ChatGPT 4o Mini Analysis
 ```text
-Inference Error on openai/gpt-4o-mini:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}...
+Inference Error on openai/gpt-4o-mini:free: Error code: 404 - {'error': {'message': 'This model is unavailable for free. The paid version is available now - use this slug instead: openai/gpt-4o-mini', 'code': 404}, 'user_id': 'user_3GaVUKSiKy9YRGQZrPUATFQK6DZ'}...
 ```
 
 ### 🔵 Claude / Llama Alternative Analysis
 ```text
-Inference Error on meta-llama/llama-3.1-70b-instruct:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}...
+Inference Error on meta-llama/llama-3.1-70b-instruct:free: Error code: 404 - {'error': {'message': 'This model is unavailable for free. The paid version is available now - use this slug instead: meta-llama/llama-3.1-70b-instruct', 'code': 404}, 'user_id': 'user_3GaVUKSiKy9YRGQZrPUATFQK6DZ'}...
 ```
 
 ### 🔴 Gemini 2.5 Flash Analysis
 ```text
-Inference Error on google/gemini-2.5-flash:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}...
+Inference Error on google/gemini-2.5-flash:free: Error code: 404 - {'error': {'message': 'This model is unavailable for free. The paid version is available now - use this slug instead: google/gemini-2.5-flash', 'code': 404}, 'user_id': 'user_3GaVUKSiKy9YRGQZrPUATFQK6DZ'}...
 ```
 
 ### 🟡 DeepSeek R1 Analysis
 ```text
-Inference Error on deepseek/deepseek-r1:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}...
+Inference Error on deepseek/deepseek-r1:free: Error code: 404 - {'error': {'message': 'This model is unavailable for free. The paid version is available now - use this slug instead: deepseek/deepseek-r1', 'code': 404}, 'user_id': 'user_3GaVUKSiKy9YRGQZrPUATFQK6DZ'}...
 ```
 
 ----------------------------------------

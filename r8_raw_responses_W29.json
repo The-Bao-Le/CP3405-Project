@@ -1,6 +1,6 @@
 {
-    "ChatGPT_4o_Mini": "Inference Error on openai/gpt-4o-mini:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}",
-    "Claude_Llama_Alternative": "Inference Error on meta-llama/llama-3.1-70b-instruct:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}",
-    "Gemini_2.5_Flash": "Inference Error on google/gemini-2.5-flash:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}",
-    "DeepSeek_R1": "Inference Error on deepseek/deepseek-r1:free: Error code: 401 - {'error': {'message': 'Missing Authentication header', 'code': 401}}"
+    "ChatGPT_4o_Mini": "Inference Error on openai/gpt-4o-mini:free: Error code: 404 - {'error': {'message': 'This model is unavailable for free. The paid version is available now - use this slug instead: openai/gpt-4o-mini', 'code': 404}, 'user_id': 'user_3GaVUKSiKy9YRGQZrPUATFQK6DZ'}",
+    "Claude_Llama_Alternative": "Inference Error on meta-llama/llama-3.1-70b-instruct:free: Error code: 404 - {'error': {'message': 'This model is unavailable for free. The paid version is available now - use this slug instead: meta-llama/llama-3.1-70b-instruct', 'code': 404}, 'user_id': 'user_3GaVUKSiKy9YRGQZrPUATFQK6DZ'}",
+    "Gemini_2.5_Flash": "Inference Error on google/gemini-2.5-flash:free: Error code: 404 - {'error': {'message': 'This model is unavailable for free. The paid version is available now - use this slug instead: google/gemini-2.5-flash', 'code': 404}, 'user_id': 'user_3GaVUKSiKy9YRGQZrPUATFQK6DZ'}",
+    "DeepSeek_R1": "Inference Error on deepseek/deepseek-r1:free: Error code: 404 - {'error': {'message': 'This model is unavailable for free. The paid version is available now - use this slug instead: deepseek/deepseek-r1', 'code': 404}, 'user_id': 'user_3GaVUKSiKy9YRGQZrPUATFQK6DZ'}"
 }
