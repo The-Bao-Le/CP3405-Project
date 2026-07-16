@@ -69,43 +69,13 @@ TARGETS = {
 
 WEEKLY_REQUIRED_TARGETS = {
     "W24": ["SPX", "NDX", "IWM", "XLK", "XLE", "XLF"],
-    "W25": ["SPX", "NDX", "IWM", "XLK", "XLE", "XLF", "XLU", "XLB"],
+    "W25": ["SPX", "NDX", "IWM", "XLK", "XLE", "XLF", "XLU", "XLB"]
 }
 
 FULL_TARGETS = [
     "SPX", "NDX", "IWM",
-    "XLK", "XLC", "XLY", "XLP", "XLE", "XLF", "XLV", "XLI", "XLB", "XLRE", "XLU",
+    "XLK", "XLC", "XLY", "XLP", "XLE", "XLF", "XLV", "XLI", "XLB", "XLRE", "XLU"
 ]
-
-
-def get_week_number(week: str) -> int:
-    match = re.search(r"W(\d+)", week.upper())
-    if not match:
-        return 0
-    return int(match.group(1))
-
-
-def get_required_targets_for_week(week: str, parsed_predictions: dict) -> list:
-    """
-    Decides which targets should be calibrated for the week.
-
-    W24 = 3 indices + Tech, Energy, Financials
-    W25 = W24 + Utilities + Materials
-    W27 onward = 3 indices + all 11 sectors
-    Other weeks = auto-detect from prediction file
-    """
-    week = week.upper()
-    week_number = get_week_number(week)
-
-    if week in WEEKLY_REQUIRED_TARGETS:
-        return WEEKLY_REQUIRED_TARGETS[week]
-
-    if week_number >= 27:
-        return FULL_TARGETS
-
-    # Fallback for W26 or special weeks:
-    # only calibrate what the prediction file actually contains.
-    return [target for target in FULL_TARGETS if target in parsed_predictions]
 
 # W22 scoring rule reused for consistency.
 # Source rule:
@@ -125,7 +95,38 @@ SCORING_RULES = {
 }
 
 
+def get_week_number(week: str) -> int:
+    """Get week number from input string."""
+    match = re.search(r"W(\d+)", week.upper())
+    if not match:
+        return 0
+    return int(match.group(1))
+
+
+def get_required_targets_for_week(week: str, parsed_predictions: dict) -> list:
+    """
+    Decides which targets should be calibrated for the week.
+
+    W24 = 3 indices + Tech, Energy, Financials
+    W25 = W24 + Utilities + Materials
+    W27 onward = 3 indices + all 11 sectors
+    Other weeks = auto-detect from prediction file
+    """
+    week_number = get_week_number(week)
+
+    if week in WEEKLY_REQUIRED_TARGETS:
+        return WEEKLY_REQUIRED_TARGETS[week]
+
+    if week_number >= 27:
+        return FULL_TARGETS
+
+    # Fallback for W26 or special weeks:
+    # only calibrate what the prediction file actually contains.
+    return [target for target in FULL_TARGETS if target in parsed_predictions]
+
+
 def normalize_week(week: str) -> str:
+    """Normalizes week string to the format W<number>."""
     week = week.upper().strip()
     if not week.startswith("W"):
         week = f"W{week}"
@@ -133,16 +134,19 @@ def normalize_week(week: str) -> str:
 
 
 def read_text(path: Path) -> str:
+    """Read text from filepath."""
     if not path.exists():
         raise FileNotFoundError(f"Missing required file: {path}")
     return path.read_text(encoding="utf-8")
 
 
 def clean_spaces(text: str) -> str:
+    """Remove duplicate spaces from text."""
     return re.sub(r"\s+", " ", text).strip()
 
 
 def normalize_confidence(confidence: str) -> str:
+    """Normalize confidence string."""
     text = confidence.lower().strip()
 
     if "high" in text:
@@ -155,6 +159,7 @@ def normalize_confidence(confidence: str) -> str:
 
 
 def normalize_prediction_direction(direction_text: str) -> str:
+    """Normalize prediction direction string."""
     text = direction_text.lower().strip()
 
     if "neutral-bearish" in text:
@@ -176,29 +181,28 @@ def normalize_prediction_direction(direction_text: str) -> str:
 
 
 def actual_direction_from_pct(pct: float, neutral_band: float = 0.05) -> str:
-    if pct > neutral_band:
+    """
+    Returns the actual direction from the pct and neutral band.
+
+    The neutral band is the maximum magnitude in both positive and negative directions such that the pct should be considered neutral.
+    """
+    # We use the absolute value of the neutral band just in case a negative value gets passed in
+    neutral_band_magnitude = abs(neutral_band)
+    if pct > neutral_band_magnitude:  # pct > positive neutral band magnitude: up
         return "up"
-    if pct < -neutral_band:
+    if pct < neutral_band_magnitude:  # pct < positive neutral band magnitude: down
         return "down"
     return "neutral"
 
 
 def is_direction_hit(predicted_direction: str, actual_pct: float) -> bool:
+    """Determine if a direction was hit."""
     actual_direction = actual_direction_from_pct(actual_pct)
-
-    if predicted_direction == "up":
-        return actual_direction == "up"
-
-    if predicted_direction == "down":
-        return actual_direction == "down"
-
-    if predicted_direction == "neutral":
-        return actual_direction == "neutral"
-
-    return False
+    return actual_direction == predicted_direction
 
 
 def parse_range(range_text: str):
+    """Parse range and return low and high values."""
     if not range_text:
         return None
 
@@ -216,6 +220,7 @@ def parse_range(range_text: str):
 
 
 def range_status(predicted_range, actual_pct: float) -> str:
+    """Determine range status based on predicted range and actual pct."""
     if predicted_range is None:
         return "N/A"
 
@@ -235,7 +240,7 @@ def parse_explicit_prediction_section(text: str, target: str):
     % Range: +0.4% to +1.4%
     Confidence: Medium
 
-    Also works when the markdown has been compressed onto one line.
+    Also works when the Markdown has been compressed onto one line.
     """
     target_pattern = re.escape(target)
 
@@ -284,7 +289,7 @@ def parse_explicit_prediction_section(text: str, target: str):
         "predicted_range": parse_range(range_text),
         "confidence_raw": confidence_text,
         "confidence": normalize_confidence(confidence_text),
-        "source": "primary_prediction_section",
+        "source": "primary_prediction_section"
     }
 
 
@@ -326,11 +331,12 @@ def parse_sector_fallback(text: str, target: str):
         "predicted_range": None,
         "confidence_raw": "Medium",
         "confidence": "Medium",
-        "source": "sector_call_fallback",
+        "source": "sector_call_fallback"
     }
 
 
-def parse_predictions(prediction_text: str):
+def parse_predictions(prediction_text: str) -> dict:
+    """Parse prediction file."""
     prediction_text = clean_spaces(prediction_text)
     results = {}
 
@@ -340,13 +346,13 @@ def parse_predictions(prediction_text: str):
         if parsed is None:
             parsed = parse_sector_fallback(prediction_text, target)
 
-        if parsed is not None:
-            results[target] = parsed
+        results[target] = parsed
 
     return results
 
 
-def parse_actuals(actual_text: str):
+def parse_actuals(actual_text: str) -> dict:
+    """Parse actuals file."""
     actual_text = clean_spaces(actual_text)
     actuals = {}
 
@@ -358,7 +364,7 @@ def parse_actuals(actual_text: str):
         r"\|\s*([^|]+)\s*"
         r"\|\s*([^|]+)\s*"
         r"\|\s*([-+]?\d+(?:\.\d+)?)%\s*\|",
-        re.IGNORECASE,
+        re.IGNORECASE
     )
 
     for market_name, ticker, close_price, weekly_change in core_pattern.findall(actual_text):
@@ -372,41 +378,45 @@ def parse_actuals(actual_text: str):
         elif market_name_clean.lower() == "russell 2000":
             key = "IWM"
         else:
-            continue
+            continue  # skip to the next iteration if market_name_clean is none of the above
 
         actuals[key] = {
             "actual_label": market_name_clean,
             "ticker": clean_spaces(ticker),
             "close_price": clean_spaces(close_price),
             "actual_pct": pct,
-            "actual_direction": actual_direction_from_pct(pct),
+            "actual_direction": actual_direction_from_pct(pct)
         }
 
     # Sector table parser.
     # Example:
-    # | XLK Technology | 4.48% |
+    # | XLK Technology | 181.2800 | -2.42% |
     sector_pattern = re.compile(
-    r"\|\s*(XLK|XLC|XLY|XLP|XLE|XLF|XLV|XLI|XLB|XLRE|XLU)\s+[A-Za-z ]+\s*"
+    r"\|\s*(XLK|XLC|XLY|XLP|XLE|XLF|XLV|XLI|XLB|XLRE|XLU)\s+[a-zA-Z\s]+\s*"
+    r"\|\s*([^|]+)\s*"
     r"\|\s*([-+]?\d+(?:\.\d+)?)%\s*\|",
-    re.IGNORECASE,
+    re.IGNORECASE
     )
 
-    for sector, weekly_change in sector_pattern.findall(actual_text):
+    for sector, close_price, weekly_change in sector_pattern.findall(actual_text):
         key = sector.upper()
         pct = float(weekly_change)
 
         actuals[key] = {
             "actual_label": TARGETS[key]["display"],
             "ticker": key,
-            "close_price": "N/A",
+            "close_price": clean_spaces(close_price),
             "actual_pct": pct,
-            "actual_direction": actual_direction_from_pct(pct),
+            "actual_direction": actual_direction_from_pct(pct)
         }
 
     return actuals
 
 
 def score_item(prediction, actual):
+    """Compare prediction and actual values return score information."""
+    if (prediction is None) or (actual is None):  # in case None gets passed in
+        return None
     hit = is_direction_hit(prediction["predicted_direction"], actual["actual_pct"])
     score = SCORING_RULES[(prediction["confidence"], hit)]
     range_result = range_status(prediction["predicted_range"], actual["actual_pct"])
@@ -424,11 +434,12 @@ def score_item(prediction, actual):
         "hit": hit,
         "range_result": range_result,
         "score": score,
-        "prediction_source": prediction["source"],
+        "prediction_source": prediction["source"]
     }
 
 
 def generate_markdown(week, scored_items, missing_predictions, missing_actuals, output_json_name):
+    """Generate output Markdown file."""
     hits = sum(1 for item in scored_items if item["hit"])
     misses = sum(1 for item in scored_items if not item["hit"])
     total_score = sum(item["score"] for item in scored_items)
@@ -463,7 +474,7 @@ def generate_markdown(week, scored_items, missing_predictions, missing_actuals, 
         f"## {week} Team Prediction vs Actual Result",
         "",
         "| Target | Team Prediction | Predicted Direction | Predicted Range | Confidence | Actual Result | Actual Direction | Hit / Miss | Range Check | Score |",
-        "|---|---|---|---:|---|---:|---|---|---|---:|",
+        "|---|---|---|---:|---|---:|---|---|---|---:|"
     ]
 
     for item in scored_items:
@@ -488,7 +499,7 @@ def generate_markdown(week, scored_items, missing_predictions, missing_actuals, 
             f"**Hit Rate:** {hits} / {len(scored_items)} = {(hits / len(scored_items) * 100):.1f}%" if scored_items else "**Hit Rate:** N/A",
             f"**Working Calibration Score:** {total_score:+d}",
             f"**Structured Result File:** `{output_json_name}`",
-            "",
+            ""
         ]
     )
 
@@ -498,7 +509,7 @@ def generate_markdown(week, scored_items, missing_predictions, missing_actuals, 
                 "---",
                 "",
                 "## Automation Warnings",
-                "",
+                ""
             ]
         )
 
@@ -520,7 +531,7 @@ def generate_markdown(week, scored_items, missing_predictions, missing_actuals, 
             "The range check is reported separately and does not change the official W22-style score.",
             "",
             f"Generated automatically at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-            "",
+            ""
         ]
     )
 
@@ -542,29 +553,33 @@ def main():
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Load predictions file
     prediction_text = read_text(prediction_path)
-    actual_text = read_text(actual_path)
-
     predictions = parse_predictions(prediction_text)
+    print(predictions)
+
+    # Load actuals file
+    actual_text = read_text(actual_path)
     actuals = parse_actuals(actual_text)
 
-    scored_items = []
-    missing_predictions = []
-    missing_actuals = []
+    scored_items = []  # successfully scored targets
+    missing_predictions = []  # targets with missing predictions
+    missing_actuals = []  # targets with missing actuals
 
     targets_to_score = get_required_targets_for_week(week, predictions)
 
     for target in targets_to_score:
-        if target not in predictions:
+        if (target not in predictions) or (predictions[target] is None):
             missing_predictions.append(target)
             continue
 
-        if target not in actuals:
+        if (target not in actuals) or (actuals[target] is None):
             missing_actuals.append(target)
             continue
 
         scored_items.append(score_item(predictions[target], actuals[target]))
 
+    working_calibration_score = sum(item["score"] for item in scored_items)
     result = {
         "week": week,
         "prediction_file": str(prediction_path),
@@ -580,8 +595,8 @@ def main():
             "hits": sum(1 for item in scored_items if item["hit"]),
             "misses": sum(1 for item in scored_items if not item["hit"]),
             "total_items": len(scored_items),
-            "working_calibration_score": sum(item["score"] for item in scored_items),
-        },
+            "working_calibration_score": working_calibration_score
+        }
     }
 
     json_name = f"calibration_result_{week}.json"
@@ -598,7 +613,7 @@ def main():
 
     print(f"Generated: {json_path}")
     print(f"Generated: {md_path}")
-    print(f"Working calibration score: {result['summary']['working_calibration_score']:+d}")
+    print(f"Working calibration score: {working_calibration_score}")
 
 
 if __name__ == "__main__":
