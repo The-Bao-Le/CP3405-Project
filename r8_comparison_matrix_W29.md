@@ -1,12 +1,12 @@
 # 📊 R8 Multi-Model Consensus Strategy Dashboard (W29)
-Generated at: 2026-07-16 14:01:51
+Generated at: 2026-07-16 14:36:34
 
 ## 🔍 Prediction Uncertainty Assessment Matrix (Free Open-Source Model Alignment)
 
-| Evaluation Dimension | ChatGPT (4o-mini) | Claude (Alternative) | Gemini (2.5-flash) | DeepSeek (R1) |
-| :--- | :--- | :--- | :--- | :--- |
-| **Consensus Bias** | Parsed | Parsed | ⚠️ Error | Parsed |
-| **Response Status** | ✅ Success | ✅ Success | ❌ API Error | ✅ Success |
+| Evaluation Dimension | ChatGPT (4o-mini) | Claude (Alternative) | Qwen (2.5-72B-Free) |
+| :--- | :--- | :--- | :--- |
+| **Consensus Bias** | Parsed | Parsed | ⚠️ Error |
+| **Response Status** | ✅ Success | ✅ Success | ❌ API Error |
 
 ---
 
@@ -14,64 +14,45 @@ Generated at: 2026-07-16 14:01:51
 
 ### 🟢 ChatGPT 4o Mini Analysis
 ```text
-### Integrated Trading Consensus Analysis for Week 29 (W29)
+### Integrated Trading Consensus Analysis for W29
 
-#### 1. Unified Market Bias
-- **SPX (S&P 500)**: **Neutral-Bullish**
-- **NDX (NASDAQ)**: **Neutral-Bullish**
+#### Unified Market Bias
+- **SPX (S&P 500):** Neutral-Bullish
+- **NDX (NASDAQ):** Neutral-Bullish
+- **IWM (Russell 2000):** Neutral-Bullish
 
-#### 2. Macro-Technical Strategic Justification
-- **Seasonal Bias (R3)**:
-  - **SPX**: Historical average return of +1.3% in July, consistent with midterm election year trends.
-  - **NDX**: Historical average return of +0.9% in July, although lower than SPX, still indicates a positive bias.
-  - **IWM**: Lower expected return of +0.4%, suggesting caution in small-cap exposure.
-  
-- **Technical Trends (R5)**:
-  - **N/A** technical indicators for SPX and NDX limit the ability to assess immediate momentum or reversal signals.
-  - Absence of defined support and resistance levels indicates market indecision, reinforcing a neutr...
+---
+
+### Macro-Technical Strategic Justification
+
+- **Seasonal Context (R3 Analysis):**
+  - July historically shows a **Neutral-Bullish** sentiment for SPX with an expected average return of **+1.3%** during midterm election years.
+  - NDX has a historical average return of **+0.9%**, indicating a slight bullish sentiment.
+  - IWM shows a weaker performance with a historical average return of **+0.4**, but still aligns with a neutral-bullish outlook due to the overall seasonal context.
+
+- **Technical Analysis (R5 Report):**
+  - Current technical indicators for SPX, NDX, and IWM are classified as **N/A...
 ```
 
 ### 🔵 Claude / Llama Alternative Analysis
 ```text
-
-
 **Integrated Trading Consensus Analysis for W29**
 
 **Unified Market Bias:**
 
-Based on the synthesis of seasonal biases from R3 and technical trends from R5, I assign a **Neutral** market bias for the S&P 500 (SPX) and **Neutral** market bias for the NASDAQ (NDX).
+Based on the synthesis of seasonal biases from R3 and technical trends from R5, I assign a **Neutral-Bullish** market bias for the S&P 500 (SPX) and a **Neutral** market bias for the NASDAQ (NDX).
 
 **Macro-Technical Strategic Justification:**
 
-• **Seasonal Context:** R3's analysis indicates a neutral-bullish bias for the S&P 500, with a historical average return of +1.3% in July. The NASDAQ has a slightly lower expected average return of +0.9%.
-• **Technical Trends:** R5's technical analysis shows no clear trend for the S&P 500, NASDAQ, or other major indices, with most EMAs and support levels marked as N/A.
-• **Macro Environment:** R4's macro data indicates unchanged Fed rate policies, with a focus on the yield curve. Th...
+* The R3 Almanac Agent Analysis indicates a Neutral-Bullish bias for the SPX, with a historical average return of +1.3% in July, and a midterm year average return of +1.3%.
+* The R5 Technical Agent Report shows a lack of clear technical trends for the SPX, with no discernible 8-day or 21-day EMA signals.
+* The R4 Macro Environment report notes that Fed rate policies remain unchanged, and the yield curve remains a primary focus.
+* The sector index seasonality matrix from R3 s...
 ```
 
-### 🔴 Gemini 2.5 Flash Analysis
+### 🟡 Qwen 2.5 72B Free Analysis
 ```text
-Inference Error on google/gemini-2.5-flash: Error code: 402 - {'error': {'message': 'This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15034. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account', 'code': 402, 'metadata': {'provider_name': None, 'previous_errors': [{'code': 402, 'message': 'This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15034. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account'}, {'code': 402, 'message': 'This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15034. To increase, visit https://openrouter.ai/settings/credits a...
-```
-
-### 🟡 DeepSeek R1 Analysis
-```text
-**Integrated Quantitative Consensus Audit - W29 (2026-07-20 to 2026-07-24)**  
-**Team2 Quantitative Analysis Unit**  
-
----
-
-### **1. Synthesized Market Bias**  
-| Index | Seasonal Bias (R3) | Technical Context (R5) | **Unified Market Bias** |  
-|:---|:---|:---|:---|  
-| **SPX** | **Neutral-Bullish**<br>(July Avg: +1.3%, Midterm Year Avg: +1.3%) | No actionable EMA/S/R data; price at **7515.34** (no trend classification) | **Bullish** |  
-| **NDX** | **Neutral**<br>(July Avg: +0.9% vs. Midterm Year Avg: -0.8%) | No EMA/S/R data; price at **29,264.10** (no trend classification) | **Neutral** |  
-
----
-
-### **2. Macro-Technical Strategic Justification**  
-- **SPX Upside Catalyst**:  
-  - July’s historical seasonality (ranked 4th, +1.3% avg) aligns with midterm-year strength.  
-  - Sector tailw...
+Inference Error on qwen/qwen-2.5-72b-instruct:free: Error code: 404 - {'error': {'message': 'This model is unavailable for free. The paid version is available now - use this slug instead: qwen/qwen-2.5-72b-instruct', 'code': 404}, 'user_id': 'user_3GaVUKSiKy9YRGQZrPUATFQK6DZ'}...
 ```
 
 ----------------------------------------
