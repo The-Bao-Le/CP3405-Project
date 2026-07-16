@@ -3,7 +3,7 @@
         "agent": "R5 Technical Agent",
         "market_week": "W29",
         "market_year": 2026,
-        "generation_time": "2026-07-16T09:14:55+00:00",
+        "generation_time": "2026-07-16T09:15:56+00:00",
         "data_source": "Yahoo Finance via yfinance",
         "data_window_start": "2025-07-16",
         "data_window_end": "2026-07-16",
