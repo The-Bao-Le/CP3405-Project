@@ -116,10 +116,10 @@ def main():
 
     # 5. Map the 4 target flagship LLMs on the OpenRouter Free Tier
     models = {
-        "ChatGPT": "openai/gpt-4o-mini:free",
-        "Claude": "meta-llama/llama-3.1-70b-instruct:free", # Using Llama 3.1 70B as high-fidelity Claude free tier alternative
-        "Gemini": "google/gemini-2.5-flash:free",
-        "DeepSeek": "deepseek/deepseek-r1:free"
+        "ChatGPT": "openai/gpt-4o-mini",
+        "Claude": "meta-llama/llama-3.1-70b-instruct", # Using Llama 3.1 70B as high-fidelity Claude free tier alternative
+        "Gemini": "google/gemini-2.5-flash",
+        "DeepSeek": "deepseek/deepseek-r1"
     }
 
     print("🚀 Dispatching requests concurrently to OpenRouter cloud tier...")
