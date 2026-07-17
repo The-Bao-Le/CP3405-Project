@@ -3,11 +3,17 @@ name: R3 Almanac Agent Multi-Week Automation Pipeline
 on:
   # push:
   #   branches:
-  #     - Week-06
+  #     - Week-07
+  schedule:
+    - cron: '0 0 * * 6'
   workflow_dispatch:
     inputs:
       custom_market_week:
-        description: 'Target MARKET week to capture (Leave BLANK for automated current week, e.g., W27)'
+        description: 'Target MARKET week to override manually (Leave BLANK for automated next week forecast)'
+        required: false
+        type: string
+      custom_market_date:
+        description: 'Target DATE RANGE to override manually (Leave BLANK for automated next week forecast)'
         required: false
         type: string
 
@@ -15,7 +21,6 @@ jobs:
   execute-r3-matrix:
     runs-on: ubuntu-latest
     
-    # Standard security elevation configuration
     permissions:
       contents: write
 
@@ -37,46 +42,25 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Resolve Decoupled Execution Week Variables
-      id: resolve_weeks
-      run: |
-        # Replicating your brilliant R6 calendar engine logic
-        if [ -n "${{ github.event.inputs.custom_market_week }}" ]; then
-          M_WEEK=$(echo "${{ github.event.inputs.custom_market_week }}" | tr '[:lower:]' '[:upper:]')
-          echo "Execution Mode: Manual Override."
-        else
-          WEEK_NUM=$(date +%V)
-          M_WEEK="W${WEEK_NUM}"
-          echo "Execution Mode: Automated Calendar Resolution."
-        fi
-        
-        # Mapped date range logic matching the respective dynamic week
-        # In production, this can be mapped programmatically or pass through fallback parameters
-        echo "RESOLVED_WEEK=$M_WEEK" >> $GITHUB_ENV
-        echo "RESOLVED_DATE=2026-07-06 to 2026-07-10" >> $GITHUB_ENV
-        
-        echo "Resolved Dynamic WEEK: $M_WEEK"
-
     - name: Execute Parameterized R3 Almanac Agent
       working-directory: ./r3_almanac_agent
       run: |
-        # Inject dynamic runtime variables straight into the refactored Python script
-        python r3_almanac_agent.py "${{ env.RESOLVED_WEEK }}" "${{ env.RESOLVED_DATE }}"
+        # Pass manual override tokens dynamically if they exist.
+        # If blank, Python internally computes the precise T+1 upcoming trading week!
+        python r3_almanac_agent.py "${{ github.event.inputs.custom_market_week }}" "${{ github.event.inputs.custom_market_date }}"
 
     - name: Secure Ledger Artifacts & Route Commit to Active Branch
       run: |
         git config --global user.name "Team2 Data Automation Bot"
         git config --global user.email "bot@team2.financial"
         
-        # Securely capture all generated multi-week artifacts in the outputs folder
-        git add r3_almanac_agent/outputs/almanac_agent_${{ env.RESOLVED_WEEK }}.*
+        # Capture all newly generated artifacts dynamically in the outputs folder
+        git add r3_almanac_agent/outputs/*
         
         if git diff --staged --quiet; then
           echo "No strategic data shifts detected. Terminating smoothly."
         else
-          git commit -m "chore(data): automated R3 almanac matrix alignment for ${{ env.RESOLVED_WEEK }} [skip ci]"
-          
-          # Injecting the secret token to safely bypass any 403 access constraints
+          git commit -m "chore(data): automated R3 next-week forecast execution matrix [skip ci]"
           git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           git push origin HEAD:${{ github.ref_name }}
         fi

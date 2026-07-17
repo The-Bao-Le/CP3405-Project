@@ -3,7 +3,7 @@ name: Automated Technical Agent
 on:
   # push:
   #   branches:
-  #     - Week-06
+  #     - Week-07
   # Activates the single-variable override panel on GitHub Web UI
   workflow_dispatch:
     inputs:
@@ -12,9 +12,9 @@ on:
         required: false
         type: string
 
-  # Runs every Sunday at 18:00 Singapore/Beijing Time (10:00 UTC)
+  # Runs every Saturady at 07:00 Singapore
   schedule:
-    - cron: '0 10 * * 0'
+    - cron: '0 23 * * 5'
 
 jobs:
   audit_and_log:
