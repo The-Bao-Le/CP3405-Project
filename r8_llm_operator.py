@@ -90,7 +90,9 @@ def main():
     # 3. Dynamically search and load R4 Macro Analysis
     r4_paths = [
         f"macro_agent_{week}.md",
-        f"r4_macro_agent/macro_agent_{week}.md"
+        f"r4_macro_agent/macro_agent_{week}.md",
+        f"docs/macro_agent_2026-{week}.md",
+        f"macro_agent_2026-{week}.md"
     ]
     context_r4 = load_upstream_file(r4_paths)
     if not context_r4:
