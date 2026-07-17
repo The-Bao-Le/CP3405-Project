@@ -89,6 +89,8 @@ def main():
 
     # 3. Dynamically search and load R4 Macro Analysis
     r4_paths = [
+        f"docs/macro_agent_2026-{week}.md",
+        f"macro_agent_2026-{week}.md",
         f"macro_agent_{week}.md",
         f"r4_macro_agent/macro_agent_{week}.md"
     ]
