@@ -2,12 +2,9 @@ name: Automated R8 LLM Operator
 
 on:
   schedule:
-    # Configured for execution every Saturday morning at 09:45 Singapore/Beijing Time (01:45 UTC)
-    - cron: '45 1 * * 6'
+    # Configured for execution every Saturday at 16:00 Singapore time
+    - cron: '0 8 * * 6'
   workflow_dispatch: # Allows manual triggering
-  push:
-    branches:
-      - main # Triggers automatically when pushing to main branch
 
 jobs:
   multi_model_audit:
