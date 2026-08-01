@@ -1,0 +1,15 @@
+﻿period,timing,scheduled_sgt,date_sgt,time_sgt,impact,category,event,source,source_url,schedule_note
+This week,Past,2026-07-27T20:30+08:00,2026-07-27,20:30,Medium,Growth,Core Durable Goods Orders m/m,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+This week,Past,2026-07-28T22:00+08:00,2026-07-28,22:00,Medium,Consumption,CB Consumer Confidence,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+This week,Past,2026-07-30T02:00+08:00,2026-07-30,02:00,High,Monetary policy,FOMC Meeting,Federal Reserve calendar,https://www.federalreserve.gov/newsevents/2026-july.htm,Official calendar
+This week,Past,2026-07-30T20:30+08:00,2026-07-30,20:30,High,Inflation / consumption,Core PCE Price Index m/m,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+This week,Past,2026-07-30T20:30+08:00,2026-07-30,20:30,Medium,Labour,Initial Jobless Claims (expected recurring release),U.S. Department of Labor release cadence,https://www.dol.gov/newsroom/releases/opa/opa20200701,Usual Thursday cadence; verify holiday changes.
+This week,Past,2026-07-31T20:30+08:00,2026-07-31,20:30,High,Labour / inflation,Employment Cost Index,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+This week,Past,2026-07-31T21:45+08:00,2026-07-31,21:45,Medium,Growth,Chicago PMI,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+This week,Past,2026-07-31T22:00+08:00,2026-07-31,22:00,Medium,Consumption,Consumer Sentiment,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+Next week,Upcoming,2026-08-04T20:30+08:00,2026-08-04,20:30,Medium,Trade,"U.S. International Trade in Goods and Services, June 2026",BEA release schedule,https://www.bea.gov/news/schedule,Official calendar
+Next week,Upcoming,2026-08-04T22:00+08:00,2026-08-04,22:00,Medium,Labour,Job Openings and Labor Turnover Survey,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+Next week,Upcoming,2026-08-06T04:05+08:00,2026-08-06,04:05,Medium,Fed communication,Speech - Governor Lisa D. Cook — Economic Outlook,Federal Reserve calendar,https://www.federalreserve.gov/newsevents/2026-august.htm,Official calendar
+Next week,Upcoming,2026-08-06T20:30+08:00,2026-08-06,20:30,Medium,Labour,Initial Jobless Claims (expected recurring release),U.S. Department of Labor release cadence,https://www.dol.gov/newsroom/releases/opa/opa20200701,Usual Thursday cadence; verify holiday changes.
+Next week,Upcoming,2026-08-06T20:30+08:00,2026-08-06,20:30,Medium,Labour / growth,Productivity and Costs,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+Next week,Upcoming,2026-08-07T20:30+08:00,2026-08-07,20:30,High,Labour,Employment Situation,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
