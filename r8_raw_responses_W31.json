@@ -1,0 +1,5 @@
+{
+    "ChatGPT_4o_Mini": "API Key Error: OPENROUTER_API_KEY environment variable is missing. Please ensure your workflow YAML file contains the 'env: OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}' block.",
+    "Claude_Llama_Alternative": "API Key Error: OPENROUTER_API_KEY environment variable is missing. Please ensure your workflow YAML file contains the 'env: OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}' block.",
+    "Qwen_DeepSeek_Alternative": "API Key Error: OPENROUTER_API_KEY environment variable is missing. Please ensure your workflow YAML file contains the 'env: OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}' block."
+}
