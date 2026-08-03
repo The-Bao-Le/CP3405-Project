@@ -1,0 +1,16 @@
+category,ticker,name,signal,window_or_rank,return_or_evidence,source_page,extraction_method
+index_stat,SPX,S&P 500,,August rank 10,Normal August +0.02%; Midterm August -0.4%,103,parsed_from_august_vital_statistics_table
+index_stat,NDX,NASDAQ Composite — used as NDX seasonal proxy,,August rank 11,Normal August +0.3%; Midterm August -1.4%,103,parsed_from_august_vital_statistics_table
+index_stat,IWM,Russell 2000,,August rank 10,Normal August +0.1%; Midterm August -1.4%,103,parsed_from_august_vital_statistics_table
+sector_signal,XLK,Technology,LONG,Mid March to Mid July,+10.87%,130,parsed_from_sector_index_seasonality_table
+sector_signal,XLU,Utilities,LONG,Mid March to Early October,+9.32%,130,parsed_from_sector_index_seasonality_table
+sector_signal,XLF,Financials,SHORT,Early May to Early July,-6.30%,130,parsed_from_sector_index_seasonality_table
+sector_signal,XLE,Energy,SHORT,Early June to Late August,-5.67%,130,parsed_from_sector_index_seasonality_table
+sector_signal,XLB,Materials,SHORT,Mid May to Mid October,-5.10%,130,parsed_from_sector_index_seasonality_table
+sector_signal,XLY,Consumer Discretionary,LONG,Early October to Early June,+13.11%,131,parsed_from_sector_index_seasonality_table
+sector_signal,XLP,Consumer Staples,LONG,Early October to Early June,+8.47%,131,parsed_from_sector_index_seasonality_table
+sector_signal,XLV,Health Care,LONG,Early October to Early May,+8.74%,131,parsed_from_sector_index_seasonality_table
+sector_signal,XLI,Industrials,LONG,Late October to Mid May,+11.30%,131,parsed_from_sector_index_seasonality_table
+sector_signal,XLC,Communication Services,LONG,Mid October to Late December,+5.13%,131,parsed_from_sector_index_seasonality_table
+sector_signal,XLRE,Real Estate,LONG,Late October to Early May,+10.66%,131,parsed_from_sector_index_seasonality_table
+week_pattern,W32,Dynamic Weekly Boundary Matrix (W32),,Forecast: 2026-08-10 to 2026-08-14,August 2026 weekly planner source located.,104,parameterized_weekly_planner_extraction
