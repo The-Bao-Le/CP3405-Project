@@ -1,0 +1,97 @@
+{
+  "rule_based_score": 6,
+  "macro_bias": "Moderately Bullish",
+  "confidence": "Medium",
+  "bullish_factors": [
+    "SPX and NDX are both positive for the measured week.",
+    "VIX fell by at least 2%, a risk-appetite signal.",
+    "WTI fell by at least 2%, easing near-term inflation pressure.",
+    "The 10-year Treasury yield fell by at least 5 bps.",
+    "Latest CPI year-over-year inflation is below its prior reading."
+  ],
+  "bearish_factors": [],
+  "neutral_factors": [],
+  "headline_flags": [
+    "Geopolitical: 13 headline(s) require human review.",
+    "Inflation: 6 headline(s) require human review.",
+    "Labor: 11 headline(s) require human review.",
+    "Monetary Policy: 8 headline(s) require human review.",
+    "Oil Energy: 10 headline(s) require human review."
+  ],
+  "headline_category_counts": {
+    "monetary_policy": 8,
+    "labor": 11,
+    "oil_energy": 10,
+    "geopolitical": 13,
+    "inflation": 6
+  },
+  "sector_momentum": [
+    {
+      "ticker": "XLK",
+      "sector": "Technology",
+      "weekly_return_pct": 7.2,
+      "momentum_label": "Bullish momentum"
+    },
+    {
+      "ticker": "XLV",
+      "sector": "Health Care",
+      "weekly_return_pct": 1.93,
+      "momentum_label": "Bullish momentum"
+    },
+    {
+      "ticker": "XLF",
+      "sector": "Financials",
+      "weekly_return_pct": 1.16,
+      "momentum_label": "Bullish momentum"
+    },
+    {
+      "ticker": "XLY",
+      "sector": "Consumer Discretionary",
+      "weekly_return_pct": 3.25,
+      "momentum_label": "Bullish momentum"
+    },
+    {
+      "ticker": "XLC",
+      "sector": "Communication Services",
+      "weekly_return_pct": 2.78,
+      "momentum_label": "Bullish momentum"
+    },
+    {
+      "ticker": "XLI",
+      "sector": "Industrials",
+      "weekly_return_pct": 2.97,
+      "momentum_label": "Bullish momentum"
+    },
+    {
+      "ticker": "XLP",
+      "sector": "Consumer Staples",
+      "weekly_return_pct": 0.08,
+      "momentum_label": "Neutral momentum"
+    },
+    {
+      "ticker": "XLE",
+      "sector": "Energy",
+      "weekly_return_pct": -3.44,
+      "momentum_label": "Bearish momentum"
+    },
+    {
+      "ticker": "XLB",
+      "sector": "Materials",
+      "weekly_return_pct": 4.82,
+      "momentum_label": "Bullish momentum"
+    },
+    {
+      "ticker": "XLRE",
+      "sector": "Real Estate",
+      "weekly_return_pct": -0.2,
+      "momentum_label": "Neutral momentum"
+    },
+    {
+      "ticker": "XLU",
+      "sector": "Utilities",
+      "weekly_return_pct": -1.67,
+      "momentum_label": "Bearish momentum"
+    }
+  ],
+  "interpretation_limit": "This is deterministic screening, not semantic news analysis. R4 must read the linked articles and write the final weekly interpretation."
+}

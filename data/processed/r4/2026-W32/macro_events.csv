@@ -1,0 +1,13 @@
+﻿period,timing,scheduled_sgt,date_sgt,time_sgt,impact,category,event,source,source_url,schedule_note
+This week,Past,2026-08-03T21:45+08:00,2026-08-03,21:45,Medium,Growth,Final Manufacturing PMI,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+This week,Past,2026-08-03T22:00+08:00,2026-08-03,22:00,Medium,Growth,ISM Manufacturing PMI,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+This week,Past,2026-08-04T22:00+08:00,2026-08-04,22:00,Medium,Labour,Job Openings and Labor Turnover Survey,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+This week,Past,2026-08-05T21:45+08:00,2026-08-05,21:45,Medium,Growth,Final Services PMI,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+This week,Past,2026-08-05T22:00+08:00,2026-08-05,22:00,Medium,Growth,ISM Services PMI,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+This week,Past,2026-08-06T04:05+08:00,2026-08-06,04:05,Medium,Fed communication,Speech - Governor Lisa D. Cook — Economic Outlook,Federal Reserve calendar,https://www.federalreserve.gov/newsevents/2026-august.htm,Official calendar
+This week,Past,2026-08-06T20:30+08:00,2026-08-06,20:30,Medium,Labour,Initial Jobless Claims (expected recurring release),U.S. Department of Labor release cadence,https://www.dol.gov/newsroom/releases/opa/opa20200701,Usual Thursday cadence; verify holiday changes.
+This week,Past,2026-08-06T20:30+08:00,2026-08-06,20:30,Medium,Labour / growth,Productivity and Costs,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+This week,Past,2026-08-07T20:30+08:00,2026-08-07,20:30,High,Labour,Employment Situation,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+Next week,Upcoming,2026-08-12T20:30+08:00,2026-08-12,20:30,High,Inflation,Consumer Price Index,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+Next week,Upcoming,2026-08-13T20:30+08:00,2026-08-13,20:30,High,Inflation,Producer Price Index,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+Next week,Upcoming,2026-08-13T20:30+08:00,2026-08-13,20:30,Medium,Labour,Initial Jobless Claims (expected recurring release),U.S. Department of Labor release cadence,https://www.dol.gov/newsroom/releases/opa/opa20200701,Usual Thursday cadence; verify holiday changes.

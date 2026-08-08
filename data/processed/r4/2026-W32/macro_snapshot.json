@@ -1,0 +1,978 @@
+{
+  "meta": {
+    "role": "R4 Macro Agent",
+    "iso_year": 2026,
+    "iso_week": "W32",
+    "as_of_sgt": "2026-08-08",
+    "target_period_sgt": "2026-08-03 to 2026-08-08",
+    "generated_at_utc": "2026-08-08T06:35:29+00:00",
+    "schedule": "Saturday"
+  },
+  "treasury": {
+    "baseline": {
+      "date": "2026-07-31",
+      "2y": 4.28,
+      "10y": 4.75,
+      "30y": 5.27
+    },
+    "latest": {
+      "date": "2026-08-07",
+      "2y": 4.19,
+      "10y": 4.65,
+      "30y": 5.19
+    },
+    "changes_bps": {
+      "2y_change_bps": -9,
+      "10y_change_bps": -10,
+      "30y_change_bps": -8
+    },
+    "rows": [
+      {
+        "date": "2026-07-31",
+        "2y": 4.28,
+        "10y": 4.75,
+        "30y": 5.27
+      },
+      {
+        "date": "2026-08-03",
+        "2y": 4.25,
+        "10y": 4.7,
+        "30y": 5.23
+      },
+      {
+        "date": "2026-08-04",
+        "2y": 4.2,
+        "10y": 4.63,
+        "30y": 5.18
+      },
+      {
+        "date": "2026-08-05",
+        "2y": 4.18,
+        "10y": 4.63,
+        "30y": 5.17
+      },
+      {
+        "date": "2026-08-06",
+        "2y": 4.25,
+        "10y": 4.69,
+        "30y": 5.22
+      },
+      {
+        "date": "2026-08-07",
+        "2y": 4.19,
+        "10y": 4.65,
+        "30y": 5.19
+      }
+    ],
+    "method": "Previous available close to latest target-week close"
+  },
+  "labor_inflation": {
+    "cpi_latest": {
+      "period": "2026-06",
+      "index": 333.952,
+      "yoy_pct": 3.53
+    },
+    "cpi_previous": {
+      "period": "2026-05",
+      "index": 335.123,
+      "yoy_pct": 4.25
+    },
+    "unemployment_latest": {
+      "year": 2026,
+      "month": 7,
+      "period": "2026-07",
+      "value": 4.1
+    },
+    "series_notes": {
+      "cpi": "CPI-U All items, U.S. city average, not seasonally adjusted",
+      "unemployment": "Civilian unemployment rate, seasonally adjusted"
+    }
+  },
+  "jobless_claims": {
+    "week_ending": "2026-08-01",
+    "initial_claims_sa": 199000
+  },
+  "market": {
+    "metrics": {
+      "SPX": {
+        "ticker": "^GSPC",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 7489.7202,
+        "latest_date": "2026-08-07",
+        "latest_close": 7757.6401,
+        "weekly_return_pct": 3.58
+      },
+      "NDX": {
+        "ticker": "^NDX",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 28274.1992,
+        "latest_date": "2026-08-07",
+        "latest_close": 29722.3008,
+        "weekly_return_pct": 5.12
+      },
+      "IWM": {
+        "ticker": "IWM",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 291.2,
+        "latest_date": "2026-08-07",
+        "latest_close": 301.56,
+        "weekly_return_pct": 3.56
+      },
+      "VIX": {
+        "ticker": "^VIX",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 15.99,
+        "latest_date": "2026-08-07",
+        "latest_close": 14.9,
+        "weekly_return_pct": -6.82
+      },
+      "WTI": {
+        "ticker": "CL=F",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 84.67,
+        "latest_date": "2026-08-07",
+        "latest_close": 78.18,
+        "weekly_return_pct": -7.67
+      },
+      "BRENT": {
+        "ticker": "BZ=F",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 90.12,
+        "latest_date": "2026-08-07",
+        "latest_close": 83.55,
+        "weekly_return_pct": -7.29
+      },
+      "DXY": {
+        "ticker": "DX-Y.NYB",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 99.8,
+        "latest_date": "2026-08-07",
+        "latest_close": 99.6,
+        "weekly_return_pct": -0.2
+      },
+      "XLK": {
+        "ticker": "XLK",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 175.35,
+        "latest_date": "2026-08-07",
+        "latest_close": 187.97,
+        "weekly_return_pct": 7.2
+      },
+      "XLV": {
+        "ticker": "XLV",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 162.55,
+        "latest_date": "2026-08-07",
+        "latest_close": 165.68,
+        "weekly_return_pct": 1.93
+      },
+      "XLF": {
+        "ticker": "XLF",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 56.94,
+        "latest_date": "2026-08-07",
+        "latest_close": 57.6,
+        "weekly_return_pct": 1.16
+      },
+      "XLY": {
+        "ticker": "XLY",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 116.09,
+        "latest_date": "2026-08-07",
+        "latest_close": 119.86,
+        "weekly_return_pct": 3.25
+      },
+      "XLC": {
+        "ticker": "XLC",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 108.24,
+        "latest_date": "2026-08-07",
+        "latest_close": 111.25,
+        "weekly_return_pct": 2.78
+      },
+      "XLI": {
+        "ticker": "XLI",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 179.84,
+        "latest_date": "2026-08-07",
+        "latest_close": 185.18,
+        "weekly_return_pct": 2.97
+      },
+      "XLP": {
+        "ticker": "XLP",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 85.05,
+        "latest_date": "2026-08-07",
+        "latest_close": 85.12,
+        "weekly_return_pct": 0.08
+      },
+      "XLE": {
+        "ticker": "XLE",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 59.55,
+        "latest_date": "2026-08-07",
+        "latest_close": 57.5,
+        "weekly_return_pct": -3.44
+      },
+      "XLB": {
+        "ticker": "XLB",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 50.43,
+        "latest_date": "2026-08-07",
+        "latest_close": 52.86,
+        "weekly_return_pct": 4.82
+      },
+      "XLRE": {
+        "ticker": "XLRE",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 45.07,
+        "latest_date": "2026-08-07",
+        "latest_close": 44.98,
+        "weekly_return_pct": -0.2
+      },
+      "XLU": {
+        "ticker": "XLU",
+        "baseline_date": "2026-07-31",
+        "baseline_close": 44.35,
+        "latest_date": "2026-08-07",
+        "latest_close": 43.61,
+        "weekly_return_pct": -1.67
+      }
+    },
+    "missing_assets": [],
+    "missing_sectors": [],
+    "all_11_sectors_complete": true,
+    "diagnostics": {
+      "_batch": "batch download succeeded on attempt 1",
+      "SPX": "batch: ok",
+      "NDX": "batch: ok",
+      "IWM": "batch: ok",
+      "VIX": "batch: ok",
+      "WTI": "batch: ok",
+      "BRENT": "batch: ok",
+      "DXY": "batch: ok",
+      "XLK": "batch: ok",
+      "XLV": "batch: ok",
+      "XLF": "batch: ok",
+      "XLY": "batch: ok",
+      "XLC": "batch: ok",
+      "XLI": "batch: ok",
+      "XLP": "batch: ok",
+      "XLE": "batch: ok",
+      "XLB": "batch: ok",
+      "XLRE": "batch: ok",
+      "XLU": "batch: ok"
+    },
+    "method": "R4 independent yfinance collection: batch request followed by per-ticker download/history retries; previous available close to latest target-week close; raw Close"
+  },
+  "macro_events": [
+    {
+      "scheduled_sgt": "2026-08-03T21:45+08:00",
+      "date_sgt": "2026-08-03",
+      "time_sgt": "21:45",
+      "event": "Final Manufacturing PMI",
+      "category": "Growth",
+      "impact": "Medium",
+      "source": "Public economic calendar fallback",
+      "source_url": "https://www.forexfactory.com/calendar",
+      "schedule_note": "Public-calendar fallback; verify against the named agency.",
+      "period": "This week",
+      "timing": "Past"
+    },
+    {
+      "scheduled_sgt": "2026-08-03T22:00+08:00",
+      "date_sgt": "2026-08-03",
+      "time_sgt": "22:00",
+      "event": "ISM Manufacturing PMI",
+      "category": "Growth",
+      "impact": "Medium",
+      "source": "Public economic calendar fallback",
+      "source_url": "https://www.forexfactory.com/calendar",
+      "schedule_note": "Public-calendar fallback; verify against the named agency.",
+      "period": "This week",
+      "timing": "Past"
+    },
+    {
+      "scheduled_sgt": "2026-08-04T22:00+08:00",
+      "date_sgt": "2026-08-04",
+      "time_sgt": "22:00",
+      "event": "Job Openings and Labor Turnover Survey",
+      "category": "Labour",
+      "impact": "Medium",
+      "source": "BLS release calendar",
+      "source_url": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "schedule_note": "Official calendar",
+      "period": "This week",
+      "timing": "Past"
+    },
+    {
+      "scheduled_sgt": "2026-08-05T21:45+08:00",
+      "date_sgt": "2026-08-05",
+      "time_sgt": "21:45",
+      "event": "Final Services PMI",
+      "category": "Growth",
+      "impact": "Medium",
+      "source": "Public economic calendar fallback",
+      "source_url": "https://www.forexfactory.com/calendar",
+      "schedule_note": "Public-calendar fallback; verify against the named agency.",
+      "period": "This week",
+      "timing": "Past"
+    },
+    {
+      "scheduled_sgt": "2026-08-05T22:00+08:00",
+      "date_sgt": "2026-08-05",
+      "time_sgt": "22:00",
+      "event": "ISM Services PMI",
+      "category": "Growth",
+      "impact": "Medium",
+      "source": "Public economic calendar fallback",
+      "source_url": "https://www.forexfactory.com/calendar",
+      "schedule_note": "Public-calendar fallback; verify against the named agency.",
+      "period": "This week",
+      "timing": "Past"
+    },
+    {
+      "scheduled_sgt": "2026-08-06T04:05+08:00",
+      "date_sgt": "2026-08-06",
+      "time_sgt": "04:05",
+      "event": "Speech - Governor Lisa D. Cook — Economic Outlook",
+      "category": "Fed communication",
+      "impact": "Medium",
+      "source": "Federal Reserve calendar",
+      "source_url": "https://www.federalreserve.gov/newsevents/2026-august.htm",
+      "schedule_note": "Official calendar",
+      "period": "This week",
+      "timing": "Past"
+    },
+    {
+      "scheduled_sgt": "2026-08-06T20:30+08:00",
+      "date_sgt": "2026-08-06",
+      "time_sgt": "20:30",
+      "event": "Initial Jobless Claims (expected recurring release)",
+      "category": "Labour",
+      "impact": "Medium",
+      "source": "U.S. Department of Labor release cadence",
+      "source_url": "https://www.dol.gov/newsroom/releases/opa/opa20200701",
+      "schedule_note": "Usual Thursday cadence; verify holiday changes.",
+      "period": "This week",
+      "timing": "Past"
+    },
+    {
+      "scheduled_sgt": "2026-08-06T20:30+08:00",
+      "date_sgt": "2026-08-06",
+      "time_sgt": "20:30",
+      "event": "Productivity and Costs",
+      "category": "Labour / growth",
+      "impact": "Medium",
+      "source": "BLS release calendar",
+      "source_url": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "schedule_note": "Official calendar",
+      "period": "This week",
+      "timing": "Past"
+    },
+    {
+      "scheduled_sgt": "2026-08-07T20:30+08:00",
+      "date_sgt": "2026-08-07",
+      "time_sgt": "20:30",
+      "event": "Employment Situation",
+      "category": "Labour",
+      "impact": "High",
+      "source": "BLS release calendar",
+      "source_url": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "schedule_note": "Official calendar",
+      "period": "This week",
+      "timing": "Past"
+    },
+    {
+      "scheduled_sgt": "2026-08-12T20:30+08:00",
+      "date_sgt": "2026-08-12",
+      "time_sgt": "20:30",
+      "event": "Consumer Price Index",
+      "category": "Inflation",
+      "impact": "High",
+      "source": "BLS release calendar",
+      "source_url": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "schedule_note": "Official calendar",
+      "period": "Next week",
+      "timing": "Upcoming"
+    },
+    {
+      "scheduled_sgt": "2026-08-13T20:30+08:00",
+      "date_sgt": "2026-08-13",
+      "time_sgt": "20:30",
+      "event": "Producer Price Index",
+      "category": "Inflation",
+      "impact": "High",
+      "source": "BLS release calendar",
+      "source_url": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "schedule_note": "Official calendar",
+      "period": "Next week",
+      "timing": "Upcoming"
+    },
+    {
+      "scheduled_sgt": "2026-08-13T20:30+08:00",
+      "date_sgt": "2026-08-13",
+      "time_sgt": "20:30",
+      "event": "Initial Jobless Claims (expected recurring release)",
+      "category": "Labour",
+      "impact": "Medium",
+      "source": "U.S. Department of Labor release cadence",
+      "source_url": "https://www.dol.gov/newsroom/releases/opa/opa20200701",
+      "schedule_note": "Usual Thursday cadence; verify holiday changes.",
+      "period": "Next week",
+      "timing": "Upcoming"
+    }
+  ],
+  "headlines": [
+    {
+      "published_sgt": "2026-08-06T04:05+08:00",
+      "title": "Cook, Outlook for the U.S. and Alaskan Economies",
+      "publisher": "Federal Reserve speeches",
+      "feed": "Federal Reserve speeches",
+      "categories": [
+        "monetary_policy"
+      ],
+      "link": "https://www.federalreserve.gov/newsevents/speech/cook20260805a.htm"
+    },
+    {
+      "published_sgt": "2026-08-05T04:30+08:00",
+      "title": "Federal Reserve Board announces approval of the application by Coastal Bend Bancshares, Inc.",
+      "publisher": "Federal Reserve press releases",
+      "feed": "Federal Reserve press releases",
+      "categories": [
+        "monetary_policy"
+      ],
+      "link": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260804c.htm"
+    },
+    {
+      "published_sgt": "2026-08-05T04:30+08:00",
+      "title": "Federal Reserve Board announces approval of the application by FS Bancorp, Inc.",
+      "publisher": "Federal Reserve press releases",
+      "feed": "Federal Reserve press releases",
+      "categories": [
+        "monetary_policy"
+      ],
+      "link": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260804b.htm"
+    },
+    {
+      "published_sgt": "2026-08-05T04:30+08:00",
+      "title": "Federal Reserve Board announces approval of the application by Banco Santander, S.A. and Santander Holdings USA, Inc.",
+      "publisher": "Federal Reserve press releases",
+      "feed": "Federal Reserve press releases",
+      "categories": [
+        "monetary_policy"
+      ],
+      "link": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260804a.htm"
+    },
+    {
+      "published_sgt": "2026-08-04T13:29+08:00",
+      "title": "Gold rises on softer oil prices; U.S. jobs data, Fed rate outlook on tap - CNBC",
+      "publisher": "CNBC",
+      "feed": "Google News macro search",
+      "categories": [
+        "monetary_policy",
+        "labor",
+        "oil_energy"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeHJ6b0hJZzZDOElHMmo5bHNTMkZHX254MldZRkE5SFVtYmdIOVJjenpuS0ZtbEhoODZtbW1VY3VxVVBwdXhVT0RlZmtiSzN3U1VaSi1uMWg5V1JHSGhJV1dId3B1a0hCNFUxUjBNS0prd2VpQkZ0MDFxU1NiVXdyUy1laGI1T0xnZTBHS0FSbUhnSkxnSW1JZXhzYTJYaVNMcHVB0gGoAUFVX3lxTE1yUXltXzEtUmttbGs5UFNyRWR5aXp5NnJtSU5OMDZJcTdUbDBocFVDN1lFWjdUaGYwRnhjYUh1UHNlZ1FkN1JNc3JEc09IRmN2cnEzU1B6VnM5MnNUUUEweGkyRVRfUGh4VTkxampZSXdadEFSZGx0bFoyaXMwTWxSdnVVRkpSUjcwdVFBaEdfdllCYnRFTlNVWGoxSGVlVFltUXhja1F0RQ?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-08T04:46+08:00",
+      "title": "US stocks jump as employers unexpectedly cut 23,000 jobs, raising hopes that rate hikes can wait - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "monetary_policy",
+        "labor"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNM2hsUkw2Zkw4Q3dRTnFBMEFzZWhKMUhiS0d2NkM0dmhTNVRMLWhoOExzSUZncENvdy1NOEJkRUlNNm9CRlR6ZnFPQ0dsM1VFM2V2ajVRS1VTZlJKcWZPVzc1bEtlWjVTdl90V1NKV3pndXVFQUZEMFJjSDRUcUlGdVJaMUctejZUYWVCQ1FR?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-05T01:19+08:00",
+      "title": "Big oil companies continue to post banner profits as fighting in Iran drives prices higher - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "oil_energy",
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNVHJ2c1R0N1kxZU5iNUNJQ0VoMm0zaDRMQjQ2b3RHMC1RazBIZllPMklUOGJYNUFBSVFLZ1RhOFZ2b2R1ZFNyMWl3VGF4MVBkVHUzUmVfeW51Q0t3VnFuWDVBRy1sWEJBZlVHZkVQU3J4YXAwYkRiOHBPQ2pqVGxjUmlJdXJXdV9qTlA3cW15Vlo0RlJ0V0tOQg?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-04T22:33+08:00",
+      "title": "US job openings slip to 7.4 million, but labor market remains resilient in face of fighting in Iran - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "labor",
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQMGNsN0o2Um5qMnRTaTdUZkxNOGpxY3hSaXVmY3FHZnBnbDdwVnR1VXlYUHFVVU5wSngtUS1MTFpkQjhpNGNOSUV1X29PM0JMajg4Mml3VTBvUVpKdkxtUF90QzFoTDhUekMtSkNqTkJnVmFTcXBJcWRXdWlMZV8zX3RBY0pZNExwbmNkSmNmZm5EV3ItVXhTNzVXTkw?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-03T16:33+08:00",
+      "title": "U.S. Treasury yields fall as oil prices plunge on Iran de-escalation hopes - CNBC",
+      "publisher": "CNBC",
+      "feed": "Google News macro search",
+      "categories": [
+        "oil_energy",
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxObUFXSlRPMTVtemNDTGxtNlYza2JNZG56U0Q1SXhwZ0JQT0g3dUJqMTVMQjh5MXJoQUZsVWxyV0F0U0lvUEI0MXg5c2xhRU1nYnM4MjdVdjRQNjJOTXp1RkNnTmRWZFM0VnZRSkxrczBwdi1tT0ZJakRocDZ6cXlkbdIBhgFBVV95cUxNdTlKOEJBTWt2SDJBMnFpTnN5NWEtZ3o4Q1J4endZazl5QmJLN1lUTm84N1ZwVlo1REx2OTBfOThZQThXRnI0aEJmbGRNaFpQbl9TM25jU1lhdzFzdzFBbFhJdGVFX0NTLTZrZ3FLLWg4Y00xX1RwM1VjVmR2SDN5Ukx0SFdqZw?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-08T06:22+08:00",
+      "title": "Trump administration moves ahead with efforts to fire Federal Reserve governor Lisa Cook - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "monetary_policy"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOQVN4VXRHS2pWOHdBdUhwYWpqODh6S0RTTTN0WTFqQlUxcU92YmNvV0ZtQ2FqTXNTbHQ5X3hQWE54RDRPVzhmc0xLZzd3cW9wekFhNGVyTnFDeVJMQmM3aF9OSEhteERaU2Q2Wnl3bHFEMEdsbXJ4aE92QXo4SkFxaHhuNXZKZy1DZ2dBbjBzV3l6MmNQTUkwSXE2OUpjN211Y1ZHYWhsSUhNLWlLdWFLNg?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-08T03:54+08:00",
+      "title": "US job market stalled in July as employers cut 23,000 jobs, delivering political setback to Trump - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "labor"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNeFN4Y09saFA1TUZ5TFdRWGpSb3NGZHNMU2E2SGlNcGxYWVJlanNoWTRoRHpPS3U1Nm5aSkpQQm9tX0RIYXpCVk9PMExCWWZSMVBBcmZBVXRBSGR0ZHI2WDNxMENrQXdST01leF9mSlZQeFVsblYzdUpLVnpVRVI0V21WUEIxM1J1cVFXYmlpWUljNVpIc3Y2aEJlLWRPeU9VUDQ0Xzh2c2FtSmc?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-08T02:08+08:00",
+      "title": "Advocates for former US Marine held in Russia for more than 4 years say he is near death - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPV3c2S3h2dndCRWxhYklMNmZTSnlGVU82Q0dxc2hZWi1DZ0JENzNOeUpUUUU0OGxCdDRlUzBSdGtTQWtsYThIaG9Rc0E5cWxPdDBPYUQwSHFZM2Vjb2I2bXNYYjA1U0E5S2cydmhabkY4bFFndEhQUWdLTXY1eUNBd2RGVm1TS1NpLXU5T0JIaXg0VWs?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-07T18:15+08:00",
+      "title": "Trump moves to restrict birthright citizenship after SCOTUS loss, checking his economy claims - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "labor"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBlaUxxRzE3WHRNa3VNa3kwaDFYR0EtTlphMGdhbnpyWFhtUGlQWGFqbmJFT3ZRQno4bEZkMC1NX0pxWmxNTXBqbUZJTlI3N3p2ZkpjOExWSGxuejY2OWY4ZEJfMmNGTlE?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-07T06:27+08:00",
+      "title": "Crude oil prices have surged amid fading expectations for a US-Iran agreement, and with inflation accelerating, markets are pricing in a September rate hike following reports that the Federal Reserve Chair is not ruling out further tightening, prompting t - 富途牛牛",
+      "publisher": "富途牛牛",
+      "feed": "Google News macro search",
+      "categories": [
+        "monetary_policy",
+        "inflation",
+        "oil_energy",
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOOGVnb2lVd1FxVVJtMjIxQm44V3htYWF1NmNsTy1DeDFfOXdDOUtmVVZYR3pTTWRfOXcxbERtLW45Y3JKTnVpR25xRU9keW42eENrVUVERVE0YXhZaXZCdnExU3dHd01PUF9DYUhrY2hpWDBLaDJmbTNXalhIOW9hanJ2ZEM5bFFQUHVndVlrZkVxNGt6U29QOV9SOHozVkxMaWc?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-07T04:22+08:00",
+      "title": "US stocks edge lower as oil prices rise and more earnings reports roll in - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "oil_energy"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOOTFfVWZyLTR1TDU5VDE1Q3BsaXRkMWxQeUg4UFhDV0l2dmVMbXp1cWFXd0s4MlB1V0JyV2NvUTZJRGRfRjZZT3VjR0JTSTROMENwLUpLMUpIeGUwNjU5WVQwUzJxQ1ZrM2hEeVlBTV9wTGViVVFVUWd5MVpPdVNvZ1NiYmFmTjJXOTh6VkRxbEZkS1Y4MzNscDZTa2c?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-06T21:38+08:00",
+      "title": "Trump administration moves forward with Head Start overhaul, proposing to eliminate regulations - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVUNfNGY3UG5UMUhyR2c3eDJhU0hjdE1XckpNVEFjclNUQzRxN0NTLTRtUmF1TkE4TG9vak9ELTR3elpHVjhLWTFvdkFwNGV2czVQNDNXZFdHMVBFV1RMZUdzQlJWMkM4el96SWh2T2xQRzBRR05idXN4Q09jLUc2QkU1WGF5NjJ5cFo1Z1h2T25BWXZr?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-06T21:25+08:00",
+      "title": "US filings for jobless benefits rise to 199,000 last week, but layoffs remain historically low - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "labor"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNWW9QOGEzQmtUYmx6dHo4S3FiT0lqMllyMXdQNmZUVVk2LTdjX0VFNTkzb0ZKUkVqRFJPLUdoY0U5c1UwUHhNR0pPS0I3UGJ4a3pjQXBPN0hWNHIxX1RRVzVya0M3NGYwRjVrd2tOWGt6bk1fZU9JXzZwRV9jOEFVTFRlVnRPWFR6VnA2blV0d2liRFNQZ2toZ3lzZw?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-06T19:41+08:00",
+      "title": "US Dollar Rises Early Thursday Ahead of Jobless Claims, Productivity - Yahoo Finance",
+      "publisher": "Yahoo Finance",
+      "feed": "Google News macro search",
+      "categories": [
+        "labor"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcl9aVVFhRjVvQnN3aDUyS3l2d29OMmF0SGtMSHljYTNDOHBUdjJWajVfSGQxZEJTNmpJV1RiVUhCQmpvQ0NHTzdPelhpTC1EbWFWbmtSeVh0dnk2T01CRGhLZ29JbXZILW5OQmlaYU9YWlRyR2JsNTE2VlFqaFZLaXBObEp4amJyeGdHbWFpWGdmal9oeFg0WHJfTU1BcWZV?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-06T08:03+08:00",
+      "title": "Trump says ‘we may have to’ send oil prices ‘up again’ - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "oil_energy"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNMGNiSHd2Rm1vQ2NFN0lqYzZuZHZRdnM2Wi1CTTVzMVgzRGVacnVzTzZjVkVWQXY4V3U1ZnJTU1JnbG9FUVdrWXFRRlFrMXdxYkhTc3lVUkRUNVZjTS15enIwLUlYaTBSa1MtUWpJSzhhcHFqZENpQW1LWXZscW11SnF3c281NlFvNEx4d21tdjZLZy1ZcnVuYlhSOG9xNEEtTG5TZVloMV82VWNTV1FUV1VlUGtObEkyZTA5Y1RZVkY2Z1g4b2lSSlVMTmc1RVllSnV6MjJXZ1VJUlE?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-06T04:58+08:00",
+      "title": "US stocks hold near records on hopes of an agreement with Iran - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcmdoRG9weElIVW5jZmNVT2Fzbzd1Vl92d1lkWU81cU1sajY2STVFeWZicFBhdTlLdUx5dHJoX09yc0ZZdEZHeVk0cjN3dGRabjA5SHU5VTFkQmRGNTU2eVRicFozQVRhWTY3cVRxY3JkUWM2MWYxNlNoTGM3NTZZWHB2MTlhR0xTcUtfdC15dmh1VlNuaWc?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-06T03:03+08:00",
+      "title": "No evidence? No problem. Trump pushes ahead on false claims that Reflecting Pool was vandalized - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "labor"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPOWxqb1pPbTFwZXFTcm9md0tCb1FWdno3MnVoa3RNeFlpY1RUNU94OW1nWkp1alJGZEhpM2Vsc29kU2NXN2FYbVdJN3FmZGZLd2JtQUxUY0hxVVY2UWR2Q0g2anU2ek0xQzBkMTZyeXF3dExoRktrY1V1T1VvUElyT0NDNHZvcWQ5eWhQcmcxYlM?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-05T18:28+08:00",
+      "title": "China announces countermeasures against Washington, including controls on drone exports to the US - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQM1hDOGExZFltcUdoZUlWWnlUR1VEcGNfMTVhUlNGN1VsOC1xQzcxd0RPM1VQbkRJUlQyb3ZfZDlTd2NMd0hEQmtpOGJ4Q05Xb0VONmVQZmZrMnEyczMzMHlKS2FQakd0bkNRZ2pPeFBpTndQZE9ORThDTmpIdWoycHJNdlp3ZGZ3OEM2Zko1QTBvS21SS0dBVkVVaXRVUQ?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-05T05:00+08:00",
+      "title": "US stocks hit records as profits keep piling up for Palantir and others, while oil prices ease - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "oil_energy"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOTV9wOHRxaHZsa1ZVU3B5ZUYzRnhVT1ptZVFCcFBzOFM1SkZzQ1o3ZGlIM2FHZWphMllYbHRrS0lNWUU5ZzhUOUFfcWEtZlZjSXRNZFIwbXZ2VmI0Q1hIZVhVYXFEMlFIeTdwUXF3bVNKWXNDUFZqNFg3VlNJMmhtc2JwS0d4aGgxYlFPcllrUVg5SlFOU2o2UzdlRE5ka09lOGc?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-04T20:26+08:00",
+      "title": "A serviceman in Russian-held Crimea shoots fellow soldiers and civilians, killing 4 - apnews.com",
+      "publisher": "apnews.com",
+      "feed": "Google News AP-only search",
+      "categories": [
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObmx1N0hXRFZyTEpRX1NIRjY0M1gxNjF2cWFNV2tjWnNsZnF5Y0ZOclV5cWVtUVdLRU0wSkdaZlVFTFU3Mk4wRjVEaTVjeXRCTEdkTHVPWkNkeUdMZUZCalN1d1FOSHpiYm81ODNGa3dEeFBJUUFVb2doVGZWZElQUHppUjBvblZ4RWRQOTc5TTJEYlluZkRWLWFtSjdFcGdzNDZibw?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-07T12:01+08:00",
+      "title": "Asian shares pause for US jobs, oil extends gains on Middle East risk - NST Online",
+      "publisher": "NST Online",
+      "feed": "Google News macro search",
+      "categories": [
+        "labor",
+        "oil_energy",
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSWM4Nm15a1VDYU1xY1NoUnZEV0tNSE9wbV95czYxTV9wRzNzbFBtSHRTOXlJWHp5RDBEU2luZEN4NzlXSENvTzlYeEM3V0Nwa3RXMzZyZEZERXZrbmM1Y0pnQ2ljbDNoVHZpX1E1cjc3aFFjT3piZk5kRUxVNzUxaU50OVZxekc3QTdNX2pSRTJRV0lXZDRCalBJcUJnVUc0cGxoLUpGM094TXBqOEp5azgyWk5aWXhfSzZqcXNyczPSAcABQVVfeXFMUEljODZteWtVQ2FNcWNTaFJ2RFdLTUhPcG1feXM2MU1fcEczc2xQbUh0Uzl5SVh6eUQwRFNpbmRDeDc5V0hDb085WHhDN1dDcGt0VzM2cmRGREV2a25jNWNKZ0NpY2wzaFR2aV9RNXI3N2hRY096YmZOZEVMVTc1MWlOdDlWcXpHN0E3TV9qUkUyUVdJV2Q0QmpQSXFCZ1VHNHBsaC1KRjNPeE1wajhKeWs4MlpOWll4X0s2anFzcnMz?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-05T22:29+08:00",
+      "title": "Treasuries Mixed as Oil Slide Tempers Inflation Worries Ahead of U.S. Jobs Data - CryptoRank",
+      "publisher": "CryptoRank",
+      "feed": "Google News macro search",
+      "categories": [
+        "inflation",
+        "labor",
+        "oil_energy"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMUllbzhHdVVvRk1UVzhiTXdDWkRVSk55dFVWWmlYUnFnTWZLbXRWZmtIVlh4SlNlQlFhRFR5NkItUVlVbW42N3l1MW5YX2lSM3YwMjNGX1lrbC1iRGlOTEg1dDBIa3hYblcyZmlmUGRfYmZVMmNMOFRqX2YyczJXcUhYYWt3aXJ6UFRLT2dn?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-05T05:43+08:00",
+      "title": "Gold gains as lower oil prices, lackluster U.S. jobs data ease inflation fears (GLD:NYSEARCA) - Seeking Alpha",
+      "publisher": "Seeking Alpha",
+      "feed": "Google News macro search",
+      "categories": [
+        "inflation",
+        "labor",
+        "oil_energy"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPUEYyYkxIN3cxOGpsWWt5eldpQjRZcEoxUFhXaW5BZHVzVGtkRmZTcGljMzJaclFVS0N2WmkwMER5aXIwYkVFaHNmWWtnOGFDeEpPd1pYU1l3cktSdko5NDY1S3RvdFpTUkgxUmk0R2Q0aUZvRlF3WmxtSVR2SmFHYmZ4OWh5dGkxRlQ4ZVpMb2pLMlQ2QkJ2dThfNUx6eXFaTUFQbHlXV1pOTGpXYWVvaE9fdw?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-08T00:21+08:00",
+      "title": "US Dollar Weekly Forecast: Inflation offers support as geopolitical risks recede - FXStreet",
+      "publisher": "FXStreet",
+      "feed": "Google News macro search",
+      "categories": [
+        "inflation",
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMDBOTXNodVU5Yy1oUTdhUmVUbmZNb1kwdDFDT1UzRmJveXRiQ0FNQWN2LWhrbnBaY1VfeWVYMHd4TDI3ZDQzNFFXcU54Tl9ES0tPZjhMYll5aVd3Q1cxYUJDbTRVT1NEbjZueXNHM0dnUG5QeG5TVkJWemtqeHNVZHB3UlM3Sld3alZRMDBFcllUUm1keDhfQ2QxSW5QaG5FQ2p5MkVieTZYUTI5R1U0ckZPemJ5WmV5SExaTA?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-07T23:30+08:00",
+      "title": "EUR/USD Weekly Forecast: Inflation Data and Geopolitical Risks to Dictate Market Sentiment - Bitcoin World",
+      "publisher": "Bitcoin World",
+      "feed": "Google News macro search",
+      "categories": [
+        "inflation",
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNZXFBQkJyQm5xVF9yN0YtOWtvbUwzaExNZnFUZ25XdnNtdkZhY21EWGFaMEVQSFZLZl9iazA2ZmgxUjJpMFJITERGZzRmRFBVaFZCVWlrR01XcDZrYlpTU1UtMFNaYmlyNTdxMzJzZlFydldua09DWjlLdUhLOHNTY2Zhd3o4Zw?oc=5"
+    },
+    {
+      "published_sgt": "2026-08-07T22:05+08:00",
+      "title": "The Aug. 12 Inflation Report Could Decide Whether Kevin Warsh Raises Rates in September - 24/7 Wall St.",
+      "publisher": "24/7 Wall St.",
+      "feed": "Google News macro search",
+      "categories": [
+        "inflation",
+        "geopolitical"
+      ],
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQTGNzaGNKNjRLbGotMTNLWTY1TUx6TFRnUTFmTDVoUFlBS0FIelhGa0Vvb2h5SjNfN2M2LURkOUl5TVBEUnRheEVZaU9qY0xQTmx6UTVkLVZpMG1sMG9UM0tLMjBsckdCSTBjc3ZwSlpRUW92N3ZMTkp4Y2o5SzhybDdpa19CRGxUOUhHUzRiYk5OTi1wYlYxZ3dCTThLTkJveGpUYTlBWVVqbktjQUVTSFFGMjc2NjBlN0V1NDgtTGNZdVdGN19tR053?oc=5"
+    }
+  ],
+  "source_status": [
+    {
+      "source": "U.S. Treasury daily par yields",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv",
+      "status": "ok",
+      "detail": "collection and parsing succeeded",
+      "elapsed_seconds": 0.07
+    },
+    {
+      "source": "BLS public timeseries API",
+      "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "status": "ok",
+      "detail": "collection and parsing succeeded",
+      "elapsed_seconds": 0.37
+    },
+    {
+      "source": "U.S. Department of Labor weekly claims",
+      "url": "https://oui.doleta.gov/unemploy/DataDashboard.asp",
+      "status": "ok",
+      "detail": "collection and parsing succeeded",
+      "elapsed_seconds": 0.34
+    },
+    {
+      "source": "Yahoo Finance via yfinance (batch + per-ticker retry)",
+      "url": "https://finance.yahoo.com/",
+      "status": "ok",
+      "detail": "collection and parsing succeeded",
+      "elapsed_seconds": 3.42
+    },
+    {
+      "source": "BLS official release calendar",
+      "url": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "status": "ok",
+      "detail": "160 key events parsed before date filtering",
+      "elapsed_seconds": 0.14
+    },
+    {
+      "source": "BEA official release schedule",
+      "url": "https://www.bea.gov/news/schedule",
+      "status": "ok",
+      "detail": "14 key events parsed before date filtering",
+      "elapsed_seconds": 0.42
+    },
+    {
+      "source": "Federal Reserve official calendar",
+      "url": "https://www.federalreserve.gov/newsevents/2026-august.htm",
+      "status": "ok",
+      "detail": "2 key events parsed from 1 month page(s)",
+      "elapsed_seconds": 0.12
+    },
+    {
+      "source": "DOL weekly claims release cadence",
+      "url": "https://www.dol.gov/newsroom/releases/opa/opa20200701",
+      "status": "derived",
+      "detail": "2 expected Thursday release(s); holiday changes require verification",
+      "elapsed_seconds": null
+    },
+    {
+      "source": "Free public weekly economic-calendar fallback",
+      "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
+      "status": "ok",
+      "detail": "7 key U.S. events parsed; used only to fill official-calendar gaps",
+      "elapsed_seconds": 0.04
+    },
+    {
+      "source": "Federal Reserve press releases",
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "status": "ok",
+      "detail": "3 relevant dated headlines",
+      "elapsed_seconds": 0.04
+    },
+    {
+      "source": "Federal Reserve speeches",
+      "url": "https://www.federalreserve.gov/feeds/speeches.xml",
+      "status": "ok",
+      "detail": "1 relevant dated headlines",
+      "elapsed_seconds": 0.1
+    },
+    {
+      "source": "Google News AP-only search",
+      "url": "https://news.google.com/rss/search?q=site%3Aapnews.com+%28Federal+Reserve+OR+inflation+OR+oil+OR+economy+OR+geopolitical%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
+      "status": "ok",
+      "detail": "16 relevant dated headlines",
+      "elapsed_seconds": 0.46
+    },
+    {
+      "source": "Google News macro search",
+      "url": "https://news.google.com/rss/search?q=%28Federal+Reserve+OR+inflation+OR+jobless+claims+OR+oil+OR+geopolitical%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
+      "status": "ok",
+      "detail": "72 relevant dated headlines",
+      "elapsed_seconds": 0.38
+    },
+    {
+      "source": "CME FedWatch",
+      "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+      "status": "skipped",
+      "detail": "No stable free public FedWatch API; dynamic dashboard remains a manual R4 check.",
+      "elapsed_seconds": null
+    },
+    {
+      "source": "Trading Economics calendar API",
+      "url": "https://tradingeconomics.com/calendar",
+      "status": "skipped",
+      "detail": "Reliable API access requires credentials; guest endpoint returns HTTP 410.",
+      "elapsed_seconds": null
+    },
+    {
+      "source": "Finviz futures performance",
+      "url": "https://finviz.com/futures_performance.ashx?v=12",
+      "status": "replaced",
+      "detail": "Direct scraping is fragile; market moves use yfinance or the same-week R6 snapshot.",
+      "elapsed_seconds": null
+    },
+    {
+      "source": "AP News full-article analysis",
+      "url": "https://apnews.com/",
+      "status": "skipped",
+      "detail": "No paid/licensed AP API is configured; headline links may appear via news RSS only.",
+      "elapsed_seconds": null
+    },
+    {
+      "source": "Earnings Whispers calendar",
+      "url": "https://earningswhispers.com/",
+      "status": "skipped",
+      "detail": "No stable free public API; earnings calendar remains a manual check.",
+      "elapsed_seconds": null
+    },
+    {
+      "source": "LLM news interpretation",
+      "url": "",
+      "status": "skipped",
+      "detail": "No LLM key is required or used; final narrative is intentionally human-reviewed.",
+      "elapsed_seconds": null
+    }
+  ],
+  "analysis": {
+    "rule_based_score": 6,
+    "macro_bias": "Moderately Bullish",
+    "confidence": "Medium",
+    "bullish_factors": [
+      "SPX and NDX are both positive for the measured week.",
+      "VIX fell by at least 2%, a risk-appetite signal.",
+      "WTI fell by at least 2%, easing near-term inflation pressure.",
+      "The 10-year Treasury yield fell by at least 5 bps.",
+      "Latest CPI year-over-year inflation is below its prior reading."
+    ],
+    "bearish_factors": [],
+    "neutral_factors": [],
+    "headline_flags": [
+      "Geopolitical: 13 headline(s) require human review.",
+      "Inflation: 6 headline(s) require human review.",
+      "Labor: 11 headline(s) require human review.",
+      "Monetary Policy: 8 headline(s) require human review.",
+      "Oil Energy: 10 headline(s) require human review."
+    ],
+    "headline_category_counts": {
+      "monetary_policy": 8,
+      "labor": 11,
+      "oil_energy": 10,
+      "geopolitical": 13,
+      "inflation": 6
+    },
+    "sector_momentum": [
+      {
+        "ticker": "XLK",
+        "sector": "Technology",
+        "weekly_return_pct": 7.2,
+        "momentum_label": "Bullish momentum"
+      },
+      {
+        "ticker": "XLV",
+        "sector": "Health Care",
+        "weekly_return_pct": 1.93,
+        "momentum_label": "Bullish momentum"
+      },
+      {
+        "ticker": "XLF",
+        "sector": "Financials",
+        "weekly_return_pct": 1.16,
+        "momentum_label": "Bullish momentum"
+      },
+      {
+        "ticker": "XLY",
+        "sector": "Consumer Discretionary",
+        "weekly_return_pct": 3.25,
+        "momentum_label": "Bullish momentum"
+      },
+      {
+        "ticker": "XLC",
+        "sector": "Communication Services",
+        "weekly_return_pct": 2.78,
+        "momentum_label": "Bullish momentum"
+      },
+      {
+        "ticker": "XLI",
+        "sector": "Industrials",
+        "weekly_return_pct": 2.97,
+        "momentum_label": "Bullish momentum"
+      },
+      {
+        "ticker": "XLP",
+        "sector": "Consumer Staples",
+        "weekly_return_pct": 0.08,
+        "momentum_label": "Neutral momentum"
+      },
+      {
+        "ticker": "XLE",
+        "sector": "Energy",
+        "weekly_return_pct": -3.44,
+        "momentum_label": "Bearish momentum"
+      },
+      {
+        "ticker": "XLB",
+        "sector": "Materials",
+        "weekly_return_pct": 4.82,
+        "momentum_label": "Bullish momentum"
+      },
+      {
+        "ticker": "XLRE",
+        "sector": "Real Estate",
+        "weekly_return_pct": -0.2,
+        "momentum_label": "Neutral momentum"
+      },
+      {
+        "ticker": "XLU",
+        "sector": "Utilities",
+        "weekly_return_pct": -1.67,
+        "momentum_label": "Bearish momentum"
+      }
+    ],
+    "interpretation_limit": "This is deterministic screening, not semantic news analysis. R4 must read the linked articles and write the final weekly interpretation."
+  }
+}
