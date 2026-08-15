@@ -1,0 +1,9 @@
+﻿period,timing,scheduled_sgt,date_sgt,time_sgt,impact,category,event,source,source_url,schedule_note
+This week,Past,2026-08-12T20:30+08:00,2026-08-12,20:30,High,Inflation,Consumer Price Index,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+This week,Past,2026-08-13T20:30+08:00,2026-08-13,20:30,High,Inflation,Producer Price Index,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+This week,Past,2026-08-13T20:30+08:00,2026-08-13,20:30,Medium,Labour,Initial Jobless Claims (expected recurring release),U.S. Department of Labor release cadence,https://www.dol.gov/newsroom/releases/opa/opa20200701,Usual Thursday cadence; verify holiday changes.
+This week,Past,2026-08-14T20:30+08:00,2026-08-14,20:30,Medium,Consumption,Retail Sales,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+This week,Past,2026-08-14T22:00+08:00,2026-08-14,22:00,Medium,Consumption,Consumer Sentiment,Public economic calendar fallback,https://www.forexfactory.com/calendar,Public-calendar fallback; verify against the named agency.
+Next week,Upcoming,2026-08-18T20:30+08:00,2026-08-18,20:30,Medium,Inflation / trade,U.S. Import and Export Price Indexes,BLS release calendar,https://www.bls.gov/schedule/news_release/bls.ics,Official calendar
+Next week,Upcoming,2026-08-18T21:15+08:00,2026-08-18,21:15,Medium,Growth,G.17 - Industrial Production and Capacity Utilization,Federal Reserve calendar,https://www.federalreserve.gov/newsevents/2026-august.htm,Official calendar
+Next week,Upcoming,2026-08-20T20:30+08:00,2026-08-20,20:30,Medium,Labour,Initial Jobless Claims (expected recurring release),U.S. Department of Labor release cadence,https://www.dol.gov/newsroom/releases/opa/opa20200701,Usual Thursday cadence; verify holiday changes.
