@@ -1,0 +1,169 @@
+{
+    "meta": {
+        "market_year": 2026,
+        "market_week": "W34",
+        "generation_time_utc": "2026-08-21T22:44:52+00:00",
+        "target_week": "2026-08-17 to 2026-08-21",
+        "baseline_target": "2026-08-14",
+        "download_window": "2026-07-31 to 2026-08-22 (end exclusive)",
+        "return_method": "Previous Friday close (or nearest earlier trading-day close) to final available close in the target ISO week",
+        "price_adjustment": "Raw Close (auto_adjust=False)",
+        "required_instruments_complete": true,
+        "missing_required": [],
+        "missing_optional": []
+    },
+    "metrics": {
+        "SPX": {
+            "ticker": "^GSPC",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 7785.7598,
+            "final_date": "2026-08-21",
+            "close_price": 7674.3701,
+            "weekly_delta_pct": -1.43
+        },
+        "NDX": {
+            "ticker": "^NDX",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 30046.1406,
+            "final_date": "2026-08-21",
+            "close_price": 29308.8594,
+            "weekly_delta_pct": -2.45
+        },
+        "IWM": {
+            "ticker": "IWM",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 305.09,
+            "final_date": "2026-08-21",
+            "close_price": 299.96,
+            "weekly_delta_pct": -1.68
+        },
+        "GOLD": {
+            "ticker": "GC=F",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 4380.3999,
+            "final_date": "2026-08-21",
+            "close_price": 4661.6001,
+            "weekly_delta_pct": 6.42
+        },
+        "OIL": {
+            "ticker": "CL=F",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 82.4,
+            "final_date": "2026-08-21",
+            "close_price": 86.64,
+            "weekly_delta_pct": 5.15
+        },
+        "US10Y": {
+            "ticker": "^TNX",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 4.696,
+            "final_date": "2026-08-21",
+            "close_price": 4.738,
+            "weekly_delta_pct": 0.89
+        },
+        "TLT": {
+            "ticker": "TLT",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 82.04,
+            "final_date": "2026-08-21",
+            "close_price": 82.05,
+            "weekly_delta_pct": 0.01
+        },
+        "BTC": {
+            "ticker": "BTC-USD",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 62975.5938,
+            "final_date": "2026-08-21",
+            "close_price": 78501.0078,
+            "weekly_delta_pct": 24.65
+        },
+        "XLK": {
+            "ticker": "XLK",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 190.01,
+            "final_date": "2026-08-21",
+            "close_price": 183.31,
+            "weekly_delta_pct": -3.53
+        },
+        "XLC": {
+            "ticker": "XLC",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 112.95,
+            "final_date": "2026-08-21",
+            "close_price": 111.4,
+            "weekly_delta_pct": -1.37
+        },
+        "XLY": {
+            "ticker": "XLY",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 118.2,
+            "final_date": "2026-08-21",
+            "close_price": 118.02,
+            "weekly_delta_pct": -0.15
+        },
+        "XLF": {
+            "ticker": "XLF",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 58.16,
+            "final_date": "2026-08-21",
+            "close_price": 57.48,
+            "weekly_delta_pct": -1.17
+        },
+        "XLV": {
+            "ticker": "XLV",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 167.37,
+            "final_date": "2026-08-21",
+            "close_price": 174.62,
+            "weekly_delta_pct": 4.33
+        },
+        "XLP": {
+            "ticker": "XLP",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 86.09,
+            "final_date": "2026-08-21",
+            "close_price": 85.99,
+            "weekly_delta_pct": -0.12
+        },
+        "XLE": {
+            "ticker": "XLE",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 61.91,
+            "final_date": "2026-08-21",
+            "close_price": 63.64,
+            "weekly_delta_pct": 2.79
+        },
+        "XLU": {
+            "ticker": "XLU",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 44.31,
+            "final_date": "2026-08-21",
+            "close_price": 42.77,
+            "weekly_delta_pct": -3.48
+        },
+        "XLI": {
+            "ticker": "XLI",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 186.51,
+            "final_date": "2026-08-21",
+            "close_price": 180.25,
+            "weekly_delta_pct": -3.36
+        },
+        "XLB": {
+            "ticker": "XLB",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 52.54,
+            "final_date": "2026-08-21",
+            "close_price": 53.54,
+            "weekly_delta_pct": 1.9
+        },
+        "XLRE": {
+            "ticker": "XLRE",
+            "baseline_date": "2026-08-14",
+            "baseline_close": 45.27,
+            "final_date": "2026-08-21",
+            "close_price": 45.08,
+            "weekly_delta_pct": -0.42
+        }
+    }
+}
