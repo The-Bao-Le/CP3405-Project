@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "market_week": "W35",
+    "year": 2026,
+    "generated_at": "2026-08-29T03:58:14.617530+00:00",
+    "data_start": "2025-08-24",
+    "data_end": "2026-08-29",
+    "final_trading_day": "2026-08-28",
+    "successful_asset_count": 14,
+    "failed_asset_count": 0
+  },
+  "metrics": {
+    "SPX": {
+      "close_price": 7711.759765625,
+      "ema_8": 7697.716752050944,
+      "ema_21": 7668.773582795421,
+      "rsi": 45.31401650510901,
+      "support": 6343.72021484375,
+      "resistance": 7798.990234375,
+      "trend": "Bullish",
+      "bias": "Bullish",
+      "confidence": "Medium"
+    },
+    "NDX": {
+      "close_price": 29433.427734375,
+      "ema_8": 29398.35461916222,
+      "ema_21": 29343.805170851207,
+      "rsi": 46.55571276643614,
+      "support": 22953.380859375,
+      "resistance": 30660.599609375,
+      "trend": "Bullish",
+      "bias": "Bullish",
+      "confidence": "Medium"
+    },
+    "IWM": {
+      "close_price": 295.75,
+      "ema_8": 298.8067254518236,
+      "ema_21": 298.81002993013703,
+      "rsi": 41.95507905682039,
+      "support": 227.3980255126953,
+      "resistance": 305.0899963378906,
+      "trend": "Bearish",
+      "bias": "Bearish",
+      "confidence": "Medium"
+    },
+    "XLC": {
+      "close_price": 112.98999786376953,
+      "ema_8": 112.11101494272437,
+      "ema_21": 111.44206919033962,
+      "rsi": 54.131044222819845,
+      "support": 105.37999725341797,
+      "resistance": 119.38744354248047,
+      "trend": "Bullish",
+      "bias": "Bullish",
+      "confidence": "Medium"
+    },
+    "XLY": {
+      "close_price": 117.20999908447266,
+      "ema_8": 117.25675715013827,
+      "ema_21": 117.11740572882134,
+      "rsi": 41.17647058823529,
+      "support": 105.44987487792969,
+      "resistance": 124.0232162475586,
+      "trend": "Neutral",
+      "bias": "Neutral",
+      "confidence": "Medium"
+    },
+    "XLP": {
+      "close_price": 85.44999694824219,
+      "ema_8": 85.82683626794127,
+      "ema_21": 85.60949597763323,
+      "rsi": 52.26860794372789,
+      "support": 74.06462097167969,
+      "resistance": 88.8894271850586,
+      "trend": "Neutral",
+      "bias": "Neutral",
+      "confidence": "Medium"
+    },
+    "XLE": {
+      "close_price": 62.68000030517578,
+      "ema_8": 62.53376486524408,
+      "ema_21": 61.388453782306506,
+      "rsi": 69.65410974104415,
+      "support": 41.6750373840332,
+      "resistance": 63.75,
+      "trend": "Bullish",
+      "bias": "Bullish",
+      "confidence": "Medium"
+    },
+    "XLF": {
+      "close_price": 58.099998474121094,
+      "ema_8": 57.95795394554539,
+      "ema_21": 57.6093479689968,
+      "rsi": 53.364240391772626,
+      "support": 47.64310836791992,
+      "resistance": 58.310001373291016,
+      "trend": "Bullish",
+      "bias": "Bullish",
+      "confidence": "Medium"
+    },
+    "XLV": {
+      "close_price": 171.16000366210938,
+      "ema_8": 172.23877582189195,
+      "ema_21": 169.55531238838637,
+      "rsi": 56.41510275939604,
+      "support": 132.43038940429688,
+      "resistance": 175.67999267578125,
+      "trend": "Neutral",
+      "bias": "Neutral",
+      "confidence": "Medium"
+    },
+    "XLI": {
+      "close_price": 177.13999938964844,
+      "ema_8": 179.71282929573587,
+      "ema_21": 181.32211581243882,
+      "rsi": 27.116548106833974,
+      "support": 146.55203247070312,
+      "resistance": 186.50999450683594,
+      "trend": "Bearish",
+      "bias": "Bearish",
+      "confidence": "Medium"
+    },
+    "XLB": {
+      "close_price": 53.18000030517578,
+      "ema_8": 53.168322556112706,
+      "ema_21": 52.655865621446026,
+      "rsi": 50.0,
+      "support": 41.671302795410156,
+      "resistance": 53.66999816894531,
+      "trend": "Bullish",
+      "bias": "Bullish",
+      "confidence": "Medium"
+    },
+    "XLRE": {
+      "close_price": 44.47999954223633,
+      "ema_8": 44.88844350202599,
+      "ema_21": 44.94608025800535,
+      "rsi": 51.06380388389112,
+      "support": 39.28341293334961,
+      "resistance": 46.0099983215332,
+      "trend": "Bearish",
+      "bias": "Bearish",
+      "confidence": "Medium"
+    },
+    "XLK": {
+      "close_price": 185.69000244140625,
+      "ema_8": 184.80667570388255,
+      "ema_21": 184.10914979409793,
+      "rsi": 48.88098696905964,
+      "support": 127.34815216064453,
+      "resistance": 197.9739532470703,
+      "trend": "Bullish",
+      "bias": "Bullish",
+      "confidence": "Medium"
+    },
+    "XLU": {
+      "close_price": 42.72999954223633,
+      "ema_8": 43.289168109771374,
+      "ema_21": 43.75426873211102,
+      "rsi": 45.282998497512345,
+      "support": 40.18925857543945,
+      "resistance": 47.09787368774414,
+      "trend": "Bearish",
+      "bias": "Bearish",
+      "confidence": "Medium"
+    }
+  },
+  "errors": {}
+}
